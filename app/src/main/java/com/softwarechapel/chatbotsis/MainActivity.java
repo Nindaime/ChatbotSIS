@@ -44,18 +44,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessage(View view) {
         String text = editText.getText().toString();
-
-        new DetectIntentTexts(this,text).execute();
-        if (text.length() > 0) {
-            final Message message =new Message( text, true);
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Util.addMessageToView(message);
-                }
-            });
-            editText.getText().clear();
+        try {
+            new DetectIntentTexts(this,text).execute();
+            if (text.length() > 0) {
+                final Message message =new Message( text, true);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Util.addMessageToView(message);
+                    }
+                });
+                editText.getText().clear();
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
         }
+
     }
 
 

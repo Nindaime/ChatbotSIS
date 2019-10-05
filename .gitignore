@@ -131,3 +131,4 @@ gradle-app.setting
 # Exclude node_modules in backend
 
 /backend/node_modules/
+*.env

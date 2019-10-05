@@ -28,6 +28,7 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.dialogflow.v2.DetectIntentResponse;
+import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.QueryInput;
 import com.google.cloud.dialogflow.v2.QueryResult;
 import com.google.cloud.dialogflow.v2.SessionName;
@@ -35,6 +36,7 @@ import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.cloud.dialogflow.v2.SessionsSettings;
 import com.google.cloud.dialogflow.v2.TextInput;
 import com.google.cloud.dialogflow.v2.TextInput.Builder;
+import com.google.cloud.dialogflow.v2.WebhookResponse;
 import com.google.common.collect.Maps;
 import com.softwarechapel.chatbotsis.Message;
 import com.softwarechapel.chatbotsis.R;
@@ -124,6 +126,7 @@ public class DetectIntentTexts extends AsyncTask<Void, Void, DetectIntentRespons
 
         // Performs the detect intent request
         DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
+
         //return response
         return response;
     }
@@ -133,13 +136,17 @@ public class DetectIntentTexts extends AsyncTask<Void, Void, DetectIntentRespons
 
         // Display the query result
         QueryResult queryResult = response.getQueryResult();
+
+
         Log.i("Good","Query Text: "+ queryResult.getQueryText());
         Log.i("Good","Detected Intent: "+queryResult.getIntent().getDisplayName()+ "(confidence: "+queryResult.getIntentDetectionConfidence()+")");
         Log.i("Good","Fulfillment Text: "+queryResult.getFulfillmentText());
+
         //Receive message
         Message message = new Message( queryResult.getFulfillmentText(), false);
         Util.addMessageToView(message);
 
     }
+
 
 }
