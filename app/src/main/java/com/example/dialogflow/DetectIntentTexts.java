@@ -24,6 +24,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 
+import com.google.api.client.json.JsonGenerator;
+import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -36,15 +38,24 @@ import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.cloud.dialogflow.v2.SessionsSettings;
 import com.google.cloud.dialogflow.v2.TextInput;
 import com.google.cloud.dialogflow.v2.TextInput.Builder;
+import com.google.cloud.dialogflow.v2.WebhookRequest;
 import com.google.cloud.dialogflow.v2.WebhookResponse;
 import com.google.common.collect.Maps;
 import com.softwarechapel.chatbotsis.Message;
 import com.softwarechapel.chatbotsis.R;
 import com.softwarechapel.chatbotsis.Util;
+import com.squareup.okhttp.MediaType;
 
+
+import org.apache.http.HttpStatus;
+
+import com.google.api.client.json.JsonGenerator;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.dialogflow.v2.model.*;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
 import java.util.Map;
 import java.util.UUID;
 import java.util.logging.Logger;
@@ -126,6 +137,10 @@ public class DetectIntentTexts extends AsyncTask<Void, Void, DetectIntentRespons
 
         // Performs the detect intent request
         DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
+        // try webhook response
+        //GoogleCloudDialogflowV2WebhookResponse response2 = new GoogleCloudDialogflowV2WebhookResponse();
+
+
 
         //return response
         return response;
@@ -133,6 +148,11 @@ public class DetectIntentTexts extends AsyncTask<Void, Void, DetectIntentRespons
 
     @Override
     protected void onPostExecute(DetectIntentResponse response) {
+
+
+
+        Log.i("Good","Response: "+ response.toString());
+        //WebhookClient a ;
 
         // Display the query result
         QueryResult queryResult = response.getQueryResult();

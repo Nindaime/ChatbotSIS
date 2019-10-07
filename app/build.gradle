@@ -40,6 +40,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.google.cloud:google-cloud-dialogflow:0.108.0-alpha'
+    implementation 'com.google.apis:google-api-services-dialogflow:v2-rev81-1.25.0'
+    implementation 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     implementation 'io.grpc:grpc-okhttp:1.24.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

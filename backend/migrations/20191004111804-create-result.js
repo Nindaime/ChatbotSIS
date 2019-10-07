@@ -30,7 +30,11 @@ module.exports = {
         type: Sequelize.ENUM('100','200','300','400','500','600')
       },
       departmentId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+               model: 'Departments',
+                  key: 'departmentId'
+                }
       },
       grade: {
         type: Sequelize.ENUM('A','B','C','D','E')

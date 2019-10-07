@@ -19,5 +19,5 @@ app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.use('/api/result',resultRoutes);
+app.use('/webhook',resultRoutes);
 export default app;

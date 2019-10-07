@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     Department.belongsTo(models.Faculty, {foreignKey: 'facultyId', as: 'faculty'});
     Department.hasMany(models.Course, {as: 'courses'});
     Department.hasMany(models.Student, {as: 'students'});
+    Department.hasMany(models.Result, {as: 'results'});
   };
   return Department;
 };
