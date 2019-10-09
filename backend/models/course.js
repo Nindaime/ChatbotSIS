@@ -17,5 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     Course.hasMany(models.Result, {as: 'results'});
     Course.hasMany(models.Assignment, {as: 'assignments'});
   };
+
+  //Course.removeAttribute('id');
   return Course;
 };

@@ -14,7 +14,7 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'Courses',
-          key: 'courseId'
+          key: 'id'
         }
       },
       weekday: {

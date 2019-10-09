@@ -11,5 +11,6 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     TimeTable.belongsTo(models.Course, {foreignKey: 'courseId', as: 'courses'});
   };
+  TimeTable.removeAttribute('id');
   return TimeTable;
 };

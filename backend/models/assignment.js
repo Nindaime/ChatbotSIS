@@ -12,5 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Assignment.belongsTo(models.Course, { foreignKey: 'courseId', as: 'courses'});
   };
+  Assignment.removeAttribute('id');
   return Assignment;
 };

@@ -137,7 +137,7 @@ public class DetectIntentTexts extends AsyncTask<Void, Void, DetectIntentRespons
 
         // Performs the detect intent request
         DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
-        // try webhook response
+        // try WebhookResponse
         //GoogleCloudDialogflowV2WebhookResponse response2 = new GoogleCloudDialogflowV2WebhookResponse();
 
 

@@ -5,8 +5,7 @@ module.exports = {
       
       studentMatricId: {
         type: Sequelize.STRING,
-        allowNull: false,
-        primaryKey: true
+        allowNull: false
         ,
         references: {
           model: 'Students',
@@ -22,7 +21,7 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'Courses',
-          key: 'courseId'
+          key: 'id'
         }
         
       },
@@ -37,7 +36,7 @@ module.exports = {
                 }
       },
       grade: {
-        type: Sequelize.ENUM('A','B','C','D','E')
+        type: Sequelize.ENUM('A','B','C','D','E','F')
       },
       createdAt: {
         allowNull: false,

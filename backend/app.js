@@ -1,4 +1,5 @@
 import express from 'express';
+//import session from 'express-session';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
 const resultRoutes = require('./routes/result');
@@ -18,6 +19,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({extended: true}));
 
+/*
+app.use(session({
+  key: 'user_sid',
+  secret: 'somerandonstuffs',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+      expires: 600000
+  }
+}));
+*/
 
 app.use('/webhook',resultRoutes);
 export default app;

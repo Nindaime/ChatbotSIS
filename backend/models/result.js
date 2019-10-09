@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     courseId: DataTypes.INTEGER,
     level: DataTypes.ENUM('100','200','300','400','500','600'),
     departmentId: DataTypes.INTEGER,
-    grade: DataTypes.ENUM('A','B','C','D','E')
+    grade: DataTypes.ENUM('A','B','C','D','E','F')
   }, {});
   Result.associate = function(models) {
     // associations can be defined here
