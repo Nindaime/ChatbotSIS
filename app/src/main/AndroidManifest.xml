@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".PersonalAssistantHome" />
+        <activity android:name=".DashboardActivity" />
         <activity android:name=".CreateAssignment" />
         <activity
             android:name=".MainActivity"
