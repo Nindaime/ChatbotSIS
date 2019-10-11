@@ -36,7 +36,6 @@ weekday[6] = "Saturday";
 
 exports.getResult = async (req, res, next) => {
 
-  //console.log('parameters ', req.body);
 
   const { displayName } = req.body.queryResult.intent;
   const { parameters,session } = req.body.queryResult;
@@ -78,7 +77,7 @@ exports.getResult = async (req, res, next) => {
 
         return res.status(200).json(Payload.getPayload());
       }).catch((e) => {
-        console.log(e);
+  
         let text = "You should expect an error";
         Payload.setText(text);
         return res.status(200).json(Payload.getPayload());
@@ -125,7 +124,7 @@ exports.getResult = async (req, res, next) => {
 
         return res.status(200).json(Payload.getPayload());
       }).catch((e) => {
-        console.log(e);
+        
         let text = "You should expect an error";
         Payload.setText(text);
         return res.status(200).json(Payload.getPayload());
@@ -171,7 +170,7 @@ exports.getResult = async (req, res, next) => {
 
         return res.status(200).json(Payload.getPayload());
       }).catch((e) => {
-        console.log(e);
+        
         let text = "You should expect an error";
         Payload.setText(text);
         return res.status(200).json(Payload.getPayload());
@@ -183,7 +182,7 @@ exports.getResult = async (req, res, next) => {
   if (displayName === INTENT_NAME.mode) {
 
     const { course } = parameters;
-    console.log('parameters', parameters);
+    
     return Assignment.findAll({
       attributes: ['modeOfSubmission', 'assignmentDetails'],
       include: [{
@@ -218,7 +217,7 @@ exports.getResult = async (req, res, next) => {
 
         return res.status(200).json(Payload.getPayload());
       }).catch((e) => {
-        console.log(e);
+        
         let text = "You should expect an error";
         Payload.setText(text);
         return res.status(200).json(Payload.getPayload());
@@ -276,7 +275,7 @@ exports.getResult = async (req, res, next) => {
 
           return res.status(200).json(Payload.getPayload());
         }).catch((e) => {
-          console.log(e);
+          
           let text = "You should expect an error";
           Payload.setText(text);
           return res.status(200).json(Payload.getPayload());
@@ -317,7 +316,7 @@ exports.getResult = async (req, res, next) => {
 
           return res.status(200).json(Payload.getPayload());
         }).catch((e) => {
-          console.log(e);
+          
           let text = "You should expect an error";
           Payload.setText(text);
           return res.status(200).json(Payload.getPayload());
@@ -357,7 +356,7 @@ exports.getResult = async (req, res, next) => {
 
           return res.status(200).json(Payload.getPayload());
         }).catch((e) => {
-          console.log(e);
+          
           let text = "You should expect an error";
           Payload.setText(text);
           return res.status(200).json(Payload.getPayload());
@@ -396,7 +395,7 @@ exports.getResult = async (req, res, next) => {
 
           return res.status(200).json(Payload.getPayload());
         }).catch((e) => {
-          console.log(e);
+          
           let text = "You should expect an error";
           Payload.setText(text);
           res.status(200).json(Payload.getPayload());
@@ -412,7 +411,7 @@ exports.getResult = async (req, res, next) => {
   if (displayName === INTENT_NAME.time) {
 
     const { course, date } = parameters;
-    console.log('parameters', parameters);
+    
 
     let queryDate;
     let queryCourse;
@@ -456,7 +455,7 @@ exports.getResult = async (req, res, next) => {
 
           return res.status(200).json(Payload.getPayload());
         }).catch((e) => {
-          console.log(e);
+          
           let text = "You should expect an error";
           Payload.setText(text);
           res.status(200).json(Payload.getPayload());
@@ -497,7 +496,7 @@ exports.getResult = async (req, res, next) => {
 
           res.status(200).json(Payload.getPayload());
         }).catch((e) => {
-          console.log(e);
+        
           let text = "You should expect an error";
           Payload.setText(text);
           res.status(200).json(Payload.getPayload());
@@ -610,11 +609,18 @@ exports.getResult = async (req, res, next) => {
 
     if (student === null) {
 
-        Payload.clear();
-        Payload.setText('Your login credentials are incorrect');
-        Payload.setContext(session,'score-followup')
+      console.log(req.body.queryResult.outputContexts[0].lifeSpanCount);
 
-        res.status(200).json(Payload.getPayload());
+        Payload.clear();
+        if(req.body.queryResult.outputContexts.lifeSpanCount === 1){
+          Payload.setText('I dont think you are who you say you are');
+        }else{
+          Payload.setText('Your login credentials are incorrect. Give me your reg number again');
+        Payload.setContext(session,'score-followup');
+        }
+        
+
+        return res.status(200).json(Payload.getPayload());
     }
 
 
@@ -623,28 +629,28 @@ exports.getResult = async (req, res, next) => {
     let clause = {studentMatricId: parameters.studentMatricId};
     
     if (parameters.session !== ''){
-      clause = {  studentMatricId: parameters.studentMatricId,sessionYear: parameters.session};
+      clause.sessionYear= parameters.session;
     }
 
 
     if(parameters.course === '' ){
       return Result.findAll({
 
-        attributes: ['grade'], where: clause,
+        attributes: ['grade','sessionYear'], where: clause,
         include: [{
           model: Course,
           as: 'courses',
-          attributes: ['courseCode'],
-          //where: { courseCode: parameters.course.replace(/ +/g, "") }
+          attributes: ['courseCode','semester'],
+          where: { semester: parameters.semester }
         }
         ]
       })
         .then((result) => {
   
-          console.log('result',res);
+        
   
           if(result === null){
-            let text = ` You do not currently have any result for this course ${parameters.course}`;
+            let text = ` You do not currently have any result`;
             Payload.clear();
             Payload.setText(text);
   
@@ -652,20 +658,20 @@ exports.getResult = async (req, res, next) => {
   
           }
   
-          let text = 'Your result For this Semester';
+          let text = 'These are your results \n';
 
         result.forEach(element => {
-
-          //let course = element.get('courses');
-          //'title', 'date', 'description','venue','departmentGroup'
-          text += `${element.get('courseCode')} : ${element.get('grade')}  \n`
+          
+          let course = element.get('courses');
+          
+          text += `${course.get('courseCode')} : ${element.get('grade')} ${course.get('semester')},${element.get('sessionYear')}  \n`
         });
           Payload.clear();
           Payload.setText(text);
   
           return res.status(200).json(Payload.getPayload());
         }).catch((e) => {
-            console.log(e);
+          
           let text = "You should expect an error here";
           Payload.setText(text);
           return res.status(200).json(Payload.getPayload());
@@ -690,7 +696,6 @@ exports.getResult = async (req, res, next) => {
     })
       .then((result) => {
 
-        console.log('result',res);
 
         if(result === null){
           let text = ` You do not currently have any result for this course ${parameters.course}`;
@@ -707,7 +712,7 @@ exports.getResult = async (req, res, next) => {
 
         return res.status(200).json(Payload.getPayload());
       }).catch((e) => {
-          console.log(e);
+          
         let text = "You should expect an error here";
         Payload.setText(text);
         return res.status(200).json(Payload.getPayload());

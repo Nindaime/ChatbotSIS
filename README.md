@@ -18,3 +18,17 @@ The Chatbot SIS (School Information System) is developed as an information manag
     ngrok http 3010
 
 ```
+- with the addres created by ngrok, go to fulfillment in dialogflow and paste the address.<address>/webhook
+something like this
+```
+    https://85143995.ngrok.io/webhook
+```
+- open another terminal and cd into the backend folder and run
+```
+    npm run start:dev
+    
+```
+-this will start the backend server on port 3010
+
+#NOTE 
+Make sure your sql server is running and that you have uploaded the database tables with the relevant data
