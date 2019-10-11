@@ -4,22 +4,17 @@ The Chatbot SIS (School Information System) is developed as an information manag
 ## Comment By @victorex27
 
 
-### Install google cloud sdk
-  [Read how to connect dialogflow with your sdk ](https://cloud.google.com/dialogflow/docs/quick/setup)
+### Steps to Run app 
+- Install [ngrok ](https://ngrok.com/)
 
-### To authenticate the application each time you want to 
-### run it from the cloud sdk command line
-### Run in powershell
+- after unzipping it cd into the ngrok folder
+- if on linux run
 ```
-    $env:GOOGLE_APPLICATION_CREDENTIALS="[PATH-TO-JSON-FILE]" 
-```
-### Then run this in cmd
-``` 
-    set GOOGLE_APPLICATION_CREDENTIALS=[PATH-TO-JSON-FILE]
+    ./ngrok http 3010
 ```
 
-### Test authentication with this
-
+- if on windows run 
 ```
-    gcloud auth application-default print-access-token
+    ngrok http 3010
+
 ```

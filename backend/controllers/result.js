@@ -1,5 +1,6 @@
 // in controllers/stuff.js
 import Payload from './payload';
+import Query from './query';
 import Sequelize from 'sequelize';
 import moment from 'moment';
 
@@ -616,10 +617,62 @@ exports.getResult = async (req, res, next) => {
         res.status(200).json(Payload.getPayload());
     }
 
+
+    
+
     let clause = {studentMatricId: parameters.studentMatricId};
+    
     if (parameters.session !== ''){
       clause = {  studentMatricId: parameters.studentMatricId,sessionYear: parameters.session};
     }
+
+
+    if(parameters.course === '' ){
+      return Result.findAll({
+
+        attributes: ['grade'], where: clause,
+        include: [{
+          model: Course,
+          as: 'courses',
+          attributes: ['courseCode'],
+          //where: { courseCode: parameters.course.replace(/ +/g, "") }
+        }
+        ]
+      })
+        .then((result) => {
+  
+          console.log('result',res);
+  
+          if(result === null){
+            let text = ` You do not currently have any result for this course ${parameters.course}`;
+            Payload.clear();
+            Payload.setText(text);
+  
+            return res.status(200).json(Payload.getPayload());
+  
+          }
+  
+          let text = 'Your result For this Semester';
+
+        result.forEach(element => {
+
+          //let course = element.get('courses');
+          //'title', 'date', 'description','venue','departmentGroup'
+          text += `${element.get('courseCode')} : ${element.get('grade')}  \n`
+        });
+          Payload.clear();
+          Payload.setText(text);
+  
+          return res.status(200).json(Payload.getPayload());
+        }).catch((e) => {
+            console.log(e);
+          let text = "You should expect an error here";
+          Payload.setText(text);
+          return res.status(200).json(Payload.getPayload());
+  
+        });
+    }
+    
     
 
 
