@@ -12,6 +12,7 @@ const SchoolActivityEvent = require('../models').SchoolActivityEvent;
 const Assignment = require('../models').Assignment;
 const Op = Sequelize.Op;
 
+console.log('here');
 
 const INTENT_NAME = {
   score: 'score-custom',
