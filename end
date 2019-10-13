@@ -1,0 +1,464 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex d7888f5..f14e57e 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -125,5 +125,10 @@[m [mgradle-app.setting[m
+ # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898[m
+ # gradle/wrapper/gradle-wrapper.properties[m
+ [m
+[31m-#exclude key[m
+[31m-/app/test_key.json[m
+\ No newline at end of file[m
+[32m+[m[32m# Exclude key[m
+[32m+[m[32m/app/test_key.json[m
+[32m+[m
+[32m+[m[32m# Exclude node_modules in backend[m
+[32m+[m
+[32m+[m[32m/backend/node_modules/[m
+[32m+[m[32m*.env[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/caches/build_file_checksums.ser b/.idea/caches/build_file_checksums.ser[m
+[1mindex 60aebb5..a612881 100644[m
+Binary files a/.idea/caches/build_file_checksums.ser and b/.idea/caches/build_file_checksums.ser differ
+[1mdiff --git a/.idea/caches/gradle_models.ser b/.idea/caches/gradle_models.ser[m
+[1mindex 58719db..6e1ee49 100644[m
+Binary files a/.idea/caches/gradle_models.ser and b/.idea/caches/gradle_models.ser differ
+[1mdiff --git a/.idea/encodings.xml b/.idea/encodings.xml[m
+[1mdeleted file mode 100644[m
+[1mindex 15a15b2..0000000[m
+[1m--- a/.idea/encodings.xml[m
+[1m+++ /dev/null[m
+[36m@@ -1,4 +0,0 @@[m
+[31m-<?xml version="1.0" encoding="UTF-8"?>[m
+[31m-<project version="4">[m
+[31m-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />[m
+[31m-</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.project b/.project[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3d5396d[m
+[1m--- /dev/null[m
+[1m+++ b/.project[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<projectDescription>[m
+[32m+[m	[32m<name>ChatbotSIS</name>[m
+[32m+[m	[32m<comment>Project ChatbotSIS created by Buildship.</comment>[m
+[32m+[m	[32m<projects>[m
+[32m+[m	[32m</projects>[m
+[32m+[m	[32m<buildSpec>[m
+[32m+[m		[32m<buildCommand>[m
+[32m+[m			[32m<name>org.eclipse.buildship.core.gradleprojectbuilder</name>[m
+[32m+[m			[32m<arguments>[m
+[32m+[m			[32m</arguments>[m
+[32m+[m		[32m</buildCommand>[m
+[32m+[m	[32m</buildSpec>[m
+[32m+[m	[32m<natures>[m
+[32m+[m		[32m<nature>org.eclipse.buildship.core.gradleprojectnature</nature>[m
+[32m+[m	[32m</natures>[m
+[32m+[m[32m</projectDescription>[m
+[1mdiff --git a/.settings/org.eclipse.buildship.core.prefs b/.settings/org.eclipse.buildship.core.prefs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e889521[m
+[1m--- /dev/null[m
+[1m+++ b/.settings/org.eclipse.buildship.core.prefs[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mconnection.project.dir=[m
+[32m+[m[32meclipse.preferences.version=1[m
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 59b50bd..1a03cb1 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -4,22 +4,31 @@[m [mThe Chatbot SIS (School Information System) is developed as an information manag[m
+ ## Comment By @victorex27[m
+ [m
+ [m
+[31m-### Install google cloud sdk[m
+[31m-  [Read how to connect dialogflow with your sdk ](https://cloud.google.com/dialogflow/docs/quick/setup)[m
+[32m+[m[32m### Steps to Run app[m[41m [m
+[32m+[m[32m- Install [ngrok ](https://ngrok.com/)[m
+ [m
+[31m-### To authenticate the application each time you want to [m
+[31m-### run it from the cloud sdk command line[m
+[31m-### Run in powershell[m
+[32m+[m[32m- after unzipping it cd into the ngrok folder[m
+[32m+[m[32m- if on linux run[m
+ ```[m
+[31m-    $env:GOOGLE_APPLICATION_CREDENTIALS="[PATH-TO-JSON-FILE]" [m
+[31m-```[m
+[31m-### Then run this in cmd[m
+[31m-``` [m
+[31m-    set GOOGLE_APPLICATION_CREDENTIALS=[PATH-TO-JSON-FILE][m
+[32m+[m[32m    ./ngrok http 3010[m
+ ```[m
+ [m
+[31m-### Test authentication with this[m
+[32m+[m[32m- if on windows run[m[41m [m
+[32m+[m[32m```[m
+[32m+[m[32m    ngrok http 3010[m
+ [m
+ ```[m
+[31m-    gcloud auth application-default print-access-token[m
+[32m+[m[32m- with the addres created by ngrok, go to fulfillment in dialogflow and paste the address.<address>/webhook[m
+[32m+[m[32msomething like this[m
+[32m+[m[32m```[m
+[32m+[m[32m    https://85143995.ngrok.io/webhook[m
+ ```[m
+[32m+[m[32m- open another terminal and cd into the backend folder and run[m
+[32m+[m[32m```[m
+[32m+[m[32m    npm run start:dev[m
+[32m+[m[41m    [m
+[32m+[m[32m```[m
+[32m+[m[32m-this will start the backend server on port 3010[m
+[32m+[m
+[32m+[m[32m#NOTE[m[41m [m
+[32m+[m[32mMake sure your sql server is running and that you have uploaded the database tables with the relevant data[m
+[1mdiff --git a/app/.classpath b/app/.classpath[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3589094[m
+[1m--- /dev/null[m
+[1m+++ b/app/.classpath[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<classpath>[m
+[32m+[m	[32m<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-10/"/>[m
+[32m+[m	[32m<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>[m
+[32m+[m	[32m<classpathentry kind="output" path="bin/default"/>[m
+[32m+[m[32m</classpath>[m
+[1mdiff --git a/app/.project b/app/.project[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ac485d7[m
+[1m--- /dev/null[m
+[1m+++ b/app/.project[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<projectDescription>[m
+[32m+[m	[32m<name>app</name>[m
+[32m+[m	[32m<comment>Project app created by Buildship.</comment>[m
+[32m+[m	[32m<projects>[m
+[32m+[m	[32m</projects>[m
+[32m+[m	[32m<buildSpec>[m
+[32m+[m		[32m<buildCommand>[m
+[32m+[m			[32m<name>org.eclipse.jdt.core.javabuilder</name>[m
+[32m+[m			[32m<arguments>[m
+[32m+[m			[32m</arguments>[m
+[32m+[m		[32m</buildCommand>[m
+[32m+[m		[32m<buildCommand>[m
+[32m+[m			[32m<name>org.eclipse.buildship.core.gradleprojectbuilder</name>[m
+[32m+[m			[32m<arguments>[m
+[32m+[m			[32m</arguments>[m
+[32m+[m		[32m</buildCommand>[m
+[32m+[m	[32m</buildSpec>[m
+[32m+[m	[32m<natures>[m
+[32m+[m		[32m<nature>org.eclipse.jdt.core.javanature</nature>[m
+[32m+[m		[32m<nature>org.eclipse.buildship.core.gradleprojectnature</nature>[m
+[32m+[m	[32m</natures>[m
+[32m+[m[32m</projectDescription>[m
+[1mdiff --git a/app/.settings/org.eclipse.buildship.core.prefs b/app/.settings/org.eclipse.buildship.core.prefs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b1886ad[m
+[1m--- /dev/null[m
+[1m+++ b/app/.settings/org.eclipse.buildship.core.prefs[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mconnection.project.dir=..[m
+[32m+[m[32meclipse.preferences.version=1[m
+[1mdiff --git a/app/build.gradle b/app/build.gradle[m
+[1mindex 5d53abe..50a5c3d 100644[m
+[1m--- a/app/build.gradle[m
+[1m+++ b/app/build.gradle[m
+[36m@@ -40,15 +40,11 @@[m [mdependencies {[m
+     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'[m
+     implementation 'com.google.android.material:material:1.0.0'[m
+     implementation 'com.google.cloud:google-cloud-dialogflow:0.108.0-alpha'[m
+[32m+[m[32m    implementation 'com.google.apis:google-api-services-dialogflow:v2-rev81-1.25.0'[m
+[32m+[m[32m    implementation 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'[m
+     implementation 'io.grpc:grpc-okhttp:1.24.0'[m
+     testImplementation 'junit:junit:4.12'[m
+     androidTestImplementation 'androidx.test.ext:junit:1.1.1'[m
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'[m
+ [m
+[31m-    //added dependencies[m
+[31m-    implementation 'androidx.appcompat:appcompat:1.1.0'[m
+[31m-    implementation 'androidx.cardview:cardview:1.0.0'[m
+[31m-    implementation 'de.hdodenhof:circleimageview:3.0.1'[m
+[31m-    implementation 'androidx.recyclerview:recyclerview:1.0.0'[m
+[31m-[m
+ }[m
+[1mdiff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml[m
+[1mindex fd7f7f5..d5d0391 100644[m
+[1m--- a/app/src/main/AndroidManifest.xml[m
+[1m+++ b/app/src/main/AndroidManifest.xml[m
+[36m@@ -2,33 +2,26 @@[m
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"[m
+     xmlns:tools="http://schemas.android.com/tools"[m
+     package="com.softwarechapel.chatbotsis">[m
+[31m-[m
+     <uses-permission android:name="android.permission.INTERNET" />[m
+ [m
+     <application[m
+[31m-        android:allowBackup="true"[m
+[32m+[m[32m        tools:replace="android:appComponentFactory"[m
+         android:appComponentFactory="whateverString"[m
+[32m+[m[32m        android:allowBackup="true"[m
+         android:icon="@mipmap/ic_launcher"[m
+         android:label="@string/app_name"[m
+         android:roundIcon="@mipmap/ic_launcher_round"[m
+         android:supportsRtl="true"[m
+[31m-        android:theme="@style/AppTheme"[m
+[31m-        tools:replace="android:appComponentFactory">[m
+[31m-        <activity android:name=".ChatActivity"></activity>[m
+[31m-        <activity android:name=".PersonalAssistantHome" >[m
+[31m-            <intent-filter>[m
+[31m-                <action android:name="android.intent.action.MAIN" />[m
+[31m-[m
+[31m-                <category android:name="android.intent.category.LAUNCHER" />[m
+[31m-            </intent-filter>[m
+[31m-        </activity>[m
+[31m-        <activity android:name=".DashboardActivity" />[m
+[31m-        <activity android:name=".CreateAssignment" />[m
+[32m+[m[32m        android:theme="@style/AppTheme">[m
+         <activity[m
+             android:name=".MainActivity"[m
+             android:label="@string/app_name"[m
+             android:theme="@style/AppTheme.NoActionBar">[m
+[32m+[m[32m            <intent-filter>[m
+[32m+[m[32m                <action android:name="android.intent.action.MAIN" />[m
+ [m
+[32m+[m[32m                <category android:name="android.intent.category.LAUNCHER" />[m
+[32m+[m[32m            </intent-filter>[m
+         </activity>[m
+     </application>[m
+ [m
+[1mdiff --git a/app/src/main/ChatbotSIS.zip b/app/src/main/ChatbotSIS.zip[m
+[1mdeleted file mode 100644[m
+[1mindex a8a3a6b..0000000[m
+Binary files a/app/src/main/ChatbotSIS.zip and /dev/null differ
+[1mdiff --git a/app/src/main/java/com/example/dialogflow/DetectIntentTexts.java b/app/src/main/java/com/example/dialogflow/DetectIntentTexts.java[m
+[1mindex fad3512..3bb5923 100644[m
+[1m--- a/app/src/main/java/com/example/dialogflow/DetectIntentTexts.java[m
+[1m+++ b/app/src/main/java/com/example/dialogflow/DetectIntentTexts.java[m
+[36m@@ -24,10 +24,13 @@[m [mimport android.os.AsyncTask;[m
+ import android.util.Log;[m
+ [m
+ [m
+[32m+[m[32mimport com.google.api.client.json.JsonGenerator;[m
+[32m+[m[32mimport com.google.api.client.json.jackson2.JacksonFactory;[m
+ import com.google.api.gax.core.FixedCredentialsProvider;[m
+ import com.google.auth.oauth2.GoogleCredentials;[m
+ import com.google.auth.oauth2.ServiceAccountCredentials;[m
+ import com.google.cloud.dialogflow.v2.DetectIntentResponse;[m
+[32m+[m[32mimport com.google.cloud.dialogflow.v2.Intent;[m
+ import com.google.cloud.dialogflow.v2.QueryInput;[m
+ import com.google.cloud.dialogflow.v2.QueryResult;[m
+ import com.google.cloud.dialogflow.v2.SessionName;[m
+[36m@@ -35,14 +38,24 @@[m [mimport com.google.cloud.dialogflow.v2.SessionsClient;[m
+ import com.google.cloud.dialogflow.v2.SessionsSettings;[m
+ import com.google.cloud.dialogflow.v2.TextInput;[m
+ import com.google.cloud.dialogflow.v2.TextInput.Builder;[m
+[32m+[m[32mimport com.google.cloud.dialogflow.v2.WebhookRequest;[m
+[32m+[m[32mimport com.google.cloud.dialogflow.v2.WebhookResponse;[m
+ import com.google.common.collect.Maps;[m
+ import com.softwarechapel.chatbotsis.Message;[m
+ import com.softwarechapel.chatbotsis.R;[m
+ import com.softwarechapel.chatbotsis.Util;[m
+[32m+[m[32mimport com.squareup.okhttp.MediaType;[m
+ [m
+ [m
+[32m+[m[32mimport org.apache.http.HttpStatus;[m
+[32m+[m
+[32m+[m[32mimport com.google.api.client.json.JsonGenerator;[m
+[32m+[m[32mimport com.google.api.client.json.jackson2.JacksonFactory;[m
+[32m+[m[32mimport com.google.api.services.dialogflow.v2.model.*;[m
+[32m+[m
+ import java.io.IOException;[m
+ import java.io.InputStream;[m
+[32m+[m[32mimport java.io.StringWriter;[m
+ import java.util.Map;[m
+ import java.util.UUID;[m
+ import java.util.logging.Logger;[m
+[36m@@ -124,6 +137,11 @@[m [mpublic class DetectIntentTexts extends AsyncTask<Void, Void, DetectIntentRespons[m
+ [m
+         // Performs the detect intent request[m
+         DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);[m
+[32m+[m[32m        // try WebhookResponse[m
+[32m+[m[32m        //GoogleCloudDialogflowV2WebhookResponse response2 = new GoogleCloudDialogflowV2WebhookResponse();[m
+[32m+[m
+[32m+[m
+[32m+[m
+         //return response[m
+         return response;[m
+     }[m
+[36m@@ -131,15 +149,24 @@[m [mpublic class DetectIntentTexts extends AsyncTask<Void, Void, DetectIntentRespons[m
+     @Override[m
+     protected void onPostExecute(DetectIntentResponse response) {[m
+ [m
+[32m+[m
+[32m+[m
+[32m+[m[32m        Log.i("Good","Response: "+ response.toString());[m
+[32m+[m[32m        //WebhookClient a ;[m
+[32m+[m
+         // Display the query result[m
+         QueryResult queryResult = response.getQueryResult();[m
+[32m+[m
+[32m+[m
+         Log.i("Good","Query Text: "+ queryResult.getQueryText());[m
+         Log.i("Good","Detected Intent: "+queryResult.getIntent().getDisplayName()+ "(confidence: "+queryResult.getIntentDetectionConfidence()+")");[m
+         Log.i("Good","Fulfillment Text: "+queryResult.getFulfillmentText());[m
+[32m+[m
+         //Receive message[m
+         Message message = new Message( queryResult.getFulfillmentText(), false);[m
+         Util.addMessageToView(message);[m
+ [m
+     }[m
+ [m
+[32m+[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/app/src/main/java/com/softwarechapel/chatbotsis/ChatActivity.java b/app/src/main/java/com/softwarechapel/chatbotsis/ChatActivity.java[m
+[1mdeleted file mode 100644[m
+[1mindex e955a5a..0000000[m
+[1m--- a/app/src/main/java/com/softwarechapel/chatbotsis/ChatActivity.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,14 +0,0 @@[m
+[31m-package com.softwarechapel.chatbotsis;[m
+[31m-[m
+[31m-import androidx.appcompat.app.AppCompatActivity;[m
+[31m-[m
+[31m-import android.os.Bundle;[m
+[31m-[m
+[31m-public class ChatActivity extends AppCompatActivity {[m
+[31m-[m
+[31m-    @Override[m
+[31m-    protected void onCreate(Bundle savedInstanceState) {[m
+[31m-        super.onCreate(savedInstanceState);[m
+[31m-        setContentView(R.layout.activity_chat);[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/src/main/java/com/softwarechapel/chatbotsis/CreateAssignment.java b/app/src/main/java/com/softwarechapel/chatbotsis/CreateAssignment.java[m
+[1mdeleted file mode 100644[m
+[1mindex f20202a..0000000[m
+[1m--- a/app/src/main/java/com/softwarechapel/chatbotsis/CreateAssignment.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,51 +0,0 @@[m
+[31m-package com.softwarechapel.chatbotsis;[m
+[31m-[m
+[31m-import androidx.annotation.NonNull;[m
+[31m-import androidx.annotation.Nullable;[m
+[31m-import androidx.appcompat.app.AppCompatActivity;[m
+[31m-[m
+[31m-import android.content.Context;[m
+[31m-import android.os.Bundle;[m
+[31m-import android.view.View;[m
+[31m-import android.view.ViewGroup;[m
+[31m-import android.widget.ArrayAdapter;[m
+[31m-import android.widget.Spinner;[m
+[31m-[m
+[31m-public class CreateAssignment extends AppCompatActivity {[m
+[31m-[m
+[31m-    Context context = this;[m
+[31m-    public Spinner deptSpinner;[m
+[31m-    public ArrayAdapter<String> arrayAdapter;[m
+[31m-[m
+[31m-    @Override[m
+[31m-    protected void onCreate(Bundle savedInstanceState) {[m
+[31m-        super.onCreate(savedInstanceState);[m
+[31m-        setContentView(R.layout.activity_create_assignment);[m
+[31m-[m
+[31m-        deptSpinner = findViewById(R.id.department_spinner);[m
+[31m-[m
+[31m-        arrayAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item) {[m
+[31m-            @NonNull[m
+[31m-            @Override[m
+[31m-            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {[m
+[31m-                View v =  super.getView(position, convertView, parent);[m
+[31m-                if(position == getCount()) {[m
+[31m-[m
+[31m-                }[m
+[31m-                return  v;[m
+[31m-[m
+[31m-            }[m
+[31m-[m
+[31m-            @Override[m
+[31m-            public int getCount() {[m
+[31m-                return super.getCount() - 1;[m
+[31m-            }[m
+[31m-        };[m
+[31m-[m
+[31m-        arrayAdapter.add("Item 1");[m
+[31m-        arrayAdapter.add("Select Department");[m
+[31m-[m
+[31m-        deptSpinner.setAdapter(arrayAdapter);[m
+[31m-        deptSpinner.setSelection(arrayAdapter.getCount());[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/src/main/java/com/softwarechapel/chatbotsis/DashboardActivity.java b/app/src/main/java/com/softwarechapel/chatbotsis/DashboardActivity.java[m
+[1mdeleted file mode 100644[m
+[1mindex 8ee334b..0000000[m
+[1m--- a/app/src/main/java/com/softwarechapel/chatbotsis/DashboardActivity.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,14 +0,0 @@[m
+[31m-package com.softwarechapel.chatbotsis;[m
+[31m-[m
+[31m-import androidx.appcompat.app.AppCompatActivity;[m
+[31m-[m
+[31m-import android.os.Bundle;[m
+[31m-[m
+[31m-public class DashboardActivity extends AppCompatActivity {[m
+[31m-[m
+[31m-    @Override[m
+[31m-    protected void onCreate(Bundle savedInstanceState) {[m
+[31m-        super.onCreate(savedInstanceState);[m
+[31m-        setContentView(R.layout.activity_dashboard);[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/src/main/java/com/softwarechapel/chatbotsis/MainActivity.java b/app/src/main/java/com/softwarechapel/chatbotsis/MainActivity.java[m
+[1mindex 785fb58..ca42bc8 100644[m
+[1m--- a/app/src/main/java/com/softwarechapel/chatbotsis/MainActivity.java[m
+[1m+++ b/app/src/main/java/com/softwarechapel/chatbotsis/MainActivity.java[m
+[36m@@ -44,18 +44,22 @@[m [mpublic class MainActivity extends AppCompatActivity {[m
+ [m
+     public void sendMessage(View view) {[m
+         String text = editText.getText().toString();[m
+[31m-[m
+[31m-        new DetectIntentTexts(this,text).execute();[m
+[31m-        if (text.length() > 0) {[m
+[31m-            final Message message =new Message( text, true);[m
+[31m-            runOnUiThread(new Runnable() {[m
+[31m-                @Override[m
+[31m-                public void run() {[m
+[31m-                    Util.addMessageToView(message);[m
+[31m-                }[m
+[31m-            });[m
+[31m-            editText.getText().clear();[m
+[32m+[m[32m        try {[m
+[32m+[m[32m            new DetectIntentTexts(this,text).execute();[m
+[32m+[m[32m            if (text.length() > 0) {[m
+[32m+[m[32m                final Message message =new Message( text, true);[m
+[32m+[m[32m                runOnUiThread(new Runnable() {[m
+[32m+[m[32m                    @Override[m
+[32m+[m[32m                    public void run() {[m
+[32m+[m[32m                        Util.addMessageToView(message);[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                });[m
+[32m+[m[32m                editText.getText().clear();[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }catch (Exception ex){[m
+[32m+[m[32m            ex.printStackTrace();[m
+         }[m
+[32m+[m
+     }[m
+ [m
+ [m
+[1mdiff --git a/app/src/main/java/com/softwarechapel/chatbotsis/PersonalAssistantHome.java b/app/src/main/java/com/softwarechapel/chatbotsis/PersonalAssistantHome.java[m
+[1mdeleted file mode 100644[m
+[1mindex d90d510..0000000[m
+[1m--- a/app/src/main/java/com/softwarechapel/chatbotsis/PersonalAssistantHome.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,30 +0,0 @@[m
+[31m-package com.softwarechapel.chatbotsis;[m
+[31m-[m
+[31m-import androidx.appcompat.app.AppCompatActivity;[m
+[31m-[m
+[31m-import android.content.Context;[m
+[31m-import android.content.Intent;[m
+[31m-im

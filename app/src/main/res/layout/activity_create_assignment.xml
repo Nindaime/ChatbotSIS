@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAssignment">
+
+    <ImageButton
+        android:id="@+id/back_button_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_arrow_back_black_18dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/create_assignment_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/back_button_img"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/create_txt_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:textSize="30sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/assignment_txt_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assignment"
+            android:textSize="30sp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/assignment_title_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Assignment Title"
+        android:paddingLeft="10dp"
+        android:background="@drawable/round_edit_text"
+        android:layout_below="@id/create_assignment_linear_layout"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/department_level_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/assignment_title_edit_text">
+
+        <Spinner
+            android:id="@+id/department_spinner"
+            android:layout_width="230dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_edit_text"
+            />
+
+        <Spinner
+            android:id="@+id/level_spinner"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/round_edit_text"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/question_text_view"
+        android:layout_width="230dp"
+        android:layout_height="55dp"
+        android:text="Assignment Question goes here"
+        android:textSize="15sp"
+        android:layout_below="@id/department_level_linear_layout"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/upload_image_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/department_level_linear_layout"
+        android:layout_margin="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+
+        <ImageButton
+            android:id="@+id/upload_image_button"
+            android:layout_width="75dp"
+            android:layout_height="80dp"
+            android:src="@drawable/upload"
+            android:background="#0000ffff"
+            android:layout_marginLeft="290dp"/>
+
+        <TextView
+            android:id="@+id/upload_txt_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload File"
+            android:textSize="15sp"
+            android:textColor="#85C1E9"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="287dp"
+            />
+
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/assignment_format_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/upload_image_linear_layout"
+        android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_edit_text"/>
+
+
+
+    <TextView
+        android:id="@+id/deadline_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Deadline"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:layout_below="@id/assignment_format_spinner"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/deadline_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/deadline_text_view">
+
+        <Spinner
+            android:id="@+id/final_date_spinner"
+            android:layout_width="230dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_edit_text"
+            />
+
+        <Spinner
+            android:id="@+id/add_time_spinner"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/round_edit_text"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/create_assignment_button"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/deadline_linear_layout"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/round_edit_text"
+        android:backgroundTint="#283747"
+        android:text="Create Assignment"
+        android:textColor="#FFFFFF"/>
+
+
+
+
+
+</RelativeLayout>
