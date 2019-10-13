@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalAssistantHome">
+
+    <LinearLayout
+        android:id="@+id/hello_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:background="#3498DB">
+
+
+        <ImageButton
+            android:id="@+id/mic_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="50dp"
+            android:background="#0000ffff"
+            android:src="@drawable/mic" />
+
+        <TextView
+            android:id="@+id/hello_james_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:text="Hello, I am James"
+            android:textSize="25sp"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/school_personal_assistant_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="15dp"
+            android:text="I am your personal assistant for school."
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/below_help_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:text="Below are a few ways I can be of help"
+            android:textSize="18sp"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/things_card_view"
+        android:layout_width="400dp"
+        android:layout_height="357dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/result_card">
+
+        <LinearLayout
+            android:id="@+id/button_cards_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/admin"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#0000ffff"/>
+
+                <Button
+                    android:id="@+id/admin_button_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#0000ffff"
+                    android:background="@drawable/round_edit_text"
+                    android:text="Admin"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="20dp"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/question"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#0000ffff"/>
+
+                <Button
+                    android:id="@+id/general_question_button_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#0000ffff"
+                    android:background="@drawable/round_edit_text"
+                    android:text="General Question"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="20dp"
+                    />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/school_calendar"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#0000ffff"/>
+
+                <Button
+                    android:id="@+id/school_calendar_button_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#0000ffff"
+                    android:background="@drawable/round_edit_text"
+                    android:text="School Calendar"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="20dp"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/assignments"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#0000ffff"/>
+
+                <Button
+                    android:id="@+id/assignments_button_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#0000ffff"
+                    android:background="@drawable/round_edit_text"
+                    android:text="Assignments"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="20dp"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/timetable"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#0000ffff"/>
+
+                <Button
+                    android:id="@+id/timetable_button_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#0000ffff"
+                    android:background="@drawable/round_edit_text"
+                    android:text="Timetable"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="20dp"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/results"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#0000ffff"/>
+
+                <Button
+                    android:id="@+id/results_button_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#0000ffff"
+                    android:background="@drawable/round_edit_text"
+                    android:text="Results"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="20dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/authenticate_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/things_card_view"
+        android:layout_marginTop="10dp"
+        android:text="Users may need to authenticate to view sensitive information"
+        android:textSize="13sp"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/all_rights_reserved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/authenticate_text_view"
+        android:text="All Rights Reserved. Created by XYZ"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
