@@ -65,8 +65,8 @@ public class ListViewAdapter extends BaseAdapter {
 
             holder.name.setText(message.getUser());
             holder.messageBody.setText(message.getText());
-            GradientDrawable drawable = (GradientDrawable) holder.avatar.getBackground();
-            drawable.setColor(Color.parseColor(message.getColor()));
+            //GradientDrawable drawable = (GradientDrawable) holder.avatar.getBackground();
+            //drawable.setColor(Color.parseColor(message.getColor()));
         }
 
         return convertView;
