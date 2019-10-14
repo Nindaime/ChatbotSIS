@@ -9,7 +9,7 @@ DROP DATABASE IF EXISTS `ChatbotSIS`;
 CREATE DATABASE `ChatbotSIS` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `ChatbotSIS`;
 
-CREATE TABLE `User` (
+CREATE TABLE `Users` (
   `UserID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE `User` (
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=501 DEFAULT CHARSET=utf8;
 
-INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES
+INSERT INTO `Users` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES
 (1,	'Katlyn',	'West',	'Student'),
 (2,	'Lonzo',	'Rolfson',	'Admin'),
 (3,	'Selmer',	'Spinka',	'Student'),
@@ -519,14 +519,14 @@ INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES
 (499,	'Santina',	'Franecki',	'Admin'),
 (500,	'Shyann',	'Breitenberg',	'Student');
 
-CREATE TABLE `Faculty` (
+CREATE TABLE `Faculties` (
   `FacultyID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `FacultyName` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`FacultyID`),
   UNIQUE KEY `FacultyID` (`FacultyID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
-INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES
+INSERT INTO `Faculties` (`FacultyID`, `FacultyName`) VALUES
 (1,	'Voluptatem officiis '),
 (2,	'Voluptate quisquam a'),
 (3,	'Ut sint quia vitae r'),
@@ -538,7 +538,7 @@ INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES
 (9,	'Esse corrupti et et '),
 (10,	'Adipisci ratione und');
 
-CREATE TABLE `Department` (
+CREATE TABLE `Departments` (
   `DepartmentID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `FacultyID` smallint(5) unsigned DEFAULT NULL,
   `DepartmentName` varchar(20) DEFAULT NULL,
@@ -549,7 +549,7 @@ CREATE TABLE `Department` (
   CONSTRAINT `Department_ibfk_1` FOREIGN KEY (`FacultyID`) REFERENCES `Faculty` (`FacultyID`) ON DELETE SET NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
-INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES
+INSERT INTO `Departments` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES
 (1,	10,	'Impedit rerum repreh',	'5'),
 (2,	1,	'Tenetur itaque sit q',	'4'),
 (3,	7,	'Consequuntur cumque ',	'6'),
@@ -576,7 +576,7 @@ INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `Progra
 (24,	3,	'Asperiores sit est v',	'5'),
 (25,	3,	'Dignissimos necessit',	'4');
 
-CREATE TABLE `Course` (
+CREATE TABLE `Courses` (
   `CourseID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `CourseCode` varchar(8) NOT NULL,
   `CourseTitle` text NOT NULL,
@@ -592,7 +592,7 @@ CREATE TABLE `Course` (
   CONSTRAINT `Course_ibfk_1` FOREIGN KEY (`DepartmentID`) REFERENCES `Department` (`DepartmentID`) ON DELETE SET NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
-INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES
+INSERT INTO `Courses` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES
 (1,	'joi 970',	'Eum ut delectus facilis enim autem velit.',	3,	'100',	'second',	'Clara Jones',	8),
 (2,	'pao 932',	'Soluta hic aperiam praesentium.',	9,	'500',	'second',	'Jadon Hintz',	4),
 (3,	'hnr 387',	'Quasi atque consectetur consequatur laborum incidunt.',	7,	'100',	'second',	'Kiana Jast',	23),
@@ -696,7 +696,7 @@ INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `Co
 
 
 
-CREATE TABLE `Timetable` (
+CREATE TABLE `Timetables` (
   `TimeTableID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `CourseID` smallint(5) unsigned DEFAULT NULL,
   `Weekday` enum('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') DEFAULT NULL,
@@ -707,7 +707,7 @@ CREATE TABLE `Timetable` (
   CONSTRAINT `Timetable_ibfk_1` FOREIGN KEY (`CourseID`) REFERENCES `Course` (`CourseID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
-INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES
+INSERT INTO `Timetables` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES
 (1,	NULL,	'Tuesday',	'1980-02-26 12:15:28',	'1971-06-09 13:36:14'),
 (2,	NULL,	'Thursday',	'2004-06-06 07:59:44',	'2009-02-08 13:14:17'),
 (3,	NULL,	'Saturday',	'1995-10-22 12:37:54',	'1975-04-21 22:19:15'),
@@ -818,7 +818,7 @@ CREATE TABLE `Student` (
   PRIMARY KEY (`Student_MatricID`),
   KEY `UserID` (`UserID`),
   KEY `DepartmentID` (`DepartmentID`),
-  CONSTRAINT `Student_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `User` (`UserID`),
+  CONSTRAINT `Student_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`),
   CONSTRAINT `Student_ibfk_2` FOREIGN KEY (`DepartmentID`) REFERENCES `Department` (`DepartmentID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1340,7 +1340,7 @@ INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Descri
 
 
 
-CREATE TABLE `Result` (
+CREATE TABLE `Results` (
   `Student_MatricID` varchar(20) NOT NULL,
   `SessionYear` varchar(10) NOT NULL,
   `CourseID` smallint(5) unsigned NOT NULL,
@@ -1350,10 +1350,10 @@ CREATE TABLE `Result` (
   PRIMARY KEY (`Student_MatricID`,`SessionYear`,`CourseID`),
   KEY `CourseID` (`CourseID`),
   CONSTRAINT `Result_ibfk_1` FOREIGN KEY (`Student_MatricID`) REFERENCES `Student` (`Student_MatricID`),
-  CONSTRAINT `Result_ibfk_2` FOREIGN KEY (`CourseID`) REFERENCES `Course` (`CourseID`)
+  CONSTRAINT `Result_ibfk_2` FOREIGN KEY (`CourseID`) REFERENCES `Courses` (`CourseID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES
+INSERT INTO `Results` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES
 ('acm/864/31457',	'1996',	24,	'400',	17,	'B'),
 ('afe/784/04831',	'1998',	34,	'500',	15,	'C'),
 ('bij/894/52242',	'1971',	42,	'300',	2,	'D'),
@@ -1557,7 +1557,7 @@ INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `D
 
 
 
-CREATE TABLE `Chat` (
+CREATE TABLE `Chats` (
   `DateTime` datetime NOT NULL,
   `SenderID` smallint(5) unsigned DEFAULT NULL,
   `RecepientID` smallint(5) unsigned DEFAULT NULL,
@@ -1565,11 +1565,11 @@ CREATE TABLE `Chat` (
   PRIMARY KEY (`DateTime`),
   KEY `RecepientID` (`RecepientID`),
   KEY `SenderID` (`SenderID`),
-  CONSTRAINT `Chat_ibfk_1` FOREIGN KEY (`RecepientID`) REFERENCES `User` (`UserID`),
-  CONSTRAINT `Chat_ibfk_2` FOREIGN KEY (`SenderID`) REFERENCES `User` (`UserID`)
+  CONSTRAINT `Chat_ibfk_1` FOREIGN KEY (`RecepientID`) REFERENCES `Users` (`UserID`),
+  CONSTRAINT `Chat_ibfk_2` FOREIGN KEY (`SenderID`) REFERENCES `Users` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES
+INSERT INTO `Chats` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES
 ('1970-04-02 23:21:26',	70,	360,	'After these came the royal children, and make THEIR eyes bright and eager with many a strange tale, perhaps even with the other ladder?--Why, I hadn\'t mentioned Dinah!\' she said these words her foot.'),
 ('1970-11-09 00:28:01',	235,	292,	'I should have liked teaching it tricks very much, if--if I\'d only been the whiting,\' said the Mock Turtle. \'Seals, turtles, salmon, and so on.\' \'What a curious croquet-ground in her life before, and.'),
 ('1971-04-19 06:48:54',	133,	4,	'The poor little feet, I wonder what they\'ll do well enough; don\'t be particular--Here, Bill! catch hold of it; so, after hunting all about as much as serpents do, you know.\' Alice had learnt several.'),
@@ -1723,7 +1723,7 @@ INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES
 
 
 
-CREATE TABLE `Assignment` (
+CREATE TABLE `Assignments` (
   `AssignmentID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `CourseID` smallint(5) unsigned DEFAULT NULL,
   `Deadline` datetime DEFAULT NULL,
@@ -1733,10 +1733,10 @@ CREATE TABLE `Assignment` (
   PRIMARY KEY (`AssignmentID`),
   UNIQUE KEY `AssignmentID` (`AssignmentID`),
   KEY `CourseID` (`CourseID`),
-  CONSTRAINT `Assignment_ibfk_1` FOREIGN KEY (`CourseID`) REFERENCES `Course` (`CourseID`)
+  CONSTRAINT `Assignment_ibfk_1` FOREIGN KEY (`CourseID`) REFERENCES `Courses` (`CourseID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
-INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES
+INSERT INTO `Assignments` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES
 (1,	1,	'2007-12-05 02:04:06',	'Softcopy',	'Esse dolores maiores mollitia reiciendis illo eum iste harum.',	'1995-09-09'),
 (2,	9,	'1985-07-07 00:05:40',	'Hardcopy',	'Mollitia et necessitatibus aut molestiae unde dolores autem.',	'1979-07-03'),
 (3,	9,	'2004-10-05 15:39:20',	'Softcopy',	'Quam sed dolor nostrum velit saepe ducimus repellendus.',	'1978-11-24'),
