@@ -125,5 +125,10 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
-#exclude key
+# Exclude key
 /app/test_key.json
+
+# Exclude node_modules in backend
+
+/backend/node_modules/
+*.env
