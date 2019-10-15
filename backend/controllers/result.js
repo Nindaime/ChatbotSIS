@@ -659,13 +659,13 @@ exports.getResult = async (req, res, next) => {
   
           }
   
-          let text = 'These are your results \n';
+          let text = `These are your results these ${parameters.semester} semester \n`;
 
         result.forEach(element => {
           
           let course = element.get('courses');
           
-          text += `${course.get('courseCode')} : ${element.get('grade')} ${course.get('semester')},${element.get('sessionYear')}  \n`
+          text += `${course.get('courseCode')} : ${element.get('grade')} (${element.get('sessionYear')})  \n`
         });
           Payload.clear();
           Payload.setText(text);
@@ -673,7 +673,7 @@ exports.getResult = async (req, res, next) => {
           return res.status(200).json(Payload.getPayload());
         }).catch((e) => {
           
-          let text = "You should expect an error here";
+          let text = "Something went wrong. What else would you like to know???";
           Payload.setText(text);
           return res.status(200).json(Payload.getPayload());
   
@@ -714,7 +714,7 @@ exports.getResult = async (req, res, next) => {
         return res.status(200).json(Payload.getPayload());
       }).catch((e) => {
           
-        let text = "You should expect an error here";
+        let text = "Something went wrong. What else would you like to know???";
         Payload.setText(text);
         return res.status(200).json(Payload.getPayload());
 
