@@ -444,12 +444,12 @@ exports.getResult = async (req, res, next) => {
             res.status(200).json(Payload.getPayload());
           }
 
-          let text = 'this is your time table \n';
+          let text = 'This is your time table \n';
 
           result.forEach(element => {
 
             let course = element.get('courses');
-            text += `${element.get('weekday')} course:${course.get('courseCode')} starts at ${element.get('startTime')} and ends by ${element.get('endTime')} \n`
+            text += `(${element.get('weekday')}) course:${course.get('courseCode')} starts at ${element.get('startTime')} and ends by ${element.get('endTime')} \n`
           });
 
           Payload.setText(text);
