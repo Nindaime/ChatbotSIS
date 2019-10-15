@@ -12,7 +12,7 @@ const SchoolActivityEvent = require('../models').SchoolActivityEvent;
 const Assignment = require('../models').Assignment;
 const Op = Sequelize.Op;
 
-console.log('here');
+
 
 const INTENT_NAME = {
   score: 'score-custom',
@@ -617,7 +617,7 @@ exports.getResult = async (req, res, next) => {
           Payload.setText('I dont think you are who you say you are');
         }else{
           Payload.setText('Your login credentials are incorrect. Give me your reg number again');
-        Payload.setContext(session,'score-followup');
+          Payload.setContext(session,'score-followup');
         }
         
 
