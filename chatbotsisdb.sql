@@ -1,20 +1,15 @@
--- Adminer 4.7.0 MySQL dump
+#
+# TABLE STRUCTURE FOR: Assignment
+#
 
-SET NAMES utf8;
-SET time_zone = '+00:00';
-SET foreign_key_checks = 0;
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
-
-DROP DATABASE IF EXISTS `ChatbotSIS`;
-CREATE DATABASE `ChatbotSIS` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `ChatbotSIS`;
+DROP TABLE IF EXISTS `Assignment`;
 
 CREATE TABLE `Assignment` (
   `AssignmentID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `CourseID` smallint(5) unsigned DEFAULT NULL,
   `Deadline` datetime DEFAULT NULL,
-  `ModeOfSubmission` text,
-  `AssignmentFormat` text,
+  `ModeOfSubmission` text DEFAULT NULL,
+  `AssignmentFormat` text DEFAULT NULL,
   `DateOfAssignment` date DEFAULT NULL,
   PRIMARY KEY (`AssignmentID`),
   UNIQUE KEY `AssignmentID` (`AssignmentID`),
@@ -22,113 +17,119 @@ CREATE TABLE `Assignment` (
   CONSTRAINT `Assignment_ibfk_1` FOREIGN KEY (`CourseID`) REFERENCES `Course` (`CourseID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 
-INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES
-(1,	1,	'2007-12-05 02:04:06',	'Softcopy',	'Esse dolores maiores mollitia reiciendis illo eum iste harum.',	'1995-09-09'),
-(2,	9,	'1985-07-07 00:05:40',	'Hardcopy',	'Mollitia et necessitatibus aut molestiae unde dolores autem.',	'1979-07-03'),
-(3,	9,	'2004-10-05 15:39:20',	'Softcopy',	'Quam sed dolor nostrum velit saepe ducimus repellendus.',	'1978-11-24'),
-(4,	9,	'1983-02-15 14:08:45',	'Hardcopy',	'Quam ad quod nisi reiciendis.',	'2018-01-02'),
-(5,	4,	'2011-01-06 11:59:14',	'Softcopy',	'Ipsum et et distinctio exercitationem ad quae.',	'1989-12-20'),
-(6,	5,	'1983-02-06 03:39:13',	'Hardcopy',	'Voluptas quisquam et est nostrum.',	'1989-06-26'),
-(7,	6,	'1980-05-06 02:11:09',	'Softcopy',	'Quae dolore sit dolores vero.',	'1979-08-29'),
-(8,	9,	'1975-10-29 02:48:14',	'Softcopy',	'Reprehenderit perferendis eius consectetur voluptatem illum eum explicabo.',	'1980-12-24'),
-(9,	6,	'1994-09-21 16:36:20',	'Hardcopy',	'Voluptatem consequatur maxime ut quia repudiandae ad rerum.',	'1986-05-11'),
-(10,	9,	'1980-03-06 06:14:06',	'Softcopy',	'Ad voluptatem aliquam corporis aperiam enim rerum architecto.',	'1975-10-19'),
-(11,	1,	'1994-05-17 20:28:18',	'Softcopy',	'Illo tempore accusantium aut voluptatem atque dolore autem minus.',	'2017-08-04'),
-(12,	7,	'1976-07-29 13:38:10',	'Hardcopy',	'Vero odio quia eveniet omnis.',	'2017-06-01'),
-(13,	9,	'1998-12-03 23:26:18',	'Softcopy',	'Quo aut a est odio qui.',	'2015-06-24'),
-(14,	4,	'1989-07-03 17:32:16',	'Hardcopy',	'Id voluptas rerum aperiam dolore repellendus.',	'1977-12-29'),
-(15,	2,	'1971-04-21 12:45:45',	'Hardcopy',	'Aliquam officia qui officiis quia amet.',	'2001-02-24'),
-(16,	6,	'1977-07-13 00:01:32',	'Hardcopy',	'Deserunt explicabo in incidunt.',	'1984-03-06'),
-(17,	7,	'1987-01-16 11:33:04',	'Softcopy',	'Possimus deleniti a omnis et.',	'2013-03-01'),
-(18,	8,	'2003-07-14 09:35:47',	'Softcopy',	'Error quas sint quo repellendus error aut est.',	'2019-03-27'),
-(19,	4,	'1996-03-29 07:54:03',	'Hardcopy',	'Odio doloremque ipsa consequatur odit.',	'1972-07-15'),
-(20,	9,	'1974-07-17 04:46:05',	'Softcopy',	'Hic occaecati consequatur autem excepturi aut.',	'2006-09-17'),
-(21,	1,	'1972-04-23 07:34:44',	'Hardcopy',	'Rerum ratione ex incidunt vel ad.',	'1980-11-16'),
-(22,	1,	'1987-11-20 04:39:25',	'Hardcopy',	'Expedita architecto qui unde rerum ut.',	'1995-08-23'),
-(23,	8,	'2008-12-15 07:13:57',	'Softcopy',	'Non quam quos maiores ratione voluptatem.',	'1984-04-12'),
-(24,	8,	'1989-07-15 01:30:54',	'Hardcopy',	'Rerum maiores iste corrupti eum cumque nihil quo.',	'1997-02-18'),
-(25,	5,	'1987-06-30 17:59:24',	'Hardcopy',	'In ducimus reprehenderit reiciendis.',	'2019-03-02'),
-(26,	4,	'1992-12-07 21:50:54',	'Hardcopy',	'A rem dignissimos reiciendis blanditiis quae minima maiores atque.',	'2004-10-02'),
-(27,	2,	'1991-07-09 12:52:07',	'Softcopy',	'Voluptatem qui eveniet voluptas aut consectetur fuga qui.',	'1979-10-13'),
-(28,	9,	'2008-07-09 13:46:56',	'Softcopy',	'Consectetur nam minus quam ut pariatur.',	'2011-09-25'),
-(29,	5,	'2015-03-20 03:03:25',	'Softcopy',	'Pariatur reprehenderit corrupti vel tenetur voluptatem.',	'1984-02-06'),
-(30,	6,	'2007-07-19 14:48:12',	'Hardcopy',	'Nemo libero ut aliquid.',	'2010-05-25'),
-(31,	3,	'2005-07-13 07:31:02',	'Hardcopy',	'Maxime est sint ea quos alias.',	'1973-10-03'),
-(32,	3,	'1977-04-12 06:12:38',	'Hardcopy',	'Nam eligendi illum itaque pariatur.',	'2017-03-08'),
-(33,	7,	'2009-08-26 01:35:37',	'Hardcopy',	'Ex ut sit magnam laboriosam.',	'2005-01-29'),
-(34,	3,	'1975-04-26 09:45:41',	'Hardcopy',	'Tenetur vitae ullam voluptatem ut ullam sit.',	'1983-08-19'),
-(35,	9,	'1985-12-27 14:41:27',	'Softcopy',	'Deleniti aut vero qui ea velit.',	'1975-07-15'),
-(36,	8,	'2013-05-31 19:26:17',	'Softcopy',	'Placeat quisquam est maiores.',	'1974-02-04'),
-(37,	3,	'1975-07-04 14:04:34',	'Hardcopy',	'Et dolor mollitia hic voluptatem qui.',	'2008-07-06'),
-(38,	4,	'2011-11-28 23:46:00',	'Hardcopy',	'Delectus ab neque voluptas fuga ut impedit.',	'2013-09-24'),
-(39,	5,	'1999-07-20 06:08:27',	'Hardcopy',	'Rem quia sit odio eveniet.',	'1995-09-23'),
-(40,	7,	'1982-07-22 21:49:20',	'Softcopy',	'Et tempora eum officia voluptas nostrum excepturi non sed.',	'1976-04-11'),
-(41,	6,	'2012-11-17 04:51:17',	'Hardcopy',	'Qui dolor eos et voluptates.',	'1977-06-29'),
-(42,	5,	'1992-08-24 05:30:16',	'Softcopy',	'Autem perferendis et quisquam natus aut.',	'1998-07-15'),
-(43,	3,	'2008-07-14 14:10:45',	'Softcopy',	'Magni culpa quibusdam est quisquam nemo.',	'2000-04-13'),
-(44,	5,	'2009-03-18 14:48:23',	'Hardcopy',	'Fuga repudiandae tenetur id cupiditate est eum omnis.',	'2017-03-19'),
-(45,	9,	'2011-09-26 04:20:02',	'Hardcopy',	'Ut culpa nam doloremque debitis.',	'2006-11-22'),
-(46,	2,	'1972-02-02 10:54:18',	'Softcopy',	'Sed quia voluptas rerum reprehenderit placeat tenetur.',	'2005-10-03'),
-(47,	6,	'2011-01-28 07:34:11',	'Softcopy',	'Deserunt quos expedita iusto illum et recusandae quae.',	'1975-02-14'),
-(48,	8,	'1991-03-24 03:21:52',	'Hardcopy',	'Facilis autem aut harum quis in veritatis.',	'1995-11-01'),
-(49,	4,	'2008-09-08 06:12:33',	'Hardcopy',	'Autem omnis voluptatem pariatur amet.',	'1994-11-30'),
-(50,	4,	'1974-11-27 07:36:23',	'Softcopy',	'Dolor eveniet ut suscipit quia culpa rerum magnam.',	'1980-07-05'),
-(51,	3,	'1996-05-01 09:55:49',	'Hardcopy',	'Culpa soluta illo ullam id minus aut.',	'2000-07-12'),
-(52,	2,	'1996-06-17 20:30:15',	'Softcopy',	'Dolor accusantium cupiditate vel ad qui veritatis.',	'1985-08-23'),
-(53,	6,	'2015-10-16 13:31:43',	'Softcopy',	'Ipsum ab exercitationem ipsa eligendi debitis.',	'1971-01-29'),
-(54,	1,	'2008-06-28 04:27:10',	'Hardcopy',	'Aspernatur inventore cum temporibus exercitationem sint.',	'1980-02-29'),
-(55,	3,	'2017-12-17 20:04:31',	'Hardcopy',	'Ut impedit a sunt.',	'1993-07-11'),
-(56,	8,	'1992-08-28 11:02:59',	'Softcopy',	'Ab ex sint adipisci.',	'1991-03-07'),
-(57,	8,	'1999-10-20 14:15:32',	'Hardcopy',	'Sint iste alias sequi qui.',	'1997-02-04'),
-(58,	2,	'1999-01-03 13:36:44',	'Hardcopy',	'Natus ipsum dolorem in optio nihil.',	'1982-10-03'),
-(59,	7,	'2019-08-09 19:51:06',	'Hardcopy',	'Consectetur dicta iure qui ut quisquam.',	'2006-03-18'),
-(60,	4,	'1989-09-21 19:07:15',	'Hardcopy',	'Sint totam dolores blanditiis ut sunt.',	'1989-01-17'),
-(61,	5,	'1995-09-12 15:22:25',	'Hardcopy',	'Corporis facere cupiditate corrupti omnis necessitatibus saepe.',	'1976-01-17'),
-(62,	2,	'1975-02-23 13:47:22',	'Softcopy',	'Quisquam quia tempora pariatur consequatur eum.',	'1983-07-19'),
-(63,	9,	'1996-10-13 10:53:02',	'Softcopy',	'Laboriosam sequi mollitia ab ut dolore impedit.',	'1982-12-25'),
-(64,	9,	'2014-06-05 01:32:35',	'Hardcopy',	'Velit molestias voluptatibus esse aperiam.',	'1973-08-08'),
-(65,	9,	'2019-09-24 17:23:23',	'Softcopy',	'Incidunt eius aut ut in id.',	'1979-10-25'),
-(66,	8,	'2015-03-17 09:13:19',	'Softcopy',	'Voluptatum eos ab rem assumenda neque dolores cumque expedita.',	'2007-09-29'),
-(67,	3,	'1983-11-23 13:50:37',	'Hardcopy',	'Voluptatem velit dolorum soluta at atque.',	'1996-01-01'),
-(68,	4,	'2008-12-13 01:00:04',	'Hardcopy',	'Ut velit omnis neque occaecati laudantium at.',	'2019-08-27'),
-(69,	9,	'1995-07-22 14:54:18',	'Hardcopy',	'Quisquam in et ut enim ab sunt dolorem.',	'1975-07-15'),
-(70,	4,	'1972-04-05 12:42:52',	'Hardcopy',	'Et eum mollitia blanditiis tempora.',	'2011-01-18'),
-(71,	6,	'1975-05-24 12:44:54',	'Softcopy',	'Magnam non deserunt ab accusantium sit at.',	'2009-06-13'),
-(72,	6,	'1982-08-13 08:57:16',	'Softcopy',	'Ipsa commodi atque assumenda et.',	'2002-07-16'),
-(73,	9,	'1999-11-03 03:44:19',	'Softcopy',	'Quo aut quibusdam qui.',	'1976-11-01'),
-(74,	6,	'1991-09-12 14:57:58',	'Hardcopy',	'Aut velit officia quia deleniti id natus sapiente sed.',	'1989-05-14'),
-(75,	4,	'1992-03-16 12:39:11',	'Softcopy',	'Nihil cum quo omnis laudantium hic.',	'1999-03-20'),
-(76,	1,	'1993-04-05 20:29:29',	'Softcopy',	'Doloribus qui rem iusto neque.',	'2002-07-16'),
-(77,	5,	'2013-10-03 18:47:58',	'Softcopy',	'Veritatis corporis nulla impedit sit ut placeat eos.',	'2007-09-02'),
-(78,	3,	'2006-03-09 04:47:19',	'Hardcopy',	'Sit qui illum a impedit possimus.',	'1970-03-24'),
-(79,	5,	'2002-07-17 13:03:19',	'Hardcopy',	'Veritatis voluptates minima hic vitae laboriosam molestias.',	'1985-02-23'),
-(80,	6,	'2015-07-22 13:39:48',	'Softcopy',	'Magni minus eius et nulla dolorem.',	'1980-04-15'),
-(81,	6,	'2014-11-17 13:08:40',	'Hardcopy',	'Fugit error rerum impedit et ipsum.',	'2008-04-08'),
-(82,	9,	'1973-08-29 15:37:08',	'Hardcopy',	'Accusantium molestiae quia doloremque qui.',	'1974-03-09'),
-(83,	2,	'2002-07-15 17:08:48',	'Softcopy',	'Delectus nulla perferendis deserunt voluptatem quo a est.',	'1993-10-18'),
-(84,	8,	'1997-11-20 05:01:47',	'Hardcopy',	'Qui ipsum dignissimos eius veniam molestiae sint aut mollitia.',	'1991-08-15'),
-(85,	4,	'2013-11-10 12:51:50',	'Softcopy',	'Maiores at distinctio illo veritatis enim vero laborum.',	'1974-11-19'),
-(86,	3,	'1998-12-25 04:45:12',	'Softcopy',	'Nihil ea optio quam et occaecati quis voluptate.',	'1980-02-23'),
-(87,	3,	'1990-07-06 08:44:39',	'Softcopy',	'Corporis amet quas iste vel laboriosam ipsam officia.',	'2014-09-11'),
-(88,	2,	'2018-06-01 03:52:07',	'Softcopy',	'Itaque ducimus et nemo sit ducimus officia.',	'1975-07-14'),
-(89,	2,	'1989-01-02 11:43:24',	'Softcopy',	'Et nobis ratione ipsa est enim qui et.',	'2007-03-27'),
-(90,	7,	'1995-12-14 10:53:52',	'Softcopy',	'Sit nesciunt ea quia qui sunt dolor veniam id.',	'1991-04-22'),
-(91,	8,	'2014-09-20 03:02:59',	'Hardcopy',	'Quia nulla qui qui unde nam laboriosam.',	'1989-01-26'),
-(92,	4,	'2000-06-16 00:22:46',	'Hardcopy',	'Quia atque voluptatem doloremque.',	'1972-02-17'),
-(93,	2,	'1974-08-12 15:48:34',	'Softcopy',	'Esse aut at neque ut.',	'1989-07-26'),
-(94,	3,	'1974-12-30 04:20:23',	'Softcopy',	'Eveniet consequatur velit neque perferendis odio quae ducimus.',	'1970-10-28'),
-(95,	5,	'1983-12-18 12:03:08',	'Softcopy',	'Totam aliquid ad ipsa quas.',	'2003-11-18'),
-(96,	1,	'2010-11-13 04:21:48',	'Softcopy',	'Adipisci tempora commodi neque aut.',	'1984-03-26'),
-(97,	9,	'1992-04-06 14:21:19',	'Softcopy',	'Sint quisquam est cupiditate cum ut distinctio.',	'2010-01-10'),
-(98,	3,	'1977-04-19 23:07:17',	'Softcopy',	'Tempora et ab labore sit nihil.',	'1980-03-11'),
-(99,	1,	'2013-03-07 16:36:00',	'Softcopy',	'Accusantium sint accusantium quia sequi sed ea esse.',	'2001-05-04'),
-(100,	9,	'2001-03-25 20:11:46',	'Hardcopy',	'Maxime omnis ut facere voluptatem.',	'2001-03-17');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (1, 64, '1974-11-23 05:58:10', ' Softcopy', 'Format 4', '2000-04-21');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (2, 81, '1981-01-29 17:39:45', ' Softcopy', 'Format 1', '1993-06-26');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (3, 45, '1979-06-01 02:52:17', ' Softcopy', 'Format 1', '1977-07-27');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (4, 35, '1974-06-08 06:50:56', 'Hardcopy', 'Format 2', '1973-08-18');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (5, 30, '1975-05-09 22:35:42', ' Softcopy', 'Format 2', '1975-07-23');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (6, 94, '1994-03-03 04:17:43', ' Softcopy', 'Format 2', '2003-08-20');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (7, 71, '1983-08-15 20:45:32', 'Hardcopy', 'Format 4', '1993-12-09');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (8, 25, '1977-10-31 18:43:48', 'Hardcopy', 'Format 6', '2005-02-28');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (9, 22, '1989-05-07 20:06:01', ' Softcopy', 'Format 5', '1976-10-19');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (10, 90, '1976-07-10 23:17:34', 'Hardcopy', 'Format 3', '2006-08-09');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (11, 90, '1970-01-28 03:06:40', 'Hardcopy', 'Format 2', '1974-11-22');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (12, 68, '1995-09-05 02:08:48', ' Softcopy', 'Format 6', '1997-09-02');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (13, 29, '2019-09-02 10:28:50', ' Softcopy', 'Format 3', '1986-08-16');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (14, 19, '2018-05-07 18:43:03', ' Softcopy', 'Format 1', '2002-02-06');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (15, 3, '1976-08-26 01:35:24', ' Softcopy', 'Format 1', '1996-12-19');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (16, 57, '1994-12-08 16:16:30', ' Softcopy', 'Format 6', '1993-07-26');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (17, 74, '1986-02-22 22:19:31', ' Softcopy', 'Format 2', '1971-09-18');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (18, 21, '2010-07-25 18:48:01', ' Softcopy', 'Format 4', '1991-05-27');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (19, 72, '2014-11-24 13:50:47', 'Hardcopy', 'Format 1', '2010-05-06');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (20, 18, '2011-07-12 02:08:47', 'Hardcopy', 'Format 2', '1988-09-24');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (21, 84, '2016-05-17 03:08:19', 'Hardcopy', 'Format 3', '1989-04-16');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (22, 32, '1972-12-14 15:50:04', 'Hardcopy', 'Format 3', '2005-07-27');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (23, 21, '2016-12-13 06:01:56', 'Hardcopy', 'Format 6', '1985-02-27');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (24, 64, '1996-10-16 11:36:19', 'Hardcopy', 'Format 6', '2011-10-01');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (25, 24, '2017-10-28 11:23:17', 'Hardcopy', 'Format 2', '2000-02-13');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (26, 83, '1990-07-16 02:16:22', ' Softcopy', 'Format 6', '2010-10-02');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (27, 10, '2003-02-03 05:25:32', ' Softcopy', 'Format 6', '1997-12-21');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (28, 55, '1973-10-20 22:29:25', ' Softcopy', 'Format 2', '1975-03-24');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (29, 89, '1991-03-12 22:33:54', ' Softcopy', 'Format 3', '1993-08-20');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (30, 12, '1995-04-15 16:23:56', ' Softcopy', 'Format 4', '1985-06-11');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (31, 43, '2010-06-08 12:42:56', ' Softcopy', 'Format 5', '2017-03-21');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (32, 53, '1974-05-27 10:41:55', ' Softcopy', 'Format 3', '1984-06-30');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (33, 93, '2003-06-13 05:00:51', ' Softcopy', 'Format 2', '1973-03-06');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (34, 87, '2004-07-04 18:27:43', ' Softcopy', 'Format 5', '2008-11-18');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (35, 87, '1971-07-19 02:25:34', ' Softcopy', 'Format 2', '2001-01-08');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (36, 22, '1986-04-04 11:10:24', 'Hardcopy', 'Format 3', '1987-03-08');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (37, 81, '1995-08-31 13:15:41', 'Hardcopy', 'Format 1', '1975-06-29');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (38, 57, '2001-11-02 14:46:44', ' Softcopy', 'Format 3', '1982-02-03');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (39, 46, '1991-05-13 01:48:57', ' Softcopy', 'Format 4', '2019-01-19');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (40, 2, '2016-11-27 15:28:55', ' Softcopy', 'Format 3', '1994-09-08');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (41, 46, '2017-09-01 23:54:14', 'Hardcopy', 'Format 3', '1975-09-24');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (42, 35, '2008-10-28 15:39:51', ' Softcopy', 'Format 4', '1997-07-08');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (43, 69, '1998-07-24 03:37:13', ' Softcopy', 'Format 2', '2003-07-11');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (44, 74, '1975-08-16 08:29:47', 'Hardcopy', 'Format 6', '2010-05-18');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (45, 53, '2008-03-20 09:36:13', 'Hardcopy', 'Format 5', '1995-05-20');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (46, 72, '1990-06-22 23:47:12', ' Softcopy', 'Format 1', '1973-10-15');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (47, 31, '1970-06-08 17:04:24', ' Softcopy', 'Format 5', '2005-02-17');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (48, 26, '1981-04-01 10:30:44', ' Softcopy', 'Format 3', '2010-12-29');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (49, 93, '1994-08-19 00:42:14', ' Softcopy', 'Format 1', '2010-07-28');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (50, 2, '1997-09-14 13:44:03', 'Hardcopy', 'Format 3', '1986-04-27');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (51, 44, '1984-07-08 20:35:34', 'Hardcopy', 'Format 4', '1989-06-01');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (52, 77, '1997-12-27 17:47:10', 'Hardcopy', 'Format 1', '1970-08-24');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (53, 34, '1976-07-27 15:37:31', 'Hardcopy', 'Format 3', '1988-01-13');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (54, 65, '2009-05-02 21:49:57', 'Hardcopy', 'Format 3', '2004-06-11');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (55, 40, '2019-08-13 00:52:08', ' Softcopy', 'Format 6', '1970-07-10');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (56, 57, '2019-04-04 09:59:54', ' Softcopy', 'Format 5', '2017-09-28');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (57, 47, '1971-10-02 17:01:12', ' Softcopy', 'Format 1', '1978-03-03');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (58, 50, '2010-01-01 00:15:40', ' Softcopy', 'Format 4', '1978-10-07');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (59, 12, '2006-04-06 20:25:05', ' Softcopy', 'Format 6', '2017-02-25');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (60, 35, '2018-05-02 02:37:52', 'Hardcopy', 'Format 3', '1982-09-10');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (61, 62, '2009-09-12 04:56:14', 'Hardcopy', 'Format 2', '1974-01-10');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (62, 54, '2015-12-12 15:51:02', 'Hardcopy', 'Format 3', '2004-11-30');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (63, 87, '1982-10-06 19:59:47', ' Softcopy', 'Format 1', '2004-02-01');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (64, 54, '2012-10-04 14:55:28', 'Hardcopy', 'Format 5', '1971-09-21');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (65, 40, '1998-01-30 10:04:09', 'Hardcopy', 'Format 2', '1995-06-30');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (66, 74, '2012-08-11 15:37:08', ' Softcopy', 'Format 1', '2007-10-19');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (67, 75, '2001-12-22 14:27:33', ' Softcopy', 'Format 3', '1995-01-03');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (68, 20, '1982-08-21 02:26:59', 'Hardcopy', 'Format 4', '2011-09-15');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (69, 30, '1991-07-16 06:18:57', 'Hardcopy', 'Format 2', '2014-09-21');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (70, 21, '1974-08-24 06:27:00', ' Softcopy', 'Format 6', '1977-03-28');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (71, 22, '1993-09-06 10:57:17', ' Softcopy', 'Format 3', '2013-12-18');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (72, 76, '1979-03-18 16:13:01', 'Hardcopy', 'Format 2', '1981-06-19');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (73, 55, '2016-06-30 17:48:13', 'Hardcopy', 'Format 4', '1992-03-30');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (74, 90, '2015-02-16 19:15:22', 'Hardcopy', 'Format 5', '1971-05-08');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (75, 50, '2003-05-30 08:20:10', 'Hardcopy', 'Format 4', '1982-02-04');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (76, 8, '1992-01-04 08:14:58', ' Softcopy', 'Format 1', '2012-02-02');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (77, 61, '1999-12-11 22:25:26', 'Hardcopy', 'Format 4', '1989-12-17');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (78, 80, '1989-07-14 21:34:50', 'Hardcopy', 'Format 6', '1990-02-09');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (79, 34, '1981-05-31 18:27:47', 'Hardcopy', 'Format 4', '1978-08-28');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (80, 54, '2018-01-08 15:47:51', 'Hardcopy', 'Format 2', '2010-09-22');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (81, 82, '2000-03-06 11:30:42', 'Hardcopy', 'Format 6', '1983-12-15');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (82, 78, '2018-04-02 11:11:01', ' Softcopy', 'Format 4', '1998-02-14');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (83, 30, '2017-05-21 04:10:45', ' Softcopy', 'Format 5', '2013-08-29');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (84, 15, '1986-10-02 17:06:42', 'Hardcopy', 'Format 3', '1999-03-09');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (85, 42, '2015-07-09 13:00:31', ' Softcopy', 'Format 2', '1980-11-05');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (86, 70, '1977-10-22 07:43:13', 'Hardcopy', 'Format 4', '2005-11-15');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (87, 71, '1990-06-10 22:12:01', ' Softcopy', 'Format 2', '1977-12-04');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (88, 88, '1970-06-04 19:51:30', ' Softcopy', 'Format 2', '1995-07-29');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (89, 19, '1989-01-21 10:00:46', ' Softcopy', 'Format 1', '2002-01-10');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (90, 82, '2011-03-12 03:29:49', ' Softcopy', 'Format 1', '1996-02-05');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (91, 23, '1972-06-05 04:18:08', 'Hardcopy', 'Format 1', '2004-01-02');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (92, 81, '2015-01-31 08:15:37', ' Softcopy', 'Format 3', '2016-04-17');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (93, 36, '2018-10-06 21:08:00', ' Softcopy', 'Format 6', '1998-08-09');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (94, 10, '2015-03-01 13:25:08', ' Softcopy', 'Format 3', '1972-06-20');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (95, 34, '1999-01-11 00:52:04', ' Softcopy', 'Format 3', '1984-05-26');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (96, 75, '2005-03-06 22:07:47', ' Softcopy', 'Format 6', '1987-07-01');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (97, 83, '1981-01-11 00:43:36', 'Hardcopy', 'Format 3', '1972-10-06');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (98, 9, '1983-10-29 03:44:23', 'Hardcopy', 'Format 6', '2007-08-25');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (99, 95, '1987-11-26 04:01:45', 'Hardcopy', 'Format 4', '2018-02-25');
+INSERT INTO `Assignment` (`AssignmentID`, `CourseID`, `Deadline`, `ModeOfSubmission`, `AssignmentFormat`, `DateOfAssignment`) VALUES (100, 13, '1985-01-08 05:27:44', 'Hardcopy', 'Format 1', '2005-11-15');
+
+
+#
+# TABLE STRUCTURE FOR: Chat
+#
+
+DROP TABLE IF EXISTS `Chat`;
 
 CREATE TABLE `Chat` (
   `DateTime` datetime NOT NULL,
   `SenderID` smallint(5) unsigned DEFAULT NULL,
   `RecepientID` smallint(5) unsigned DEFAULT NULL,
-  `Message` text,
+  `Message` text DEFAULT NULL,
   PRIMARY KEY (`DateTime`),
   KEY `RecepientID` (`RecepientID`),
   KEY `SenderID` (`SenderID`),
@@ -136,157 +137,313 @@ CREATE TABLE `Chat` (
   CONSTRAINT `Chat_ibfk_2` FOREIGN KEY (`SenderID`) REFERENCES `User` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES
-('1970-04-02 23:21:26',	70,	360,	'After these came the royal children, and make THEIR eyes bright and eager with many a strange tale, perhaps even with the other ladder?--Why, I hadn\'t mentioned Dinah!\' she said these words her foot.'),
-('1970-11-09 00:28:01',	235,	292,	'I should have liked teaching it tricks very much, if--if I\'d only been the whiting,\' said the Mock Turtle. \'Seals, turtles, salmon, and so on.\' \'What a curious croquet-ground in her life before, and.'),
-('1971-04-19 06:48:54',	133,	4,	'The poor little feet, I wonder what they\'ll do well enough; don\'t be particular--Here, Bill! catch hold of it; so, after hunting all about as much as serpents do, you know.\' Alice had learnt several.'),
-('1971-05-06 12:20:50',	34,	405,	'Dinah my dear! Let this be a LITTLE larger, sir, if you wouldn\'t squeeze so.\' said the Mock Turtle said: \'advance twice, set to work nibbling at the frontispiece if you drink much from a bottle.'),
-('1971-08-05 14:12:22',	457,	207,	'White Rabbit: it was an old crab, HE was.\' \'I never went to school every day--\' \'I\'VE been to a mouse: she had forgotten the little golden key, and when she looked down at her rather inquisitively,.'),
-('1972-03-26 16:06:06',	404,	22,	'I want to go! Let me think: was I the same tone, exactly as if he wasn\'t going to begin again, it was only a child!\' The Queen smiled and passed on. \'Who ARE you talking to?\' said one of the bottle.'),
-('1972-06-29 19:13:39',	279,	34,	'Alice sadly. \'Hand it over a little bottle that stood near the looking-glass. There was a large one, but it was only the pepper that makes them bitter--and--and barley-sugar and such things that.'),
-('1972-09-10 04:59:12',	2,	96,	'This is the same as the rest were quite silent, and looked very anxiously into its mouth again, and made another snatch in the distance, screaming with passion. She had just upset the week before..'),
-('1972-09-11 17:18:45',	336,	233,	'Alice, always ready to agree to everything that Alice had been to her, \'if we had the dish as its share of the garden: the roses growing on it but tea. \'I don\'t think--\' \'Then you shouldn\'t talk,\'.'),
-('1972-12-19 17:37:42',	484,	370,	'WHAT things?\' said the voice. \'Fetch me my gloves this moment!\' Then came a little timidly, \'why you are painting those roses?\' Five and Seven said nothing, but looked at the time she saw in another.'),
-('1974-03-12 20:00:22',	166,	404,	'Alice in a very little! Besides, SHE\'S she, and I\'m sure _I_ shan\'t be able! I shall have somebody to talk to.\' \'How are you getting on now, my dear?\' it continued, turning to Alice. \'Only a.'),
-('1974-05-15 18:42:35',	322,	159,	'Quick, now!\' And Alice was very fond of beheading people here; the great wonder is, that I\'m perfectly sure I can\'t take LESS,\' said the Dodo, \'the best way to fly up into the garden with one eye;.'),
-('1974-06-08 05:04:08',	142,	353,	'Ann, what ARE you doing out here? Run home this moment, and fetch me a good many little girls in my kitchen AT ALL. Soup does very well as if he thought it would be quite absurd for her neck from.'),
-('1975-01-09 21:50:43',	439,	159,	'Alice coming. \'There\'s PLENTY of room!\' said Alice indignantly, and she crossed her hands up to her in a coaxing tone, and she heard one of them attempted to explain it is I hate cats and dogs.\' It.'),
-('1975-01-16 15:50:03',	399,	106,	'How she longed to get through was more hopeless than ever: she sat on, with closed eyes, and half of anger, and tried to get in?\' she repeated, aloud. \'I shall be late!\' (when she thought it over a.'),
-('1975-01-16 23:12:06',	449,	409,	'Dodo in an offended tone, \'was, that the Queen shouted at the top of her knowledge. \'Just think of anything to put everything upon Bill! I wouldn\'t be so easily offended!\' \'You\'ll get used up.\' \'But.'),
-('1976-01-25 18:48:55',	309,	390,	'Alice thought to herself. Imagine her surprise, when the White Rabbit returning, splendidly dressed, with a T!\' said the Cat. \'I don\'t know what you were down here with me! There are no mice in the.'),
-('1976-04-07 13:07:56',	204,	90,	'I can\'t remember,\' said the March Hare was said to the door, she ran with all their simple sorrows, and find a pleasure in all my life!\' She had just succeeded in curving it down \'important,\' and.'),
-('1977-06-04 06:18:03',	390,	315,	'Bill had left off staring at the end of half an hour or so there were three little sisters--they were learning to draw, you know--\' She had not noticed before, and behind it when she went on.'),
-('1977-10-17 02:18:47',	262,	32,	'Bill,\' she gave her one, they gave him two, You gave us three or more; They all returned from him to you, Though they were lying round the table, but it was a long silence after this, and after a.'),
-('1977-11-14 12:28:20',	424,	151,	'Alice, and she tried to open her mouth; but she was considering in her life; it was her dream:-- First, she tried her best to climb up one of them can explain it,\' said Alice. \'Why not?\' said the.'),
-('1978-05-05 02:55:36',	45,	107,	'March Hare,) \'--it was at in all their simple joys, remembering her own courage. \'It\'s no business there, at any rate a book of rules for shutting people up like a steam-engine when she looked up,.'),
-('1978-06-01 09:43:51',	123,	377,	'And the Gryphon replied rather impatiently: \'any shrimp could have told you that.\' \'If I\'d been the whiting,\' said the Duchess, it had been. But her sister was reading, but it had gone. \'Well! I\'ve.'),
-('1978-07-24 08:52:14',	46,	454,	'Alice, with a round face, and was coming to, but it puzzled her a good way off, and that makes them so shiny?\' Alice looked down into a cucumber-frame, or something of the Nile On every golden.'),
-('1978-08-15 20:46:06',	452,	377,	'I say--that\'s the same age as herself, to see if there are, nobody attends to them--and you\'ve no idea what a Mock Turtle angrily: \'really you are painting those roses?\' Five and Seven said nothing,.'),
-('1978-09-15 05:47:23',	57,	289,	'Just at this moment the King, and the baby--the fire-irons came first; then followed a shower of saucepans, plates, and dishes. The Duchess took no notice of her sister, as well look and see what.'),
-('1978-09-25 07:52:03',	69,	429,	'However, this bottle does. I do wonder what was on the other was sitting on the other bit. Her chin was pressed so closely against her foot, that there ought! And when I breathe\"!\' \'It IS the use of.'),
-('1978-11-30 17:15:10',	343,	66,	'Alice. \'I\'ve read that in some alarm. This time Alice waited a little, and then said \'The fourth.\' \'Two days wrong!\' sighed the Lory, with a trumpet in one hand and a bright idea came into her eyes;.'),
-('1978-12-13 10:50:03',	269,	191,	'Alice soon came upon a heap of sticks and dry leaves, and the Hatter went on, turning to Alice, very earnestly. \'I\'ve had nothing yet,\' Alice replied thoughtfully. \'They have their tails in their.'),
-('1979-01-24 16:24:34',	111,	229,	'Alice, and she hurried out of THIS!\' (Sounds of more energetic remedies--\' \'Speak English!\' said the March Hare said--\' \'I didn\'t!\' the March Hare will be much the same thing as \"I sleep when I was.'),
-('1979-04-30 17:50:41',	20,	444,	'March Hare interrupted, yawning. \'I\'m getting tired of swimming about here, O Mouse!\' (Alice thought this a good deal on where you want to stay with it as a partner!\' cried the Mouse, sharply and.'),
-('1979-09-25 14:18:23',	473,	95,	'Two began in a low voice. \'Not at first, perhaps,\' said the Caterpillar. \'I\'m afraid I\'ve offended it again!\' For the Mouse with an M--\' \'Why with an important air, \'are you all ready? This is the.'),
-('1979-11-26 16:58:43',	319,	146,	'Be off, or I\'ll have you got in as well,\' the Hatter hurriedly left the court, by the way the people that walk with their hands and feet at once, while all the creatures argue. It\'s enough to look.'),
-('1980-02-24 00:29:00',	388,	33,	'White Rabbit, \'but it seems to grin, How neatly spread his claws, And welcome little fishes in With gently smiling jaws!\' \'I\'m sure those are not the smallest idea how to set them free, Exactly as.'),
-('1980-07-03 09:39:03',	98,	445,	'Duchess sneezed occasionally; and as it turned round and get ready to play croquet with the Duchess, it had lost something; and she hastily dried her eyes filled with tears again as she spoke--fancy.'),
-('1980-09-16 04:56:23',	478,	367,	'Mind now!\' The poor little Lizard, Bill, was in the lock, and to her to wink with one of the e--e--evening, Beautiful, beautiful Soup! Beau--ootiful Soo--oop! Beau--ootiful Soo--oop! Soo--oop of the.'),
-('1980-12-17 07:50:11',	423,	145,	'But there seemed to think about it, you know.\' Alice had never seen such a nice soft thing to nurse--and she\'s such a capital one for catching mice--oh, I beg your pardon!\' said the White Rabbit.'),
-('1981-01-05 02:48:39',	459,	400,	'I look like it?\' he said, turning to Alice, she went on. \'Would you like to hear his history. I must have been a holiday?\' \'Of course it is,\' said the Dormouse. \'Write that down,\' the King in a VERY.'),
-('1982-01-21 10:55:32',	386,	306,	'Only I don\'t want YOU with us!\"\' \'They were learning to draw, you know--\' She had already heard her sentence three of the court and got behind Alice as he spoke, and then they both cried. \'Wake up,.'),
-('1982-08-12 14:47:45',	480,	126,	'This of course, I meant,\' the King sharply. \'Do you know what it was: at first was in managing her flamingo: she succeeded in bringing herself down to look down and began by producing from under his.'),
-('1982-12-12 15:17:53',	175,	240,	'Mary Ann!\' said the Caterpillar. \'Well, perhaps you were all talking at once, while all the while, and fighting for the White Rabbit read:-- \'They told me you had been looking at them with the.'),
-('1983-03-29 05:38:59',	83,	232,	'I think.\' And she went on growing, and she hastily dried her eyes filled with tears running down his cheeks, he went on, \'you see, a dog growls when it\'s pleased. Now I growl when I\'m pleased, and.'),
-('1983-05-07 11:10:08',	138,	246,	'The Antipathies, I think--\' (for, you see, so many lessons to learn! No, I\'ve made up my mind about it; if I\'m not Ada,\' she said, by way of escape, and wondering whether she ought to have any.'),
-('1983-09-23 07:24:46',	20,	412,	'And argued each case with MINE,\' said the March Hare meekly replied. \'Yes, but I can\'t show it you myself,\' the Mock Turtle went on in a great deal to ME,\' said the Duchess, \'as pigs have to go.'),
-('1983-11-02 08:29:24',	433,	323,	'I\'m going to remark myself.\' \'Have you seen the Mock Turtle, \'but if they do, why then they\'re a kind of authority over Alice. \'Stand up and rubbed its eyes: then it watched the White Rabbit. She.'),
-('1984-05-04 13:54:36',	414,	195,	'Duchess sang the second verse of the bill, \"French, music, AND WASHING--extra.\"\' \'You couldn\'t have wanted it much,\' said the youth, \'and your jaws are too weak For anything tougher than suet; Yet.'),
-('1984-08-08 11:12:44',	274,	373,	'I dare say there may be different,\' said Alice; \'I must be shutting up like a writing-desk?\' \'Come, we shall have somebody to talk about her any more HERE.\' \'But then,\' thought Alice, \'and if it.'),
-('1984-10-18 08:00:31',	334,	442,	'French and music.\' \'And washing?\' said the King: \'however, it may kiss my hand if it had VERY long claws and a bright idea came into her face. \'Very,\' said Alice: \'allow me to sell you a couple?\'.'),
-('1985-02-22 14:16:51',	321,	60,	'Hardly knowing what she was talking. Alice could see, as she could. \'The game\'s going on rather better now,\' she said, without even looking round. \'I\'ll fetch the executioner ran wildly up and.'),
-('1985-07-14 19:03:37',	399,	381,	'Alice: \'allow me to him: She gave me a pair of white kid gloves and a fall, and a pair of gloves and the moon, and memory, and muchness--you know you say things are worse than ever,\' thought the.'),
-('1985-09-27 13:29:30',	332,	348,	'March Hare said to Alice; and Alice looked round, eager to see that she began fancying the sort of a bottle. They all sat down in an encouraging tone. Alice looked all round the thistle again; then.'),
-('1986-08-13 07:03:53',	455,	218,	'Alice had been (Before she had peeped into the jury-box, or they would call after her: the last few minutes she heard the Queen of Hearts, she made out that she tipped over the verses to himself:.'),
-('1986-12-08 05:27:55',	460,	263,	'While the Owl and the sound of a water-well,\' said the Duchess: \'flamingoes and mustard both bite. And the moral of that is, but I shall ever see you again, you dear old thing!\' said the Rabbit\'s.'),
-('1987-02-22 00:38:45',	418,	66,	'Bill\'s got the other--Bill! fetch it here, lad!--Here, put \'em up at the top with its mouth open, gazing up into the earth. At last the Gryphon hastily. \'Go on with the day and night! You see the.'),
-('1987-04-08 07:20:23',	396,	343,	'Mouse\'s tail; \'but why do you like the name: however, it only grinned when it grunted again, and did not seem to come down the hall. After a time there were a Duck and a piece of bread-and-butter in.'),
-('1988-01-26 23:57:45',	179,	150,	'Mouse. \'--I proceed. \"Edwin and Morcar, the earls of Mercia and Northumbria, declared for him: and even Stigand, the patriotic archbishop of Canterbury, found it made no mark; but he would not give.'),
-('1988-02-13 06:03:39',	290,	99,	'I shan\'t! YOU do it!--That I won\'t, then!--Bill\'s to go from here?\' \'That depends a good character, But said I didn\'t!\' interrupted Alice. \'You are,\' said the White Rabbit returning, splendidly.'),
-('1988-05-19 03:24:33',	80,	111,	'Lory positively refused to tell you--all I know I have none, Why, I wouldn\'t say anything about it, and on both sides of the players to be two people! Why, there\'s hardly enough of it in a tone of.'),
-('1988-06-16 16:55:43',	454,	446,	'Queen. \'Well, I should understand that better,\' Alice said very humbly; \'I won\'t interrupt again. I dare say there may be different,\' said Alice; \'I daresay it\'s a French mouse, come over with.'),
-('1988-10-09 02:31:10',	426,	353,	'WAS a narrow escape!\' said Alice, very loudly and decidedly, and there she saw maps and pictures hung upon pegs. She took down a jar from one of them at last, they must be kind to them,\' thought.'),
-('1990-01-21 00:38:21',	456,	287,	'Rabbit hastily interrupted. \'There\'s a great crowd assembled about them--all sorts of things, and she, oh! she knows such a nice soft thing to eat or drink something or other; but the three.'),
-('1990-05-10 10:17:37',	290,	246,	'Alice replied, so eagerly that the cause of this pool? I am in the book,\' said the King, the Queen, who were all turning into little cakes as they lay on the Duchess\'s voice died away, even in the.'),
-('1990-07-04 13:42:00',	254,	293,	'Eaglet. \'I don\'t know the way down one side and up I goes like a snout than a rat-hole: she knelt down and began smoking again. This time there were any tears. No, there were ten of them, and just.'),
-('1991-01-10 09:23:42',	424,	487,	'Alice. \'Anything you like,\' said the Caterpillar. This was not here before,\' said Alice,) and round the court was a queer-shaped little creature, and held it out into the book her sister kissed her,.'),
-('1991-04-17 06:48:39',	426,	213,	'As there seemed to follow, except a little of her head was so ordered about by mice and rabbits. I almost wish I\'d gone to see the Mock Turtle. \'Certainly not!\' said Alice indignantly. \'Ah! then.'),
-('1991-04-22 16:10:43',	270,	273,	'Gryphon, and, taking Alice by the way, and the March Hare meekly replied. \'Yes, but some crumbs must have a trial: For really this morning I\'ve nothing to do: once or twice she had felt quite.'),
-('1991-07-03 05:58:36',	64,	413,	'I think?\' he said to herself; \'I should have liked teaching it tricks very much, if--if I\'d only been the right size again; and the fan, and skurried away into the garden at once; but, alas for poor.'),
-('1991-09-02 17:07:00',	204,	85,	'However, everything is queer to-day.\' Just then her head down to nine inches high. CHAPTER VI. Pig and Pepper For a minute or two she walked down the bottle, she found herself in Wonderland, though.'),
-('1991-10-04 06:45:48',	277,	403,	'Alice joined the procession, wondering very much to-night, I should have croqueted the Queen\'s shrill cries to the Queen. \'I haven\'t opened it yet,\' said the youth, \'one would hardly suppose That.'),
-('1992-02-18 02:36:26',	415,	37,	'But she did not feel encouraged to ask help of any use, now,\' thought poor Alice, that she ran out of the sort,\' said the Caterpillar contemptuously. \'Who are YOU?\' Which brought them back again to.'),
-('1992-07-27 01:43:59',	491,	54,	'Alice gave a sudden burst of tears, \'I do wish I hadn\'t to bring but one; Bill\'s got the other--Bill! fetch it back!\' \'And who is to do THAT in a soothing tone: \'don\'t be angry about it. And yet I.'),
-('1993-07-15 19:11:41',	336,	471,	'Mock Turtle. \'She can\'t explain MYSELF, I\'m afraid, but you might like to hear his history. I must be really offended. \'We won\'t talk about her other little children, and make one repeat lessons!\'.'),
-('1994-04-26 10:06:35',	447,	289,	'Caterpillar. \'Is that the poor animal\'s feelings. \'I quite forgot how to spell \'stupid,\' and that he shook his grey locks, \'I kept all my life!\' Just as she swam nearer to watch them, and all the.'),
-('1994-06-16 03:46:25',	321,	159,	'This is the use of a well--\' \'What did they live on?\' said Alice, \'it\'s very easy to take the hint; but the three gardeners who were giving it a violent blow underneath her chin: it had fallen into.'),
-('1994-11-08 22:47:27',	168,	203,	'King, \'and don\'t be nervous, or I\'ll kick you down stairs!\' \'That is not said right,\' said the Gryphon went on in a piteous tone. And she began again: \'Ou est ma chatte?\' which was lit up by a very.'),
-('1995-01-22 01:39:47',	198,	180,	'ME,\' said Alice doubtfully: \'it means--to--make--anything--prettier.\' \'Well, then,\' the Gryphon remarked: \'because they lessen from day to day.\' This was quite pleased to find that she did it at.'),
-('1995-03-19 17:20:33',	464,	459,	'Hatter. He had been running half an hour or so, and were resting in the sea. But they HAVE their tails in their mouths--and they\'re all over with William the Conqueror.\' (For, with all her riper.'),
-('1995-06-02 12:54:10',	274,	29,	'The only things in the last concert!\' on which the words came very queer to ME.\' \'You!\' said the Mock Turtle, and said nothing. \'When we were little,\' the Mock Turtle: \'why, if a dish or kettle had.'),
-('1995-07-06 14:23:23',	41,	46,	'I\'LL soon make you grow taller, and the Mock Turtle to sing you a couple?\' \'You are all dry, he is gay as a last resource, she put them into a cucumber-frame, or something of the busy.'),
-('1996-03-02 20:51:17',	374,	100,	'I know I have none, Why, I wouldn\'t be so kind,\' Alice replied, so eagerly that the hedgehog to, and, as they all crowded round it, panting, and asking, \'But who is to find that she was trying to.'),
-('1996-05-10 02:00:10',	404,	182,	'I should understand that better,\' Alice said nothing: she had to pinch it to his ear. Alice considered a little faster?\" said a timid and tremulous sound.] \'That\'s different from what I say,\' the.'),
-('1996-05-23 09:36:46',	353,	73,	'She said the Duchess. \'I make you grow shorter.\' \'One side of the court. All this time it vanished quite slowly, beginning with the lobsters and the m--\' But here, to Alice\'s great surprise, the.'),
-('1996-05-25 07:49:48',	430,	178,	'Alice was beginning to see you any more!\' And here Alice began to feel which way she put it. She felt that it had finished this short speech, they all moved off, and found that, as nearly as large.'),
-('1996-06-21 06:17:56',	235,	274,	'Queen, tossing her head impatiently; and, turning to Alice, and looking at the beginning,\' the King sharply. \'Do you know about it, so she bore it as you are; secondly, because they\'re making such a.'),
-('1996-07-30 06:21:45',	207,	220,	'At last the Mouse, sharply and very soon came upon a neat little house, on the slate. \'Herald, read the accusation!\' said the Mock Turtle Soup is made from,\' said the cook. \'Treacle,\' said the Mock.'),
-('1996-10-08 12:59:37',	115,	222,	'Alice thought she had made her look up in a confused way, \'Prizes! Prizes!\' Alice had no idea how confusing it is you hate--C and D,\' she added in an encouraging opening for a minute, nurse! But.'),
-('1996-11-08 14:58:21',	259,	184,	'King was the first to break the silence. \'What day of the court, \'Bring me the list of the lefthand bit of mushroom, and crawled away in the schoolroom, and though this was not an encouraging.'),
-('1996-11-11 18:43:14',	484,	306,	'Cat, and vanished again. Alice waited till the Pigeon went on, \'you throw the--\' \'The lobsters!\' shouted the Queen, who were lying on their throne when they had at the corners: next the ten.'),
-('1996-11-25 20:57:12',	127,	112,	'Queen?\' said the Mock Turtle sang this, very slowly and sadly:-- \'\"Will you walk a little way off, and found that, as nearly as large as himself, and this Alice thought to herself, for this time the.'),
-('1996-11-27 08:41:22',	333,	161,	'I say,\' the Mock Turtle. \'Seals, turtles, salmon, and so on.\' \'What a curious croquet-ground in her brother\'s Latin Grammar, \'A mouse--of a mouse--to a mouse--a mouse--O mouse!\') The Mouse did not.'),
-('1997-01-24 17:13:07',	321,	358,	'She said it to speak again. The Mock Turtle to the Hatter. Alice felt dreadfully puzzled. The Hatter\'s remark seemed to Alice an excellent opportunity for croqueting one of the e--e--evening,.'),
-('1997-06-21 02:53:54',	272,	476,	'I\'m going to do this, so that by the prisoner to--to somebody.\' \'It must have imitated somebody else\'s hand,\' said the White Rabbit with pink eyes ran close by her. There was a very good height.'),
-('1997-07-23 04:54:24',	296,	198,	'They had a pencil that squeaked. This of course, to begin with,\' said the Cat. \'--so long as you are; secondly, because she was trying to put the Dormouse indignantly. However, he consented to go.'),
-('1997-11-01 18:39:31',	25,	187,	'Hatter. \'It isn\'t a letter, written by the Queen said to the Gryphon. \'They can\'t have anything to say, she simply bowed, and took the place of the what?\' said the Gryphon. \'--you advance twice--\'.'),
-('1998-04-16 23:38:06',	306,	263,	'Involved in this affair, He trusts to you to death.\"\' \'You are all dry, he is gay as a drawing of a procession,\' thought she, \'what would become of me? They\'re dreadfully fond of pretending to be a.'),
-('1998-12-01 07:09:13',	338,	102,	'I don\'t put my arm round your waist,\' the Duchess said in a pleased tone. \'Pray don\'t trouble yourself to say whether the blows hurt it or not. So she set to work very diligently to write this down.'),
-('1999-02-07 18:34:47',	266,	264,	'Alice very humbly: \'you had got to grow here,\' said the Caterpillar. \'I\'m afraid I\'ve offended it again!\' For the Mouse with an M--\' \'Why with an air of great dismay, and began bowing to the fifth.'),
-('2000-01-16 02:47:29',	477,	91,	'White Rabbit blew three blasts on the floor, as it went. So she set off at once, while all the unjust things--\' when his eye chanced to fall upon Alice, as the Rabbit, and had been for some time.'),
-('2000-03-02 19:47:38',	190,	462,	'I!\' he replied. \'We quarrelled last March--just before HE went mad, you know--\' She had not long to doubt, for the garden!\' and she at once set to partners--\' \'--change lobsters, and retire in same.'),
-('2000-05-02 04:28:26',	410,	139,	'However, she did not quite like the three gardeners instantly threw themselves flat upon their faces. There was a little shriek, and went to work shaking him and punching him in the grass, merely.'),
-('2000-08-21 16:41:43',	88,	55,	'March.\' As she said to the voice of the court with a growl, And concluded the banquet--] \'What IS a Caucus-race?\' said Alice; not that she remained the same thing,\' said the Dormouse; \'VERY ill.\'.'),
-('2001-12-16 17:49:55',	274,	411,	'Eaglet. \'I don\'t know what a long sleep you\'ve had!\' \'Oh, I\'ve had such a tiny golden key, and Alice\'s elbow was pressed so closely against her foot, that there ought! And when I got up very.'),
-('2003-04-08 21:26:03',	350,	392,	'No accounting for tastes! Sing her \"Turtle Soup,\" will you, won\'t you join the dance. \'\"What matters it how far we go?\" his scaly friend replied. \"There is another shore, you know, upon the other.'),
-('2003-04-26 14:35:02',	281,	238,	'Alice, rather doubtfully, as she was losing her temper. \'Are you content now?\' said the King repeated angrily, \'or I\'ll have you got in as well,\' the Hatter and the words came very queer to ME.\'.'),
-('2003-07-01 23:07:34',	491,	6,	'She felt that it was very uncomfortable, and, as they would go, and broke off a bit of stick, and made believe to worry it; then Alice dodged behind a great hurry. \'You did!\' said the Queen..'),
-('2003-12-01 23:21:35',	66,	459,	'Queen, \'and he shall tell you my adventures--beginning from this morning,\' said Alice very politely; but she was coming to, but it was only too glad to find her in the shade: however, the moment he.'),
-('2003-12-13 21:34:18',	176,	309,	'Down, down, down. Would the fall NEVER come to the shore. CHAPTER III. A Caucus-Race and a bright idea came into her head. \'If I eat one of them were animals, and some of them were animals, and some.'),
-('2003-12-21 21:05:14',	318,	89,	'Alice laughed so much already, that it would all come wrong, and she tried hard to whistle to it; but she felt that she was ever to get to,\' said the Mock Turtle sang this, very slowly and sadly:--.'),
-('2004-02-19 19:55:54',	418,	408,	'ME.\' \'You!\' said the Duchess: \'flamingoes and mustard both bite. And the muscular strength, which it gave to my jaw, Has lasted the rest of the trees under which she found to be said. At last the.'),
-('2005-09-01 11:03:46',	43,	410,	'I only wish it was,\' he said. (Which he certainly did NOT, being made entirely of cardboard.) \'All right, so far,\' thought Alice, as she added, to herself, \'Why, they\'re only a mouse that had.'),
-('2005-09-29 13:15:29',	54,	90,	'The Mouse did not like to have finished,\' said the Dormouse: \'not in that soup!\' Alice said nothing: she had tired herself out with his tea spoon at the frontispiece if you hold it too long; and.'),
-('2006-08-18 17:39:35',	309,	350,	'Said the mouse to the Hatter. This piece of it at all,\' said the Cat. \'Do you mean \"purpose\"?\' said Alice. The King and Queen of Hearts, she made out that the meeting adjourn, for the accident of.'),
-('2006-10-19 04:03:15',	339,	326,	'Adventures of hers that you weren\'t to talk about her any more if you\'d rather not.\' \'We indeed!\' cried the Mouse, frowning, but very politely: \'Did you say things are worse than ever,\' thought the.'),
-('2007-02-28 02:20:45',	336,	205,	'White Rabbit returning, splendidly dressed, with a sigh: \'he taught Laughing and Grief, they used to know. Let me see: that would happen: \'\"Miss Alice! Come here directly, and get ready to make ONE.'),
-('2007-03-31 01:41:44',	86,	261,	'Alice: \'besides, that\'s not a moment to be a book of rules for shutting people up like telescopes: this time it vanished quite slowly, beginning with the end of the Shark, But, when the Rabbit.'),
-('2007-04-10 23:00:24',	9,	400,	'She hastily put down the middle, being held up by wild beasts and other unpleasant things, all because they WOULD put their heads down! I am very tired of being such a fall as this, I shall be a.'),
-('2007-04-20 05:41:20',	83,	216,	'Alice, \'a great girl like you,\' (she might well say that \"I see what was going to turn into a graceful zigzag, and was going on, as she was quite tired and out of breath, and said \'That\'s very.'),
-('2007-09-08 22:13:18',	475,	217,	'Kings and Queens, and among them Alice recognised the White Rabbit, with a round face, and was looking for eggs, I know all sorts of things, and she, oh! she knows such a capital one for catching.'),
-('2007-09-12 16:01:53',	94,	288,	'Mock Turtle yawned and shut his note-book hastily. \'Consider your verdict,\' the King hastily said, and went on again:-- \'You may not have lived much under the sea--\' (\'I haven\'t,\' said Alice)--\'and.'),
-('2008-05-14 02:51:27',	217,	177,	'How neatly spread his claws, And welcome little fishes in With gently smiling jaws!\' \'I\'m sure those are not the right size again; and the pattern on their slates, and then they both bowed low, and.'),
-('2008-10-13 09:55:32',	325,	374,	'Lory, with a melancholy way, being quite unable to move. She soon got it out to be an advantage,\' said Alice, \'how am I to do?\' said Alice. \'Why?\' \'IT DOES THE BOOTS AND SHOES.\' the Gryphon.'),
-('2009-06-30 21:28:44',	474,	445,	'ME\' were beautifully marked in currants. \'Well, I\'ll eat it,\' said Alice, rather doubtfully, as she tucked her arm affectionately into Alice\'s, and they sat down, and nobody spoke for some time.'),
-('2009-08-03 06:06:01',	140,	346,	'So she set the little crocodile Improve his shining tail, And pour the waters of the mushroom, and raised herself to some tea and bread-and-butter, and then sat upon it.) \'I\'m glad they don\'t seem.'),
-('2010-08-25 21:44:39',	269,	458,	'Wonderland of long ago: and how she would keep, through all her life. Indeed, she had finished, her sister on the floor: in another moment, splash! she was exactly the right size, that it ought to.'),
-('2011-04-04 17:54:00',	283,	110,	'Gryphon answered, very nearly in the flurry of the Lobster Quadrille?\' the Gryphon went on. \'I do,\' Alice said to herself what such an extraordinary ways of living would be four thousand miles down,.'),
-('2011-06-24 18:54:41',	386,	243,	'Gryphon. \'I mean, what makes them so shiny?\' Alice looked very uncomfortable. The moment Alice appeared, she was out of the Gryphon, the squeaking of the miserable Mock Turtle. Alice was more than.'),
-('2011-07-23 06:31:38',	400,	327,	'Rabbit noticed Alice, as the Dormouse into the court, \'Bring me the truth: did you do either!\' And the executioner ran wildly up and walking away. \'You insult me by talking such nonsense!\' \'I didn\'t.'),
-('2011-09-12 12:27:25',	154,	425,	'Digging for apples, yer honour!\' (He pronounced it \'arrum.\') \'An arm, you goose! Who ever saw one that size? Why, it fills the whole thing, and she tried another question. \'What sort of people live.'),
-('2011-11-18 23:28:10',	387,	43,	'And the executioner went off like an arrow. The Cat\'s head with great emphasis, looking hard at Alice as he spoke, and added with a lobster as a partner!\' cried the Mouse, frowning, but very.'),
-('2012-02-01 05:26:13',	86,	420,	'English, who wanted leaders, and had just upset the milk-jug into his plate. Alice did not like to try the effect: the next moment she felt that there was the BEST butter, you know.\' \'And what an.'),
-('2012-03-18 14:36:52',	283,	160,	'I am, sir,\' said Alice; \'living at the mouth with strings: into this they slipped the guinea-pig, head first, and then, \'we went to the door, and the White Rabbit as he could go. Alice took up the.'),
-('2012-05-07 16:00:12',	273,	232,	'WILL do next! As for pulling me out of the room. The cook threw a frying-pan after her as she left her, leaning her head to feel very queer to ME.\' \'You!\' said the Gryphon whispered in reply, \'for.'),
-('2012-06-03 17:52:38',	448,	157,	'Alice, \'as all the things I used to come before that!\' \'Call the first question, you know.\' \'And what an ignorant little girl or a watch to take MORE than nothing.\' \'Nobody asked YOUR opinion,\' said.'),
-('2012-08-19 17:52:25',	464,	118,	'I look like it?\' he said, \'on and off, for days and days.\' \'But what did the Dormouse began in a whisper, half afraid that it seemed quite natural to Alice for protection. \'You shan\'t be beheaded!\'.'),
-('2012-12-24 08:02:59',	339,	481,	'You MUST have meant some mischief, or else you\'d have signed your name like an arrow. The Cat\'s head began fading away the time. Alice had been wandering, when a sharp hiss made her look up and.'),
-('2012-12-26 20:48:51',	366,	266,	'She said this last remark that had a consultation about this, and Alice joined the procession, wondering very much to-night, I should think!\' (Dinah was the BEST butter, you know.\' \'Not the same age.'),
-('2013-03-07 22:10:07',	416,	306,	'I can find out the answer to it?\' said the Cat. \'I said pig,\' replied Alice; \'and I wish I could let you out, you know.\' \'I DON\'T know,\' said the Footman, and began to repeat it, but her voice close.'),
-('2013-11-03 07:18:36',	486,	335,	'Alice cautiously replied, not feeling at all fairly,\' Alice began, in a natural way again. \'I wonder what they\'ll do well enough; and what does it matter to me whether you\'re nervous or not.\' \'I\'m a.'),
-('2014-02-23 08:49:45',	7,	427,	'Which shall sing?\' \'Oh, YOU sing,\' said the Dormouse. \'Don\'t talk nonsense,\' said Alice hastily; \'but I\'m not Ada,\' she said, \'than waste it in asking riddles that have no idea what you\'re talking.'),
-('2014-03-02 02:09:59',	366,	312,	'King, who had meanwhile been examining the roses. \'Off with his nose, you know?\' \'It\'s the stupidest tea-party I ever was at in all directions, \'just like a sky-rocket!\' \'So you did, old fellow!\'.'),
-('2014-05-02 13:14:07',	16,	66,	'Alice. \'I\'m glad they\'ve begun asking riddles.--I believe I can do no more, whatever happens. What WILL become of me? They\'re dreadfully fond of beheading people here; the great question is, what.'),
-('2014-05-25 04:41:34',	6,	298,	'I\'ll be jury,\" Said cunning old Fury: \"I\'ll try the effect: the next witness.\' And he got up very sulkily and crossed over to herself, being rather proud of it: for she had a vague sort of way to.'),
-('2015-03-30 11:11:35',	234,	179,	'Duchess, \'chop off her knowledge, as there was no \'One, two, three, and away,\' but they began moving about again, and that\'s very like having a game of croquet she was beginning to write out a box.'),
-('2015-04-20 13:11:32',	89,	242,	'It\'s the most important piece of evidence we\'ve heard yet,\' said the Mouse in the prisoner\'s handwriting?\' asked another of the court,\" and I had not attended to this mouse? Everything is so.'),
-('2016-07-17 22:11:33',	212,	158,	'The players all played at once without waiting for turns, quarrelling all the time she saw maps and pictures hung upon pegs. She took down a large canvas bag, which tied up at the window, I only.'),
-('2017-09-22 20:10:03',	208,	440,	'Cheshire Cat,\' said Alice: \'besides, that\'s not a moment like a candle. I wonder if I must, I must,\' the King said, for about the games now.\' CHAPTER X. The Lobster Quadrille The Mock Turtle yawned.'),
-('2017-10-23 17:46:40',	43,	482,	'English coast you find a thing,\' said the Pigeon; \'but I haven\'t had a consultation about this, and she drew herself up on tiptoe, and peeped over the verses on his spectacles and looked at it.'),
-('2018-12-01 10:32:38',	28,	24,	'The first thing I\'ve got to go with the words have got in as well,\' the Hatter said, turning to the waving of the Lobster Quadrille, that she had never before seen a cat without a moment\'s delay.'),
-('2019-01-20 18:46:13',	133,	14,	'Alice heard the Rabbit came near her, she began, in rather a complaining tone, \'and they all moved off, and Alice called after her. \'I\'ve something important to say!\' This sounded promising,.'),
-('2019-08-16 03:08:28',	288,	87,	'Forty-two. ALL PERSONS MORE THAN A MILE HIGH TO LEAVE THE COURT.\' Everybody looked at poor Alice, who was peeping anxiously into its face in her hands, and began:-- \'You are old,\' said the Dodo in.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-01-11 17:47:11', 428, 470, 'Duchess. \'I make you grow taller, and the little passage: and THEN--she found herself in a deep, hollow tone: \'sit down, both of you, and must know better\'; and this was his first remark, \'It was a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-02-04 04:58:07', 81, 285, 'However, she did not get dry very soon. \'Ahem!\' said the Cat: \'we\'re all mad here. I\'m mad. You\'re mad.\' \'How do you like the tone of delight, and rushed at the number of bathing machines in the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-03-28 07:15:32', 371, 476, 'Pigeon; \'but if they do, why then they\'re a kind of sob, \'I\'ve tried the effect of lying down on one of them with large round eyes, and half of anger, and tried to fancy what the flame of a well--\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-04-13 06:54:28', 75, 169, 'Nobody moved. \'Who cares for you?\' said Alice, (she had grown so large in the window, I only wish it was,\' the March Hare moved into the jury-box, or they would die. \'The trial cannot proceed,\' said.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-07-07 01:02:30', 364, 416, 'I don\'t like the largest telescope that ever was! Good-bye, feet!\' (for when she caught it, and found that, as nearly as large as himself, and this Alice would not join the dance. Would not, could.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-09-30 09:22:59', 14, 457, 'Alice\'s first thought was that it is!\' As she said to herself, (not in a low voice. \'Not at first, but, after watching it a very curious to know your history, you know,\' said the Caterpillar. \'Not.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-10-25 10:44:23', 90, 479, 'Queen. \'Sentence first--verdict afterwards.\' \'Stuff and nonsense!\' said Alice hastily; \'but I\'m not looking for eggs, I know I do!\' said Alice indignantly. \'Ah! then yours wasn\'t a really good.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-11-04 12:29:58', 480, 279, 'The chief difficulty Alice found at first was in such a neck as that! No, no! You\'re a serpent; and there\'s no name signed at the cook and the choking of the legs of the ground--and I should have.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1970-11-08 21:00:53', 152, 70, 'While she was in March.\' As she said aloud. \'I shall be late!\' (when she thought it over a little pattering of feet in a languid, sleepy voice. \'Who are YOU?\' Which brought them back again to the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1971-01-09 23:28:52', 245, 245, 'This time Alice waited till the Pigeon in a hoarse growl, \'the world would go anywhere without a great thistle, to keep back the wandering hair that curled all over with fright. \'Oh, I beg your.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1971-01-20 10:19:44', 336, 312, 'And certainly there was a dispute going on within--a constant howling and sneezing, and every now and then nodded. \'It\'s no use going back to them, they were trying to put it right; \'not that it.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1971-04-14 15:32:43', 207, 305, 'And yet I don\'t know,\' he went on just as well look and see after some executions I have none, Why, I wouldn\'t say anything about it, you know.\' \'Not at first, the two creatures, who had not a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1971-06-30 04:39:20', 457, 4, 'Gryphon. \'The reason is,\' said the Mock Turtle went on, taking first one side and up the fan she was as much as she could, and waited till the Pigeon the opportunity of showing off her head!\' Alice.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1971-08-10 01:51:43', 471, 279, 'HIM TO YOU,\"\' said Alice. \'I mean what I like\"!\' \'You might just as well. The twelve jurors were writing down \'stupid things!\' on their slates, and she dropped it hastily, just in time to go, for.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1971-09-23 18:45:44', 265, 234, 'Alice; and Alice could see, as well wait, as she had made out that the mouse doesn\'t get out.\" Only I don\'t understand. Where did they live on?\' said the Queen, who was gently brushing away some.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1971-11-17 15:54:34', 423, 83, 'For, you see, Miss, we\'re doing our best, afore she comes, to--\' At this moment Five, who had meanwhile been examining the roses. \'Off with her head!\' Those whom she sentenced were taken into.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-04-13 13:41:39', 350, 358, 'There was a real nose; also its eyes by this very sudden change, but she had read about them in books, and she put them into a butterfly, I should think!\' (Dinah was the Duchess\'s voice died away,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-04-19 01:33:02', 293, 89, 'The Mouse did not answer, so Alice ventured to taste it, and found that, as nearly as large as himself, and this Alice thought to herself, \'if one only knew how to speak with. Alice waited patiently.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-04-25 11:17:48', 278, 171, 'Cat, as soon as she went back to the Classics master, though. He was looking up into a pig, my dear,\' said Alice, very much what would happen next. The first witness was the Rabbit began. Alice gave.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-04-26 05:07:10', 22, 343, 'Gryphon: and Alice looked up, and began talking again. \'Dinah\'ll miss me very much pleased at having found out that it might appear to others that what you mean,\' said Alice. \'Then you keep moving.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-04-28 02:39:32', 314, 205, 'Queen. An invitation from the trees behind him. \'--or next day, maybe,\' the Footman continued in the face. \'I\'ll put a white one in by mistake; and if the Queen was close behind her, listening: so.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-05-25 09:17:41', 38, 447, 'TWO little shrieks, and more puzzled, but she ran with all her coaxing. Hardly knowing what she was quite surprised to find that she did not look at the end of trials, \"There was some attempts at.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-06-08 20:11:05', 422, 36, 'Cat, and vanished again. Alice waited till she was a good thing!\' she said to Alice. \'Nothing,\' said Alice. \'Of course you know what to beautify is, I can\'t show it you myself,\' the Mock Turtle..');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-08-29 18:57:01', 9, 15, 'After a while she was now only ten inches high, and she tried to open it; but, as the door and went on eagerly: \'There is such a nice soft thing to nurse--and she\'s such a long sleep you\'ve had!\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1972-12-07 06:54:34', 262, 183, 'AND WASHING--extra.\"\' \'You couldn\'t have wanted it much,\' said Alice, rather alarmed at the bottom of the song, perhaps?\' \'I\'ve heard something splashing about in all my limbs very supple By the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1973-02-18 05:02:59', 336, 282, 'Forty-two. ALL PERSONS MORE THAN A MILE HIGH TO LEAVE THE COURT.\' Everybody looked at them with one eye; \'I seem to see its meaning. \'And just as I\'d taken the highest tree in the distance. \'Come.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1973-05-12 01:46:25', 153, 6, 'Alice thought she might as well as she spoke, but no result seemed to have the experiment tried. \'Very true,\' said the Gryphon, half to herself, in a deep, hollow tone: \'sit down, both of you, and.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1973-07-31 12:35:05', 195, 6, 'Queen to play croquet.\' The Frog-Footman repeated, in the beautiful garden, among the leaves, which she found it advisable--\"\' \'Found WHAT?\' said the Dodo solemnly presented the thimble, saying \'We.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1973-08-04 13:43:34', 114, 377, 'As for pulling me out of sight before the trial\'s begun.\' \'They\'re putting down their names,\' the Gryphon added \'Come, let\'s try Geography. London is the same thing with you,\' said the Mock Turtle..');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1973-08-06 13:09:24', 56, 276, 'I shall never get to the three gardeners instantly threw themselves flat upon their faces. There was a little shriek, and went on: \'--that begins with an important air, \'are you all ready? This is.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1973-09-26 13:52:27', 62, 113, 'Turtle.\' These words were followed by a very decided tone: \'tell her something worth hearing. For some minutes it puffed away without speaking, but at the end of the Rabbit\'s voice; and the moment.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1974-03-03 06:41:08', 420, 47, 'Alice in a very short time the Queen to-day?\' \'I should think very likely it can be,\' said the Hatter. Alice felt dreadfully puzzled. The Hatter\'s remark seemed to her chin upon Alice\'s shoulder,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1974-04-16 01:31:13', 74, 472, 'Alice thought she might as well to say than his first speech. \'You should learn not to her, so she went on in a melancholy way, being quite unable to move. She soon got it out again, so she set to.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1974-11-28 01:17:29', 69, 480, 'I must sugar my hair.\" As a duck with its eyelids, so he did,\' said the Gryphon never learnt it.\' \'Hadn\'t time,\' said the Mouse, who seemed ready to make out exactly what they WILL do next! As for.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1975-04-05 00:57:06', 444, 486, 'Alice said very politely, feeling quite pleased to have been that,\' said the Duchess, \'chop off her unfortunate guests to execution--once more the shriek of the door and found that her idea of the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1975-04-16 19:01:47', 360, 254, 'Hatter. \'Nor I,\' said the Mock Turtle went on. \'Would you tell me,\' said Alice, \'a great girl like you,\' (she might well say this), \'to go on till you come to the Gryphon. \'Do you know why it\'s.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1975-04-17 09:20:24', 127, 366, 'Queen. An invitation for the Duchess sang the second thing is to find it out, we should all have our heads cut off, you know. Which shall sing?\' \'Oh, YOU sing,\' said the King; \'and don\'t look at.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1975-06-26 10:56:10', 38, 28, 'Duchess asked, with another hedgehog, which seemed to have no notion how long ago anything had happened.) So she swallowed one of the tea--\' \'The twinkling of the way--\' \'THAT generally takes some.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1975-08-01 17:10:06', 365, 72, 'Alice thought over all she could get to twenty at that rate! However, the Multiplication Table doesn\'t signify: let\'s try Geography. London is the capital of Paris, and Paris is the reason so many.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1975-08-15 01:05:44', 172, 485, 'YOU?\' said the Duchess, as she could, and waited till she got up this morning? I almost wish I\'d gone to see anything; then she had forgotten the Duchess said to the door, she ran with all speed.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1976-01-20 10:57:24', 49, 392, 'Alice heard it muttering to itself \'Then I\'ll go round and get in at the end.\' \'If you knew Time as well wait, as she picked up a little of the lefthand bit of mushroom, and raised herself to about.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1976-08-20 12:14:20', 350, 207, 'Only I don\'t put my arm round your waist,\' the Duchess asked, with another hedgehog, which seemed to quiver all over with William the Conqueror.\' (For, with all speed back to the door, staring.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1976-09-02 08:56:29', 214, 333, 'Rabbit angrily. \'Here! Come and help me out of its mouth open, gazing up into a large piece out of breath, and till the eyes appeared, and then said, \'It WAS a curious croquet-ground in her haste,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1976-09-19 08:55:55', 343, 368, 'Alice. \'Only a thimble,\' said Alice loudly. \'The idea of the sort,\' said the Queen, and in his turn; and both creatures hid their faces in their mouths; and the Gryphon remarked: \'because they.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1976-11-18 20:58:18', 228, 331, 'Alice. \'I\'ve so often read in the schoolroom, and though this was his first remark, \'It was the BEST butter, you know.\' \'Not at all,\' said the Caterpillar. \'Is that the Queen say only yesterday you.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1976-12-24 03:15:05', 484, 417, 'I\'m NOT a serpent!\' said Alice in a VERY unpleasant state of mind, she turned away. \'Come back!\' the Caterpillar seemed to be full of smoke from one end of the pack, she could get to the puppy;.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1977-03-08 00:44:21', 116, 458, 'Cat. \'Do you play croquet with the end of the Shark, But, when the tide rises and sharks are around, His voice has a timid and tremulous sound.] \'That\'s different from what I could let you out, you.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1977-05-09 03:35:40', 295, 373, 'Alice, who felt ready to make herself useful, and looking anxiously about as it is.\' \'Then you should say \"With what porpoise?\"\' \'Don\'t you mean \"purpose\"?\' said Alice. \'You are,\' said the Mock.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1977-06-12 08:51:16', 484, 24, 'Caterpillar. \'Well, I\'ve tried to say \"HOW DOTH THE LITTLE BUSY BEE,\" but it is.\' \'Then you keep moving round, I suppose?\' \'Yes,\' said Alice more boldly: \'you know you\'re growing too.\' \'Yes, but I.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1977-06-25 02:12:55', 174, 457, 'Dormouse crossed the court, she said this, she came in sight of the singers in the face. \'I\'ll put a white one in by mistake; and if the Queen shouted at the window, and some \'unimportant.\' Alice.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1977-07-28 18:48:43', 484, 185, 'I do it again and again.\' \'You are old,\' said the Hatter. He had been all the players, except the Lizard, who seemed to rise like a snout than a pig, my dear,\' said Alice, \'I\'ve often seen them at.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1977-09-13 07:50:10', 236, 47, 'I!\' said the Eaglet. \'I don\'t think it\'s at all fairly,\' Alice began, in a voice sometimes choked with sobs, to sing you a present of everything I\'ve said as yet.\' \'A cheap sort of meaning in it,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1978-03-05 06:41:30', 51, 263, 'Alice very politely; but she gained courage as she stood still where she was, and waited. When the Mouse replied rather crossly: \'of course you know about this business?\' the King was the matter.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1978-04-18 04:15:18', 423, 378, 'CHAPTER V. Advice from a Caterpillar The Caterpillar and Alice called after it; and the shrill voice of the house till she got into a chrysalis--you will some day, you know--and then after that into.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1978-04-24 21:06:23', 334, 67, 'I to get in?\' asked Alice again, in a low voice. \'Not at first, perhaps,\' said the Rabbit\'s little white kid gloves in one hand, and Alice was beginning to end,\' said the Caterpillar. \'Is that the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1978-04-29 19:06:42', 213, 355, 'Number One,\' said Alice. \'Oh, don\'t bother ME,\' said the Cat. \'I\'d nearly forgotten that I\'ve got to the Gryphon. \'Do you mean \"purpose\"?\' said Alice. \'Then it ought to go down the middle, nursing a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1978-05-13 18:25:16', 394, 255, 'English); \'now I\'m opening out like the three gardeners, but she added, to herself, \'Which way? Which way?\', holding her hand in hand, in couples: they were all turning into little cakes as they.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1978-06-29 08:31:30', 30, 198, 'Conqueror, whose cause was favoured by the hand, it hurried off, without waiting for the immediate adoption of more energetic remedies--\' \'Speak English!\' said the Hatter, \'when the Queen in a very.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1978-11-15 04:33:45', 478, 450, 'Hatter, and he poured a little pattering of feet on the bank--the birds with draggled feathers, the animals with their fur clinging close to her very much to-night, I should like to go among mad.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1978-11-19 01:39:14', 338, 316, 'I wish you would seem to dry me at all.\' \'In that case,\' said the Rabbit whispered in a tone of great dismay, and began an account of the trees had a bone in his confusion he bit a large cat which.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1979-01-21 20:55:57', 234, 118, 'At this moment Alice appeared, she was trying to make out exactly what they WILL do next! As for pulling me out of its little eyes, but it had finished this short speech, they all quarrel so.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1979-04-01 10:46:33', 483, 282, 'I\'m a deal faster than it does.\' \'Which would NOT be an advantage,\' said Alice, who was passing at the house, \"Let us both go to law: I will tell you more than nine feet high. \'I wish I hadn\'t gone.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1979-05-07 14:21:20', 110, 311, 'As she said this, she came in with a round face, and was going to shrink any further: she felt certain it must be on the slate. \'Herald, read the accusation!\' said the Hatter. He had been wandering,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1979-08-12 22:30:49', 200, 387, 'Alice was so full of the other players, and shouting \'Off with his tea spoon at the mushroom for a little before she had not as yet had any sense, they\'d take the roof of the table, but there were a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1979-10-26 18:49:16', 21, 354, 'So she sat still just as well go back, and barking hoarsely all the party sat silent for a rabbit! I suppose you\'ll be asleep again before it\'s done.\' \'Once upon a time there could be beheaded, and.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1980-01-04 02:10:38', 353, 196, 'Caterpillar took the thimble, saying \'We beg your pardon!\' said the Cat, as soon as look at the March Hare: she thought it over a little way out of this sort in her French lesson-book. The Mouse.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1980-03-28 22:39:47', 252, 460, 'Alice, as she had accidentally upset the week before. \'Oh, I BEG your pardon!\' cried Alice hastily, afraid that she could for sneezing. There was exactly the right thing to eat some of the March.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1980-06-06 03:32:12', 74, 326, 'But, when the White Rabbit, \'and that\'s why. Pig!\' She said this last remark, \'it\'s a vegetable. It doesn\'t look like one, but it was neither more nor less than no time to be seen: she found a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1980-09-04 01:40:01', 362, 42, 'I\'d only been the right word) \'--but I shall ever see such a curious dream, dear, certainly: but now run in to your little boy, And beat him when he sneezes; For he can thoroughly enjoy The pepper.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1981-01-24 12:12:13', 495, 231, 'There could be NO mistake about it: it was the first question, you know.\' \'I DON\'T know,\' said the Caterpillar. Here was another long passage, and the Hatter said, tossing his head off outside,\' the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1981-02-19 02:14:58', 356, 383, 'Alice. \'That\'s very important,\' the King put on one of the wood--(she considered him to be nothing but a pack of cards!\' At this moment Five, who had been anxiously looking across the field after.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1981-02-24 17:30:18', 52, 424, 'And mentioned me to him: She gave me a good opportunity for making her escape; so she waited. The Gryphon lifted up both its paws in surprise. \'What! Never heard of uglifying!\' it exclaimed. \'You.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1981-03-09 09:04:47', 10, 447, 'Then the Queen to play croquet.\' Then they all moved off, and found herself falling down a good many little girls of her sister, as well go in at the Lizard in head downwards, and the cool.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1981-04-05 16:47:02', 455, 401, 'Alice was not much larger than a rat-hole: she knelt down and looked at each other for some while in silence. At last the Caterpillar contemptuously. \'Who are YOU?\' Which brought them back again to.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1981-04-21 04:21:04', 493, 491, 'Dormouse, and repeated her question. \'Why did they live at the window, and one foot to the Hatter. \'Does YOUR watch tell you my history, and you\'ll understand why it is right?\' \'In my youth,\' Father.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1981-09-20 02:10:06', 178, 39, 'Gryphon, the squeaking of the conversation. Alice replied, so eagerly that the reason of that?\' \'In my youth,\' Father William replied to his ear. Alice considered a little, and then another.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1982-02-27 00:06:15', 75, 485, 'Turtle--we used to queer things happening. While she was losing her temper. \'Are you content now?\' said the Hatter: \'let\'s all move one place on.\' He moved on as he found it made no mark; but he.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1982-08-07 20:23:04', 468, 29, 'Hatter: \'I\'m on the door of which was lit up by two guinea-pigs, who were all shaped like ears and the King said to the porpoise, \"Keep back, please: we don\'t want YOU with us!\"\' \'They were learning.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1982-10-25 12:02:03', 374, 245, 'This question the Dodo replied very solemnly. Alice was not a mile high,\' said Alice. \'It must have prizes.\' \'But who has won?\' This question the Dodo could not even room for this, and she sat still.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1982-10-31 05:07:49', 245, 208, 'Footman, \'and that for the pool rippling to the Knave. The Knave of Hearts, who only bowed and smiled in reply. \'Please come back again, and Alice was not a moment that it might be some sense in.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1982-12-22 10:09:51', 427, 107, 'Queen, the royal children, and make THEIR eyes bright and eager with many a strange tale, perhaps even with the words a little, half expecting to see if she were saying lessons, and began singing in.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-02-04 12:15:44', 298, 320, 'No, I\'ve made up my mind about it; if I\'m not looking for eggs, as it went, \'One side of WHAT? The other guests had taken advantage of the reeds--the rattling teacups would change to tinkling.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-03-06 10:59:34', 203, 463, 'What happened to me! I\'LL soon make you grow shorter.\' \'One side will make you grow taller, and the blades of grass, but she was quite impossible to say but \'It belongs to the beginning again?\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-05-01 22:43:29', 46, 76, 'Duck and a long way back, and see after some executions I have to whisper a hint to Time, and round the court with a trumpet in one hand, and made a rush at the March Hare, who had been to her, one.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-06-15 23:02:13', 329, 285, 'I might venture to say but \'It belongs to the jury, who instantly made a rush at the bottom of a good deal on where you want to get to,\' said the King. \'Nearly two miles high,\' added the March Hare..');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-07-23 04:17:56', 244, 434, 'March Hare. Alice sighed wearily. \'I think I must have been a holiday?\' \'Of course they were\', said the Dormouse, without considering at all fairly,\' Alice began, in a great hurry, muttering to.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-08-07 05:55:28', 493, 6, 'Alice had not gone (We know it to be done, I wonder?\' And here poor Alice began to repeat it, but her head down to them, and then all the jelly-fish out of its mouth, and addressed her in such a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-08-13 07:43:02', 389, 46, 'Rabbit in a low, trembling voice. \'There\'s more evidence to come before that!\' \'Call the first to speak. \'What size do you know about this business?\' the King eagerly, and he says it\'s so useful,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-09-17 18:39:59', 97, 387, 'Mock Turtle would be offended again. \'Mine is a very fine day!\' said a timid and tremulous sound.] \'That\'s different from what I say,\' the Mock Turtle, \'they--you\'ve seen them, of course?\' \'Yes,\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1983-11-13 23:00:49', 6, 28, 'I don\'t understand. Where did they live at the bottom of a procession,\' thought she, \'what would become of you? I gave her answer. \'They\'re done with blacking, I believe.\' \'Boots and shoes under the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1984-03-27 02:49:47', 490, 81, 'I\'m afraid, but you might like to see anything; then she looked up, and reduced the answer to shillings and pence. \'Take off your hat,\' the King triumphantly, pointing to the tarts on the top of his.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1984-04-12 00:13:40', 272, 356, 'But I\'ve got back to her: first, because the chimneys were shaped like ears and whiskers, how late it\'s getting!\' She was looking for it, you may stand down,\' continued the Hatter, \'or you\'ll be.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1984-05-06 06:12:24', 427, 282, 'Dormouse,\' the Queen said severely \'Who is this?\' She said it to annoy, Because he knows it teases.\' CHORUS. (In which the wretched Hatter trembled so, that Alice had got its neck nicely.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1984-05-20 05:58:14', 366, 101, 'Mind now!\' The poor little Lizard, Bill, was in the house down!\' said the King; and the Dormouse fell asleep instantly, and neither of the trees under which she found her head pressing against the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1984-06-15 21:24:50', 78, 284, 'Alice began telling them her adventures from the shock of being upset, and their curls got entangled together. Alice was thoroughly puzzled. \'Does the boots and shoes!\' she repeated in a minute..');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1984-07-17 19:31:58', 134, 170, 'While she was small enough to try the experiment?\' \'HE might bite,\' Alice cautiously replied: \'but I know all the unjust things--\' when his eye chanced to fall upon Alice, as she had peeped into the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1984-09-18 06:47:07', 470, 399, 'No room!\' they cried out when they saw Alice coming. \'There\'s PLENTY of room!\' said Alice indignantly, and she jumped up and walking away. \'You insult me by talking such nonsense!\' \'I didn\'t know.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1985-01-19 00:01:46', 334, 302, 'It\'s by far the most curious thing I ever saw in another moment that it was addressed to the garden with one finger pressed upon its forehead (the position in dancing.\' Alice said; \'there\'s a large.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1985-01-28 19:33:52', 130, 437, 'Alice: he had to sing \"Twinkle, twinkle, little bat! How I wonder what they\'ll do next! As for pulling me out of sight; and an old conger-eel, that used to it!\' pleaded poor Alice in a languid,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1985-05-02 00:01:25', 332, 300, 'Alice coming. \'There\'s PLENTY of room!\' said Alice in a long, low hall, which was immediately suppressed by the officers of the jurymen. \'No, they\'re not,\' said the Dormouse, without considering at.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1985-07-24 02:19:09', 340, 34, 'Nobody moved. \'Who cares for fish, Game, or any other dish? Who would not join the dance?\"\' \'Thank you, sir, for your interesting story,\' but she had got its neck nicely straightened out, and was a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1985-08-16 13:05:26', 310, 23, 'I don\'t care which happens!\' She ate a little pattering of feet in the other: the Duchess asked, with another dig of her own mind (as well as the large birds complained that they could not remember.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1985-10-05 04:53:00', 244, 180, 'Queen?\' said the sage, as he fumbled over the wig, (look at the cook, and a large one, but the great wonder is, that there\'s any one of them hit her in a low, trembling voice. \'There\'s more evidence.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-01-10 00:38:36', 56, 467, 'He got behind Alice as it didn\'t sound at all a proper way of expressing yourself.\' The baby grunted again, so that altogether, for the rest of the tea--\' \'The twinkling of the house, quite.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-01-16 01:29:38', 455, 157, 'SAID was, \'Why is a long sleep you\'ve had!\' \'Oh, I\'ve had such a capital one for catching mice--oh, I beg your pardon!\' she exclaimed in a tone of great curiosity. \'Soles and eels, of course,\' the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-01-22 19:32:06', 158, 77, 'I shall have to ask the question?\' said the Caterpillar took the regular course.\' \'What was that?\' inquired Alice. \'Reeling and Writhing, of course, I meant,\' the King eagerly, and he went on,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-02-20 02:49:24', 494, 57, 'VERY short remarks, and she went on, \'I must be Mabel after all, and I had not long to doubt, for the baby, it was labelled \'ORANGE MARMALADE\', but to her great disappointment it was a little way.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-03-21 14:30:57', 178, 427, 'Pepper For a minute or two, she made out that the way YOU manage?\' Alice asked. The Hatter shook his grey locks, \'I kept all my life, never!\' They had a bone in his sleep, \'that \"I breathe when I.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-03-27 06:55:06', 49, 33, 'In another minute there was no longer to be afraid of interrupting him,) \'I\'ll give him sixpence. _I_ don\'t believe it,\' said Alice very meekly: \'I\'m growing.\' \'You\'ve no right to grow larger again,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-05-10 22:03:46', 303, 325, 'King said, for about the twentieth time that day. \'That PROVES his guilt,\' said the White Rabbit read out, at the window.\' \'THAT you won\'t\' thought Alice, and, after folding his arms and legs in all.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-07-06 17:45:31', 52, 165, 'Mock Turtle replied in an offended tone, \'was, that the best way you can;--but I must go by the whole she thought at first she would manage it. \'They must go by the fire, stirring a large plate came.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-10-06 21:35:17', 313, 105, 'However, this bottle does. I do so like that curious song about the twentieth time that day. \'A likely story indeed!\' said the Duchess; \'and most of \'em do.\' \'I don\'t like it, yer honour, at all, as.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-10-29 12:44:07', 359, 13, 'The cook threw a frying-pan after her as she fell very slowly, for she felt sure it would all wash off in the court!\' and the great wonder is, that I\'m perfectly sure I have ordered\'; and she felt a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-11-18 02:32:45', 281, 457, 'And oh, I wish you were or might have been changed for any lesson-books!\' And so it was growing, and she drew herself up closer to Alice\'s great surprise, the Duchess\'s knee, while plates and dishes.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-11-26 19:46:12', 222, 152, 'Alice, who had been to the jury, in a low voice. \'Not at first, but, after watching it a little worried. \'Just about as much right,\' said the Knave, \'I didn\'t write it, and they went up to her in an.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1986-12-02 09:30:41', 161, 197, 'Let me see--how IS it to annoy, Because he knows it teases.\' CHORUS. (In which the March Hare. \'Then it wasn\'t trouble enough hatching the eggs,\' said the Mouse only shook its head impatiently, and.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1987-02-06 15:52:25', 125, 228, 'Our family always HATED cats: nasty, low, vulgar things! Don\'t let him know she liked them best, For this must ever be A secret, kept from all the jurymen are back in a sorrowful tone; \'at least.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1987-08-01 05:29:40', 76, 314, 'Mock Turtle in a VERY unpleasant state of mind, she turned the corner, but the great hall, with the distant sobs of the busy farm-yard--while the lowing of the crowd below, and there she saw them,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1987-09-22 22:26:01', 238, 231, 'Lizard, who seemed too much overcome to do next, when suddenly a White Rabbit with pink eyes ran close by it, and finding it very nice, (it had, in fact, I didn\'t know that Cheshire cats always.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1987-10-03 18:37:14', 329, 348, 'So she swallowed one of the e--e--evening, Beautiful, beauti--FUL SOUP!\' \'Chorus again!\' cried the Mouse, frowning, but very glad to find that she still held the pieces of mushroom in her French.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1987-10-09 16:29:02', 81, 261, 'I\'ll kick you down stairs!\' \'That is not said right,\' said the March Hare, who had been anxiously looking across the field after it, \'Mouse dear! Do come back with the bread-knife.\' The March Hare.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1987-12-17 06:40:49', 455, 493, 'VERY unpleasant state of mind, she turned to the executioner: \'fetch her here.\' And the Gryphon said to itself \'Then I\'ll go round and look up in her head, and she tried to curtsey as she did not.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1988-05-19 15:35:05', 439, 19, 'Queen was silent. The King turned pale, and shut his note-book hastily. \'Consider your verdict,\' he said in a sorrowful tone, \'I\'m afraid I don\'t understand. Where did they live at the window.\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1988-06-26 01:01:38', 153, 475, 'Alice looked down into a graceful zigzag, and was just possible it had struck her foot! She was a dead silence. \'It\'s a mineral, I THINK,\' said Alice. \'Did you speak?\' \'Not I!\' he replied. \'We.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1988-07-03 20:16:12', 2, 233, 'Alice said; but was dreadfully puzzled by the little golden key, and Alice\'s elbow was pressed hard against it, that attempt proved a failure. Alice heard the Rabbit in a natural way. \'I thought you.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1988-08-16 09:24:20', 29, 5, 'King. On this the White Rabbit, \'but it seems to grin, How neatly spread his claws, And welcome little fishes in With gently smiling jaws!\' \'I\'m sure I\'m not particular as to bring but one; Bill\'s.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1988-09-17 22:20:15', 471, 56, 'I will just explain to you never even introduced to a farmer, you know, as we needn\'t try to find my way into that beautiful garden--how IS that to be afraid of it. Presently the Rabbit came up to.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1989-01-26 12:07:10', 6, 101, 'Presently the Rabbit angrily. \'Here! Come and help me out of the trees upon her knee, and the little passage: and THEN--she found herself at last in the wood,\' continued the Gryphon. \'How the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1989-04-21 05:20:30', 472, 305, 'Let me think: was I the same size for going through the wood. \'It\'s the oldest rule in the middle, nursing a baby; the cook was leaning over the list, feeling very glad to find any. And yet I wish.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1989-06-06 19:53:56', 202, 207, 'Said the mouse to the game. CHAPTER IX. The Mock Turtle replied; \'and then the different branches of Arithmetic--Ambition, Distraction, Uglification, and Derision.\' \'I never heard before, \'Sure then.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1989-07-07 08:38:52', 44, 56, 'Caterpillar. \'Well, perhaps not,\' said the Mock Turtle sighed deeply, and began, in a minute or two she stood watching them, and the Queen said--\' \'Get to your places!\' shouted the Queen. \'Never!\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1989-08-25 03:43:46', 41, 417, 'However, when they hit her; and when she looked up, and began talking to him,\' the Mock Turtle. \'She can\'t explain MYSELF, I\'m afraid, but you might like to show you! A little bright-eyed terrier,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1990-01-22 07:51:00', 397, 166, 'I will prosecute YOU.--Come, I\'ll take no denial; We must have been changed several times since then.\' \'What do you know the meaning of half an hour or so, and were quite silent, and looked at the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1990-02-21 22:03:09', 207, 22, 'The King laid his hand upon her knee, and the other queer noises, would change (she knew) to the Duchess: \'and the moral of that is, but I can\'t tell you my history, and you\'ll understand why it is.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1990-03-10 19:12:30', 122, 365, 'Queen, in a dreamy sort of way to fly up into a pig, and she had asked it aloud; and in despair she put one arm out of court! Suppress him! Pinch him! Off with his tea spoon at the Hatter, with an.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1990-04-30 08:27:13', 443, 82, 'Dormouse sulkily remarked, \'If you can\'t swim, can you?\' he added, turning to Alice for some time with the lobsters to the voice of thunder, and people began running about in the distance. \'And yet.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1990-08-15 01:32:31', 28, 359, 'Hatter: and in another moment, splash! she was out of this rope--Will the roof off.\' After a while, finding that nothing more happened, she decided on going into the sky all the other birds tittered.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1990-09-01 05:27:00', 49, 41, 'An enormous puppy was looking up into a doze; but, on being pinched by the English, who wanted leaders, and had come back and see that queer little toss of her own mind (as well as she remembered.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1990-12-30 13:32:39', 216, 323, 'GAVE HER ONE, THEY GAVE HIM TWO--\" why, that must be Mabel after all, and I never heard before, \'Sure then I\'m here! Digging for apples, indeed!\' said the Hatter. \'It isn\'t a letter, after all: it\'s.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1991-01-26 09:49:13', 285, 246, 'Five! Always lay the blame on others!\' \'YOU\'D better not talk!\' said Five. \'I heard every word you fellows were saying.\' \'Tell us a story.\' \'I\'m afraid I am, sir,\' said Alice; \'all I know who I am!.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1991-03-02 22:02:26', 446, 259, 'Hatter: \'as the things get used up.\' \'But what did the Dormouse into the garden with one finger, as he spoke. \'A cat may look at the end of every line: \'Speak roughly to your tea; it\'s getting.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1992-05-16 01:48:00', 177, 115, 'I used--and I don\'t want YOU with us!\"\' \'They were learning to draw,\' the Dormouse say?\' one of these cakes,\' she thought, \'and hand round the court and got behind him, and said to herself in a day.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-02-23 13:00:23', 379, 492, 'Alice, \'because I\'m not Ada,\' she said, \'than waste it in a hurry that she was peering about anxiously among the branches, and every now and then the puppy began a series of short charges at the top.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-05-13 03:51:22', 366, 198, 'Will you, won\'t you, will you join the dance? Will you, won\'t you, won\'t you, will you join the dance? \"You can really have no sort of a feather flock together.\"\' \'Only mustard isn\'t a letter,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-06-07 01:02:24', 173, 340, 'Lizard, Bill, was in the flurry of the trial.\' \'Stupid things!\' Alice thought to herself. At this moment the door of the room. The cook threw a frying-pan after her as she had never done such a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-07-19 02:14:44', 459, 491, 'There was a paper label, with the Dormouse. \'Fourteenth of March, I think I can creep under the table: she opened the door began sneezing all at once. The Dormouse had closed its eyes were looking.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-10-09 19:11:39', 155, 232, 'Alice began telling them her adventures from the time they were mine before. If I or she fell past it. \'Well!\' thought Alice to find it out, we should all have our heads cut off, you know. Come on!\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-11-02 10:13:24', 497, 78, 'Gryphon, \'that they WOULD put their heads off?\' shouted the Queen. An invitation for the hedgehogs; and in a low, trembling voice. \'There\'s more evidence to come once a week: HE taught us Drawling,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-11-06 20:09:53', 414, 464, 'I am now? That\'ll be a book written about me, that there was a paper label, with the Duchess, it had lost something; and she heard the Queen shouted at the top of it. She went on again:-- \'I didn\'t.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-11-07 05:28:30', 325, 196, 'Alice, that she was in the window, she suddenly spread out her hand, watching the setting sun, and thinking of little animals and birds waiting outside. The poor little Lizard, Bill, was in the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1993-12-30 05:03:52', 77, 6, 'Edwin and Morcar, the earls of Mercia and Northumbria--\"\' \'Ugh!\' said the Cat. \'I\'d nearly forgotten that I\'ve got to the jury, in a low voice, \'Your Majesty must cross-examine the next witness. It.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1994-01-21 02:56:37', 489, 10, 'DOES THE BOOTS AND SHOES.\' the Gryphon interrupted in a low voice, to the rose-tree, she went slowly after it: \'I never was so much surprised, that for two Pennyworth only of beautiful Soup?.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1994-02-22 18:01:32', 117, 296, 'Alice. \'Stand up and walking off to other parts of the ground, Alice soon came to ME, and told me you had been for some time without interrupting it. \'They were obliged to say it any longer than.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1994-12-23 11:46:32', 285, 27, 'The poor little thing sat down again very sadly and quietly, and looked anxiously over his shoulder as she picked up a little shriek and a crash of broken glass. \'What a number of changes she had.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1995-03-24 19:06:28', 337, 386, 'Magpie began wrapping itself up very carefully, remarking, \'I really must be getting home; the night-air doesn\'t suit my throat!\' and a great interest in questions of eating and drinking. \'They.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1995-08-01 14:43:09', 19, 252, 'King. (The jury all brightened up at this corner--No, tie \'em together first--they don\'t reach half high enough yet--Oh! they\'ll do well enough; and what does it matter to me whether you\'re a little.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1995-08-18 23:31:54', 396, 301, 'On various pretexts they all spoke at once, in a great hurry. \'You did!\' said the King, \'that only makes the matter worse. You MUST have meant some mischief, or else you\'d have signed your name like.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1995-11-23 15:45:14', 480, 430, 'This sounded promising, certainly: Alice turned and came flying down upon her: she gave a sudden burst of tears, but said nothing. \'Perhaps it doesn\'t matter a bit,\' said the Hatter, and here the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1995-12-21 03:06:08', 403, 152, 'Alice, feeling very curious thing, and she put one arm out of breath, and till the eyes appeared, and then at the mushroom (she had kept a piece of bread-and-butter in the grass, merely remarking as.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1996-04-20 05:20:39', 39, 142, 'Alice as he came, \'Oh! the Duchess, who seemed to think that there ought! And when I grow up, I\'ll write one--but I\'m grown up now,\' she added in an undertone,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1996-07-22 01:14:46', 27, 104, 'Dormouse go on for some way of expressing yourself.\' The baby grunted again, so violently, that she was holding, and she grew no larger: still it was impossible to say when I sleep\" is the same side.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1996-09-06 23:40:41', 113, 367, 'Alice as it left no mark on the look-out for serpents night and day! Why, I haven\'t had a large dish of tarts upon it: they looked so grave and anxious.) Alice could see her after the candle is.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-01-05 15:49:45', 176, 473, 'Alice, (she had kept a piece of it altogether; but after a pause: \'the reason is, that there\'s any one left alive!\' She was looking up into the court, she said to itself in a low voice, to the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-01-13 03:32:23', 284, 462, 'Arithmetic--Ambition, Distraction, Uglification, and Derision.\' \'I never went to school every day--\' \'I\'VE been to her, \'if we had the door and found quite a new kind of sob, \'I\'ve tried the little.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-02-12 23:01:04', 196, 102, 'ONE with such a long argument with the bread-and-butter getting so used to it in large letters. It was high time you were INSIDE, you might like to be done, I wonder?\' As she said this, she came.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-03-05 17:05:00', 156, 319, 'Cat, as soon as there was enough of it at last, and managed to put everything upon Bill! I wouldn\'t be so kind,\' Alice replied, rather shyly, \'I--I hardly know, sir, just at present--at least I know.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-03-23 14:03:00', 421, 249, 'And then a row of lodging houses, and behind them a new pair of the Lobster Quadrille?\' the Gryphon as if he doesn\'t begin.\' But she went on, \'\"--found it advisable to go down--Here, Bill! the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-08-05 08:04:10', 225, 75, 'I to get in?\' asked Alice again, in a ring, and begged the Mouse with an air of great relief. \'Call the next witness. It quite makes my forehead ache!\' Alice watched the Queen of Hearts were seated.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-09-08 08:21:35', 470, 142, 'So she began shrinking directly. As soon as look at a reasonable pace,\' said the cook. \'Treacle,\' said the Dodo could not remember the simple and loving heart of her own child-life, and the little.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-10-18 23:27:03', 407, 143, 'I suppose.\' So she began: \'O Mouse, do you know that you\'re mad?\' \'To begin with,\' said the Rabbit say to itself \'The Duchess! The Duchess! Oh my dear Dinah! I wonder what Latitude was, or Longitude.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-10-20 20:42:23', 209, 128, 'So she set to partners--\' \'--change lobsters, and retire in same order,\' continued the Hatter, \'I cut some more tea,\' the March Hare went \'Sh! sh!\' and the jury wrote it down \'important,\' and some.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-10-26 14:27:01', 483, 447, 'Was kindly permitted to pocket the spoon: While the Panther received knife and fork with a pair of white kid gloves, and she at once crowded round it, panting, and asking, \'But who is to France--.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1997-12-24 00:00:25', 283, 35, 'Shakespeare, in the court!\' and the moon, and memory, and muchness--you know you say \"What a pity!\"?\' the Rabbit came up to the rose-tree, she went on again:-- \'I didn\'t write it, and found herself.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1998-05-03 10:54:27', 359, 226, 'This sounded promising, certainly: Alice turned and came flying down upon her: she gave her one, they gave him two, You gave us three or more; They all made a snatch in the last word two or three.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1998-05-14 06:59:35', 430, 102, 'Alice heard the King had said that day. \'That PROVES his guilt,\' said the Pigeon; \'but if you\'ve seen them so shiny?\' Alice looked down at her hands, and began:-- \'You are old,\' said the youth, \'as.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1998-06-13 10:57:36', 3, 22, 'Alice waited patiently until it chose to speak good English); \'now I\'m opening out like the three gardeners, oblong and flat, with their heads!\' and the Queen till she shook the house, quite.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1998-06-15 06:13:30', 14, 128, 'The Gryphon sat up and saying, \'Thank you, it\'s a French mouse, come over with fright. \'Oh, I BEG your pardon!\' cried Alice in a very difficult game indeed. The players all played at once set to.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1998-09-22 20:35:17', 103, 91, 'Alice was very nearly in the air. Even the Duchess said in a low, trembling voice. \'There\'s more evidence to come out among the distant green leaves. As there seemed to be told so. \'It\'s really.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1998-12-17 20:08:52', 451, 310, 'I WAS when I got up this morning? I almost wish I could show you our cat Dinah: I think you\'d take a fancy to cats if you only kept on good terms with him, he\'d do almost anything you liked with the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-01-15 22:58:46', 253, 241, 'Alice. \'Then you may SIT down,\' the King said to the voice of thunder, and people began running about in all directions, \'just like a sky-rocket!\' \'So you did, old fellow!\' said the Hatter. This.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-05-13 07:13:41', 308, 143, 'Duchess, it had entirely disappeared; so the King put on one knee. \'I\'m a poor man, your Majesty,\' said Two, in a shrill, loud voice, and see how the game began. Alice thought this must ever be A.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-05-30 13:13:13', 377, 114, 'Mouse replied rather crossly: \'of course you know about this business?\' the King in a sorrowful tone; \'at least there\'s no use their putting their heads down and make out that the Queen had only one.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-06-08 12:07:22', 485, 329, 'I give you fair warning,\' shouted the Queen, and in another moment, when she heard a voice of the hall; but, alas! either the locks were too large, or the key was too slippery; and when she noticed.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-06-14 12:55:58', 362, 49, 'I\'ve finished.\' So they began running about in all directions, tumbling up against each other; however, they got their tails in their mouths. So they couldn\'t see it?\' So she went on, \'I must be.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-06-22 14:38:46', 409, 116, 'But I\'ve got to come upon them THIS size: why, I should be like then?\' And she opened the door between us. For instance, suppose it were white, but there was no use going back to the confused.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-10-13 00:20:19', 461, 307, 'However, I\'ve got back to the table to measure herself by it, and finding it very nice, (it had, in fact, I didn\'t know that cats COULD grin.\' \'They all can,\' said the King eagerly, and he wasn\'t.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-10-28 18:23:58', 134, 386, 'I don\'t know,\' he went on again:-- \'I didn\'t write it, and kept doubling itself up and rubbed its eyes: then it watched the Queen in a trembling voice, \'--and I hadn\'t drunk quite so much!\' Alas! it.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-11-21 06:35:56', 274, 200, 'Dormouse,\' the Queen ordering off her head!\' Alice glanced rather anxiously at the sides of the tail, and ending with the Dormouse. \'Write that down,\' the King said, for about the same solemn tone,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('1999-11-25 23:09:02', 2, 402, 'Alice herself, and shouted out, \'You\'d better not talk!\' said Five. \'I heard every word you fellows were saying.\' \'Tell us a story.\' \'I\'m afraid I am, sir,\' said Alice; \'I can\'t remember half of.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2000-01-11 16:00:25', 167, 283, 'This sounded promising, certainly: Alice turned and came back again. \'Keep your temper,\' said the Duchess, \'chop off her head!\' about once in the window, and on both sides at once. \'Give your.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2000-01-23 04:32:19', 99, 92, 'Alice said with some curiosity. \'What a number of cucumber-frames there must be!\' thought Alice. \'I\'ve so often read in the grass, merely remarking as it turned a back-somersault in at all?\' said.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2000-04-19 04:57:22', 407, 335, 'Long Tale They were just beginning to see if there are, nobody attends to them--and you\'ve no idea what a long breath, and said \'That\'s very curious!\' she thought. \'But everything\'s curious today. I.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2000-05-18 11:43:14', 61, 338, 'Owl, as a lark, And will talk in contemptuous tones of the bottle was a dead silence instantly, and neither of the suppressed guinea-pigs, filled the air, I\'m afraid, sir\' said Alice, rather.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2000-07-29 04:28:48', 262, 379, 'They are waiting on the twelfth?\' Alice went on, \'What\'s your name, child?\' \'My name is Alice, so please your Majesty,\' said Two, in a languid, sleepy voice. \'Who are YOU?\' Which brought them back.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2000-07-31 12:01:26', 21, 261, 'Now I growl when I\'m angry. Therefore I\'m mad.\' \'I call it sad?\' And she thought it had lost something; and she tried the roots of trees, and I\'ve tried to fancy to herself \'That\'s quite enough--I.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2000-08-07 12:08:44', 361, 57, 'Beautiful, beauti--FUL SOUP!\' \'Chorus again!\' cried the Gryphon, and, taking Alice by the hedge!\' then silence, and then she walked sadly down the chimney?--Nay, I shan\'t! YOU do it!--That I won\'t,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2000-09-14 13:10:16', 203, 275, 'I\'ll kick you down stairs!\' \'That is not said right,\' said the Mouse, who was beginning to write this down on the table. \'Have some wine,\' the March Hare said to herself, \'Now, what am I to do it?\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2001-01-20 00:16:51', 403, 274, 'Five and Seven said nothing, but looked at poor Alice, who had meanwhile been examining the roses. \'Off with his whiskers!\' For some minutes it seemed quite natural to Alice an excellent opportunity.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2001-03-17 20:07:53', 49, 267, 'How the Owl and the March Hare: she thought of herself, \'I don\'t think--\' \'Then you shouldn\'t talk,\' said the White Rabbit cried out, \'Silence in the schoolroom, and though this was of very little.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2001-09-20 13:56:44', 404, 35, 'Gryphon, and, taking Alice by the whole party swam to the jury. \'Not yet, not yet!\' the Rabbit angrily. \'Here! Come and help me out of sight; and an old Crab took the hookah into its mouth and began.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2001-12-09 13:27:19', 464, 74, 'WAS a narrow escape!\' said Alice, \'we learned French and music.\' \'And washing?\' said the March Hare. \'Yes, please do!\' but the three were all locked; and when she had put the Lizard in head.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2002-03-19 23:19:11', 147, 281, 'Cheshire Cat,\' said Alice: \'besides, that\'s not a moment to be a LITTLE larger, sir, if you hold it too long; and that if you were down here till I\'m somebody else\"--but, oh dear!\' cried Alice in a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2002-04-23 06:13:34', 439, 73, 'CHAPTER X. The Lobster Quadrille The Mock Turtle\'s heavy sobs. Lastly, she pictured to herself \'That\'s quite enough--I hope I shan\'t grow any more--As it is, I can\'t remember,\' said the Caterpillar..');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2002-09-14 19:46:13', 426, 58, 'I should think!\' (Dinah was the matter on, What would become of me? They\'re dreadfully fond of beheading people here; the great wonder is, that there\'s any one of the tale was something like it,\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2002-11-18 00:55:55', 323, 195, 'I got up this morning? I almost think I should be free of them with one of them didn\'t know it was her turn or not. So she tucked her arm affectionately into Alice\'s, and they all spoke at once,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2003-01-08 14:04:30', 48, 372, 'Hatter hurriedly left the court, without even looking round. \'I\'ll fetch the executioner myself,\' said the sage, as he spoke, and added \'It isn\'t mine,\' said the King, rubbing his hands; \'so now let.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2003-01-23 23:44:49', 262, 221, 'Bill, the Lizard) could not taste theirs, and the shrill voice of thunder, and people began running when they saw her, they hurried back to the other bit. Her chin was pressed hard against it, that.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2003-04-22 05:22:07', 49, 45, 'Alice\'s elbow was pressed so closely against her foot, that there was a long sleep you\'ve had!\' \'Oh, I\'ve had such a rule at processions; \'and besides, what would happen next. The first question of.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2003-07-04 21:21:13', 102, 413, 'Alice looked up, and there stood the Queen was in such confusion that she was ever to get into her face. \'Wake up, Dormouse!\' And they pinched it on both sides at once. \'Give your evidence,\' said.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2003-07-06 04:39:21', 324, 404, 'Dormouse,\' the Queen said severely \'Who is it directed to?\' said the Hatter: \'but you could see this, as she went on: \'--that begins with an M--\' \'Why with an M, such as mouse-traps, and the Mock.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2004-01-16 04:56:16', 223, 338, 'So you see, because some of them even when they passed too close, and waving their forepaws to mark the time, while the rest of the wood for fear of killing somebody, so managed to put it in a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2004-02-18 11:06:29', 179, 176, 'Duchess was VERY ugly; and secondly, because they\'re making such VERY short remarks, and she thought to herself, in a sulky tone; \'Seven jogged my elbow.\' On which Seven looked up eagerly, half.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2004-04-24 18:44:53', 17, 424, 'Alice was so ordered about in all their simple sorrows, and find a pleasure in all their simple joys, remembering her own mind (as well as she went on again: \'Twenty-four hours, I THINK; or is it I.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2004-06-30 20:34:00', 327, 417, 'While she was ready to talk to.\' \'How are you getting on?\' said Alice, \'a great girl like you,\' (she might well say this), \'to go on crying in this way! Stop this moment, I tell you!\' But she went.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2004-08-17 18:43:39', 398, 451, 'Duchess and the two creatures, who had spoken first. \'That\'s none of them say, \'Look out now, Five! Don\'t go splashing paint over me like a mouse, That he met in the flurry of the e--e--evening,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2004-09-22 01:24:14', 424, 21, 'Alice began, in a trembling voice:-- \'I passed by his face only, she would keep, through all her knowledge of history, Alice had got its neck nicely straightened out, and was a body to cut it off.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2004-09-23 00:48:41', 441, 468, 'Rabbit began. Alice thought this a very curious sensation, which puzzled her a good deal frightened by this time, and was suppressed. \'Come, that finished the goose, with the game,\' the Queen was.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2005-02-07 21:39:54', 393, 305, 'Alice said very humbly; \'I won\'t indeed!\' said Alice, and tried to open her mouth; but she remembered having seen such a curious appearance in the sand with wooden spades, then a row of lamps.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2005-03-01 06:53:59', 414, 15, 'King. The White Rabbit hurried by--the frightened Mouse splashed his way through the neighbouring pool--she could hear him sighing as if she had nibbled some more of the court. (As that is rather a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2005-04-17 01:24:09', 479, 400, 'Duck. \'Found IT,\' the Mouse heard this, it turned a back-somersault in at the March Hare, who had not the right thing to nurse--and she\'s such a new idea to Alice, very loudly and decidedly, and he.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2005-09-16 12:55:04', 220, 42, 'YOU, and no room to open her mouth; but she had wept when she had this fit) An obstacle that came between Him, and ourselves, and it. Don\'t let him know she liked them best, For this must ever be A.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2005-10-03 10:28:56', 305, 74, 'Pigeon; \'but I must be getting somewhere near the looking-glass. There was nothing else to do, so Alice ventured to taste it, and found herself at last she stretched her arms round it as a lark, And.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2005-10-12 06:51:53', 63, 169, 'It was, no doubt: only Alice did not dare to disobey, though she looked down into its face in her haste, she had got to come upon them THIS size: why, I should like to see the earth takes.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2005-12-27 20:52:40', 476, 308, 'I have dropped them, I wonder?\' As she said this, she looked down at them, and just as well as the doubled-up soldiers were silent, and looked at the window.\' \'THAT you won\'t\' thought Alice, and,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2006-01-16 21:43:44', 358, 258, 'While she was losing her temper. \'Are you content now?\' said the Mock Turtle; \'but it doesn\'t mind.\' The table was a dispute going on rather better now,\' she added in a melancholy tone. \'Nobody.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2006-04-10 04:03:06', 198, 159, 'I should be raving mad after all! I almost think I can remember feeling a little timidly, \'why you are painting those roses?\' Five and Seven said nothing, but looked at it again: but he could think.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2006-06-26 17:33:24', 30, 461, 'Who would not stoop? Soup of the trial.\' \'Stupid things!\' Alice began to get her head made her draw back in a very respectful tone, but frowning and making quite a commotion in the house, and the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2006-10-06 08:29:15', 366, 151, 'And beat him when he finds out who I am! But I\'d better take him his fan and gloves--that is, if I must, I must,\' the King in a trembling voice to its children, \'Come away, my dears! It\'s high time.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2006-10-11 23:29:12', 393, 249, 'Which way?\', holding her hand again, and Alice heard the Queen\'s ears--\' the Rabbit noticed Alice, as she went on, spreading out the Fish-Footman was gone, and, by the officers of the Rabbit\'s.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2007-01-28 04:57:44', 192, 245, 'Mouse only shook its head down, and was going to dive in among the trees had a wink of sleep these three little sisters--they were learning to draw, you know--\' \'What did they draw the treacle.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2007-06-08 18:13:29', 70, 333, 'Those whom she sentenced were taken into custody by the officers of the trees as well as she spoke; \'either you or your head must be what he did with the day of the Mock Turtle with a table in the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2007-09-07 18:27:06', 381, 292, 'So they got their tails fast in their mouths--and they\'re all over with William the Conqueror.\' (For, with all their simple joys, remembering her own children. \'How should I know?\' said Alice,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2007-10-10 05:40:16', 419, 464, 'Hatter: \'as the things I used to it as you might knock, and I don\'t want YOU with us!\"\' \'They were obliged to say a word, but slowly followed her back to my right size again; and the m--\' But here,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2008-02-26 15:01:36', 425, 336, 'He says it kills all the same, shedding gallons of tears, but said nothing. \'Perhaps it hasn\'t one,\' Alice ventured to say. \'What is it?\' \'Why,\' said the King: \'leave out that the pebbles were all.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2008-03-14 17:49:10', 105, 321, 'THEN--she found herself in the way out of court! Suppress him! Pinch him! Off with his nose, and broke to pieces against one of the teacups as the White Rabbit as he found it so quickly that the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2008-04-25 01:07:56', 14, 292, 'March Hare. \'It was much pleasanter at home,\' thought poor Alice, that she began shrinking directly. As soon as the door that led into the garden. Then she went on. Her listeners were perfectly.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2008-10-05 02:18:55', 29, 188, 'Alice, \'and those twelve creatures,\' (she was so much at first, the two creatures got so much into the garden. Then she went on all the time at the cook tulip-roots instead of onions.\' Seven flung.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2008-12-27 02:23:41', 141, 222, 'I shall think nothing of the way the people that walk with their hands and feet at once, and ran the faster, while more and more sounds of broken glass. \'What a curious dream!\' said Alice, in a deep.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-01-09 17:29:36', 96, 114, 'SOMETHING interesting is sure to make out exactly what they said. The executioner\'s argument was, that if you cut your finger VERY deeply with a great hurry to change the subject of conversation..');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-02-22 15:57:14', 23, 387, 'Mabel after all, and I could not swim. He sent them word I had our Dinah here, I know all the while, till at last she stretched her arms round it as you can--\' \'Swim after them!\' screamed the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-03-15 12:13:43', 490, 208, 'I can listen all day about it!\' Last came a rumbling of little animals and birds waiting outside. The poor little juror (it was exactly the right distance--but then I wonder what you\'re talking.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-04-27 02:01:02', 120, 434, 'Off--\' \'Nonsense!\' said Alice, \'we learned French and music.\' \'And washing?\' said the Mock Turtle drew a long silence after this, and she hastily dried her eyes filled with cupboards and.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-05-03 16:39:21', 53, 59, 'Queen had never heard of such a thing I know. Silence all round, if you were me?\' \'Well, perhaps you were or might have been that,\' said the King, \'that saves a world of trouble, you know, upon the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-08-02 16:00:01', 165, 25, 'Rabbit just under the window, and one foot up the conversation dropped, and the reason of that?\' \'In my youth,\' Father William replied to his son, \'I feared it might injure the brain; But, now that.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-10-25 10:17:50', 103, 20, 'I know who I WAS when I got up this morning, but I grow at a reasonable pace,\' said the King. \'Then it wasn\'t very civil of you to leave off being arches to do that,\' said the Mock Turtle. Alice was.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-10-31 23:10:55', 85, 265, 'Alice noticed with some curiosity. \'What a pity it wouldn\'t stay!\' sighed the Lory, as soon as look at all know whether it was in the same words as before, \'It\'s all her coaxing. Hardly knowing what.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-11-05 22:04:38', 115, 401, 'Alice called after her. \'I\'ve something important to say!\' This sounded promising, certainly: Alice turned and came back again. \'Keep your temper,\' said the King. \'It began with the Mouse only shook.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2009-11-07 23:01:44', 21, 221, 'See how eagerly the lobsters and the three gardeners who were all talking together: she made her look up in a trembling voice, \'--and I hadn\'t to bring but one; Bill\'s got the other--Bill! fetch it.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2010-01-07 08:00:15', 138, 256, 'Alice; \'only, as it\'s asleep, I suppose you\'ll be telling me next that you never to lose YOUR temper!\' \'Hold your tongue!\' added the Gryphon; and then she had peeped into the air. This time there.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2010-06-21 01:59:20', 468, 93, 'King, and the blades of grass, but she thought it would be quite as much as she had never seen such a curious dream!\' said Alice, (she had kept a piece of evidence we\'ve heard yet,\' said the Queen..');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2010-08-14 10:48:37', 210, 324, 'King, going up to her feet as the jury asked. \'That I can\'t understand it myself to begin lessons: you\'d only have to ask any more HERE.\' \'But then,\' thought Alice, \'or perhaps they won\'t walk the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2010-08-30 23:56:39', 93, 223, 'Alice had begun to think about stopping herself before she made out the answer to it?\' said the White Rabbit. She was walking by the fire, and at last it sat for a rabbit! I suppose Dinah\'ll be.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2010-10-22 06:03:00', 235, 222, 'Alice. The King looked anxiously round, to make out what it was: she was surprised to find it out, we should all have our heads cut off, you know. But do cats eat bats? Do cats eat bats?\' and.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2011-01-09 20:43:19', 432, 420, 'Come on!\' So they couldn\'t get them out of court! Suppress him! Pinch him! Off with his head!\"\' \'How dreadfully savage!\' exclaimed Alice. \'And be quick about it,\' said Alice hastily; \'but I\'m not.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2011-02-12 16:48:16', 78, 346, 'Alice thought she might as well to introduce some other subject of conversation. \'Are you--are you fond--of--of dogs?\' The Mouse only growled in reply. \'Idiot!\' said the Cat, as soon as look at the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2011-06-14 06:30:58', 320, 492, 'I shall have somebody to talk to.\' \'How are you getting on now, my dear?\' it continued, turning to the Gryphon. \'The reason is,\' said the King replied. Here the other side of WHAT?\' thought Alice;.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2011-06-15 19:46:12', 163, 166, 'The Caterpillar and Alice looked up, but it did not notice this last remark, \'it\'s a vegetable. It doesn\'t look like one, but the three gardeners, oblong and flat, with their heads!\' and the pattern.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2011-06-17 07:18:56', 380, 133, 'They\'re dreadfully fond of beheading people here; the great hall, with the distant sobs of the officers: but the Gryphon went on, turning to the Dormouse, and repeated her question. \'Why did they.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2011-09-19 11:11:41', 25, 247, 'Hatter: \'I\'m on the shingle--will you come to the rose-tree, she went hunting about, and make one repeat lessons!\' thought Alice; \'I can\'t explain MYSELF, I\'m afraid, but you might catch a bat, and.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2012-01-01 01:07:58', 84, 382, 'YOU with us!\"\' \'They were obliged to say it any longer than that,\' said Alice. \'It must have imitated somebody else\'s hand,\' said the Lory, who at last came a rumbling of little Alice was a little.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2012-04-16 09:41:00', 231, 215, 'You grant that?\' \'I suppose so,\' said the Caterpillar, and the little thing sat down again into its face was quite pale (with passion, Alice thought), and it was YOUR table,\' said Alice; \'you.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2012-06-01 20:38:43', 131, 277, 'But said I could shut up like a star-fish,\' thought Alice. \'I wonder how many miles I\'ve fallen by this time). \'Don\'t grunt,\' said Alice; \'that\'s not at all this time, as it spoke. \'As wet as ever,\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2012-06-03 22:17:59', 191, 6, 'Alice felt dreadfully puzzled. The Hatter\'s remark seemed to be true): If she should meet the real Mary Ann, and be turned out of a water-well,\' said the Caterpillar; and it was very like having a.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2012-11-17 17:45:42', 6, 264, 'I begin, please your Majesty,\' he began, \'for bringing these in: but I grow up, I\'ll write one--but I\'m grown up now,\' she said, without opening its eyes, for it was in the last concert!\' on which.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-01-29 04:58:04', 157, 196, 'Alice thought to herself \'It\'s the thing Mock Turtle drew a long time together.\' \'Which is just the case with my wife; And the executioner myself,\' said the King, who had got its head to feel very.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-03-08 11:57:13', 270, 392, 'I shall see it trot away quietly into the darkness as hard as it is.\' \'Then you keep moving round, I suppose?\' \'Yes,\' said Alice, who always took a minute or two, she made out that part.\' \'Well, at.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-05-02 19:09:44', 113, 274, 'Father William,\' the young Crab, a little girl she\'ll think me at all.\' \'In that case,\' said the Cat, \'a dog\'s not mad. You grant that?\' \'I suppose so,\' said the Duchess: you\'d better ask HER about.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-05-19 14:27:57', 88, 434, 'I wonder if I might venture to ask them what the next moment she quite forgot you didn\'t sign it,\' said Alice to herself. \'Of the mushroom,\' said the Duchess; \'and most things twinkled after.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-05-28 21:50:42', 421, 190, 'King, the Queen, \'and he shall tell you his history,\' As they walked off together, Alice heard it before,\' said the Duchess, it had fallen into a line along the sea-shore--\' \'Two lines!\' cried the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-10-22 12:43:22', 131, 311, 'Five and Seven said nothing, but looked at the White Rabbit as he spoke, \'we were trying--\' \'I see!\' said the Gryphon remarked: \'because they lessen from day to such stuff? Be off, or I\'ll have you.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-10-31 22:50:47', 430, 219, 'The rabbit-hole went straight on like a steam-engine when she found to be two people. \'But it\'s no use going back to the Classics master, though. He was an old conger-eel, that used to say.\' \'So he.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-11-03 22:53:13', 176, 175, 'Knave was standing before them, in chains, with a trumpet in one hand and a large one, but the Hatter went on, \'you see, a dog growls when it\'s angry, and wags its tail about in the chimney close.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-11-30 13:45:09', 262, 388, 'Alice, (she had kept a piece of evidence we\'ve heard yet,\' said the Gryphon. \'Of course,\' the Mock Turtle went on, \'--likely to win, that it\'s hardly worth while finishing the game.\' The Queen.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2013-12-10 09:10:20', 77, 61, 'Cat went on, very much pleased at having found out a box of comfits, (luckily the salt water had not as yet had any dispute with the clock. For instance, if you don\'t explain it is I hate cats and.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2014-04-09 22:17:48', 48, 272, 'Alice)--\'and perhaps you were never even introduced to a day-school, too,\' said Alice; \'all I know is, something comes at me like that!\' But she waited patiently. \'Once,\' said the Mock Turtle to the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2014-05-06 08:38:11', 251, 72, 'I could show you our cat Dinah: I think I should say what you would have done that, you know,\' the Hatter were having tea at it: a Dormouse was sitting on a crimson velvet cushion; and, last of all.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2014-05-19 22:39:20', 464, 293, 'You MUST have meant some mischief, or else you\'d have signed your name like an arrow. The Cat\'s head began fading away the time. Alice had not got into the air, and came back again. \'Keep your.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2014-09-13 22:45:53', 31, 375, 'I gave her answer. \'They\'re done with blacking, I believe.\' \'Boots and shoes under the sea,\' the Gryphon replied very gravely. \'What else had you to get in?\' asked Alice again, in a hoarse growl,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2014-10-25 20:57:16', 437, 481, 'Hatter grumbled: \'you shouldn\'t have put it right; \'not that it might appear to others that what you mean,\' said Alice. \'I mean what I see\"!\' \'You might just as she remembered how small she was.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2014-11-09 04:55:21', 366, 189, 'Pigeon, raising its voice to its feet, ran round the court with a pair of gloves and a pair of white kid gloves in one hand, and made believe to worry it; then Alice put down her anger as well to.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2014-11-30 15:01:50', 145, 180, 'IS it to annoy, Because he knows it teases.\' CHORUS. (In which the cook tulip-roots instead of onions.\' Seven flung down his brush, and had just begun to repeat it, but her head pressing against the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2015-01-11 00:24:27', 348, 302, 'How puzzling all these strange Adventures of hers would, in the act of crawling away: besides all this, there was generally a frog or a serpent?\' \'It matters a good way off, panting, with its wings..');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2015-01-17 22:42:03', 498, 332, 'Alice began to tremble. Alice looked very uncomfortable. The first witness was the first figure,\' said the Caterpillar. Here was another puzzling question; and as it was her turn or not. \'Oh, PLEASE.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2015-06-14 23:41:03', 333, 233, 'There was nothing on it (as she had grown up,\' she said to Alice, they all crowded round it, panting, and asking, \'But who has won?\' This question the Dodo suddenly called out \'The race is over!\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2015-10-25 23:41:29', 402, 411, 'March Hare. \'Exactly so,\' said Alice. \'Well, I hardly know--No more, thank ye; I\'m better now--but I\'m a hatter.\' Here the other ladder?--Why, I hadn\'t to bring tears into her head. Still she went.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2016-05-22 14:18:13', 318, 299, 'Alice thought she had quite a conversation of it had come back with the grin, which remained some time with one elbow against the roof of the deepest contempt. \'I\'ve seen hatters before,\' she said.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2016-09-25 15:04:28', 413, 217, 'It was the White Rabbit hurried by--the frightened Mouse splashed his way through the doorway; \'and even if my head would go round a deal faster than it does.\' \'Which would NOT be an old crab, HE.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2017-01-27 18:56:31', 111, 64, 'I shall remember it in with a knife, it usually bleeds; and she felt a little while, however, she went to school every day--\' \'I\'VE been to a farmer, you know, as we needn\'t try to find that the.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2017-09-27 22:37:29', 222, 478, 'William\'s conduct at first was in confusion, getting the Dormouse indignantly. However, he consented to go nearer till she shook the house, and have next to her. The Cat seemed to be lost: away went.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2017-11-17 08:07:43', 252, 453, 'Alice went on in a great deal too flustered to tell them something more. \'You promised to tell me the truth: did you call him Tortoise--\' \'Why did you manage on the floor, as it is.\' \'I quite agree.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2018-06-05 01:11:28', 250, 243, 'Improve his shining tail, And pour the waters of the party went back to her: its face was quite impossible to say it over) \'--yes, that\'s about the right way of settling all difficulties, great or.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2018-06-12 04:54:23', 150, 64, 'Gryphon replied rather crossly: \'of course you know the meaning of it in with the birds hurried off at once, with a little startled by seeing the Cheshire Cat sitting on a branch of a procession,\'.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2018-09-19 04:47:16', 495, 44, 'White Rabbit was still in sight, hurrying down it. There could be NO mistake about it: it was all very well as she leant against a buttercup to rest her chin upon Alice\'s shoulder, and it set to.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2019-01-03 04:06:53', 407, 404, 'Alice put down yet, before the end of the evening, beautiful Soup! Beau--ootiful Soo--oop! Beau--ootiful Soo--oop! Beau--ootiful Soo--oop! Soo--oop of the jurymen. \'No, they\'re not,\' said the King,.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2019-01-24 11:17:12', 32, 478, 'Tortoise because he taught us,\' said the Mock Turtle, \'but if you\'ve seen them at last, and they walked off together. Alice was so small as this is May it won\'t be raving mad--at least not so mad as.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2019-03-10 14:43:25', 308, 402, 'I\'m pleased, and wag my tail when it\'s pleased. Now I growl when I\'m pleased, and wag my tail when it\'s angry, and wags its tail about in the pool a little bottle on it, or at any rate,\' said Alice:.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2019-03-30 01:56:33', 266, 221, 'I should have liked teaching it tricks very much, if--if I\'d only been the right house, because the chimneys were shaped like ears and whiskers, how late it\'s getting!\' She was moving them about as.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2019-05-20 10:20:50', 153, 36, 'CHORUS. (In which the cook had disappeared. \'Never mind!\' said the Gryphon, and the executioner went off like an arrow. The Cat\'s head began fading away the moment she felt sure it would feel very.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2019-06-14 23:59:48', 363, 261, 'Now I growl when I\'m angry. Therefore I\'m mad.\' \'I call it sad?\' And she tried the effect of lying down with her head to hide a smile: some of YOUR business, Two!\' said Seven. \'Yes, it IS his.');
+INSERT INTO `Chat` (`DateTime`, `SenderID`, `RecepientID`, `Message`) VALUES ('2019-09-03 05:31:36', 198, 464, 'I ever was at in all my life, never!\' They had not long to doubt, for the baby, it was good practice to say which), and they walked off together. Alice laughed so much surprised, that for the baby,.');
+
+
+#
+# TABLE STRUCTURE FOR: Course
+#
+
+DROP TABLE IF EXISTS `Course`;
 
 CREATE TABLE `Course` (
   `CourseID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -295,7 +452,7 @@ CREATE TABLE `Course` (
   `CourseUnit` tinyint(3) unsigned NOT NULL,
   `CourseLevel` enum('100','200','300','400','500','600') DEFAULT NULL,
   `Semester` enum('first','second') DEFAULT NULL,
-  `LecturerName` text,
+  `LecturerName` text DEFAULT NULL,
   `DepartmentID` smallint(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`CourseID`),
   UNIQUE KEY `CourseID` (`CourseID`),
@@ -304,107 +461,113 @@ CREATE TABLE `Course` (
   CONSTRAINT `Course_ibfk_1` FOREIGN KEY (`DepartmentID`) REFERENCES `Department` (`DepartmentID`) ON DELETE SET NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 
-INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES
-(1,	'joi 970',	'Eum ut delectus facilis enim autem velit.',	3,	'100',	'second',	'Clara Jones',	8),
-(2,	'pao 932',	'Soluta hic aperiam praesentium.',	9,	'500',	'second',	'Jadon Hintz',	4),
-(3,	'hnr 387',	'Quasi atque consectetur consequatur laborum incidunt.',	7,	'100',	'second',	'Kiana Jast',	23),
-(4,	'jrd 182',	'Illum vel consequatur exercitationem eum voluptatem nulla ut.',	6,	'400',	'first',	'Chadd Streich',	23),
-(5,	'ubf 351',	'Aut occaecati modi voluptas optio maiores.',	6,	'100',	'second',	'Dr. Gustave D\'Amore',	21),
-(6,	'gqp 623',	'Provident voluptatum velit sed laborum officia nostrum.',	3,	'500',	'second',	'Lou Bosco II',	3),
-(7,	'eyp 811',	'Nesciunt quas eos excepturi enim porro voluptatum.',	9,	'200',	'second',	'Kailee Hickle III',	24),
-(8,	'wsv 823',	'Ab magnam reprehenderit sint ut.',	3,	'400',	'second',	'Odell Schimmel',	4),
-(9,	'pys 604',	'Saepe et quae labore nihil ut voluptate.',	2,	'400',	'first',	'Alexandre Quigley',	25),
-(10,	'rrr 158',	'Eveniet numquam rem ut doloribus exercitationem.',	9,	'200',	'first',	'Hilbert Grant',	3),
-(11,	'elc 231',	'Harum voluptatem est cum.',	2,	'400',	'second',	'Dena Rutherford',	16),
-(12,	'mod 359',	'Aperiam odio laudantium sequi exercitationem earum asperiores.',	4,	'300',	'first',	'Zena Goldner',	9),
-(13,	'wtw 232',	'Nam voluptatem eos et eius.',	0,	'300',	'second',	'Diana Terry',	3),
-(14,	'cnb 368',	'Possimus nulla ut aut dolores.',	3,	'200',	'second',	'Jazmyne Cormier',	9),
-(15,	'ktk 565',	'Et ab et quo.',	0,	'200',	'first',	'Prof. Jefferey Mraz Sr.',	5),
-(16,	'hfx 026',	'Similique illo suscipit ut expedita magnam.',	1,	'200',	'first',	'Mavis Jenkins',	4),
-(17,	'qgv 549',	'Nesciunt aspernatur laborum nemo iste.',	4,	'600',	'first',	'Guido Towne',	7),
-(18,	'upx 855',	'Explicabo dolores id tempora quas reprehenderit nisi.',	1,	'500',	'second',	'Tyra Harvey',	14),
-(19,	'jpb 100',	'Labore dignissimos alias velit a dolor placeat et esse.',	4,	'500',	'second',	'Zoe Schamberger',	4),
-(20,	'mhj 264',	'Ea reprehenderit tempore assumenda.',	6,	'200',	'first',	'Mr. Jimmie Grant',	18),
-(21,	'nqc 577',	'Enim natus sit officia omnis occaecati id nihil.',	7,	'600',	'first',	'Prof. Keagan Runolfsson MD',	3),
-(22,	'clv 244',	'Nam et assumenda minus voluptatem quidem adipisci facere.',	5,	'500',	'first',	'Barrett Harvey',	2),
-(23,	'pab 225',	'Dolores voluptatem et assumenda quisquam.',	0,	'600',	'first',	'Kaycee Jerde',	22),
-(24,	'mkc 708',	'Qui recusandae dolores praesentium et placeat neque officiis quod.',	7,	'400',	'first',	'Grover Collier',	18),
-(25,	'bsr 725',	'Et voluptatibus inventore sed voluptas totam.',	2,	'400',	'second',	'Dina Champlin',	4),
-(26,	'liw 132',	'Cupiditate enim sed saepe.',	3,	'100',	'second',	'Magnolia Bashirian',	8),
-(27,	'eyk 492',	'Omnis consequatur fuga eveniet recusandae.',	7,	'300',	'second',	'Dr. Kennedi Connelly',	18),
-(28,	'jcb 531',	'Vel at repellendus nostrum labore culpa velit nesciunt pariatur.',	4,	'100',	'second',	'Fred Rutherford',	18),
-(29,	'qgj 517',	'Ut facere voluptatibus nemo ut commodi praesentium asperiores.',	0,	'200',	'second',	'Martina Marvin',	25),
-(30,	'sey 033',	'Ut vero ea illo a minima soluta.',	9,	'400',	'second',	'Jordyn Thompson',	9),
-(31,	'nnt 716',	'Incidunt explicabo saepe atque consequatur aut.',	6,	'600',	'second',	'Pattie Herzog',	21),
-(32,	'mxx 676',	'Totam distinctio et mollitia.',	6,	'100',	'first',	'Prof. Quinten Kassulke',	7),
-(33,	'kbv 272',	'Dolorum optio perspiciatis rerum et illo voluptatem.',	8,	'300',	'first',	'Leora Gorczany',	13),
-(34,	'zsc 555',	'Voluptas omnis qui sit eligendi esse ut ut.',	7,	'500',	'second',	'Ford Volkman',	18),
-(35,	'wnt 725',	'Numquam consequuntur debitis veritatis eveniet sed explicabo.',	9,	'300',	'second',	'Cedrick Fisher',	5),
-(36,	'nfa 316',	'Nobis ducimus ex sequi ea enim.',	6,	'100',	'first',	'Fidel Langosh',	8),
-(37,	'lud 120',	'Rerum et aut provident sunt vero.',	3,	'400',	'second',	'Leo Runte',	20),
-(38,	'ydk 921',	'Doloremque ea ipsa commodi sunt.',	0,	'100',	'second',	'Lexus Homenick',	4),
-(39,	'wao 235',	'Tenetur quasi error consequatur beatae rerum sunt est.',	1,	'500',	'first',	'Lenore Boyle',	12),
-(40,	'tsv 915',	'Est veritatis sint et.',	3,	'200',	'first',	'Waldo Kling',	19),
-(41,	'zba 241',	'A totam illo qui cumque delectus.',	4,	'300',	'first',	'Ora Hermann',	6),
-(42,	'ecd 008',	'Non ut laudantium pariatur omnis voluptate.',	1,	'300',	'first',	'Taya Goyette',	2),
-(43,	'jdb 550',	'Rem sed ipsum ex est enim.',	7,	'400',	'first',	'Adonis Hessel',	3),
-(44,	'bef 678',	'Dolore distinctio repellat et molestias molestiae rerum id nesciunt.',	9,	'400',	'first',	'Timmothy Braun',	9),
-(45,	'led 998',	'Odit impedit unde sint.',	3,	'600',	'second',	'Cecil Stroman',	10),
-(46,	'jnl 934',	'Qui vel saepe voluptatem.',	9,	'300',	'second',	'Aliya Simonis',	8),
-(47,	'wzc 348',	'Error provident impedit velit illum delectus.',	5,	'200',	'first',	'Jude Tremblay',	12),
-(48,	'ijm 450',	'Impedit maxime omnis ad aut eum.',	4,	'400',	'first',	'Finn Sauer III',	17),
-(49,	'xmb 824',	'Doloribus dolorem est ipsam fuga ipsum.',	5,	'100',	'second',	'Owen Frami',	21),
-(50,	'obh 234',	'Et et quidem magnam sed facere cupiditate est reprehenderit.',	6,	'400',	'second',	'Kaylie Hoppe',	15),
-(51,	'cor 774',	'Suscipit magnam earum et nihil recusandae consequatur rerum.',	0,	'200',	'first',	'Allan Raynor V',	9),
-(52,	'gfc 451',	'Iusto voluptas quisquam nisi nihil illo et molestiae accusamus.',	1,	'600',	'first',	'Reynold Wolf',	24),
-(53,	'yhm 373',	'Et animi omnis qui aut consequatur aut.',	9,	'500',	'second',	'Cheyenne Kovacek',	16),
-(54,	'nnd 207',	'Cupiditate quo iste libero.',	8,	'200',	'second',	'Kirk Sporer DVM',	5),
-(55,	'nnc 734',	'In necessitatibus ea itaque autem.',	5,	'400',	'second',	'Tanner Schultz',	16),
-(56,	'afr 615',	'Sequi fuga voluptas nam molestiae aliquam placeat dolores.',	5,	'600',	'second',	'Dr. Tressie Kreiger Jr.',	20),
-(57,	'ogo 444',	'Non pariatur rerum incidunt qui.',	0,	'400',	'second',	'Prof. Laurel Bartoletti Jr.',	13),
-(58,	'xxn 054',	'Eaque sit illum voluptates soluta voluptatem.',	0,	'400',	'second',	'Nellie Walsh',	8),
-(59,	'ryj 005',	'At quasi dolore et atque hic.',	3,	'300',	'first',	'Travon Stamm I',	13),
-(60,	'exg 629',	'Incidunt consequuntur reprehenderit qui aut.',	7,	'600',	'first',	'Mr. Hailey Corkery',	12),
-(61,	'rma 791',	'Earum commodi a aut qui.',	8,	'300',	'second',	'Cortney Kunde',	17),
-(62,	'hed 908',	'Quia animi aut et laboriosam impedit modi in.',	0,	'400',	'first',	'Prof. Tierra Ebert',	9),
-(63,	'gyo 513',	'Minus id rem non est quo earum vel.',	0,	'300',	'second',	'Vance Kunde',	19),
-(64,	'idt 318',	'Praesentium inventore omnis sunt enim.',	0,	'600',	'first',	'Shawna Stark',	5),
-(65,	'avh 702',	'Esse harum corrupti fuga repudiandae.',	0,	'200',	'first',	'Myrtle Prohaska',	1),
-(66,	'opx 743',	'Officiis nihil sunt occaecati quaerat.',	0,	'500',	'first',	'Cara Langosh',	23),
-(67,	'wtx 142',	'Quos fuga aliquam ipsa facilis totam.',	1,	'500',	'second',	'Kamren Cole',	13),
-(68,	'rfr 030',	'Et quia velit quo magni.',	5,	'400',	'first',	'Cecil Cartwright I',	21),
-(69,	'utz 381',	'Consequatur ipsum vero debitis.',	3,	'400',	'second',	'Domenica Shields',	2),
-(70,	'xyd 499',	'Repellendus odio velit recusandae voluptatem exercitationem sit.',	7,	'600',	'first',	'Prof. Eusebio Heathcote',	24),
-(71,	'xbs 965',	'Veniam alias vitae qui ducimus sit perferendis.',	0,	'500',	'first',	'Gia Bashirian',	15),
-(72,	'cwr 724',	'Dolorum cum reprehenderit ut dignissimos necessitatibus voluptate aut.',	0,	'100',	'second',	'Mr. Eric Schinner MD',	7),
-(73,	'myh 551',	'Et iste optio odit.',	0,	'600',	'first',	'Vallie Jones',	1),
-(74,	'rst 546',	'Dolorem odit aut asperiores est.',	2,	'100',	'second',	'Sibyl Pfannerstill',	18),
-(75,	'fst 731',	'Nobis dolorem omnis animi voluptate sunt quidem.',	1,	'400',	'second',	'Rico Stark',	15),
-(76,	'def 614',	'Recusandae nesciunt non hic ipsa in incidunt aut suscipit.',	8,	'100',	'first',	'Lavina Runolfsson',	10),
-(77,	'acg 429',	'Voluptatum saepe nulla occaecati deleniti.',	1,	'400',	'first',	'Mr. Junior Waelchi PhD',	25),
-(78,	'dqy 668',	'Qui sit velit beatae dolor.',	8,	'200',	'second',	'Yvonne Auer',	2),
-(79,	'lnc 604',	'Aliquam natus rerum vero dignissimos autem.',	8,	'200',	'second',	'Dr. Sydney Prohaska PhD',	2),
-(80,	'rso 861',	'Et itaque neque quisquam et non eius pariatur aliquid.',	7,	'600',	'second',	'Dr. Ransom Olson',	21),
-(81,	'gkj 658',	'Adipisci maiores ut animi praesentium.',	8,	'500',	'first',	'Eino Strosin',	17),
-(82,	'sut 574',	'Esse qui quis dolor distinctio error error aut.',	6,	'100',	'first',	'Lucie Schaefer',	10),
-(83,	'kbu 279',	'Facilis non similique sint nostrum aliquid et.',	6,	'500',	'second',	'Adelbert Rosenbaum II',	19),
-(84,	'sgv 999',	'Placeat optio inventore eum dolorem reprehenderit.',	6,	'500',	'second',	'Orion Swaniawski',	8),
-(85,	'tdw 471',	'Sit nam error sequi odio non temporibus sint.',	5,	'400',	'second',	'Yasmeen Boyle I',	14),
-(86,	'gfj 217',	'Eveniet rerum et ad aspernatur exercitationem tenetur.',	1,	'300',	'first',	'Ms. Jacklyn Cummerata',	10),
-(87,	'srw 498',	'Est sit commodi quis exercitationem.',	5,	'400',	'second',	'Lera Collins',	2),
-(88,	'psh 926',	'Accusantium autem error omnis enim amet rerum qui.',	4,	'600',	'second',	'Jillian Bartell',	2),
-(89,	'inb 430',	'Reiciendis provident modi illo sit deleniti.',	7,	'100',	'first',	'Prof. Adriel Mayer Sr.',	18),
-(90,	'oip 912',	'Qui illo excepturi voluptatum molestias veniam exercitationem voluptas voluptates.',	1,	'600',	'first',	'Bradly Boyle',	15),
-(91,	'wen 491',	'Aliquam et velit tenetur eos.',	0,	'500',	'first',	'Ms. Sister Nitzsche Jr.',	13),
-(92,	'fvu 902',	'Suscipit consequatur voluptatum dolorem.',	2,	'600',	'second',	'Alexa Medhurst',	10),
-(93,	'rdp 415',	'Dolorem ab quia ex quaerat illo aut doloribus beatae.',	8,	'200',	'first',	'Hugh Cummerata',	23),
-(94,	'qcx 033',	'A iste aut necessitatibus autem quia neque et.',	8,	'300',	'first',	'Cordelia Reichel',	6),
-(95,	'phi 918',	'Eligendi minus aut rem eos nemo vel.',	3,	'500',	'first',	'Adalberto Quitzon',	14),
-(96,	'zjg 298',	'Quis voluptatibus tenetur nobis assumenda qui.',	7,	'500',	'second',	'Aliza Sawayn',	24),
-(97,	'gva 250',	'Id reprehenderit aperiam eaque aut delectus maiores.',	4,	'600',	'first',	'Guiseppe Baumbach',	4),
-(98,	'hzw 060',	'Quia officia et nihil qui quis ea quo.',	1,	'300',	'first',	'Prof. Willa Stroman',	2),
-(99,	'lyw 027',	'Et harum ratione repellendus impedit exercitationem nihil.',	0,	'500',	'first',	'Ms. Domenica Hyatt MD',	20),
-(100,	'kmc 255',	'Molestiae delectus voluptatem consequuntur earum quisquam ipsum mollitia.',	8,	'300',	'second',	'Andreane DuBuque',	5);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (1, 'vrj 274', 'Visionary neutral standardization', 1, '300', 'first', 'Chester Hegmann MD', 5);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (2, 'tpg 818', 'Distributed encompassing ability', 6, '600', 'first', 'Germaine Hilpert', 1);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (3, 'dxu 305', 'Cross-group responsive intranet', 1, '100', 'first', 'Khalid Kunze', 6);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (4, 'wzb 002', 'Customer-focused contextually-based initiative', 4, '300', 'second', 'Emiliano Stehr DVM', 6);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (5, 'hio 709', 'Programmable global focusgroup', 7, '500', 'first', 'Prof. Keegan Schmitt', 10);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (6, 'cfp 321', 'Upgradable stable complexity', 6, '100', 'second', 'Ayla Huel', 22);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (7, 'zsx 585', 'Optimized contextually-based project', 5, '300', 'first', 'Dena Orn', 19);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (8, 'ccd 177', 'Horizontal uniform artificialintelligence', 7, '400', 'first', 'Prof. Jude Kertzmann V', 1);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (9, 'vkg 181', 'Reactive hybrid focusgroup', 8, '300', 'first', 'Sven Weimann I', 4);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (10, 'wdy 705', 'Integrated regional support', 0, '400', 'first', 'Dr. Donald Jenkins III', 22);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (11, 'ezz 957', 'Exclusive systematic task-force', 0, '600', 'first', 'Luisa Bergnaum MD', 22);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (12, 'rgz 014', 'Cloned human-resource securedline', 6, '600', 'second', 'Cleve Ortiz PhD', 20);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (13, 'ive 986', 'Inverse radical product', 1, '100', 'second', 'Cooper Reichel IV', 7);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (14, 'ifl 704', 'Inverse mobile collaboration', 3, '500', 'second', 'Alvina Kreiger', 8);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (15, 'rmg 897', 'Facetoface tertiary contingency', 0, '200', 'first', 'Devin Kovacek', 18);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (16, 'xiv 499', 'Public-key encompassing opensystem', 8, '300', 'second', 'Mr. Johnathon Romaguera II', 8);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (17, 'gsf 815', 'Expanded fresh-thinking middleware', 3, '300', 'first', 'Kale Rippin Jr.', 23);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (18, 'arg 848', 'Pre-emptive real-time productivity', 6, '100', 'first', 'Kira Rosenbaum', 2);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (19, 'kve 831', 'Object-based disintermediate website', 8, '400', 'second', 'Miss Liliana Price III', 9);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (20, 'ujq 783', 'Phased bottom-line parallelism', 4, '200', 'second', 'Therese Hessel', 5);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (21, 'udm 621', 'Proactive zerotolerance encoding', 3, '400', 'second', 'Katlyn Rath', 8);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (22, 'yor 633', 'Fully-configurable tertiary migration', 5, '400', 'second', 'Trever Blanda', 9);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (23, 'uiv 361', 'Reverse-engineered systemic throughput', 3, '500', 'second', 'Francis Gutkowski', 15);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (24, 'oyt 379', 'Assimilated stable service-desk', 9, '100', 'second', 'Daniela Kuhn', 20);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (25, 'mok 738', 'Programmable global database', 4, '100', 'second', 'Adrian VonRueden', 2);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (26, 'hnv 860', 'Advanced 24/7 processimprovement', 2, '400', 'first', 'Dr. Kyra Ratke', 21);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (27, 'vte 902', 'Automated heuristic database', 5, '200', 'second', 'Bernita Boehm DVM', 15);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (28, 'lgr 836', 'Team-oriented solution-oriented project', 0, '300', 'first', 'Ayana Littel', 6);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (29, 'bra 886', 'Optimized fault-tolerant software', 8, '100', 'second', 'Vaughn Skiles', 11);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (30, 'vgt 847', 'Decentralized systematic parallelism', 1, '300', 'first', 'Keegan Kling', 16);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (31, 'opu 989', 'Front-line mobile systemengine', 7, '600', 'first', 'Mr. Andre Hessel III', 10);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (32, 'hsy 608', 'Streamlined actuating project', 1, '500', 'first', 'General Littel', 16);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (33, 'dtg 436', 'Inverse homogeneous analyzer', 8, '500', 'second', 'Valentina Cronin', 16);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (34, 'vwu 137', 'Self-enabling attitude-oriented capacity', 0, '300', 'second', 'Genevieve Heathcote', 15);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (35, 'osb 954', 'Vision-oriented foreground systemengine', 5, '600', 'first', 'Miss Demetris Lowe I', 21);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (36, 'ien 635', 'Upgradable scalable firmware', 4, '600', 'second', 'Beulah Brakus', 1);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (37, 'elh 314', 'Multi-channelled 5thgeneration synergy', 1, '500', 'second', 'Joe Hoeger', 12);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (38, 'qbk 438', 'Total grid-enabled parallelism', 7, '100', 'first', 'Mr. Baylee Moen III', 15);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (39, 'yny 534', 'Horizontal executive infrastructure', 1, '200', 'first', 'Karlee Erdman MD', 2);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (40, 'lew 342', 'Optimized real-time encoding', 9, '500', 'first', 'Adela Klocko', 15);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (41, 'umr 390', 'Enhanced coherent time-frame', 4, '400', 'first', 'Vicente Gusikowski III', 11);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (42, 'ybj 686', 'Horizontal zerodefect projection', 5, '300', 'second', 'Aiyana Torp', 23);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (43, 'dcx 573', 'Extended encompassing support', 0, '300', 'first', 'Mariela Jenkins', 9);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (44, 'fzg 148', 'Re-contextualized client-driven initiative', 4, '500', 'first', 'Carley Dicki', 17);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (45, 'bwc 202', 'Virtual systemic groupware', 1, '300', 'second', 'Verdie Bode', 5);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (46, 'bkr 020', 'Diverse clear-thinking help-desk', 9, '200', 'first', 'Jeanne Crist', 2);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (47, 'mho 206', 'Function-based discrete intranet', 3, '500', 'second', 'Kali Macejkovic', 25);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (48, 'lnh 714', 'Reduced human-resource productivity', 3, '200', 'first', 'Polly Pacocha', 3);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (49, 'hlj 454', 'Decentralized attitude-oriented help-desk', 1, '600', 'second', 'Mrs. Susana Wilderman', 3);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (50, 'tsx 172', 'Focused stable benchmark', 5, '600', 'second', 'Katelyn Kub', 9);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (51, 'eri 300', 'User-centric 5thgeneration function', 5, '200', 'first', 'Marianna Jerde', 7);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (52, 'hbi 402', 'Exclusive system-worthy throughput', 5, '500', 'first', 'Roy Senger', 11);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (53, 'ebg 641', 'Synergized real-time archive', 0, '200', 'first', 'Linda Lebsack', 17);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (54, 'agk 224', 'Intuitive context-sensitive success', 0, '500', 'first', 'Prof. Rogers Ortiz PhD', 22);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (55, 'dqh 066', 'Cross-platform empowering standardization', 9, '200', 'second', 'Dr. Reba Cole IV', 5);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (56, 'syr 503', 'Secured discrete focusgroup', 8, '200', 'first', 'Adella Koelpin III', 18);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (57, 'dng 909', 'Multi-layered dynamic throughput', 9, '400', 'second', 'Dr. Anita Bashirian Jr.', 18);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (58, 'urn 988', 'Secured bi-directional support', 6, '300', 'first', 'Manley Kutch', 20);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (59, 'sfz 537', 'Fundamental multi-tasking time-frame', 1, '100', 'first', 'Dolly Dicki', 24);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (60, 'kyx 277', 'Synergized incremental help-desk', 0, '200', 'first', 'Mona Jaskolski', 3);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (61, 'dlm 848', 'Horizontal clear-thinking time-frame', 3, '500', 'first', 'Kenneth Dibbert', 10);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (62, 'ljs 809', 'Adaptive heuristic localareanetwork', 4, '300', 'second', 'Mr. Jasen Goyette DDS', 8);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (63, 'nyk 437', 'Cloned interactive archive', 1, '500', 'first', 'Dr. Imelda Stroman', 19);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (64, 'npi 375', 'Right-sized discrete monitoring', 3, '500', 'first', 'Emile Kling', 1);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (65, 'xxk 881', 'Digitized neutral knowledgeuser', 7, '100', 'first', 'Newton Dickinson', 22);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (66, 'afo 273', 'Ergonomic grid-enabled workforce', 3, '600', 'second', 'Jessyca Lang', 14);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (67, 'qiv 636', 'Enterprise-wide bandwidth-monitored orchestration', 3, '100', 'first', 'Ms. Clotilde Bednar', 1);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (68, 'qld 318', 'Triple-buffered reciprocal collaboration', 3, '600', 'second', 'Angelita Stehr', 9);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (69, 'puv 495', 'Multi-layered holistic groupware', 3, '500', 'first', 'Joan Boyle', 3);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (70, 'osd 976', 'Persistent zerodefect benchmark', 1, '200', 'second', 'Natalie Brown', 3);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (71, 'gxy 847', 'Upgradable object-oriented hub', 1, '400', 'first', 'Kacey Jakubowski DVM', 23);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (72, 'nrz 267', 'Ergonomic foreground encryption', 3, '600', 'second', 'Amira Baumbach', 14);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (73, 'crq 308', 'Re-contextualized high-level function', 7, '600', 'first', 'Dr. Kayleigh Rogahn', 25);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (74, 'cdj 171', 'Implemented tertiary implementation', 6, '100', 'first', 'Dario Thiel', 7);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (75, 'xok 865', 'Assimilated holistic application', 4, '500', 'second', 'Izabella Champlin', 6);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (76, 'awg 511', 'De-engineered fault-tolerant monitoring', 6, '100', 'second', 'Celia Sawayn', 4);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (77, 'wdx 596', 'Grass-roots interactive monitoring', 8, '400', 'second', 'Prof. Foster Ruecker I', 8);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (78, 'owr 038', 'Self-enabling motivating contingency', 3, '500', 'first', 'Keely Kutch I', 5);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (79, 'szp 702', 'Distributed static collaboration', 5, '100', 'second', 'Prof. Breana Bartell MD', 7);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (80, 'upb 062', 'Future-proofed homogeneous core', 8, '500', 'second', 'Alison Casper', 11);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (81, 'lup 774', 'Triple-buffered incremental core', 1, '200', 'first', 'Jordy Emmerich', 14);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (82, 'cxd 552', 'Compatible fresh-thinking artificialintelligence', 1, '300', 'second', 'Alene Heller PhD', 13);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (83, 'wzu 562', 'Compatible transitional throughput', 6, '400', 'second', 'Delia Carter', 21);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (84, 'enw 820', 'Sharable contextually-based service-desk', 5, '200', 'first', 'Freeda Reynolds', 6);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (85, 'psd 975', 'Distributed interactive matrix', 9, '400', 'first', 'Dr. Shania Rath V', 10);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (86, 'cvc 974', 'Organized scalable emulation', 7, '100', 'first', 'Edward Tremblay', 1);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (87, 'gbp 408', 'Advanced context-sensitive GraphicalUserInterface', 6, '500', 'second', 'Miss Tianna Fahey IV', 23);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (88, 'pyg 589', 'Profound system-worthy function', 5, '300', 'second', 'Jonathon Farrell', 2);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (89, 'bar 659', 'Devolved bottom-line hardware', 9, '600', 'first', 'Onie Brown', 20);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (90, 'rvx 626', 'Virtual 24/7 pricingstructure', 1, '500', 'first', 'Jarrod Schoen', 22);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (91, 'wzf 009', 'Switchable value-added matrix', 1, '500', 'first', 'Emmett Kihn', 5);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (92, 'oes 366', 'Sharable bandwidth-monitored infrastructure', 5, '200', 'first', 'Prof. Luis Gutmann Jr.', 5);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (93, 'vwa 334', 'Open-source uniform architecture', 1, '300', 'second', 'Edison Mayert', 4);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (94, 'qox 539', 'Exclusive incremental challenge', 2, '500', 'first', 'Everett Huel', 23);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (95, 'jre 112', 'Focused system-worthy toolset', 8, '600', 'first', 'Merl Roob V', 6);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (96, 'pff 542', 'De-engineered full-range ability', 7, '400', 'first', 'Arne Wuckert', 1);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (97, 'uai 031', 'Integrated real-time processimprovement', 1, '600', 'second', 'Adelle Dooley Sr.', 11);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (98, 'ooj 067', 'Realigned radical artificialintelligence', 9, '300', 'second', 'Ms. Patience Bogisich', 7);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (99, 'sfo 209', 'User-friendly 24/7 complexity', 4, '200', 'first', 'Mr. Conner Cremin PhD', 9);
+INSERT INTO `Course` (`CourseID`, `CourseCode`, `CourseTitle`, `CourseUnit`, `CourseLevel`, `Semester`, `LecturerName`, `DepartmentID`) VALUES (100, 'cfz 042', 'Compatible 3rdgeneration firmware', 3, '400', 'first', 'Nova Ebert', 14);
+
+
+#
+# TABLE STRUCTURE FOR: Department
+#
+
+DROP TABLE IF EXISTS `Department`;
 
 CREATE TABLE `Department` (
   `DepartmentID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -417,32 +580,38 @@ CREATE TABLE `Department` (
   CONSTRAINT `Department_ibfk_1` FOREIGN KEY (`FacultyID`) REFERENCES `Faculty` (`FacultyID`) ON DELETE SET NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
-INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES
-(1,	10,	'Impedit rerum repreh',	'5'),
-(2,	1,	'Tenetur itaque sit q',	'4'),
-(3,	7,	'Consequuntur cumque ',	'6'),
-(4,	8,	'Molestias perspiciat',	'4'),
-(5,	6,	'Esse occaecati assum',	'4'),
-(6,	7,	'Aliquid optio aut no',	'6'),
-(7,	9,	'Repellendus molestia',	'6'),
-(8,	5,	'Praesentium accusamu',	'6'),
-(9,	6,	'Illum numquam dolore',	'5'),
-(10,	2,	'Perspiciatis ea dolo',	'6'),
-(11,	6,	'Tempore et perferend',	'5'),
-(12,	9,	'Aliquam error et ut ',	'6'),
-(13,	7,	'Facere aut quos temp',	'5'),
-(14,	4,	'Et dolorem quibusdam',	'4'),
-(15,	8,	'Neque doloremque ad ',	'5'),
-(16,	9,	'Minima nostrum ut do',	'5'),
-(17,	5,	'Aut aut molestias et',	'5'),
-(18,	5,	'Eligendi nemo volupt',	'4'),
-(19,	2,	'Qui vitae consequatu',	'4'),
-(20,	7,	'Eaque quo qui unde p',	'5'),
-(21,	2,	'Eum corrupti illum q',	'6'),
-(22,	1,	'Animi veritatis et e',	'5'),
-(23,	6,	'Deleniti provident s',	'6'),
-(24,	3,	'Asperiores sit est v',	'5'),
-(25,	3,	'Dignissimos necessit',	'4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (1, 5, 'Don\'t let him know s', '4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (2, 7, 'I shall have to whis', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (3, 6, 'Alice, swallowing do', '4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (4, 5, 'Pig and Pepper For a', '4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (5, 10, 'VERY tired of this. ', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (6, 6, 'I\'d hardly finished ', '5');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (7, 6, 'Duchess; \'and that\'s', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (8, 10, 'I am to see anything', '4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (9, 2, 'The judge, by the wa', '5');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (10, 4, 'Gryphon replied rath', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (11, 1, 'Mouse, who was passi', '5');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (12, 6, 'She had already hear', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (13, 5, 'Alice replied eagerl', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (14, 9, 'Improve his shining.', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (15, 9, 'Rabbit came near her', '4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (16, 5, 'YOUR business, Two!\'', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (17, 7, 'Majesty,\' the Hatter', '6');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (18, 7, 'I don\'t want YOU wit', '4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (19, 7, 'March Hare took the.', '5');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (20, 1, 'I only knew the mean', '5');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (21, 2, 'White Rabbit, jumpin', '4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (22, 10, 'So she set to work.', '5');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (23, 1, 'Gryphon at the cook,', '4');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (24, 1, 'Why, I do it again a', '5');
+INSERT INTO `Department` (`DepartmentID`, `FacultyID`, `DepartmentName`, `ProgrammeSpan`) VALUES (25, 1, 'French mouse, come o', '5');
+
+
+#
+# TABLE STRUCTURE FOR: Faculty
+#
+
+DROP TABLE IF EXISTS `Faculty`;
 
 CREATE TABLE `Faculty` (
   `FacultyID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -451,17 +620,23 @@ CREATE TABLE `Faculty` (
   UNIQUE KEY `FacultyID` (`FacultyID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
-INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES
-(1,	'Voluptatem officiis '),
-(2,	'Voluptate quisquam a'),
-(3,	'Ut sint quia vitae r'),
-(4,	'Quos consectetur qua'),
-(5,	'Officiis tempore max'),
-(6,	'Veniam voluptas rati'),
-(7,	'Consequatur et ea vo'),
-(8,	'Ratione incidunt duc'),
-(9,	'Esse corrupti et et '),
-(10,	'Adipisci ratione und');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (1, ' Public Health');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (2, 'Sciense and science ');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (3, ' Faculty of agricult');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (4, 'Faculty of law');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (5, 'Faculty of Humanitie');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (6, 'Social and managemen');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (7, 'Faculty of engineeri');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (8, 'College of health');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (9, 'Renewable natural re');
+INSERT INTO `Faculty` (`FacultyID`, `FacultyName`) VALUES (10, 'Faculty of education');
+
+
+#
+# TABLE STRUCTURE FOR: Result
+#
+
+DROP TABLE IF EXISTS `Result`;
 
 CREATE TABLE `Result` (
   `Student_MatricID` varchar(20) NOT NULL,
@@ -476,321 +651,333 @@ CREATE TABLE `Result` (
   CONSTRAINT `Result_ibfk_2` FOREIGN KEY (`CourseID`) REFERENCES `Course` (`CourseID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES
-('acm/864/31457',	'1996',	24,	'400',	17,	'B'),
-('afe/784/04831',	'1998',	34,	'500',	15,	'C'),
-('bij/894/52242',	'1971',	42,	'300',	2,	'D'),
-('bqj/895/68257',	'2009',	23,	'600',	23,	'B'),
-('bst/728/32938',	'1985',	81,	'400',	9,	'C'),
-('btc/031/23103',	'1980',	51,	'500',	7,	'B'),
-('btc/031/23103',	'2010',	19,	'100',	6,	'B'),
-('btn/577/70325',	'1999',	36,	'500',	2,	'C'),
-('bto/665/54912',	'1970',	32,	'500',	10,	'E'),
-('bto/665/54912',	'1975',	31,	'300',	23,	'D'),
-('bvs/632/91937',	'2003',	19,	'100',	19,	'A'),
-('bwt/028/44087',	'1975',	13,	'100',	19,	'D'),
-('caa/080/52071',	'1991',	85,	'400',	21,	'E'),
-('caa/080/52071',	'1993',	11,	'400',	2,	'C'),
-('cbd/079/21704',	'1987',	70,	'500',	1,	'D'),
-('cgu/799/99493',	'1995',	39,	'400',	18,	'B'),
-('cli/259/59018',	'1998',	59,	'600',	15,	'A'),
-('cli/259/59018',	'2009',	71,	'400',	7,	'D'),
-('clq/649/17194',	'1991',	19,	'300',	2,	'E'),
-('clq/649/17194',	'2015',	63,	'100',	9,	'A'),
-('clt/016/36683',	'2000',	41,	'300',	11,	'C'),
-('clt/016/36683',	'2015',	80,	'600',	5,	'D'),
-('cml/438/16938',	'1991',	56,	'400',	13,	'E'),
-('cnh/065/78145',	'1971',	78,	'400',	10,	'C'),
-('ctj/715/99236',	'2002',	41,	'600',	14,	'C'),
-('cuv/598/19983',	'1975',	12,	'400',	4,	'C'),
-('cvh/772/10478',	'1971',	52,	'500',	19,	'D'),
-('dew/655/39897',	'1974',	88,	'600',	2,	'A'),
-('dfa/625/22692',	'1982',	92,	'200',	9,	'E'),
-('dfa/625/22692',	'2005',	25,	'600',	1,	'B'),
-('dge/655/09998',	'2000',	56,	'600',	2,	'D'),
-('dge/655/09998',	'2009',	83,	'400',	19,	'B'),
-('dky/584/70310',	'2015',	40,	'300',	11,	'A'),
-('dwy/652/53139',	'2017',	50,	'100',	20,	'B'),
-('edx/043/63533',	'2016',	92,	'300',	14,	'D'),
-('enx/618/96514',	'2003',	21,	'600',	12,	'A'),
-('fdm/652/67029',	'2005',	12,	'500',	7,	'A'),
-('fmr/655/41052',	'1976',	26,	'300',	23,	'E'),
-('fnm/251/96266',	'2007',	4,	'300',	3,	'E'),
-('fur/251/03249',	'1973',	49,	'300',	12,	'A'),
-('fur/251/03249',	'1979',	29,	'400',	13,	'B'),
-('fzn/320/75892',	'1995',	26,	'500',	24,	'D'),
-('gqm/500/67495',	'1977',	39,	'600',	7,	'E'),
-('gxz/344/44634',	'1999',	36,	'400',	22,	'C'),
-('gxz/344/44634',	'2002',	66,	'300',	12,	'B'),
-('gyg/378/93266',	'2011',	97,	'500',	20,	'A'),
-('gzn/819/98778',	'1993',	46,	'400',	14,	'A'),
-('hbz/737/38718',	'1979',	73,	'600',	3,	'E'),
-('hej/180/04425',	'2002',	16,	'400',	8,	'C'),
-('hha/885/85934',	'1976',	71,	'500',	2,	'E'),
-('hha/885/85934',	'2007',	74,	'400',	3,	'B'),
-('hli/713/82287',	'1978',	45,	'100',	10,	'B'),
-('hod/906/73382',	'2004',	46,	'100',	7,	'A'),
-('hqz/093/73226',	'1989',	24,	'400',	2,	'D'),
-('hrr/635/07251',	'2003',	10,	'100',	14,	'B'),
-('hsc/316/81391',	'1970',	28,	'500',	9,	'B'),
-('hsc/316/81391',	'2015',	77,	'600',	22,	'E'),
-('hve/967/15469',	'1991',	12,	'500',	9,	'A'),
-('ifj/640/87689',	'1979',	88,	'100',	15,	'B'),
-('igs/247/07648',	'2001',	59,	'400',	10,	'D'),
-('ihy/269/97216',	'1993',	59,	'400',	15,	'C'),
-('ihy/269/97216',	'1999',	56,	'400',	23,	'B'),
-('irs/920/60342',	'1989',	8,	'300',	18,	'D'),
-('jab/387/21979',	'1982',	35,	'300',	3,	'D'),
-('jbp/575/33119',	'1971',	13,	'300',	9,	'A'),
-('jbp/575/33119',	'1990',	31,	'400',	5,	'D'),
-('jbp/575/33119',	'2015',	60,	'200',	2,	'E'),
-('jgt/063/12584',	'1976',	54,	'500',	20,	'D'),
-('jgt/063/12584',	'1989',	10,	'300',	6,	'C'),
-('jhw/496/59388',	'1986',	35,	'400',	21,	'A'),
-('jhw/496/59388',	'1990',	36,	'500',	15,	'D'),
-('jmi/671/18112',	'1981',	24,	'100',	15,	'A'),
-('jne/931/34801',	'1995',	25,	'200',	16,	'B'),
-('jry/467/99566',	'1997',	32,	'100',	6,	'D'),
-('jry/467/99566',	'2000',	86,	'600',	3,	'D'),
-('jsq/706/76947',	'1977',	76,	'600',	3,	'B'),
-('jsq/706/76947',	'1993',	97,	'200',	24,	'B'),
-('jta/607/71800',	'2019',	36,	'100',	19,	'E'),
-('jtu/123/95253',	'2011',	50,	'100',	21,	'E'),
-('jyl/395/96812',	'1984',	41,	'500',	12,	'D'),
-('kdo/392/79920',	'2011',	64,	'600',	9,	'A'),
-('ket/948/37048',	'1979',	25,	'200',	25,	'A'),
-('ket/948/37048',	'1989',	16,	'300',	7,	'E'),
-('kim/935/01436',	'2000',	84,	'100',	6,	'A'),
-('kqp/753/87630',	'1995',	33,	'100',	2,	'B'),
-('kxu/365/22304',	'1984',	67,	'600',	2,	'B'),
-('kxu/365/22304',	'1990',	48,	'500',	2,	'C'),
-('kyf/480/22496',	'1978',	49,	'400',	7,	'E'),
-('kyf/480/22496',	'1981',	1,	'300',	18,	'D'),
-('kyf/480/22496',	'1988',	51,	'600',	15,	'D'),
-('lmw/511/98783',	'2017',	70,	'600',	25,	'A'),
-('lnn/158/23059',	'1986',	15,	'500',	1,	'E'),
-('lzk/042/44557',	'1993',	91,	'200',	8,	'D'),
-('maw/181/29540',	'2000',	17,	'300',	3,	'A'),
-('mbp/512/64670',	'2000',	7,	'400',	21,	'C'),
-('mdn/622/71378',	'1978',	84,	'300',	17,	'E'),
-('mdq/223/69189',	'1995',	83,	'200',	7,	'D'),
-('mep/560/11980',	'1979',	49,	'200',	10,	'C'),
-('mep/560/11980',	'2007',	34,	'400',	10,	'D'),
-('mlm/334/58100',	'2015',	14,	'200',	24,	'A'),
-('moh/956/99655',	'1980',	83,	'400',	15,	'C'),
-('msd/634/35585',	'2019',	15,	'500',	7,	'A'),
-('mse/399/96238',	'2015',	92,	'600',	10,	'E'),
-('nch/848/91968',	'2008',	76,	'300',	5,	'B'),
-('neg/850/24585',	'1977',	83,	'600',	24,	'D'),
-('nms/969/11366',	'2005',	4,	'500',	2,	'D'),
-('nxx/605/86262',	'2011',	99,	'100',	17,	'E'),
-('nzh/646/16318',	'1985',	89,	'500',	24,	'E'),
-('nzm/112/32602',	'1976',	54,	'300',	5,	'C'),
-('ojg/540/62231',	'2013',	8,	'100',	3,	'D'),
-('olc/787/16566',	'2006',	59,	'300',	7,	'B'),
-('omf/018/17208',	'1970',	37,	'400',	10,	'A'),
-('omi/345/16179',	'1986',	18,	'400',	18,	'E'),
-('onm/508/91178',	'1981',	7,	'200',	21,	'E'),
-('onm/508/91178',	'2002',	90,	'100',	19,	'D'),
-('oxb/090/43149',	'1985',	89,	'200',	12,	'D'),
-('oyt/006/70624',	'1989',	8,	'100',	24,	'C'),
-('oyt/006/70624',	'1993',	57,	'600',	11,	'C'),
-('oyt/006/70624',	'2015',	53,	'400',	14,	'D'),
-('ozc/509/27036',	'1981',	41,	'400',	23,	'E'),
-('pcs/031/26142',	'2014',	89,	'200',	11,	'C'),
-('pcs/031/26142',	'2016',	71,	'300',	4,	'D'),
-('pcs/567/34200',	'1975',	19,	'100',	18,	'D'),
-('pfj/997/65655',	'1981',	87,	'500',	22,	'E'),
-('pkd/517/74151',	'1978',	51,	'500',	10,	'D'),
-('pml/570/10780',	'2003',	82,	'100',	17,	'C'),
-('pmq/120/88813',	'1972',	90,	'600',	18,	'B'),
-('qdw/780/72858',	'1988',	16,	'500',	20,	'A'),
-('qgq/944/73798',	'1975',	16,	'600',	23,	'A'),
-('qgv/652/75784',	'1998',	85,	'400',	5,	'E'),
-('qip/258/06166',	'2009',	34,	'500',	15,	'D'),
-('qlz/225/16515',	'1988',	57,	'500',	22,	'D'),
-('qqj/769/06346',	'2002',	43,	'600',	15,	'E'),
-('qql/247/12394',	'1981',	2,	'400',	15,	'C'),
-('qqo/438/05923',	'1974',	48,	'400',	8,	'C'),
-('qvn/196/52570',	'1994',	22,	'300',	23,	'C'),
-('qwc/993/76931',	'2010',	6,	'200',	1,	'C'),
-('qxt/778/35123',	'1987',	74,	'300',	22,	'A'),
-('qys/993/45797',	'2001',	94,	'300',	11,	'E'),
-('rdl/317/39184',	'1971',	50,	'300',	12,	'A'),
-('rdl/317/39184',	'1973',	35,	'100',	14,	'A'),
-('rki/322/77319',	'2008',	65,	'400',	18,	'B'),
-('rrq/511/86382',	'1981',	74,	'500',	6,	'A'),
-('rrq/511/86382',	'2004',	61,	'600',	6,	'E'),
-('soa/602/75782',	'1980',	29,	'400',	11,	'A'),
-('sof/446/29125',	'1992',	32,	'600',	9,	'C'),
-('spg/295/24786',	'1993',	99,	'100',	6,	'E'),
-('sqh/980/36902',	'1987',	97,	'200',	7,	'A'),
-('sqh/980/36902',	'2018',	85,	'600',	11,	'E'),
-('srn/156/48825',	'1978',	32,	'200',	9,	'D'),
-('sux/901/99207',	'1996',	82,	'100',	13,	'B'),
-('sxx/204/56475',	'1983',	41,	'600',	2,	'B'),
-('sxx/204/56475',	'2003',	51,	'600',	7,	'D'),
-('tpe/401/53376',	'2017',	66,	'200',	22,	'B'),
-('tqm/294/75271',	'1973',	87,	'400',	25,	'D'),
-('trj/821/77156',	'1982',	50,	'300',	13,	'E'),
-('uas/074/61112',	'1980',	50,	'300',	4,	'C'),
-('uas/074/61112',	'2018',	65,	'100',	17,	'E'),
-('ucd/143/07779',	'1983',	81,	'300',	22,	'C'),
-('uua/606/57924',	'1983',	36,	'500',	13,	'D'),
-('uua/606/57924',	'2001',	54,	'400',	18,	'E'),
-('uxy/784/69595',	'1970',	64,	'400',	18,	'A'),
-('vdq/370/56094',	'2018',	13,	'300',	7,	'B'),
-('vep/468/00093',	'2005',	92,	'100',	3,	'E'),
-('vlo/371/23578',	'1988',	95,	'300',	8,	'D'),
-('vlo/371/23578',	'1999',	70,	'400',	4,	'E'),
-('vvk/526/62825',	'1972',	22,	'100',	15,	'E'),
-('vwo/046/26156',	'1971',	7,	'200',	8,	'B'),
-('vxf/004/27971',	'1979',	92,	'200',	10,	'C'),
-('vxf/004/27971',	'2009',	41,	'200',	21,	'D'),
-('vzn/783/97438',	'1985',	29,	'200',	6,	'A'),
-('vzw/146/67355',	'2016',	83,	'200',	6,	'E'),
-('wdo/254/79803',	'1990',	57,	'600',	2,	'E'),
-('wdo/254/79803',	'2011',	75,	'400',	16,	'E'),
-('wou/435/48405',	'1986',	36,	'300',	22,	'B'),
-('wwg/842/70663',	'1976',	39,	'200',	5,	'A'),
-('wye/885/42328',	'1976',	23,	'300',	23,	'E'),
-('wye/885/42328',	'1976',	26,	'300',	6,	'C'),
-('xag/044/74594',	'2001',	19,	'500',	6,	'E'),
-('xct/916/11769',	'1999',	43,	'200',	14,	'E'),
-('xjq/355/68293',	'1981',	60,	'500',	7,	'A'),
-('xjq/355/68293',	'1999',	17,	'200',	20,	'C'),
-('xlq/861/60804',	'1994',	85,	'300',	1,	'C'),
-('xop/789/84964',	'2018',	47,	'300',	11,	'E'),
-('xud/835/36926',	'1977',	68,	'600',	11,	'A'),
-('xxy/522/99577',	'1992',	54,	'600',	18,	'D'),
-('xxy/522/99577',	'1995',	83,	'600',	14,	'A'),
-('ypm/615/70987',	'1997',	1,	'400',	16,	'A'),
-('ypt/863/67375',	'1992',	1,	'400',	14,	'D'),
-('ypt/863/67375',	'1998',	18,	'500',	24,	'C'),
-('ypt/863/67375',	'1999',	34,	'600',	1,	'C'),
-('yrw/981/37344',	'1988',	57,	'100',	7,	'E'),
-('yyn/097/84376',	'2010',	26,	'200',	1,	'E'),
-('zai/550/43414',	'1970',	15,	'100',	6,	'C'),
-('zau/370/06645',	'1978',	19,	'600',	12,	'B'),
-('zde/109/92931',	'1989',	92,	'400',	20,	'A'),
-('zkj/828/41036',	'2015',	21,	'500',	2,	'B'),
-('zpw/485/16522',	'2000',	14,	'400',	18,	'B'),
-('zqm/012/53910',	'1984',	69,	'100',	23,	'C'),
-('zry/868/64590',	'2014',	44,	'400',	6,	'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140156', '1992', 29, '100', 1, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140192', '1992', 95, '600', 22, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140192', '1994', 37, '600', 23, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140203', '1983', 99, '400', 19, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140203', '2014', 51, '500', 5, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140233', '1991', 67, '200', 10, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140313', '1989', 90, '400', 22, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140313', '1996', 55, '500', 25, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140313', '1998', 73, '400', 17, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140412', '2019', 32, '500', 21, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140428', '2007', 88, '300', 22, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140614', '2002', 94, '400', 11, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140798', '2004', 54, '200', 7, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140823', '1993', 100, '400', 14, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140880', '1992', 59, '100', 21, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140925', '1996', 48, '500', 4, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140931', '2018', 30, '500', 14, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140953', '2015', 45, '400', 18, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140968', '1990', 28, '600', 19, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('140989', '2017', 6, '400', 9, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141092', '1992', 22, '200', 18, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141092', '1992', 83, '100', 10, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141128', '1993', 63, '300', 3, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141210', '2002', 12, '500', 18, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141211', '1974', 65, '400', 5, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141286', '1992', 38, '600', 6, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141286', '2003', 1, '400', 24, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141286', '2010', 47, '500', 13, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141286', '2016', 92, '300', 15, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141293', '1983', 60, '200', 11, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141403', '2006', 22, '300', 23, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141546', '1992', 27, '200', 18, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141687', '1976', 71, '500', 1, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141731', '2000', 16, '400', 3, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141765', '1979', 60, '500', 25, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141765', '1987', 53, '500', 14, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141765', '1988', 15, '300', 10, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141769', '2007', 31, '600', 13, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141824', '1973', 67, '100', 2, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141900', '1987', 51, '500', 13, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141900', '2018', 20, '500', 19, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('141949', '1972', 77, '600', 20, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142019', '1996', 11, '400', 22, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142019', '2000', 85, '100', 4, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142019', '2002', 78, '300', 13, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142140', '2010', 44, '300', 25, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142256', '2014', 2, '300', 13, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142331', '1997', 95, '200', 18, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142341', '1988', 12, '100', 15, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142341', '1993', 29, '500', 15, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142341', '2016', 37, '200', 11, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142387', '1980', 41, '400', 21, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142387', '1987', 80, '600', 20, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142512', '1977', 1, '300', 24, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142521', '1972', 21, '500', 11, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142521', '2009', 85, '600', 21, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142582', '1997', 61, '200', 22, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142607', '1981', 20, '200', 14, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142607', '2012', 34, '200', 11, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142647', '1982', 15, '400', 7, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('142856', '1997', 20, '500', 2, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143160', '1987', 38, '200', 20, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143177', '1980', 7, '200', 4, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143177', '1994', 88, '200', 12, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143187', '1980', 42, '400', 9, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143187', '2012', 44, '400', 8, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143187', '2014', 98, '500', 1, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143270', '1992', 62, '600', 17, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143413', '2017', 66, '600', 15, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143430', '2014', 55, '400', 1, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143497', '2014', 72, '300', 11, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143577', '1976', 16, '300', 4, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143743', '2004', 7, '200', 15, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143837', '1993', 79, '400', 17, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143842', '1975', 34, '500', 7, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143842', '1994', 87, '200', 5, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143919', '1995', 39, '600', 10, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('143950', '1984', 83, '600', 18, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144135', '1978', 43, '400', 16, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144135', '1987', 54, '500', 1, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144199', '2002', 44, '600', 7, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144286', '1982', 65, '300', 2, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144286', '1987', 46, '200', 9, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144354', '1987', 44, '300', 23, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144451', '1994', 41, '200', 24, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144451', '2011', 65, '100', 15, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144467', '1972', 81, '300', 6, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144489', '1972', 72, '500', 14, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144497', '2002', 6, '600', 1, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144512', '1987', 86, '400', 23, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144512', '1998', 73, '200', 14, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144512', '2011', 44, '600', 1, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144513', '1989', 12, '200', 4, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144513', '2018', 83, '500', 19, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144533', '1986', 32, '500', 13, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144628', '1976', 88, '100', 25, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144628', '2001', 61, '300', 5, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144682', '1990', 75, '500', 3, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144715', '1986', 18, '500', 17, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('144984', '1972', 48, '200', 21, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145031', '1972', 2, '100', 4, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145337', '1998', 80, '400', 21, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145337', '2000', 98, '600', 15, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145337', '2011', 59, '500', 23, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145386', '1993', 59, '600', 14, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145518', '2010', 20, '400', 20, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145523', '2004', 31, '200', 25, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145532', '2016', 90, '600', 19, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145663', '2000', 66, '100', 7, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145731', '1995', 25, '600', 16, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145745', '1997', 35, '300', 18, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145761', '2013', 86, '300', 24, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145802', '2003', 75, '100', 18, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145897', '1974', 89, '100', 18, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('145904', '2009', 87, '300', 11, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146029', '2004', 23, '400', 25, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146040', '2006', 38, '200', 22, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146065', '2014', 48, '500', 21, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146073', '1988', 70, '100', 2, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146078', '2018', 40, '600', 3, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146079', '2014', 72, '400', 12, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146101', '1994', 55, '100', 11, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146160', '2002', 65, '500', 25, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146196', '1984', 71, '500', 23, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146196', '1997', 51, '300', 10, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146198', '1977', 57, '300', 25, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146210', '2015', 17, '600', 3, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146380', '1974', 78, '200', 25, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146380', '2000', 13, '300', 8, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146380', '2008', 32, '500', 2, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146437', '1974', 84, '500', 12, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146467', '1970', 67, '200', 11, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146540', '1984', 53, '500', 8, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146540', '2008', 3, '500', 17, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146666', '1980', 42, '500', 19, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146676', '2019', 3, '400', 17, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146680', '1988', 67, '300', 18, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146680', '1999', 96, '400', 3, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146680', '2011', 54, '500', 14, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146730', '1982', 25, '600', 10, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146798', '1986', 16, '400', 1, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146829', '1991', 16, '200', 11, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146931', '1991', 60, '100', 1, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('146956', '1981', 53, '200', 8, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147060', '1981', 63, '300', 6, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147060', '1982', 67, '200', 7, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147060', '1989', 64, '300', 17, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147060', '1991', 8, '100', 1, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147105', '2012', 41, '300', 2, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147174', '1989', 1, '100', 13, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147332', '1974', 99, '100', 19, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147332', '2006', 2, '600', 15, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147332', '2017', 9, '100', 24, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147593', '2007', 7, '100', 10, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147627', '1981', 64, '200', 1, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147642', '1999', 7, '600', 18, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147719', '2007', 15, '100', 7, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147742', '2002', 41, '100', 14, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147831', '1981', 1, '400', 6, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147921', '1988', 40, '200', 5, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('147921', '2009', 88, '600', 15, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148055', '2017', 49, '300', 23, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148117', '1979', 32, '300', 8, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148117', '2014', 40, '100', 16, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148129', '1978', 94, '300', 10, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148129', '2000', 30, '100', 15, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148199', '1990', 9, '100', 7, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148280', '1980', 61, '500', 1, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148280', '1990', 59, '300', 1, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148333', '1986', 86, '200', 1, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148472', '1991', 31, '400', 8, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148534', '2010', 37, '300', 11, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148539', '1970', 45, '400', 8, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148539', '1975', 17, '300', 14, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148539', '2015', 53, '300', 3, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148606', '2007', 34, '500', 3, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148611', '2016', 88, '600', 23, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148758', '1987', 87, '300', 15, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148758', '2015', 1, '200', 1, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('148917', '1992', 63, '500', 17, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149010', '1981', 5, '600', 6, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149022', '1973', 52, '100', 19, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149024', '1994', 50, '300', 20, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149024', '1996', 80, '400', 18, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149025', '1974', 50, '500', 5, 'A');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149025', '1978', 86, '200', 6, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149040', '1971', 16, '600', 20, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149040', '1974', 73, '100', 24, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149280', '2015', 17, '500', 7, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149335', '1999', 50, '200', 19, 'B');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149354', '1970', 89, '400', 19, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149379', '1990', 2, '500', 20, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149379', '2000', 31, '100', 16, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149583', '1985', 58, '500', 14, 'D');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149583', '2005', 22, '600', 20, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149628', '1978', 61, '600', 11, 'E');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149695', '1996', 56, '600', 17, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149828', '1979', 50, '500', 16, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149914', '1972', 89, '200', 25, 'C');
+INSERT INTO `Result` (`Student_MatricID`, `SessionYear`, `CourseID`, `Level`, `DepartmentID`, `Grade`) VALUES ('149979', '2009', 90, '300', 25, 'E');
+
+
+#
+# TABLE STRUCTURE FOR: SchoolActivity_Event
+#
+
+DROP TABLE IF EXISTS `SchoolActivity_Event`;
 
 CREATE TABLE `SchoolActivity_Event` (
   `Activity_EventID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `Title` text,
+  `Title` text DEFAULT NULL,
   `Date` date DEFAULT NULL,
-  `Description` text,
+  `Description` text DEFAULT NULL,
   `Type` enum('SchoolActivity','SchoolEvent') DEFAULT 'SchoolActivity',
-  `Venue` text,
-  `DepartmentGroup` text,
+  `Venue` text DEFAULT NULL,
+  `DepartmentGroup` text DEFAULT NULL,
   PRIMARY KEY (`Activity_EventID`),
   UNIQUE KEY `Activity_EventID` (`Activity_EventID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 
-INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES
-(1,	'Dolorem vel consequatur dolores aut.',	'1975-04-30',	'Hatter, who turned pale and fidgeted. \'Give your evidence,\' said the King. \'Then it doesn\'t matter much,\' thought Alice, \'it\'ll never do to come yet, please your Majesty!\' the Duchess by this time,.',	'SchoolEvent',	'N/A',	'All Students'),
-(2,	'Delectus et consectetur dolore sint nesciunt officiis odit.',	'2001-08-16',	'YOURS: I don\'t want YOU with us!\"\' \'They were learning to draw, you know--\' \'What did they live at the frontispiece if you wouldn\'t keep appearing and vanishing so suddenly: you make one repeat.',	'SchoolActivity',	'',	'All Students'),
-(3,	'Cumque cupiditate dolorum explicabo consequatur cumque saepe voluptatum.',	'1999-03-24',	'Hatter: \'but you could only hear whispers now and then dipped suddenly down, so suddenly that Alice had learnt several things of this rope--Will the roof bear?--Mind that loose slate--Oh, it\'s.',	'SchoolEvent',	'Afe Babalola Hall',	'Final Year Students'),
-(4,	'Id facilis velit quia nesciunt velit soluta qui aliquid.',	'1979-12-13',	'Alice; \'I can\'t go no lower,\' said the Duchess, the Duchess! Oh! won\'t she be savage if I\'ve been changed for Mabel! I\'ll try if I shall ever see you any more!\' And here poor Alice began telling.',	'SchoolEvent',	'',	'Final Year Students'),
-(5,	'At impedit et non numquam.',	'1978-08-12',	'Pigeon; \'but I must be a great interest in questions of eating and drinking. \'They lived on treacle,\' said the Duchess: you\'d better ask HER about it.\' (The jury all looked puzzled.) \'He must have a.',	'SchoolEvent',	'',	'All Students'),
-(6,	'Quia necessitatibus officiis quis voluptatem officiis.',	'2000-08-20',	'Hatter. \'He won\'t stand beating. Now, if you want to stay in here any longer!\' She waited for some minutes. The Caterpillar was the Cat said, waving its tail when I\'m angry. Therefore I\'m mad.\' \'I.',	'SchoolActivity',	'Afe Babalola Hall',	'postgraduate programmes at the master’s and doctoral levels.'),
-(7,	'Adipisci et et reprehenderit sed.',	'1992-05-09',	'I should think very likely it can talk: at any rate, the Dormouse again, so she went in without knocking, and hurried off to other parts of the bottle was a little door into that lovely garden. I.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'Final Year Students'),
-(8,	'Quas non sed nihil nihil.',	'1991-04-02',	'Alice, \'to speak to this mouse? Everything is so out-of-the-way down here, and I\'m sure I have none, Why, I wouldn\'t say anything about it, so she went round the hall, but they were getting.',	'SchoolActivity',	'N/A',	'All Students'),
-(9,	'Dolorem odit laudantium qui maxime quia autem.',	'1990-01-09',	'Alice, in a tone of great dismay, and began an account of the bill, \"French, music, AND WASHING--extra.\"\' \'You couldn\'t have wanted it much,\' said Alice; \'I daresay it\'s a very long silence, broken.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(10,	'Quia a sit magni doloribus.',	'2010-02-09',	'Alice. \'Come on, then!\' roared the Queen, the royal children, and make one quite giddy.\' \'All right,\' said the Cat. \'I said pig,\' replied Alice; \'and I wish you wouldn\'t squeeze so.\' said the.',	'SchoolEvent',	'',	'Final Year Students'),
-(11,	'Odit ratione sapiente tempore pariatur et deleniti dolor.',	'2002-10-05',	'I say,\' the Mock Turtle at last, and they sat down and began staring at the Hatter, with an anxious look at the mouth with strings: into this they slipped the guinea-pig, head first, and then, if I.',	'SchoolActivity',	'J. F. Ade. Ajayi Auditorium',	'postgraduate programmes at the master’s and doctoral levels.'),
-(12,	'Qui inventore id molestiae.',	'2018-09-09',	'All this time she went on. \'Would you tell me,\' said Alice, \'and those twelve creatures,\' (she was obliged to say it any longer than that,\' said the cook. \'Treacle,\' said the King was the cat.) \'I.',	'SchoolEvent',	'N/A',	'Final Year Students'),
-(13,	'Ut aut possimus esse tempora voluptatem quia.',	'2011-09-14',	'How neatly spread his claws, And welcome little fishes in With gently smiling jaws!\' \'I\'m sure those are not the same, the next thing was to find that the pebbles were all talking together: she made.',	'SchoolEvent',	'N/A',	'Final Year Students'),
-(14,	'Nostrum quaerat quibusdam perferendis eum maxime sed.',	'2008-01-09',	'QUITE as much as she spoke--fancy CURTSEYING as you\'re falling through the little golden key, and Alice\'s first thought was that she did not venture to go on for some time with great curiosity, and.',	'SchoolEvent',	'N/A',	'All Students'),
-(15,	'Quam modi dignissimos veniam sit aperiam sed.',	'1979-02-02',	'It doesn\'t look like one, but it all is! I\'ll try if I must, I must,\' the King said to Alice, very much at this, that she had got so close to her head, she tried to speak, but for a few minutes to.',	'SchoolActivity',	'',	'All Students'),
-(16,	'Et minus omnis eligendi qui assumenda placeat perferendis sint.',	'1985-08-27',	'They all made of solid glass; there was no one could possibly hear you.\' And certainly there was nothing so VERY tired of this. I vote the young lady to see if he had to be an advantage,\' said.',	'SchoolEvent',	'N/A',	'postgraduate programmes at the master’s and doctoral levels.'),
-(17,	'Autem occaecati dicta officiis molestiae explicabo.',	'1973-03-20',	'The Cat seemed to rise like a candle. I wonder what I could say if I shall never get to the door, she found that it was very fond of beheading people here; the great question certainly was, what?.',	'SchoolActivity',	'Afe Babalola Hall',	'All Students'),
-(18,	'Alias accusamus cupiditate voluptatem velit cum.',	'2018-05-18',	'Let me think: was I the same side of the jury had a VERY unpleasant state of mind, she turned the corner, but the tops of the Lobster; I heard him declare, \"You have baked me too brown, I must have.',	'SchoolActivity',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(19,	'Distinctio voluptatem delectus voluptates facere iste cum fugit sunt.',	'1993-07-21',	'Dormouse was sitting next to no toys to play croquet.\' The Frog-Footman repeated, in the distance would take the roof of the deepest contempt. \'I\'ve seen hatters before,\' she said this, she came up.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'postgraduate programmes at the master’s and doctoral levels.'),
-(20,	'Autem cumque et animi vel esse voluptas repellendus necessitatibus.',	'2016-06-29',	'For this must ever be A secret, kept from all the rats and--oh dear!\' cried Alice in a game of croquet she was appealed to by all three dates on their faces, and the King had said that day. \'That.',	'SchoolEvent',	'N/A',	'All Students'),
-(21,	'Nesciunt quis dicta qui.',	'1991-01-22',	'Laughing and Grief, they used to do:-- \'How doth the little--\"\' and she thought it must be shutting up like a telescope.\' And so she tried to open her mouth; but she got to the executioner: \'fetch.',	'SchoolEvent',	'Afe Babalola Hall',	'Final Year Students'),
-(22,	'Et eius nemo est dignissimos.',	'2002-12-03',	'Alice; \'it\'s laid for a little quicker. \'What a pity it wouldn\'t stay!\' sighed the Lory, as soon as she listened, or seemed to have no sort of lullaby to it in her French lesson-book. The Mouse did.',	'SchoolActivity',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(23,	'Quo totam voluptatem inventore ut quos.',	'2014-12-11',	'I was thinking I should be free of them attempted to explain the mistake it had finished this short speech, they all crowded round her head. \'If I eat one of the month is it?\' \'Why,\' said the.',	'SchoolActivity',	'',	'Final Year Students'),
-(24,	'Ipsam unde ipsa aut voluptates illo.',	'2005-05-04',	'Alice coming. \'There\'s PLENTY of room!\' said Alice hastily; \'but I\'m not particular as to the Duchess: \'flamingoes and mustard both bite. And the Gryphon answered, very nearly getting up and throw.',	'SchoolEvent',	'Afe Babalola Hall',	'postgraduate programmes at the master’s and doctoral levels.'),
-(25,	'Hic repellat omnis perferendis quae voluptas sequi.',	'1999-01-14',	'March Hare said to the general conclusion, that wherever you go to on the end of half those long words, and, what\'s more, I don\'t want YOU with us!\"\' \'They were obliged to write this down on one.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(26,	'Quaerat eligendi est rerum et qui minus reiciendis.',	'1999-02-14',	'But she waited for a good way off, and found herself safe in a low voice, to the jury, in a very good height indeed!\' said the Cat. \'I\'d nearly forgotten to ask.\' \'It turned into a tidy little room.',	'SchoolActivity',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(27,	'Assumenda pariatur sunt ut hic eos laborum.',	'2000-11-20',	'As she said these words her foot as far down the chimney close above her: then, saying to herself \'Suppose it should be raving mad--at least not so mad as it was only a pack of cards: the Knave.',	'SchoolActivity',	'',	'Final Year Students'),
-(28,	'Dolorem sit sed inventore totam quos.',	'2006-12-16',	'SOMETHING interesting is sure to make out who was trembling down to them, they were IN the well,\' Alice said very politely, feeling quite pleased to have it explained,\' said the others. \'Are their.',	'SchoolActivity',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(29,	'Sint eos sint necessitatibus et praesentium.',	'2015-02-21',	'While she was now more than that, if you like!\' the Duchess said in a hoarse growl, \'the world would go through,\' thought poor Alice, \'when one wasn\'t always growing larger and smaller, and being.',	'SchoolActivity',	'N/A',	'postgraduate programmes at the master’s and doctoral levels.'),
-(30,	'Porro quia quisquam qui modi.',	'1979-07-29',	'There were doors all round the refreshments!\' But there seemed to think that there was no time to begin with,\' the Mock Turtle. Alice was thoroughly puzzled. \'Does the boots and shoes!\' she repeated.',	'SchoolEvent',	'',	'All Students'),
-(31,	'Ea error qui eius totam suscipit.',	'2003-06-26',	'There\'s no pleasing them!\' Alice was soon submitted to by the prisoner to--to somebody.\' \'It must be removed,\' said the Hatter; \'so I should think very likely to eat the comfits: this caused some.',	'SchoolEvent',	'N/A',	'Final Year Students'),
-(32,	'Nesciunt fuga veniam itaque.',	'1972-01-10',	'O Mouse!\' (Alice thought this must ever be A secret, kept from all the jelly-fish out of his head. But at any rate it would all come wrong, and she hastily dried her eyes to see it again, but it.',	'SchoolActivity',	'N/A',	'postgraduate programmes at the master’s and doctoral levels.'),
-(33,	'Voluptatem odio laudantium voluptatem quos ipsa et consectetur molestiae.',	'1975-01-07',	'Alice in a fight with another hedgehog, which seemed to think about it, so she set the little dears came jumping merrily along hand in hand with Dinah, and saying to herself, and once again the tiny.',	'SchoolEvent',	'N/A',	'All Students'),
-(34,	'Quam qui sit placeat voluptatum harum aut.',	'1998-08-01',	'Rabbit came near her, about four inches deep and reaching half down the middle, wondering how she would gather about her other little children, and make out that one of the trial.\' \'Stupid things!\'.',	'SchoolEvent',	'N/A',	'postgraduate programmes at the master’s and doctoral levels.'),
-(35,	'Consectetur fugit officia et fuga blanditiis.',	'2004-03-03',	'Lobster; I heard him declare, \"You have baked me too brown, I must be the use of a bottle. They all sat down at her side. She was a real nose; also its eyes by this time, and was just saying to her.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(36,	'Facere rerum ullam ut et.',	'1998-02-12',	'Mock Turtle a little anxiously. \'Yes,\' said Alice, seriously, \'I\'ll have nothing more happened, she decided to remain where she was quite pale (with passion, Alice thought), and it said in a hurry.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(37,	'Cum est voluptas possimus sint non repudiandae.',	'1990-05-28',	'I\'d only been the whiting,\' said the Mouse, frowning, but very glad to find that she had peeped into the roof of the court,\" and I shall ever see you any more!\' And here Alice began to feel which.',	'SchoolActivity',	'Afe Babalola Hall',	'postgraduate programmes at the master’s and doctoral levels.'),
-(38,	'Facere et quia possimus praesentium tenetur ab beatae.',	'2009-08-18',	'She did it so VERY nearly at the corners: next the ten courtiers; these were ornamented all over with fright. \'Oh, I know!\' exclaimed Alice, who felt very glad to get in?\' asked Alice again, for.',	'SchoolActivity',	'Afe Babalola Hall',	'postgraduate programmes at the master’s and doctoral levels.'),
-(39,	'Eveniet tenetur accusamus ut ipsam dolores iste.',	'1977-10-22',	'Yet you balanced an eel on the OUTSIDE.\' He unfolded the paper as he spoke, \'we were trying--\' \'I see!\' said the Queen. \'It proves nothing of tumbling down stairs! How brave they\'ll all think me at.',	'SchoolEvent',	'N/A',	'Final Year Students'),
-(40,	'Libero id et quod voluptatem a optio qui.',	'1976-06-14',	'I never heard before, \'Sure then I\'m here! Digging for apples, indeed!\' said the King. \'Then it doesn\'t matter which way it was done. They had a bone in his sleep, \'that \"I like what I could show.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'Final Year Students'),
-(41,	'Sequi nobis laboriosam beatae.',	'1993-03-31',	'As soon as she could, for the end of the court was in such a puzzled expression that she hardly knew what she was not a moment to be a letter, after all: it\'s a set of verses.\' \'Are they in the.',	'SchoolActivity',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(42,	'Velit eos laboriosam aut in voluptatem impedit eius.',	'2000-10-03',	'Dormouse\'s place, and Alice looked all round the refreshments!\' But there seemed to be full of the trees under which she had not attended to this last remark, \'it\'s a vegetable. It doesn\'t look like.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'postgraduate programmes at the master’s and doctoral levels.'),
-(43,	'Quo vel tempore deserunt sint itaque officia ea.',	'2005-06-05',	'MUST have meant some mischief, or else you\'d have signed your name like an arrow. The Cat\'s head began fading away the moment how large she had put the Lizard as she did not get dry very soon..',	'SchoolEvent',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(44,	'Error quae eum tempore perspiciatis enim dolor qui animi.',	'2016-08-27',	'MORE than nothing.\' \'Nobody asked YOUR opinion,\' said Alice. \'I don\'t see,\' said the one who had been to her, \'if we had the best cat in the night? Let me see: four times seven is--oh dear! I wish I.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'Final Year Students'),
-(45,	'Fuga temporibus similique repellendus.',	'1994-04-05',	'King. \'Nothing whatever,\' said Alice. \'I wonder how many miles I\'ve fallen by this very sudden change, but she gained courage as she spoke. (The unfortunate little Bill had left off writing on his.',	'SchoolActivity',	'Afe Babalola Hall',	'All Students'),
-(46,	'Perferendis dolore sunt accusamus molestiae dolorem deleniti aut.',	'2014-11-07',	'YOU manage?\' Alice asked. \'We called him a fish)--and rapped loudly at the March Hare meekly replied. \'Yes, but some crumbs must have been changed several times since then.\' \'What do you like the.',	'SchoolActivity',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(47,	'Ipsa id et perspiciatis et facere ratione.',	'1994-07-17',	'She went on so long that they couldn\'t see it?\' So she swallowed one of the cattle in the sea, some children digging in the face. \'I\'ll put a stop to this,\' she said to herself. \'Of the mushroom,\'.',	'SchoolEvent',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(48,	'Voluptas vel ut hic.',	'1986-12-26',	'Hatter. \'I deny it!\' said the King, the Queen, who were lying round the court was a queer-shaped little creature, and held it out to sea. So they had at the time when she was talking. \'How CAN I.',	'SchoolActivity',	'N/A',	'All Students'),
-(49,	'Dolor aut quo est totam.',	'1982-11-11',	'Alice. \'I don\'t quite understand you,\' she said, \'and see whether it\'s marked \"poison\" or not\'; for she was exactly one a-piece all round. (It was this last remark, \'it\'s a vegetable. It doesn\'t.',	'SchoolActivity',	'',	'Final Year Students'),
-(50,	'Et earum temporibus pariatur qui veniam enim in.',	'1989-07-26',	'Alice, \'it would have made a rush at Alice the moment she appeared; but she added, to herself, and once again the tiny hands were clasped upon her knee, and looking at it gloomily: then he dipped it.',	'SchoolEvent',	'N/A',	'All Students'),
-(51,	'Molestiae aliquam veritatis porro doloribus quia mollitia architecto ea.',	'1991-08-01',	'Gryphon added \'Come, let\'s try Geography. London is the same age as herself, to see the earth takes twenty-four hours to turn into a chrysalis--you will some day, you know--and then after that.',	'SchoolEvent',	'N/A',	'Final Year Students'),
-(52,	'Nihil quo voluptates dolore laboriosam quae.',	'1972-10-30',	'However, on the bank--the birds with draggled feathers, the animals with their fur clinging close to the conclusion that it felt quite strange at first; but she did not get dry again: they had been.',	'SchoolActivity',	'J. F. Ade. Ajayi Auditorium',	'Final Year Students'),
-(53,	'Ea deserunt eius nihil quaerat voluptas et ad.',	'1971-06-12',	'Alice. \'What sort of idea that they had settled down again, the cook till his eyes were nearly out of the house of the ground--and I should understand that better,\' Alice said to the whiting,\' said.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'postgraduate programmes at the master’s and doctoral levels.'),
-(54,	'Quasi eos hic aliquid.',	'1989-06-28',	'King, \'unless it was just in time to avoid shrinking away altogether. \'That WAS a narrow escape!\' said Alice, \'I\'ve often seen them so shiny?\' Alice looked at the place of the lefthand bit of stick,.',	'SchoolActivity',	'N/A',	'postgraduate programmes at the master’s and doctoral levels.'),
-(55,	'Aspernatur qui maiores enim tempore.',	'2010-07-26',	'I eat or drink something or other; but the Rabbit came near her, about the temper of your flamingo. Shall I try the thing yourself, some winter day, I will just explain to you how the game was going.',	'SchoolActivity',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(56,	'Deserunt id dolorem cupiditate.',	'2002-06-05',	'Majesty,\' he began. \'You\'re a very decided tone: \'tell her something about the right size for ten minutes together!\' \'Can\'t remember WHAT things?\' said the Pigeon went on, \'--likely to win, that.',	'SchoolActivity',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(57,	'Debitis quis nihil omnis incidunt qui.',	'1996-11-03',	'Alice put down yet, before the trial\'s begun.\' \'They\'re putting down their names,\' the Gryphon repeated impatiently: \'it begins \"I passed by his garden, and I shall be a person of authority over.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(58,	'Enim recusandae animi est iure.',	'2005-03-04',	'Hearts, he stole those tarts, And took them quite away!\' \'Consider your verdict,\' the King repeated angrily, \'or I\'ll have you got in your knocking,\' the Footman went on saying to her ear. \'You\'re.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(59,	'Error autem ab deserunt fugit maiores.',	'1987-08-23',	'Gryphon, and the March Hare and the constant heavy sobbing of the water, and seemed to have any rules in particular; at least, if there are, nobody attends to them--and you\'ve no idea how to speak.',	'SchoolEvent',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(60,	'Adipisci recusandae assumenda quia ducimus quaerat laborum distinctio.',	'2015-10-16',	'The pepper when he finds out who I am! But I\'d better take him his fan and two or three times over to the Classics master, though. He was an old Turtle--we used to say.\' \'So he did, so he did,\' said.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(61,	'Quaerat sit saepe quos repellendus molestiae.',	'2005-04-19',	'And here Alice began telling them her adventures from the sky! Ugh, Serpent!\' \'But I\'m not the right size for ten minutes together!\' \'Can\'t remember WHAT things?\' said the Gryphon: and it sat for a.',	'SchoolEvent',	'N/A',	'Final Year Students'),
-(62,	'Alias at labore qui nihil neque sed iste.',	'2016-09-20',	'Father William replied to his son, \'I feared it might happen any minute, \'and then,\' thought she, \'what would become of me? They\'re dreadfully fond of pretending to be otherwise than what it was: at.',	'SchoolEvent',	'',	'All Students'),
-(63,	'Quam et quia quis reiciendis quam dolorem.',	'1995-01-29',	'Alice, \'they\'re sure to make the arches. The chief difficulty Alice found at first she would get up and said, very gravely, \'I think, you ought to be said. At last the Mouse, turning to the Gryphon..',	'SchoolEvent',	'Afe Babalola Hall',	'All Students'),
-(64,	'Laudantium facere enim voluptate nam atque qui amet.',	'2005-07-10',	'Duchess was sitting on a summer day: The Knave shook his head sadly. \'Do I look like it?\' he said, turning to the table, half hoping that they had at the March Hare said--\' \'I didn\'t!\' the March.',	'SchoolActivity',	'Afe Babalola Hall',	'All Students'),
-(65,	'Sed omnis nisi aut eius assumenda dolores.',	'2011-04-28',	'Alice replied: \'what\'s the answer?\' \'I haven\'t the slightest idea,\' said the Gryphon, half to Alice. \'Only a thimble,\' said Alice timidly. \'Would you like the three gardeners who were all shaped.',	'SchoolActivity',	'N/A',	'All Students'),
-(66,	'Aut quod quaerat voluptatem.',	'1999-10-14',	'Then came a rumbling of little cartwheels, and the little golden key in the distance, and she said this, she looked down into a tidy little room with a melancholy air, and, after folding his arms.',	'SchoolEvent',	'N/A',	'postgraduate programmes at the master’s and doctoral levels.'),
-(67,	'Accusantium dignissimos ullam voluptas voluptas velit doloribus porro.',	'2004-05-25',	'Allow me to introduce it.\' \'I don\'t believe it,\' said Alice. \'I don\'t know of any one; so, when the White Rabbit, \'and that\'s the queerest thing about it.\' (The jury all brightened up again.).',	'SchoolActivity',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(68,	'Voluptatum aperiam non quo ratione quibusdam.',	'1972-06-10',	'Queen of Hearts were seated on their faces, so that it might end, you know,\' Alice gently remarked; \'they\'d have been a RED rose-tree, and we put a stop to this,\' she said to the Mock Turtle sighed.',	'SchoolActivity',	'N/A',	'Final Year Students'),
-(69,	'Molestias repellat ipsum consectetur temporibus reprehenderit.',	'1981-02-08',	'Cheshire Cat sitting on the top of his pocket, and was going on within--a constant howling and sneezing, and every now and then all the time she found a little bit, and said \'No, never\') \'--so you.',	'SchoolEvent',	'Afe Babalola Hall',	'Final Year Students'),
-(70,	'Ut et natus a rem vitae in.',	'1978-06-12',	'Five! Always lay the blame on others!\' \'YOU\'D better not do that again!\' which produced another dead silence. Alice noticed with some difficulty, as it didn\'t much matter which way you can;--but I.',	'SchoolEvent',	'',	'Final Year Students'),
-(71,	'Et ipsum nulla corrupti blanditiis aut in consectetur.',	'1976-12-31',	'So she set to work at once crowded round it, panting, and asking, \'But who has won?\' This question the Dodo replied very politely, \'for I can\'t tell you just now what the flame of a globe of.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(72,	'Minima autem velit et optio placeat omnis molestiae.',	'2003-05-10',	'Lastly, she pictured to herself how this same little sister of hers that you couldn\'t cut off a bit of mushroom, and her eyes anxiously fixed on it, (\'which certainly was not a mile high,\' said.',	'SchoolEvent',	'',	'Final Year Students'),
-(73,	'Repudiandae quod dolores quod qui voluptatem quas porro.',	'1977-01-26',	'I can listen all day to day.\' This was such a new kind of serpent, that\'s all you know the way the people near the centre of the players to be otherwise than what you had been (Before she had read.',	'SchoolActivity',	'Afe Babalola Hall',	'postgraduate programmes at the master’s and doctoral levels.'),
-(74,	'Aut facilis quisquam expedita culpa corporis porro.',	'1998-01-03',	'Dormouse. \'Write that down,\' the King said gravely, \'and go on for some time busily writing in his sleep, \'that \"I breathe when I get it home?\' when it had gone. \'Well! I\'ve often seen them so.',	'SchoolEvent',	'',	'All Students'),
-(75,	'Unde facilis culpa excepturi quidem neque omnis.',	'1985-12-15',	'The Queen turned angrily away from him, and very soon came to ME, and told me he was gone, and the m--\' But here, to Alice\'s great surprise, the Duchess\'s voice died away, even in the pool of tears.',	'SchoolEvent',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(76,	'Quos delectus ut dignissimos et.',	'2001-03-07',	'Presently she began shrinking directly. As soon as there was not a VERY turn-up nose, much more like a Jack-in-the-box, and up the conversation dropped, and the jury consider their verdict,\' the.',	'SchoolActivity',	'',	'Final Year Students'),
-(77,	'In quia est dicta doloremque doloremque ducimus quo cum.',	'1973-05-04',	'CHAPTER VI. Pig and Pepper For a minute or two, looking for it, she found this a very difficult question. However, at last turned sulky, and would only say, \'I am older than I am in the kitchen that.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(78,	'Eveniet sed totam ratione labore voluptatem officiis beatae.',	'1980-07-30',	'Alice said very politely, \'if I had to stop and untwist it. After a time she found herself safe in a languid, sleepy voice. \'Who are YOU?\' Which brought them back again to the baby, the shriek of.',	'SchoolEvent',	'N/A',	'Final Year Students'),
-(79,	'Sunt qui labore debitis libero laborum est ipsa.',	'1998-08-13',	'As she said to herself, \'whenever I eat or drink anything; so I\'ll just see what the flame of a bottle. They all sat down a good deal until she had got burnt, and eaten up by a row of lodging.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(80,	'Alias dignissimos aut tenetur iure corrupti sed.',	'1983-12-04',	'Morcar, the earls of Mercia and Northumbria--\"\' \'Ugh!\' said the Duchess; \'and the moral of that is--\"Birds of a large cat which was sitting on the spot.\' This did not get dry again: they had at the.',	'SchoolActivity',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(81,	'Rem voluptatem cupiditate aut eligendi laborum.',	'2011-01-01',	'Alice. \'I wonder what they said. The executioner\'s argument was, that if you only walk long enough.\' Alice felt dreadfully puzzled. The Hatter\'s remark seemed to think that very few little girls eat.',	'SchoolActivity',	'N/A',	'Final Year Students'),
-(82,	'Maxime repellat alias cupiditate voluptates eius.',	'1976-04-27',	'And so she sat down again into its eyes were nearly out of sight: \'but it seems to grin, How neatly spread his claws, And welcome little fishes in With gently smiling jaws!\' \'I\'m sure those are not.',	'SchoolActivity',	'',	'Final Year Students'),
-(83,	'Debitis dolorum architecto veritatis veritatis sed.',	'1999-05-19',	'Hatter went on, \'--likely to win, that it\'s hardly worth while finishing the game.\' The Queen had ordered. They very soon finished off the subjects on his spectacles and looked at her, and the.',	'SchoolActivity',	'',	'postgraduate programmes at the master’s and doctoral levels.'),
-(84,	'Non aut consequuntur voluptatibus ex expedita.',	'1979-08-17',	'I hadn\'t cried so much!\' Alas! it was neither more nor less than no time she\'d have everybody executed, all round. \'But she must have been changed for any of them. However, on the ground near the.',	'SchoolEvent',	'Afe Babalola Hall',	'Final Year Students'),
-(85,	'Dolores magnam cumque id in dolores qui odit.',	'1976-02-02',	'Father William replied to his son, \'I feared it might be some sense in your knocking,\' the Footman continued in the lock, and to her usual height. It was opened by another footman in livery came.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(86,	'Odio omnis sint velit ab facilis.',	'1999-10-03',	'For, you see, Miss, we\'re doing our best, afore she comes, to--\' At this moment Five, who had meanwhile been examining the roses. \'Off with her head pressing against the ceiling, and had come back.',	'SchoolEvent',	'N/A',	'All Students'),
-(87,	'Laborum magni nesciunt sint eaque fugit recusandae fugiat.',	'1970-12-08',	'I\'ve tried banks, and I\'ve tried hedges,\' the Pigeon the opportunity of taking it away. She did it so quickly that the best way you go,\' said the Cat; and this Alice thought to herself. Imagine her.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(88,	'Et illo illum repellat sed ut officiis.',	'1972-04-26',	'But the snail replied \"Too far, too far!\" and gave a sudden leap out of the house, and found that her neck would bend about easily in any direction, like a telescope! I think I must sugar my hair.\".',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'Final Year Students'),
-(89,	'Et illum incidunt ut praesentium.',	'1995-06-07',	'March Hare moved into the wood. \'If it had been. But her sister was reading, but it said in a hoarse growl, \'the world would go through,\' thought poor Alice, \'when one wasn\'t always growing larger.',	'SchoolActivity',	'Afe Babalola Hall',	'postgraduate programmes at the master’s and doctoral levels.'),
-(90,	'Nostrum explicabo fuga autem aut.',	'1986-02-14',	'IN the well,\' Alice said with some curiosity. \'What a pity it wouldn\'t stay!\' sighed the Hatter. \'I told you butter wouldn\'t suit the works!\' he added looking angrily at the proposal. \'Then the.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'postgraduate programmes at the master’s and doctoral levels.'),
-(91,	'Deserunt et dolorem sunt dolorem quibusdam velit.',	'2004-04-20',	'Alice. \'Come on, then,\' said the Cat, and vanished. Alice was not much surprised at this, she came upon a little startled by seeing the Cheshire Cat sitting on a little anxiously. \'Yes,\' said Alice.',	'SchoolEvent',	'N/A',	'All Students'),
-(92,	'Voluptatum tenetur dolorem dolor adipisci.',	'2014-04-16',	'Mock Turtle in the wind, and the Queen put on his spectacles and looked very uncomfortable. The moment Alice appeared, she was considering in her French lesson-book. The Mouse gave a little bit, and.',	'SchoolActivity',	'Afe Babalola Hall',	'Final Year Students'),
-(93,	'Laborum est itaque et ut.',	'2015-02-09',	'You MUST have meant some mischief, or else you\'d have signed your name like an honest man.\' There was no one could possibly hear you.\' And certainly there was enough of it in her hands, and began:--.',	'SchoolActivity',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(94,	'Laborum ipsum eaque sequi dolor repudiandae aspernatur voluptatem architecto.',	'1976-02-23',	'I\'ve fallen by this time, sat down and saying \"Come up again, dear!\" I shall have some fun now!\' thought Alice. \'I\'m a--I\'m a--\' \'Well! WHAT are you?\' And then a voice of the room. The cook threw a.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'All Students'),
-(95,	'Nostrum temporibus omnis qui quo unde voluptas aut.',	'2016-03-21',	'Then came a little while, however, she waited for a great deal of thought, and it put the Lizard in head downwards, and the great hall, with the edge of the month is it?\' Alice panted as she spoke..',	'SchoolActivity',	'Afe Babalola Hall',	'All Students'),
-(96,	'Aut qui neque non quod eum.',	'2003-11-23',	'Alice, \'or perhaps they won\'t walk the way of expressing yourself.\' The baby grunted again, and put back into the loveliest garden you ever saw. How she longed to change the subject of conversation..',	'SchoolEvent',	'N/A',	'postgraduate programmes at the master’s and doctoral levels.'),
-(97,	'Et laboriosam ipsa qui cupiditate rem.',	'1977-07-03',	'Some of the Gryphon, \'she wants for to know what a Gryphon is, look at them--\'I wish they\'d get the trial done,\' she thought, \'and hand round the refreshments!\' But there seemed to Alice an.',	'SchoolEvent',	'N/A',	'All Students'),
-(98,	'Dolor et eum eum deserunt.',	'2011-09-04',	'Alice, every now and then they both cried. \'Wake up, Dormouse!\' And they pinched it on both sides at once. \'Give your evidence,\' said the King; \'and don\'t be nervous, or I\'ll have you executed,.',	'SchoolEvent',	'Afe Babalola Hall',	'All Students'),
-(99,	'Et et aut necessitatibus eum quam.',	'2014-03-19',	'Cheshire cat,\' said the Mock Turtle sighed deeply, and began, in a court of justice before, but she added, \'and the moral of that is--\"Oh, \'tis love, that makes them so often, of course had to run.',	'SchoolEvent',	'',	'Final Year Students'),
-(100,	'Voluptatem corporis eum sunt voluptatem sequi assumenda.',	'2008-11-09',	'I wonder?\' As she said to herself how she would manage it. \'They were learning to draw,\' the Dormouse sulkily remarked, \'If you do. I\'ll set Dinah at you!\' There was no more of it at last, with a.',	'SchoolEvent',	'J. F. Ade. Ajayi Auditorium',	'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (1, 'Dolorem vel consequatur dolores aut.', '1975-04-30', 'Hatter, who turned pale and fidgeted. \'Give your evidence,\' said the King. \'Then it doesn\'t matter much,\' thought Alice, \'it\'ll never do to come yet, please your Majesty!\' the Duchess by this time,.', 'SchoolEvent', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (2, 'Delectus et consectetur dolore sint nesciunt officiis odit.', '2001-08-16', 'YOURS: I don\'t want YOU with us!\"\' \'They were learning to draw, you know--\' \'What did they live at the frontispiece if you wouldn\'t keep appearing and vanishing so suddenly: you make one repeat.', 'SchoolActivity', '', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (3, 'Cumque cupiditate dolorum explicabo consequatur cumque saepe voluptatum.', '1999-03-24', 'Hatter: \'but you could only hear whispers now and then dipped suddenly down, so suddenly that Alice had learnt several things of this rope--Will the roof bear?--Mind that loose slate--Oh, it\'s.', 'SchoolEvent', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (4, 'Id facilis velit quia nesciunt velit soluta qui aliquid.', '1979-12-13', 'Alice; \'I can\'t go no lower,\' said the Duchess, the Duchess! Oh! won\'t she be savage if I\'ve been changed for Mabel! I\'ll try if I shall ever see you any more!\' And here poor Alice began telling.', 'SchoolEvent', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (5, 'At impedit et non numquam.', '1978-08-12', 'Pigeon; \'but I must be a great interest in questions of eating and drinking. \'They lived on treacle,\' said the Duchess: you\'d better ask HER about it.\' (The jury all looked puzzled.) \'He must have a.', 'SchoolEvent', '', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (6, 'Quia necessitatibus officiis quis voluptatem officiis.', '2000-08-20', 'Hatter. \'He won\'t stand beating. Now, if you want to stay in here any longer!\' She waited for some minutes. The Caterpillar was the Cat said, waving its tail when I\'m angry. Therefore I\'m mad.\' \'I.', 'SchoolActivity', 'Afe Babalola Hall', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (7, 'Adipisci et et reprehenderit sed.', '1992-05-09', 'I should think very likely it can talk: at any rate, the Dormouse again, so she went in without knocking, and hurried off to other parts of the bottle was a little door into that lovely garden. I.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (8, 'Quas non sed nihil nihil.', '1991-04-02', 'Alice, \'to speak to this mouse? Everything is so out-of-the-way down here, and I\'m sure I have none, Why, I wouldn\'t say anything about it, so she went round the hall, but they were getting.', 'SchoolActivity', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (9, 'Dolorem odit laudantium qui maxime quia autem.', '1990-01-09', 'Alice, in a tone of great dismay, and began an account of the bill, \"French, music, AND WASHING--extra.\"\' \'You couldn\'t have wanted it much,\' said Alice; \'I daresay it\'s a very long silence, broken.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (10, 'Quia a sit magni doloribus.', '2010-02-09', 'Alice. \'Come on, then!\' roared the Queen, the royal children, and make one quite giddy.\' \'All right,\' said the Cat. \'I said pig,\' replied Alice; \'and I wish you wouldn\'t squeeze so.\' said the.', 'SchoolEvent', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (11, 'Odit ratione sapiente tempore pariatur et deleniti dolor.', '2002-10-05', 'I say,\' the Mock Turtle at last, and they sat down and began staring at the Hatter, with an anxious look at the mouth with strings: into this they slipped the guinea-pig, head first, and then, if I.', 'SchoolActivity', 'J. F. Ade. Ajayi Auditorium', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (12, 'Qui inventore id molestiae.', '2018-09-09', 'All this time she went on. \'Would you tell me,\' said Alice, \'and those twelve creatures,\' (she was obliged to say it any longer than that,\' said the cook. \'Treacle,\' said the King was the cat.) \'I.', 'SchoolEvent', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (13, 'Ut aut possimus esse tempora voluptatem quia.', '2011-09-14', 'How neatly spread his claws, And welcome little fishes in With gently smiling jaws!\' \'I\'m sure those are not the same, the next thing was to find that the pebbles were all talking together: she made.', 'SchoolEvent', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (14, 'Nostrum quaerat quibusdam perferendis eum maxime sed.', '2008-01-09', 'QUITE as much as she spoke--fancy CURTSEYING as you\'re falling through the little golden key, and Alice\'s first thought was that she did not venture to go on for some time with great curiosity, and.', 'SchoolEvent', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (15, 'Quam modi dignissimos veniam sit aperiam sed.', '1979-02-02', 'It doesn\'t look like one, but it all is! I\'ll try if I must, I must,\' the King said to Alice, very much at this, that she had got so close to her head, she tried to speak, but for a few minutes to.', 'SchoolActivity', '', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (16, 'Et minus omnis eligendi qui assumenda placeat perferendis sint.', '1985-08-27', 'They all made of solid glass; there was no one could possibly hear you.\' And certainly there was nothing so VERY tired of this. I vote the young lady to see if he had to be an advantage,\' said.', 'SchoolEvent', 'N/A', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (17, 'Autem occaecati dicta officiis molestiae explicabo.', '1973-03-20', 'The Cat seemed to rise like a candle. I wonder what I could say if I shall never get to the door, she found that it was very fond of beheading people here; the great question certainly was, what?.', 'SchoolActivity', 'Afe Babalola Hall', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (18, 'Alias accusamus cupiditate voluptatem velit cum.', '2018-05-18', 'Let me think: was I the same side of the jury had a VERY unpleasant state of mind, she turned the corner, but the tops of the Lobster; I heard him declare, \"You have baked me too brown, I must have.', 'SchoolActivity', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (19, 'Distinctio voluptatem delectus voluptates facere iste cum fugit sunt.', '1993-07-21', 'Dormouse was sitting next to no toys to play croquet.\' The Frog-Footman repeated, in the distance would take the roof of the deepest contempt. \'I\'ve seen hatters before,\' she said this, she came up.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (20, 'Autem cumque et animi vel esse voluptas repellendus necessitatibus.', '2016-06-29', 'For this must ever be A secret, kept from all the rats and--oh dear!\' cried Alice in a game of croquet she was appealed to by all three dates on their faces, and the King had said that day. \'That.', 'SchoolEvent', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (21, 'Nesciunt quis dicta qui.', '1991-01-22', 'Laughing and Grief, they used to do:-- \'How doth the little--\"\' and she thought it must be shutting up like a telescope.\' And so she tried to open her mouth; but she got to the executioner: \'fetch.', 'SchoolEvent', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (22, 'Et eius nemo est dignissimos.', '2002-12-03', 'Alice; \'it\'s laid for a little quicker. \'What a pity it wouldn\'t stay!\' sighed the Lory, as soon as she listened, or seemed to have no sort of lullaby to it in her French lesson-book. The Mouse did.', 'SchoolActivity', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (23, 'Quo totam voluptatem inventore ut quos.', '2014-12-11', 'I was thinking I should be free of them attempted to explain the mistake it had finished this short speech, they all crowded round her head. \'If I eat one of the month is it?\' \'Why,\' said the.', 'SchoolActivity', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (24, 'Ipsam unde ipsa aut voluptates illo.', '2005-05-04', 'Alice coming. \'There\'s PLENTY of room!\' said Alice hastily; \'but I\'m not particular as to the Duchess: \'flamingoes and mustard both bite. And the Gryphon answered, very nearly getting up and throw.', 'SchoolEvent', 'Afe Babalola Hall', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (25, 'Hic repellat omnis perferendis quae voluptas sequi.', '1999-01-14', 'March Hare said to the general conclusion, that wherever you go to on the end of half those long words, and, what\'s more, I don\'t want YOU with us!\"\' \'They were obliged to write this down on one.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (26, 'Quaerat eligendi est rerum et qui minus reiciendis.', '1999-02-14', 'But she waited for a good way off, and found herself safe in a low voice, to the jury, in a very good height indeed!\' said the Cat. \'I\'d nearly forgotten to ask.\' \'It turned into a tidy little room.', 'SchoolActivity', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (27, 'Assumenda pariatur sunt ut hic eos laborum.', '2000-11-20', 'As she said these words her foot as far down the chimney close above her: then, saying to herself \'Suppose it should be raving mad--at least not so mad as it was only a pack of cards: the Knave.', 'SchoolActivity', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (28, 'Dolorem sit sed inventore totam quos.', '2006-12-16', 'SOMETHING interesting is sure to make out who was trembling down to them, they were IN the well,\' Alice said very politely, feeling quite pleased to have it explained,\' said the others. \'Are their.', 'SchoolActivity', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (29, 'Sint eos sint necessitatibus et praesentium.', '2015-02-21', 'While she was now more than that, if you like!\' the Duchess said in a hoarse growl, \'the world would go through,\' thought poor Alice, \'when one wasn\'t always growing larger and smaller, and being.', 'SchoolActivity', 'N/A', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (30, 'Porro quia quisquam qui modi.', '1979-07-29', 'There were doors all round the refreshments!\' But there seemed to think that there was no time to begin with,\' the Mock Turtle. Alice was thoroughly puzzled. \'Does the boots and shoes!\' she repeated.', 'SchoolEvent', '', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (31, 'Ea error qui eius totam suscipit.', '2003-06-26', 'There\'s no pleasing them!\' Alice was soon submitted to by the prisoner to--to somebody.\' \'It must be removed,\' said the Hatter; \'so I should think very likely to eat the comfits: this caused some.', 'SchoolEvent', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (32, 'Nesciunt fuga veniam itaque.', '1972-01-10', 'O Mouse!\' (Alice thought this must ever be A secret, kept from all the jelly-fish out of his head. But at any rate it would all come wrong, and she hastily dried her eyes to see it again, but it.', 'SchoolActivity', 'N/A', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (33, 'Voluptatem odio laudantium voluptatem quos ipsa et consectetur molestiae.', '1975-01-07', 'Alice in a fight with another hedgehog, which seemed to think about it, so she set the little dears came jumping merrily along hand in hand with Dinah, and saying to herself, and once again the tiny.', 'SchoolEvent', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (34, 'Quam qui sit placeat voluptatum harum aut.', '1998-08-01', 'Rabbit came near her, about four inches deep and reaching half down the middle, wondering how she would gather about her other little children, and make out that one of the trial.\' \'Stupid things!\'.', 'SchoolEvent', 'N/A', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (35, 'Consectetur fugit officia et fuga blanditiis.', '2004-03-03', 'Lobster; I heard him declare, \"You have baked me too brown, I must be the use of a bottle. They all sat down at her side. She was a real nose; also its eyes by this time, and was just saying to her.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (36, 'Facere rerum ullam ut et.', '1998-02-12', 'Mock Turtle a little anxiously. \'Yes,\' said Alice, seriously, \'I\'ll have nothing more happened, she decided to remain where she was quite pale (with passion, Alice thought), and it said in a hurry.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (37, 'Cum est voluptas possimus sint non repudiandae.', '1990-05-28', 'I\'d only been the whiting,\' said the Mouse, frowning, but very glad to find that she had peeped into the roof of the court,\" and I shall ever see you any more!\' And here Alice began to feel which.', 'SchoolActivity', 'Afe Babalola Hall', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (38, 'Facere et quia possimus praesentium tenetur ab beatae.', '2009-08-18', 'She did it so VERY nearly at the corners: next the ten courtiers; these were ornamented all over with fright. \'Oh, I know!\' exclaimed Alice, who felt very glad to get in?\' asked Alice again, for.', 'SchoolActivity', 'Afe Babalola Hall', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (39, 'Eveniet tenetur accusamus ut ipsam dolores iste.', '1977-10-22', 'Yet you balanced an eel on the OUTSIDE.\' He unfolded the paper as he spoke, \'we were trying--\' \'I see!\' said the Queen. \'It proves nothing of tumbling down stairs! How brave they\'ll all think me at.', 'SchoolEvent', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (40, 'Libero id et quod voluptatem a optio qui.', '1976-06-14', 'I never heard before, \'Sure then I\'m here! Digging for apples, indeed!\' said the King. \'Then it doesn\'t matter which way it was done. They had a bone in his sleep, \'that \"I like what I could show.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (41, 'Sequi nobis laboriosam beatae.', '1993-03-31', 'As soon as she could, for the end of the court was in such a puzzled expression that she hardly knew what she was not a moment to be a letter, after all: it\'s a set of verses.\' \'Are they in the.', 'SchoolActivity', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (42, 'Velit eos laboriosam aut in voluptatem impedit eius.', '2000-10-03', 'Dormouse\'s place, and Alice looked all round the refreshments!\' But there seemed to be full of the trees under which she had not attended to this last remark, \'it\'s a vegetable. It doesn\'t look like.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (43, 'Quo vel tempore deserunt sint itaque officia ea.', '2005-06-05', 'MUST have meant some mischief, or else you\'d have signed your name like an arrow. The Cat\'s head began fading away the moment how large she had put the Lizard as she did not get dry very soon..', 'SchoolEvent', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (44, 'Error quae eum tempore perspiciatis enim dolor qui animi.', '2016-08-27', 'MORE than nothing.\' \'Nobody asked YOUR opinion,\' said Alice. \'I don\'t see,\' said the one who had been to her, \'if we had the best cat in the night? Let me see: four times seven is--oh dear! I wish I.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (45, 'Fuga temporibus similique repellendus.', '1994-04-05', 'King. \'Nothing whatever,\' said Alice. \'I wonder how many miles I\'ve fallen by this very sudden change, but she gained courage as she spoke. (The unfortunate little Bill had left off writing on his.', 'SchoolActivity', 'Afe Babalola Hall', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (46, 'Perferendis dolore sunt accusamus molestiae dolorem deleniti aut.', '2014-11-07', 'YOU manage?\' Alice asked. \'We called him a fish)--and rapped loudly at the March Hare meekly replied. \'Yes, but some crumbs must have been changed several times since then.\' \'What do you like the.', 'SchoolActivity', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (47, 'Ipsa id et perspiciatis et facere ratione.', '1994-07-17', 'She went on so long that they couldn\'t see it?\' So she swallowed one of the cattle in the sea, some children digging in the face. \'I\'ll put a stop to this,\' she said to herself. \'Of the mushroom,\'.', 'SchoolEvent', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (48, 'Voluptas vel ut hic.', '1986-12-26', 'Hatter. \'I deny it!\' said the King, the Queen, who were lying round the court was a queer-shaped little creature, and held it out to sea. So they had at the time when she was talking. \'How CAN I.', 'SchoolActivity', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (49, 'Dolor aut quo est totam.', '1982-11-11', 'Alice. \'I don\'t quite understand you,\' she said, \'and see whether it\'s marked \"poison\" or not\'; for she was exactly one a-piece all round. (It was this last remark, \'it\'s a vegetable. It doesn\'t.', 'SchoolActivity', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (50, 'Et earum temporibus pariatur qui veniam enim in.', '1989-07-26', 'Alice, \'it would have made a rush at Alice the moment she appeared; but she added, to herself, and once again the tiny hands were clasped upon her knee, and looking at it gloomily: then he dipped it.', 'SchoolEvent', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (51, 'Molestiae aliquam veritatis porro doloribus quia mollitia architecto ea.', '1991-08-01', 'Gryphon added \'Come, let\'s try Geography. London is the same age as herself, to see the earth takes twenty-four hours to turn into a chrysalis--you will some day, you know--and then after that.', 'SchoolEvent', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (52, 'Nihil quo voluptates dolore laboriosam quae.', '1972-10-30', 'However, on the bank--the birds with draggled feathers, the animals with their fur clinging close to the conclusion that it felt quite strange at first; but she did not get dry again: they had been.', 'SchoolActivity', 'J. F. Ade. Ajayi Auditorium', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (53, 'Ea deserunt eius nihil quaerat voluptas et ad.', '1971-06-12', 'Alice. \'What sort of idea that they had settled down again, the cook till his eyes were nearly out of the house of the ground--and I should understand that better,\' Alice said to the whiting,\' said.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (54, 'Quasi eos hic aliquid.', '1989-06-28', 'King, \'unless it was just in time to avoid shrinking away altogether. \'That WAS a narrow escape!\' said Alice, \'I\'ve often seen them so shiny?\' Alice looked at the place of the lefthand bit of stick,.', 'SchoolActivity', 'N/A', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (55, 'Aspernatur qui maiores enim tempore.', '2010-07-26', 'I eat or drink something or other; but the Rabbit came near her, about the temper of your flamingo. Shall I try the thing yourself, some winter day, I will just explain to you how the game was going.', 'SchoolActivity', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (56, 'Deserunt id dolorem cupiditate.', '2002-06-05', 'Majesty,\' he began. \'You\'re a very decided tone: \'tell her something about the right size for ten minutes together!\' \'Can\'t remember WHAT things?\' said the Pigeon went on, \'--likely to win, that.', 'SchoolActivity', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (57, 'Debitis quis nihil omnis incidunt qui.', '1996-11-03', 'Alice put down yet, before the trial\'s begun.\' \'They\'re putting down their names,\' the Gryphon repeated impatiently: \'it begins \"I passed by his garden, and I shall be a person of authority over.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (58, 'Enim recusandae animi est iure.', '2005-03-04', 'Hearts, he stole those tarts, And took them quite away!\' \'Consider your verdict,\' the King repeated angrily, \'or I\'ll have you got in your knocking,\' the Footman went on saying to her ear. \'You\'re.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (59, 'Error autem ab deserunt fugit maiores.', '1987-08-23', 'Gryphon, and the March Hare and the constant heavy sobbing of the water, and seemed to have any rules in particular; at least, if there are, nobody attends to them--and you\'ve no idea how to speak.', 'SchoolEvent', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (60, 'Adipisci recusandae assumenda quia ducimus quaerat laborum distinctio.', '2015-10-16', 'The pepper when he finds out who I am! But I\'d better take him his fan and two or three times over to the Classics master, though. He was an old Turtle--we used to say.\' \'So he did, so he did,\' said.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (61, 'Quaerat sit saepe quos repellendus molestiae.', '2005-04-19', 'And here Alice began telling them her adventures from the sky! Ugh, Serpent!\' \'But I\'m not the right size for ten minutes together!\' \'Can\'t remember WHAT things?\' said the Gryphon: and it sat for a.', 'SchoolEvent', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (62, 'Alias at labore qui nihil neque sed iste.', '2016-09-20', 'Father William replied to his son, \'I feared it might happen any minute, \'and then,\' thought she, \'what would become of me? They\'re dreadfully fond of pretending to be otherwise than what it was: at.', 'SchoolEvent', '', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (63, 'Quam et quia quis reiciendis quam dolorem.', '1995-01-29', 'Alice, \'they\'re sure to make the arches. The chief difficulty Alice found at first she would get up and said, very gravely, \'I think, you ought to be said. At last the Mouse, turning to the Gryphon..', 'SchoolEvent', 'Afe Babalola Hall', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (64, 'Laudantium facere enim voluptate nam atque qui amet.', '2005-07-10', 'Duchess was sitting on a summer day: The Knave shook his head sadly. \'Do I look like it?\' he said, turning to the table, half hoping that they had at the March Hare said--\' \'I didn\'t!\' the March.', 'SchoolActivity', 'Afe Babalola Hall', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (65, 'Sed omnis nisi aut eius assumenda dolores.', '2011-04-28', 'Alice replied: \'what\'s the answer?\' \'I haven\'t the slightest idea,\' said the Gryphon, half to Alice. \'Only a thimble,\' said Alice timidly. \'Would you like the three gardeners who were all shaped.', 'SchoolActivity', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (66, 'Aut quod quaerat voluptatem.', '1999-10-14', 'Then came a rumbling of little cartwheels, and the little golden key in the distance, and she said this, she looked down into a tidy little room with a melancholy air, and, after folding his arms.', 'SchoolEvent', 'N/A', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (67, 'Accusantium dignissimos ullam voluptas voluptas velit doloribus porro.', '2004-05-25', 'Allow me to introduce it.\' \'I don\'t believe it,\' said Alice. \'I don\'t know of any one; so, when the White Rabbit, \'and that\'s the queerest thing about it.\' (The jury all brightened up again.).', 'SchoolActivity', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (68, 'Voluptatum aperiam non quo ratione quibusdam.', '1972-06-10', 'Queen of Hearts were seated on their faces, so that it might end, you know,\' Alice gently remarked; \'they\'d have been a RED rose-tree, and we put a stop to this,\' she said to the Mock Turtle sighed.', 'SchoolActivity', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (69, 'Molestias repellat ipsum consectetur temporibus reprehenderit.', '1981-02-08', 'Cheshire Cat sitting on the top of his pocket, and was going on within--a constant howling and sneezing, and every now and then all the time she found a little bit, and said \'No, never\') \'--so you.', 'SchoolEvent', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (70, 'Ut et natus a rem vitae in.', '1978-06-12', 'Five! Always lay the blame on others!\' \'YOU\'D better not do that again!\' which produced another dead silence. Alice noticed with some difficulty, as it didn\'t much matter which way you can;--but I.', 'SchoolEvent', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (71, 'Et ipsum nulla corrupti blanditiis aut in consectetur.', '1976-12-31', 'So she set to work at once crowded round it, panting, and asking, \'But who has won?\' This question the Dodo replied very politely, \'for I can\'t tell you just now what the flame of a globe of.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (72, 'Minima autem velit et optio placeat omnis molestiae.', '2003-05-10', 'Lastly, she pictured to herself how this same little sister of hers that you couldn\'t cut off a bit of mushroom, and her eyes anxiously fixed on it, (\'which certainly was not a mile high,\' said.', 'SchoolEvent', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (73, 'Repudiandae quod dolores quod qui voluptatem quas porro.', '1977-01-26', 'I can listen all day to day.\' This was such a new kind of serpent, that\'s all you know the way the people near the centre of the players to be otherwise than what you had been (Before she had read.', 'SchoolActivity', 'Afe Babalola Hall', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (74, 'Aut facilis quisquam expedita culpa corporis porro.', '1998-01-03', 'Dormouse. \'Write that down,\' the King said gravely, \'and go on for some time busily writing in his sleep, \'that \"I breathe when I get it home?\' when it had gone. \'Well! I\'ve often seen them so.', 'SchoolEvent', '', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (75, 'Unde facilis culpa excepturi quidem neque omnis.', '1985-12-15', 'The Queen turned angrily away from him, and very soon came to ME, and told me he was gone, and the m--\' But here, to Alice\'s great surprise, the Duchess\'s voice died away, even in the pool of tears.', 'SchoolEvent', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (76, 'Quos delectus ut dignissimos et.', '2001-03-07', 'Presently she began shrinking directly. As soon as there was not a VERY turn-up nose, much more like a Jack-in-the-box, and up the conversation dropped, and the jury consider their verdict,\' the.', 'SchoolActivity', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (77, 'In quia est dicta doloremque doloremque ducimus quo cum.', '1973-05-04', 'CHAPTER VI. Pig and Pepper For a minute or two, looking for it, she found this a very difficult question. However, at last turned sulky, and would only say, \'I am older than I am in the kitchen that.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (78, 'Eveniet sed totam ratione labore voluptatem officiis beatae.', '1980-07-30', 'Alice said very politely, \'if I had to stop and untwist it. After a time she found herself safe in a languid, sleepy voice. \'Who are YOU?\' Which brought them back again to the baby, the shriek of.', 'SchoolEvent', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (79, 'Sunt qui labore debitis libero laborum est ipsa.', '1998-08-13', 'As she said to herself, \'whenever I eat or drink anything; so I\'ll just see what the flame of a bottle. They all sat down a good deal until she had got burnt, and eaten up by a row of lodging.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (80, 'Alias dignissimos aut tenetur iure corrupti sed.', '1983-12-04', 'Morcar, the earls of Mercia and Northumbria--\"\' \'Ugh!\' said the Duchess; \'and the moral of that is--\"Birds of a large cat which was sitting on the spot.\' This did not get dry again: they had at the.', 'SchoolActivity', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (81, 'Rem voluptatem cupiditate aut eligendi laborum.', '2011-01-01', 'Alice. \'I wonder what they said. The executioner\'s argument was, that if you only walk long enough.\' Alice felt dreadfully puzzled. The Hatter\'s remark seemed to think that very few little girls eat.', 'SchoolActivity', 'N/A', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (82, 'Maxime repellat alias cupiditate voluptates eius.', '1976-04-27', 'And so she sat down again into its eyes were nearly out of sight: \'but it seems to grin, How neatly spread his claws, And welcome little fishes in With gently smiling jaws!\' \'I\'m sure those are not.', 'SchoolActivity', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (83, 'Debitis dolorum architecto veritatis veritatis sed.', '1999-05-19', 'Hatter went on, \'--likely to win, that it\'s hardly worth while finishing the game.\' The Queen had ordered. They very soon finished off the subjects on his spectacles and looked at her, and the.', 'SchoolActivity', '', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (84, 'Non aut consequuntur voluptatibus ex expedita.', '1979-08-17', 'I hadn\'t cried so much!\' Alas! it was neither more nor less than no time she\'d have everybody executed, all round. \'But she must have been changed for any of them. However, on the ground near the.', 'SchoolEvent', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (85, 'Dolores magnam cumque id in dolores qui odit.', '1976-02-02', 'Father William replied to his son, \'I feared it might be some sense in your knocking,\' the Footman continued in the lock, and to her usual height. It was opened by another footman in livery came.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (86, 'Odio omnis sint velit ab facilis.', '1999-10-03', 'For, you see, Miss, we\'re doing our best, afore she comes, to--\' At this moment Five, who had meanwhile been examining the roses. \'Off with her head pressing against the ceiling, and had come back.', 'SchoolEvent', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (87, 'Laborum magni nesciunt sint eaque fugit recusandae fugiat.', '1970-12-08', 'I\'ve tried banks, and I\'ve tried hedges,\' the Pigeon the opportunity of taking it away. She did it so quickly that the best way you go,\' said the Cat; and this Alice thought to herself. Imagine her.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (88, 'Et illo illum repellat sed ut officiis.', '1972-04-26', 'But the snail replied \"Too far, too far!\" and gave a sudden leap out of the house, and found that her neck would bend about easily in any direction, like a telescope! I think I must sugar my hair.\".', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (89, 'Et illum incidunt ut praesentium.', '1995-06-07', 'March Hare moved into the wood. \'If it had been. But her sister was reading, but it said in a hoarse growl, \'the world would go through,\' thought poor Alice, \'when one wasn\'t always growing larger.', 'SchoolActivity', 'Afe Babalola Hall', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (90, 'Nostrum explicabo fuga autem aut.', '1986-02-14', 'IN the well,\' Alice said with some curiosity. \'What a pity it wouldn\'t stay!\' sighed the Hatter. \'I told you butter wouldn\'t suit the works!\' he added looking angrily at the proposal. \'Then the.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (91, 'Deserunt et dolorem sunt dolorem quibusdam velit.', '2004-04-20', 'Alice. \'Come on, then,\' said the Cat, and vanished. Alice was not much surprised at this, she came upon a little startled by seeing the Cheshire Cat sitting on a little anxiously. \'Yes,\' said Alice.', 'SchoolEvent', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (92, 'Voluptatum tenetur dolorem dolor adipisci.', '2014-04-16', 'Mock Turtle in the wind, and the Queen put on his spectacles and looked very uncomfortable. The moment Alice appeared, she was considering in her French lesson-book. The Mouse gave a little bit, and.', 'SchoolActivity', 'Afe Babalola Hall', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (93, 'Laborum est itaque et ut.', '2015-02-09', 'You MUST have meant some mischief, or else you\'d have signed your name like an honest man.\' There was no one could possibly hear you.\' And certainly there was enough of it in her hands, and began:--.', 'SchoolActivity', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (94, 'Laborum ipsum eaque sequi dolor repudiandae aspernatur voluptatem architecto.', '1976-02-23', 'I\'ve fallen by this time, sat down and saying \"Come up again, dear!\" I shall have some fun now!\' thought Alice. \'I\'m a--I\'m a--\' \'Well! WHAT are you?\' And then a voice of the room. The cook threw a.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (95, 'Nostrum temporibus omnis qui quo unde voluptas aut.', '2016-03-21', 'Then came a little while, however, she waited for a great deal of thought, and it put the Lizard in head downwards, and the great hall, with the edge of the month is it?\' Alice panted as she spoke..', 'SchoolActivity', 'Afe Babalola Hall', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (96, 'Aut qui neque non quod eum.', '2003-11-23', 'Alice, \'or perhaps they won\'t walk the way of expressing yourself.\' The baby grunted again, and put back into the loveliest garden you ever saw. How she longed to change the subject of conversation..', 'SchoolEvent', 'N/A', 'postgraduate programmes at the master’s and doctoral levels.');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (97, 'Et laboriosam ipsa qui cupiditate rem.', '1977-07-03', 'Some of the Gryphon, \'she wants for to know what a Gryphon is, look at them--\'I wish they\'d get the trial done,\' she thought, \'and hand round the refreshments!\' But there seemed to Alice an.', 'SchoolEvent', 'N/A', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (98, 'Dolor et eum eum deserunt.', '2011-09-04', 'Alice, every now and then they both cried. \'Wake up, Dormouse!\' And they pinched it on both sides at once. \'Give your evidence,\' said the King; \'and don\'t be nervous, or I\'ll have you executed,.', 'SchoolEvent', 'Afe Babalola Hall', 'All Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (99, 'Et et aut necessitatibus eum quam.', '2014-03-19', 'Cheshire cat,\' said the Mock Turtle sighed deeply, and began, in a court of justice before, but she added, \'and the moral of that is--\"Oh, \'tis love, that makes them so often, of course had to run.', 'SchoolEvent', '', 'Final Year Students');
+INSERT INTO `SchoolActivity_Event` (`Activity_EventID`, `Title`, `Date`, `Description`, `Type`, `Venue`, `DepartmentGroup`) VALUES (100, 'Voluptatem corporis eum sunt voluptatem sequi assumenda.', '2008-11-09', 'I wonder?\' As she said to herself how she would manage it. \'They were learning to draw,\' the Dormouse sulkily remarked, \'If you do. I\'ll set Dinah at you!\' There was no more of it at last, with a.', 'SchoolEvent', 'J. F. Ade. Ajayi Auditorium', 'postgraduate programmes at the master’s and doctoral levels.');
+
+
+#
+# TABLE STRUCTURE FOR: Student
+#
+
+DROP TABLE IF EXISTS `Student`;
 
 CREATE TABLE `Student` (
   `Student_MatricID` varchar(20) NOT NULL,
@@ -804,407 +991,313 @@ CREATE TABLE `Student` (
   CONSTRAINT `Student_ibfk_2` FOREIGN KEY (`DepartmentID`) REFERENCES `Department` (`DepartmentID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES
-('aby/538/87547',	21,	19,	'100'),
-('acm/864/31457',	109,	18,	'500'),
-('afe/784/04831',	492,	10,	'300'),
-('aju/591/40822',	3,	2,	'300'),
-('ajv/483/90510',	8,	18,	'100'),
-('ali/846/57517',	206,	4,	'500'),
-('arz/050/64417',	453,	22,	'400'),
-('aup/609/38828',	258,	4,	'600'),
-('bbp/546/82413',	386,	9,	'100'),
-('bem/442/61029',	76,	15,	'300'),
-('bet/986/59630',	255,	20,	'500'),
-('bfa/682/99345',	186,	12,	'400'),
-('bfy/958/49577',	484,	16,	'400'),
-('bij/894/52242',	177,	11,	'200'),
-('biy/684/29307',	28,	1,	'500'),
-('bjr/348/70417',	500,	17,	'400'),
-('bkw/019/83155',	404,	13,	'200'),
-('bmo/639/35087',	477,	14,	'600'),
-('bmv/738/44463',	2,	16,	'100'),
-('bqj/895/68257',	209,	23,	'100'),
-('bst/728/32938',	371,	22,	'400'),
-('btc/031/23103',	302,	23,	'600'),
-('btn/577/70325',	349,	17,	'100'),
-('bto/665/54912',	27,	1,	'500'),
-('btx/393/88643',	69,	22,	'600'),
-('bvs/632/91937',	401,	14,	'500'),
-('bwp/121/35293',	238,	17,	'500'),
-('bwt/028/44087',	397,	8,	'500'),
-('bwx/968/84045',	408,	12,	'100'),
-('bzv/168/71052',	7,	2,	'500'),
-('caa/080/52071',	47,	3,	'500'),
-('cbd/079/21704',	460,	1,	'500'),
-('cej/364/74553',	481,	4,	'200'),
-('cfn/741/98219',	144,	13,	'400'),
-('cgu/799/99493',	378,	7,	'100'),
-('cli/259/59018',	233,	3,	'400'),
-('clq/649/17194',	397,	4,	'200'),
-('clt/016/36683',	162,	8,	'100'),
-('clu/540/41204',	64,	14,	'500'),
-('cml/438/16938',	353,	1,	'300'),
-('cnh/065/78145',	395,	18,	'100'),
-('coz/342/02303',	298,	3,	'100'),
-('ctj/715/99236',	381,	17,	'200'),
-('ctu/431/45622',	212,	12,	'400'),
-('cuv/598/19983',	305,	25,	'300'),
-('cvh/772/10478',	47,	23,	'300'),
-('cys/539/93141',	173,	19,	'100'),
-('ded/210/95538',	120,	21,	'400'),
-('dew/655/39897',	41,	10,	'400'),
-('dfa/625/22692',	36,	9,	'100'),
-('dge/655/09998',	138,	13,	'100'),
-('dkv/439/06616',	441,	15,	'400'),
-('dky/584/70310',	231,	7,	'500'),
-('dmv/790/37888',	237,	1,	'400'),
-('dnc/539/57692',	453,	23,	'200'),
-('dns/411/51806',	267,	20,	'300'),
-('dny/498/53174',	125,	10,	'600'),
-('dvu/794/51214',	47,	7,	'500'),
-('dwh/772/09414',	454,	13,	'200'),
-('dwm/161/41066',	277,	10,	'200'),
-('dwy/652/53139',	306,	3,	'100'),
-('dxj/575/51620',	30,	11,	'200'),
-('dyj/397/02120',	153,	18,	'400'),
-('eaq/975/14225',	238,	15,	'300'),
-('eby/889/36691',	370,	11,	'200'),
-('edx/043/63533',	396,	11,	'500'),
-('emg/194/14427',	158,	25,	'400'),
-('enx/618/96514',	134,	18,	'500'),
-('esj/830/72682',	61,	2,	'400'),
-('ets/939/33645',	441,	2,	'400'),
-('exo/697/96203',	283,	8,	'400'),
-('fan/357/46682',	111,	19,	'400'),
-('fan/703/64360',	284,	21,	'500'),
-('fav/021/94037',	356,	14,	'300'),
-('fay/185/60291',	494,	16,	'500'),
-('fbn/521/60452',	223,	5,	'400'),
-('fcq/157/00669',	359,	25,	'500'),
-('fdm/652/67029',	53,	13,	'300'),
-('fgl/548/77451',	244,	23,	'400'),
-('fmr/655/41052',	150,	17,	'100'),
-('fnb/698/13931',	395,	11,	'100'),
-('fnm/251/96266',	262,	25,	'200'),
-('fpw/034/08606',	44,	17,	'300'),
-('fpy/919/45936',	278,	15,	'200'),
-('fur/251/03249',	192,	21,	'300'),
-('fvq/862/47273',	246,	12,	'200'),
-('fwy/955/00026',	33,	17,	'400'),
-('fys/857/56135',	182,	15,	'300'),
-('fzn/320/75892',	241,	14,	'200'),
-('gdl/509/22708',	319,	20,	'300'),
-('gdt/175/18791',	426,	23,	'500'),
-('ggi/692/30632',	431,	16,	'300'),
-('ggt/587/01431',	353,	9,	'200'),
-('gii/232/49377',	257,	14,	'600'),
-('giv/857/47729',	111,	11,	'600'),
-('glu/033/24257',	367,	24,	'200'),
-('glz/368/09805',	191,	18,	'500'),
-('goy/302/39413',	237,	1,	'300'),
-('gqm/500/67495',	321,	24,	'400'),
-('gto/423/39469',	269,	2,	'100'),
-('gxz/344/44634',	305,	11,	'200'),
-('gyg/378/93266',	42,	25,	'300'),
-('gzn/819/98778',	203,	22,	'500'),
-('haa/908/84276',	146,	10,	'300'),
-('hbz/737/38718',	321,	10,	'100'),
-('hcx/739/78531',	128,	7,	'100'),
-('hej/180/04425',	348,	7,	'300'),
-('hfm/370/34726',	223,	1,	'500'),
-('hha/885/85934',	285,	20,	'600'),
-('hkp/457/51098',	291,	17,	'300'),
-('hli/713/82287',	482,	15,	'100'),
-('hlz/164/33318',	369,	25,	'400'),
-('hod/906/73382',	169,	19,	'400'),
-('hot/608/59597',	118,	18,	'200'),
-('hou/903/71236',	127,	23,	'400'),
-('hqz/093/73226',	431,	16,	'100'),
-('hrr/635/07251',	358,	15,	'500'),
-('hsc/316/81391',	276,	20,	'200'),
-('hve/967/15469',	26,	19,	'600'),
-('hxd/583/69850',	342,	13,	'500'),
-('hzx/775/92680',	361,	16,	'600'),
-('icd/097/28601',	99,	7,	'300'),
-('ifj/640/87689',	264,	20,	'200'),
-('igs/247/07648',	407,	12,	'200'),
-('igv/212/51155',	354,	20,	'300'),
-('igx/290/13366',	304,	5,	'400'),
-('ihy/269/97216',	282,	10,	'600'),
-('iqf/823/60232',	73,	8,	'200'),
-('irs/920/60342',	37,	20,	'500'),
-('isw/225/84344',	481,	1,	'100'),
-('izh/054/92308',	189,	12,	'500'),
-('jab/387/21979',	385,	14,	'200'),
-('jau/569/56694',	356,	9,	'100'),
-('jbp/575/33119',	31,	25,	'400'),
-('jcp/327/22159',	87,	4,	'200'),
-('jea/298/40972',	221,	19,	'300'),
-('jgp/832/37732',	186,	19,	'200'),
-('jgt/063/12584',	112,	20,	'500'),
-('jhw/496/59388',	329,	5,	'500'),
-('jmi/671/18112',	144,	7,	'300'),
-('jne/931/34801',	104,	4,	'500'),
-('jri/496/27431',	176,	18,	'200'),
-('jrj/108/04019',	477,	24,	'100'),
-('jro/254/67606',	178,	19,	'600'),
-('jry/467/99566',	234,	22,	'100'),
-('jsq/706/76947',	189,	4,	'200'),
-('jta/607/71800',	156,	22,	'200'),
-('jtu/123/95253',	425,	13,	'100'),
-('juo/186/49064',	418,	11,	'300'),
-('juy/740/44152',	464,	14,	'100'),
-('jyl/395/96812',	78,	1,	'100'),
-('kdo/392/79920',	65,	5,	'300'),
-('kdq/786/17725',	488,	25,	'300'),
-('ket/948/37048',	12,	10,	'100'),
-('keu/065/04862',	43,	20,	'200'),
-('kfd/767/47597',	498,	5,	'600'),
-('kfy/401/87166',	225,	5,	'100'),
-('kgc/884/79394',	423,	4,	'200'),
-('kgt/116/95873',	478,	22,	'500'),
-('khj/927/01267',	459,	8,	'200'),
-('kig/676/27320',	370,	7,	'100'),
-('kim/935/01436',	436,	14,	'300'),
-('klb/797/65200',	184,	9,	'300'),
-('klc/777/29440',	265,	18,	'400'),
-('knh/044/04195',	321,	13,	'200'),
-('kod/881/52321',	97,	9,	'600'),
-('kqp/753/87630',	198,	20,	'200'),
-('kxu/365/22304',	144,	8,	'100'),
-('kyf/480/22496',	327,	13,	'400'),
-('kze/249/04282',	416,	6,	'100'),
-('lfd/284/75257',	70,	6,	'100'),
-('lmh/595/16088',	286,	7,	'300'),
-('lmw/511/98783',	448,	8,	'100'),
-('lmw/799/51616',	115,	10,	'400'),
-('lnn/158/23059',	313,	1,	'100'),
-('lor/454/20301',	8,	23,	'600'),
-('lov/200/79792',	109,	10,	'200'),
-('lpx/886/85051',	141,	1,	'200'),
-('lsp/458/52511',	243,	7,	'100'),
-('lzk/042/44557',	115,	12,	'600'),
-('maw/181/29540',	218,	6,	'100'),
-('mbc/541/87105',	317,	7,	'500'),
-('mbd/751/26066',	467,	19,	'300'),
-('mbp/512/64670',	356,	7,	'200'),
-('mbt/749/66650',	71,	12,	'400'),
-('mdn/622/71378',	272,	3,	'100'),
-('mdq/223/69189',	109,	11,	'300'),
-('mep/560/11980',	377,	9,	'300'),
-('mgx/367/16065',	316,	8,	'200'),
-('mlm/334/58100',	89,	24,	'400'),
-('mnf/486/92135',	177,	14,	'400'),
-('moh/956/99655',	449,	7,	'100'),
-('mpk/427/20320',	149,	6,	'300'),
-('mqe/475/48912',	24,	2,	'300'),
-('mqv/878/20121',	119,	10,	'300'),
-('mrk/527/82842',	123,	1,	'200'),
-('msa/152/30940',	430,	21,	'400'),
-('msd/634/35585',	135,	21,	'600'),
-('mse/399/96238',	230,	1,	'100'),
-('msz/926/21153',	78,	20,	'500'),
-('mti/625/04411',	50,	18,	'100'),
-('mux/546/46169',	420,	25,	'300'),
-('nch/848/91968',	18,	1,	'100'),
-('ndm/328/72774',	380,	15,	'600'),
-('neg/850/24585',	305,	13,	'500'),
-('nig/375/58689',	492,	13,	'600'),
-('nme/727/60167',	309,	17,	'200'),
-('nms/605/92516',	238,	10,	'500'),
-('nms/969/11366',	462,	21,	'500'),
-('nnl/022/25575',	406,	18,	'400'),
-('nuf/353/27962',	156,	23,	'100'),
-('nut/471/53363',	468,	3,	'600'),
-('nxx/605/86262',	412,	10,	'200'),
-('nzh/646/16318',	457,	17,	'200'),
-('nzm/112/32602',	152,	14,	'100'),
-('ofk/033/76074',	227,	2,	'100'),
-('ogt/725/13636',	455,	11,	'200'),
-('oil/941/82199',	314,	19,	'400'),
-('ojg/540/62231',	153,	7,	'100'),
-('olc/787/16566',	395,	21,	'600'),
-('omf/018/17208',	141,	21,	'600'),
-('omi/345/16179',	145,	8,	'300'),
-('onm/508/91178',	47,	13,	'500'),
-('orl/805/90805',	273,	19,	'400'),
-('owl/829/20309',	137,	4,	'100'),
-('oxb/090/43149',	143,	5,	'300'),
-('oye/705/77133',	228,	6,	'100'),
-('oyt/006/70624',	83,	18,	'500'),
-('ozc/509/27036',	444,	20,	'100'),
-('pcs/031/26142',	135,	20,	'100'),
-('pcs/567/34200',	275,	15,	'600'),
-('pct/789/98894',	384,	16,	'200'),
-('pfa/864/21443',	215,	14,	'200'),
-('pfj/997/65655',	452,	13,	'100'),
-('pfo/829/32025',	478,	17,	'500'),
-('phd/446/54627',	333,	21,	'200'),
-('pkd/517/74151',	132,	10,	'200'),
-('plm/327/32066',	468,	7,	'600'),
-('pml/570/10780',	55,	19,	'400'),
-('pmq/120/88813',	178,	5,	'500'),
-('pqf/824/96118',	91,	4,	'400'),
-('pri/982/54091',	412,	20,	'500'),
-('pui/712/70236',	270,	1,	'500'),
-('qap/608/99954',	311,	9,	'200'),
-('qbr/529/98542',	4,	11,	'200'),
-('qcy/066/22478',	237,	1,	'500'),
-('qdk/535/00590',	305,	4,	'200'),
-('qdw/780/72858',	380,	17,	'400'),
-('qft/163/35454',	137,	11,	'300'),
-('qgq/944/73798',	188,	21,	'600'),
-('qgv/652/75784',	121,	17,	'500'),
-('qip/258/06166',	151,	21,	'500'),
-('qkh/201/98008',	285,	14,	'300'),
-('qkr/162/07495',	212,	15,	'100'),
-('qlz/225/16515',	410,	5,	'200'),
-('qmk/778/60930',	348,	13,	'200'),
-('qne/075/60604',	209,	14,	'200'),
-('qpl/148/56839',	335,	14,	'500'),
-('qqj/769/06346',	204,	19,	'500'),
-('qql/247/12394',	478,	6,	'300'),
-('qqo/438/05923',	34,	10,	'200'),
-('qrr/335/93898',	430,	17,	'300'),
-('qvn/196/52570',	218,	7,	'200'),
-('qwc/993/76931',	296,	11,	'300'),
-('qxt/778/35123',	102,	12,	'600'),
-('qya/466/36107',	465,	9,	'500'),
-('qys/993/45797',	13,	14,	'100'),
-('rdl/317/39184',	337,	25,	'300'),
-('rge/610/55403',	273,	7,	'200'),
-('rki/322/77319',	131,	6,	'100'),
-('rrq/511/86382',	228,	8,	'200'),
-('rvv/844/65974',	349,	10,	'500'),
-('rwi/109/66047',	253,	5,	'100'),
-('rxq/230/17295',	317,	22,	'500'),
-('say/280/48137',	165,	7,	'400'),
-('saz/422/06166',	302,	10,	'500'),
-('smo/158/10566',	293,	25,	'500'),
-('smr/283/79667',	389,	13,	'500'),
-('smr/902/59603',	261,	20,	'300'),
-('sng/161/16791',	379,	13,	'400'),
-('soa/602/75782',	343,	3,	'300'),
-('sof/446/29125',	16,	16,	'500'),
-('spg/295/24786',	243,	9,	'600'),
-('sqh/980/36902',	272,	1,	'500'),
-('srn/156/48825',	309,	25,	'400'),
-('sso/603/89881',	70,	1,	'500'),
-('sur/558/71697',	142,	21,	'100'),
-('sux/901/99207',	382,	17,	'200'),
-('sxx/204/56475',	102,	17,	'500'),
-('syu/065/45649',	349,	1,	'100'),
-('tgp/635/07766',	461,	20,	'300'),
-('thn/644/23776',	105,	18,	'500'),
-('tlj/612/75497',	144,	1,	'200'),
-('tme/437/21175',	306,	16,	'500'),
-('tmy/936/44611',	108,	12,	'200'),
-('toj/223/07966',	81,	10,	'500'),
-('tpe/401/53376',	13,	8,	'200'),
-('tqm/294/75271',	128,	24,	'100'),
-('trj/821/77156',	31,	19,	'300'),
-('tvx/752/09900',	81,	25,	'100'),
-('uas/074/61112',	114,	21,	'600'),
-('ubr/354/75819',	101,	6,	'300'),
-('ubz/020/95747',	398,	18,	'300'),
-('ucd/143/07779',	289,	9,	'600'),
-('uku/277/52209',	383,	20,	'600'),
-('uob/786/37446',	43,	18,	'200'),
-('uqc/756/63631',	212,	14,	'400'),
-('uqk/765/33809',	209,	6,	'600'),
-('url/753/29848',	180,	3,	'500'),
-('usk/850/19239',	235,	19,	'100'),
-('uua/606/57924',	486,	6,	'100'),
-('uua/669/20546',	164,	3,	'600'),
-('uxy/784/69595',	153,	14,	'200'),
-('uyf/581/85606',	117,	4,	'300'),
-('uzh/945/31598',	419,	15,	'200'),
-('vad/654/22984',	30,	5,	'500'),
-('vch/262/48309',	42,	7,	'100'),
-('vdq/370/56094',	47,	20,	'500'),
-('vep/468/00093',	72,	14,	'100'),
-('vew/642/69376',	308,	3,	'600'),
-('vhw/045/54515',	328,	20,	'500'),
-('vlo/371/23578',	244,	12,	'400'),
-('vqj/294/76904',	397,	10,	'600'),
-('vsl/394/39003',	244,	19,	'200'),
-('vvk/526/62825',	187,	3,	'100'),
-('vwd/768/23523',	286,	19,	'100'),
-('vwo/046/26156',	161,	9,	'300'),
-('vwu/559/47620',	275,	10,	'400'),
-('vxf/004/27971',	295,	3,	'200'),
-('vxz/286/77465',	331,	11,	'100'),
-('vzn/783/97438',	67,	22,	'500'),
-('vzw/146/67355',	30,	24,	'400'),
-('wad/731/24145',	357,	15,	'400'),
-('wcx/921/06879',	218,	20,	'100'),
-('wdo/254/79803',	313,	6,	'100'),
-('wek/753/36202',	315,	25,	'100'),
-('wgi/972/82379',	397,	14,	'100'),
-('whl/531/35900',	360,	25,	'200'),
-('wju/279/45635',	466,	17,	'100'),
-('wmk/180/30381',	181,	1,	'400'),
-('wot/437/78223',	489,	4,	'200'),
-('wou/435/48405',	278,	5,	'300'),
-('wsk/730/96360',	276,	7,	'300'),
-('wup/454/74374',	287,	5,	'200'),
-('wvx/002/27545',	397,	14,	'200'),
-('wwg/842/70663',	82,	8,	'400'),
-('wye/885/42328',	81,	1,	'500'),
-('wyi/996/23519',	4,	11,	'100'),
-('wzl/927/66239',	85,	14,	'200'),
-('xag/044/74594',	329,	5,	'400'),
-('xar/755/76411',	116,	14,	'200'),
-('xct/916/11769',	24,	14,	'100'),
-('xdp/899/15852',	276,	13,	'600'),
-('xdq/141/40569',	289,	7,	'500'),
-('xem/416/13651',	158,	5,	'500'),
-('xjd/848/14319',	366,	14,	'500'),
-('xjq/355/68293',	347,	24,	'100'),
-('xlp/536/25661',	312,	8,	'600'),
-('xlq/861/60804',	272,	25,	'200'),
-('xmr/881/70087',	388,	22,	'600'),
-('xob/204/46919',	290,	16,	'100'),
-('xop/789/84964',	2,	11,	'400'),
-('xpy/552/12910',	143,	17,	'500'),
-('xrn/942/28601',	416,	18,	'200'),
-('xud/835/36926',	207,	18,	'400'),
-('xue/345/27813',	89,	14,	'100'),
-('xuq/263/02204',	320,	24,	'600'),
-('xuy/955/86433',	219,	12,	'100'),
-('xxy/522/99577',	409,	13,	'100'),
-('xxz/959/80534',	167,	13,	'600'),
-('xyo/508/60766',	127,	24,	'100'),
-('xzv/463/71995',	164,	20,	'600'),
-('yhx/574/98440',	230,	10,	'300'),
-('ykc/923/24715',	489,	21,	'500'),
-('ykh/632/34965',	170,	20,	'200'),
-('ypm/615/70987',	51,	23,	'500'),
-('ypt/863/67375',	166,	18,	'100'),
-('yri/270/24682',	481,	2,	'500'),
-('yrr/804/12697',	325,	2,	'100'),
-('yrw/981/37344',	296,	10,	'600'),
-('ysb/370/69039',	209,	3,	'200'),
-('ysr/556/61867',	140,	3,	'200'),
-('ysy/590/79996',	92,	23,	'400'),
-('yvl/173/65871',	253,	25,	'100'),
-('yvz/366/00812',	281,	8,	'200'),
-('yxg/142/38768',	320,	2,	'600'),
-('yyn/097/84376',	492,	6,	'100'),
-('zai/550/43414',	362,	15,	'400'),
-('zau/370/06645',	262,	21,	'100'),
-('zde/109/92931',	221,	12,	'200'),
-('zes/502/04312',	26,	11,	'200'),
-('zgy/600/92513',	3,	4,	'200'),
-('zkj/828/41036',	263,	22,	'200'),
-('zlm/196/28043',	136,	22,	'200'),
-('zpw/485/16522',	32,	5,	'500'),
-('zqm/012/53910',	387,	9,	'100'),
-('zqt/927/67371',	277,	8,	'500'),
-('zry/868/64590',	220,	11,	'300'),
-('zux/547/13546',	391,	3,	'100'),
-('zvh/744/10922',	115,	15,	'600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140062', 335, 20, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140090', 128, 15, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140153', 108, 5, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140156', 441, 7, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140192', 469, 24, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140203', 248, 2, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140229', 448, 15, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140233', 113, 1, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140313', 92, 2, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140412', 15, 23, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140428', 389, 24, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140439', 252, 14, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140445', 69, 19, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140531', 499, 21, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140540', 298, 6, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140614', 488, 11, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140668', 225, 16, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140687', 437, 17, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140701', 288, 12, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140798', 99, 24, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140823', 34, 19, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140880', 7, 17, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140904', 209, 3, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140925', 39, 24, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140931', 346, 2, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140953', 447, 24, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140968', 368, 16, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('140989', 271, 9, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141092', 382, 8, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141128', 362, 8, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141130', 76, 8, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141164', 386, 7, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141175', 295, 11, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141186', 102, 21, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141210', 47, 18, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141211', 237, 21, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141230', 4, 4, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141258', 142, 19, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141286', 342, 3, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141293', 56, 25, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141403', 188, 8, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141503', 459, 20, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141546', 130, 25, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141601', 207, 11, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141687', 498, 17, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141726', 471, 18, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141731', 443, 11, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141765', 274, 3, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141769', 146, 3, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141824', 454, 1, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141900', 262, 1, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('141949', 341, 24, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142019', 383, 21, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142029', 471, 21, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142085', 200, 12, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142106', 182, 2, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142123', 188, 23, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142140', 101, 6, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142190', 412, 25, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142205', 5, 11, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142235', 366, 11, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142244', 340, 11, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142256', 187, 16, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142302', 37, 12, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142331', 25, 23, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142336', 269, 24, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142341', 196, 16, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142387', 438, 8, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142405', 247, 18, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142417', 479, 25, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142492', 245, 20, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142506', 497, 14, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142512', 425, 6, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142518', 152, 12, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142521', 231, 3, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142582', 349, 1, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142607', 390, 19, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142647', 225, 15, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142716', 262, 24, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142761', 476, 9, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('142856', 262, 18, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143080', 66, 5, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143144', 182, 6, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143160', 234, 25, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143177', 251, 17, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143187', 394, 6, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143198', 476, 21, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143203', 283, 16, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143270', 163, 7, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143280', 32, 11, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143356', 37, 19, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143398', 405, 19, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143402', 386, 3, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143413', 265, 6, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143430', 400, 9, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143437', 431, 5, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143497', 235, 9, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143570', 362, 3, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143577', 55, 13, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143674', 202, 3, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143693', 15, 22, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143743', 400, 4, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143784', 120, 24, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143785', 118, 4, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143821', 21, 1, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143837', 144, 23, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143842', 199, 25, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143869', 377, 24, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143884', 19, 5, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143919', 246, 13, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143920', 374, 25, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143938', 422, 14, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('143950', 349, 1, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144114', 212, 1, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144135', 248, 2, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144199', 441, 19, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144286', 153, 10, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144324', 117, 7, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144325', 492, 25, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144339', 373, 8, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144354', 62, 8, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144451', 385, 23, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144467', 212, 17, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144489', 259, 15, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144497', 148, 13, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144512', 426, 6, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144513', 477, 8, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144521', 441, 22, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144533', 470, 19, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144582', 179, 22, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144603', 296, 25, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144628', 244, 22, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144634', 22, 1, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144682', 147, 23, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144703', 58, 16, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144715', 498, 25, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144788', 348, 23, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144826', 302, 1, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144858', 256, 3, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144943', 71, 12, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144967', 410, 6, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('144984', 265, 23, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145010', 271, 10, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145031', 407, 2, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145090', 273, 5, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145125', 457, 13, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145337', 73, 7, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145365', 375, 4, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145370', 317, 14, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145386', 337, 2, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145421', 311, 24, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145518', 384, 13, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145523', 20, 24, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145532', 215, 18, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145554', 51, 4, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145570', 335, 22, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145622', 397, 2, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145647', 394, 24, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145663', 459, 20, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145667', 106, 24, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145674', 302, 6, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145731', 121, 13, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145745', 10, 5, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145761', 116, 3, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145774', 486, 24, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145802', 81, 15, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145815', 309, 8, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145858', 264, 7, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145897', 389, 11, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145904', 203, 4, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145958', 443, 9, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('145971', 263, 1, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146029', 95, 17, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146040', 110, 8, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146056', 133, 19, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146065', 190, 7, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146073', 48, 20, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146078', 110, 19, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146079', 319, 23, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146101', 280, 23, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146116', 377, 18, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146160', 280, 2, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146196', 52, 20, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146198', 223, 3, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146210', 258, 18, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146269', 449, 24, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146275', 315, 3, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146283', 70, 8, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146361', 136, 9, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146380', 458, 14, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146391', 151, 5, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146434', 454, 5, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146436', 126, 12, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146437', 255, 25, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146441', 35, 20, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146467', 453, 2, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146514', 458, 16, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146540', 165, 25, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146559', 300, 1, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146597', 94, 17, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146613', 349, 1, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146664', 356, 25, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146666', 367, 19, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146676', 445, 3, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146680', 480, 18, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146730', 120, 6, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146798', 30, 19, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146829', 481, 16, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146844', 170, 8, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146931', 84, 8, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146944', 497, 6, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('146956', 471, 12, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147060', 474, 21, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147074', 254, 23, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147105', 221, 10, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147108', 278, 5, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147174', 413, 20, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147228', 142, 6, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147243', 375, 5, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147323', 402, 23, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147332', 23, 23, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147348', 89, 21, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147393', 113, 14, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147525', 412, 11, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147535', 60, 4, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147542', 312, 6, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147565', 247, 12, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147593', 379, 22, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147608', 88, 8, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147627', 295, 24, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147641', 255, 21, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147642', 389, 17, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147693', 265, 6, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147719', 57, 16, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147742', 500, 16, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147769', 190, 15, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147831', 436, 22, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147921', 7, 25, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147935', 441, 6, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('147938', 278, 9, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148055', 393, 21, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148110', 66, 12, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148117', 128, 2, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148129', 247, 24, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148130', 447, 23, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148199', 12, 19, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148280', 277, 8, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148312', 492, 20, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148333', 18, 14, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148338', 171, 16, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148407', 105, 22, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148472', 34, 24, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148500', 111, 25, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148532', 98, 4, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148533', 499, 3, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148534', 61, 2, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148539', 92, 11, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148579', 379, 7, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148606', 350, 9, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148611', 486, 1, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148624', 442, 12, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148748', 196, 5, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148751', 499, 6, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148758', 384, 21, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148876', 21, 21, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148917', 110, 11, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148971', 500, 1, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('148978', 19, 18, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149000', 245, 4, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149010', 341, 18, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149022', 378, 13, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149024', 3, 25, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149025', 81, 11, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149040', 105, 2, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149048', 369, 21, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149153', 415, 7, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149212', 175, 14, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149262', 232, 16, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149280', 243, 25, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149321', 186, 7, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149331', 216, 17, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149335', 321, 12, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149354', 470, 9, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149379', 71, 24, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149501', 82, 13, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149548', 450, 25, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149583', 220, 12, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149594', 344, 15, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149628', 274, 7, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149695', 118, 20, '200');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149725', 90, 5, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149828', 33, 25, '500');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149830', 478, 17, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149871', 336, 11, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149890', 469, 17, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149914', 450, 25, '100');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149929', 372, 24, '600');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149936', 75, 23, '300');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149973', 246, 18, '400');
+INSERT INTO `Student` (`Student_MatricID`, `UserID`, `DepartmentID`, `Level`) VALUES ('149979', 359, 5, '400');
+
+
+#
+# TABLE STRUCTURE FOR: Timetable
+#
+
+DROP TABLE IF EXISTS `Timetable`;
 
 CREATE TABLE `Timetable` (
   `TimeTableID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -1217,107 +1310,113 @@ CREATE TABLE `Timetable` (
   CONSTRAINT `Timetable_ibfk_1` FOREIGN KEY (`CourseID`) REFERENCES `Course` (`CourseID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 
-INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES
-(1,	NULL,	'Tuesday',	'1980-02-26 12:15:28',	'1971-06-09 13:36:14'),
-(2,	NULL,	'Thursday',	'2004-06-06 07:59:44',	'2009-02-08 13:14:17'),
-(3,	NULL,	'Saturday',	'1995-10-22 12:37:54',	'1975-04-21 22:19:15'),
-(4,	NULL,	'Tuesday',	'1985-01-26 08:19:32',	'1984-06-27 23:58:31'),
-(5,	NULL,	'Tuesday',	'1979-08-28 22:20:05',	'2000-10-07 08:05:19'),
-(6,	NULL,	'Saturday',	'2007-01-22 09:10:41',	'2007-09-07 15:22:17'),
-(7,	NULL,	'Tuesday',	'1985-12-02 05:17:02',	'1991-07-11 13:12:32'),
-(8,	NULL,	'Monday',	'1991-02-22 19:38:53',	'1987-11-27 13:13:23'),
-(9,	NULL,	'Tuesday',	'2009-11-04 14:32:37',	'1972-02-04 00:13:36'),
-(10,	NULL,	'Friday',	'1977-11-17 00:37:29',	'1991-10-01 20:46:42'),
-(11,	NULL,	'Thursday',	'2003-07-08 12:34:57',	'1986-02-24 07:17:07'),
-(12,	NULL,	'Monday',	'2002-09-08 19:41:45',	'2006-01-29 13:51:36'),
-(13,	NULL,	'Wednesday',	'2017-07-26 00:41:34',	'2016-01-18 12:31:17'),
-(14,	NULL,	'Friday',	'1996-08-14 15:32:57',	'2011-04-27 04:17:59'),
-(15,	NULL,	'Thursday',	'2004-08-29 20:14:04',	'1975-09-23 13:49:41'),
-(16,	NULL,	'Friday',	'2007-06-13 19:58:52',	'2009-01-14 18:41:03'),
-(17,	NULL,	'Wednesday',	'1985-06-14 13:16:08',	'1990-07-30 13:18:05'),
-(18,	NULL,	'Tuesday',	'1974-11-28 12:23:52',	'2004-11-29 21:58:36'),
-(19,	NULL,	'Monday',	'1980-01-28 03:55:35',	'1999-03-08 14:36:47'),
-(20,	NULL,	'Thursday',	'1988-01-27 05:24:12',	'1991-05-12 02:19:28'),
-(21,	NULL,	'Thursday',	'1980-04-30 17:25:16',	'1995-01-28 18:35:43'),
-(22,	NULL,	'Thursday',	'2004-08-08 19:53:01',	'1995-05-26 22:18:45'),
-(23,	NULL,	'Monday',	'1992-06-22 17:00:51',	'2005-03-02 09:49:21'),
-(24,	NULL,	'Thursday',	'2006-10-15 00:09:01',	'1998-12-29 10:11:56'),
-(25,	NULL,	'Saturday',	'1990-07-06 17:46:25',	'2019-02-23 00:57:55'),
-(26,	NULL,	'Friday',	'1979-03-18 02:54:24',	'1997-07-01 11:50:25'),
-(27,	NULL,	'Friday',	'1987-06-07 03:19:34',	'1996-12-12 14:45:58'),
-(28,	NULL,	'Tuesday',	'2016-10-12 13:37:26',	'2006-04-17 21:48:29'),
-(29,	NULL,	'Monday',	'2009-03-30 11:47:02',	'1980-10-28 06:48:13'),
-(30,	NULL,	'Monday',	'2002-10-27 04:19:56',	'2004-12-04 12:09:37'),
-(31,	NULL,	'Saturday',	'1995-11-09 15:12:02',	'1971-01-08 04:26:10'),
-(32,	NULL,	'Tuesday',	'1997-08-04 00:25:53',	'1991-01-26 03:14:44'),
-(33,	NULL,	'Thursday',	'2016-06-19 08:11:10',	'1983-05-02 00:59:10'),
-(34,	NULL,	'Wednesday',	'1970-07-13 21:27:43',	'1970-09-17 07:59:26'),
-(35,	NULL,	'Monday',	'2010-10-29 00:22:11',	'1971-01-27 11:08:36'),
-(36,	NULL,	'Wednesday',	'1973-03-07 19:48:39',	'2003-03-08 09:34:33'),
-(37,	NULL,	'Thursday',	'2007-05-19 21:55:34',	'1979-04-27 15:22:41'),
-(38,	NULL,	'Wednesday',	'1985-01-19 11:08:29',	'2008-10-28 03:17:41'),
-(39,	NULL,	'Monday',	'1984-05-13 18:09:51',	'2012-02-10 12:03:02'),
-(40,	NULL,	'Thursday',	'1983-07-20 00:27:58',	'1990-10-04 02:00:16'),
-(41,	NULL,	'Tuesday',	'1999-08-02 23:01:20',	'1988-11-22 05:52:30'),
-(42,	NULL,	'Thursday',	'1994-10-23 22:45:56',	'2005-11-10 14:46:58'),
-(43,	NULL,	'Thursday',	'1987-08-25 04:15:13',	'1975-09-07 22:44:13'),
-(44,	NULL,	'Monday',	'2015-04-12 14:44:50',	'2000-03-28 08:07:20'),
-(45,	NULL,	'Saturday',	'1996-03-19 19:55:22',	'1981-08-06 07:22:17'),
-(46,	NULL,	'Monday',	'1980-09-14 15:02:48',	'1997-09-20 09:46:21'),
-(47,	NULL,	'Thursday',	'1991-05-30 08:08:42',	'2017-02-20 05:09:19'),
-(48,	NULL,	'Tuesday',	'2005-04-06 08:33:33',	'1990-07-01 22:30:22'),
-(49,	NULL,	'Saturday',	'1996-12-04 21:41:49',	'2006-09-14 09:35:28'),
-(50,	NULL,	'Saturday',	'2004-02-28 06:12:16',	'1993-05-05 04:42:53'),
-(51,	NULL,	'Thursday',	'1991-01-31 02:58:49',	'1973-07-16 11:52:30'),
-(52,	NULL,	'Saturday',	'2001-09-20 04:38:03',	'1991-12-12 04:45:36'),
-(53,	NULL,	'Tuesday',	'1979-10-05 23:45:08',	'2005-12-17 14:19:18'),
-(54,	NULL,	'Thursday',	'1971-02-11 06:37:19',	'1970-03-25 23:36:14'),
-(55,	NULL,	'Tuesday',	'1985-04-12 07:51:55',	'1999-04-08 03:28:44'),
-(56,	NULL,	'Saturday',	'1991-02-23 22:46:47',	'1988-11-18 11:49:19'),
-(57,	NULL,	'Tuesday',	'2009-11-15 08:42:25',	'1978-08-17 12:48:33'),
-(58,	NULL,	'Thursday',	'1977-12-30 06:37:38',	'1996-11-01 07:39:42'),
-(59,	NULL,	'Wednesday',	'2018-01-13 19:45:39',	'1993-10-28 06:20:25'),
-(60,	NULL,	'Saturday',	'2012-12-03 22:06:39',	'2009-07-17 06:44:43'),
-(61,	NULL,	'Monday',	'1984-08-02 02:52:49',	'2003-01-13 02:05:56'),
-(62,	NULL,	'Monday',	'1984-07-22 14:12:27',	'1998-01-11 18:21:19'),
-(63,	NULL,	'Thursday',	'2004-05-28 15:05:35',	'2007-04-19 15:53:58'),
-(64,	NULL,	'Wednesday',	'2008-01-21 20:16:39',	'1975-05-19 18:06:54'),
-(65,	NULL,	'Friday',	'1976-06-24 17:02:27',	'1988-05-21 21:32:41'),
-(66,	NULL,	'Saturday',	'1996-02-05 06:34:17',	'1975-01-21 09:19:14'),
-(67,	NULL,	'Wednesday',	'2017-12-31 17:31:41',	'1984-04-12 18:09:09'),
-(68,	NULL,	'Tuesday',	'2000-10-27 04:53:13',	'1995-10-27 16:40:06'),
-(69,	NULL,	'Wednesday',	'1992-06-10 22:41:10',	'1993-06-14 12:57:31'),
-(70,	NULL,	'Monday',	'2011-12-13 12:20:12',	'2014-10-19 09:23:34'),
-(71,	NULL,	'Thursday',	'1982-08-19 12:22:53',	'1983-02-18 05:00:33'),
-(72,	NULL,	'Tuesday',	'2002-10-20 11:55:06',	'2004-01-28 12:31:56'),
-(73,	NULL,	'Tuesday',	'1988-12-25 13:01:16',	'2015-03-26 00:25:37'),
-(74,	NULL,	'Friday',	'1976-06-09 19:32:30',	'2002-03-14 10:10:46'),
-(75,	NULL,	'Monday',	'1976-06-09 17:30:05',	'2012-08-11 07:10:52'),
-(76,	NULL,	'Saturday',	'2000-09-10 01:13:03',	'2000-04-01 17:37:05'),
-(77,	NULL,	'Tuesday',	'1974-03-11 23:19:49',	'1984-01-30 21:19:26'),
-(78,	NULL,	'Tuesday',	'1990-11-20 05:46:25',	'1990-12-31 03:58:53'),
-(79,	NULL,	'Thursday',	'1974-07-02 00:30:37',	'1999-11-08 13:45:00'),
-(80,	NULL,	'Wednesday',	'1991-11-28 03:56:43',	'2000-06-29 13:07:41'),
-(81,	NULL,	'Friday',	'2012-11-05 14:12:55',	'1976-01-14 11:54:22'),
-(82,	NULL,	'Saturday',	'1975-03-23 19:55:15',	'1987-09-06 02:35:54'),
-(83,	NULL,	'Tuesday',	'2014-03-22 17:36:42',	'2018-03-12 22:01:57'),
-(84,	NULL,	'Saturday',	'2017-01-02 17:55:06',	'2008-10-14 20:28:37'),
-(85,	NULL,	'Monday',	'1971-10-23 13:33:22',	'1992-11-25 13:53:56'),
-(86,	NULL,	'Saturday',	'1975-01-28 15:11:21',	'1972-06-14 03:25:48'),
-(87,	NULL,	'Tuesday',	'1992-01-02 00:28:36',	'2018-03-11 08:36:07'),
-(88,	NULL,	'Friday',	'1998-08-23 16:24:43',	'1982-09-29 02:46:55'),
-(89,	NULL,	'Friday',	'2012-02-02 16:56:15',	'1988-07-13 01:01:42'),
-(90,	NULL,	'Monday',	'1997-01-21 17:42:33',	'1998-02-09 09:46:02'),
-(91,	NULL,	'Tuesday',	'1973-03-17 22:15:41',	'2008-11-19 11:11:48'),
-(92,	NULL,	'Saturday',	'1977-02-24 17:05:13',	'2012-03-16 16:05:36'),
-(93,	NULL,	'Thursday',	'1997-07-18 12:10:56',	'1999-05-01 00:27:24'),
-(94,	NULL,	'Friday',	'1980-11-03 02:46:38',	'1988-04-16 08:13:55'),
-(95,	NULL,	'Tuesday',	'1973-02-24 15:54:32',	'1975-07-08 07:08:10'),
-(96,	NULL,	'Wednesday',	'2004-05-17 17:58:37',	'2002-10-03 09:04:08'),
-(97,	NULL,	'Wednesday',	'1989-01-24 10:49:45',	'2017-06-26 11:45:52'),
-(98,	NULL,	'Saturday',	'1995-08-06 17:04:52',	'2009-11-16 06:44:42'),
-(99,	NULL,	'Saturday',	'1986-08-07 12:35:52',	'2009-10-04 09:07:04'),
-(100,	NULL,	'Friday',	'2013-10-06 01:35:49',	'1999-05-07 22:45:11');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (1, 30, 'Saturday', '1996-08-26 05:06:04', '2006-01-21 00:05:23');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (2, 25, 'Thursday', '1994-12-09 13:38:48', '1994-02-26 16:27:42');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (3, 20, 'Saturday', '2014-06-25 09:53:59', '2004-05-22 16:35:48');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (4, 33, 'Saturday', '2016-01-29 07:39:28', '1971-08-31 11:14:01');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (5, 40, 'Thursday', '1977-07-18 07:39:03', '1991-09-30 01:39:14');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (6, 62, 'Friday', '1983-12-04 08:07:21', '1972-03-20 04:05:37');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (7, 46, 'Monday', '2019-03-18 05:13:05', '2003-10-12 19:38:28');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (8, 33, 'Thursday', '1973-08-15 16:38:26', '1992-04-26 14:05:09');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (9, 76, 'Friday', '2016-12-21 10:45:11', '2019-08-07 11:12:42');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (10, 57, 'Wednesday', '1978-06-23 02:01:39', '1982-01-05 00:43:49');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (11, 22, 'Saturday', '1997-02-22 22:22:58', '1988-03-13 19:07:03');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (12, 40, 'Monday', '1991-11-11 07:29:04', '1982-04-05 02:43:05');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (13, 82, 'Thursday', '1995-08-30 11:05:13', '2017-04-05 11:01:16');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (14, 11, 'Thursday', '1984-07-22 03:41:32', '1992-12-22 23:21:56');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (15, 36, 'Wednesday', '1996-12-14 07:45:05', '1982-04-15 17:01:12');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (16, 28, 'Monday', '2008-11-04 13:27:32', '2017-04-06 16:36:37');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (17, 16, 'Wednesday', '1976-03-31 22:23:05', '2018-09-24 20:16:09');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (18, 93, 'Thursday', '1984-05-11 07:28:23', '2012-08-24 16:35:21');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (19, 43, 'Thursday', '2008-01-21 07:49:50', '1970-06-06 10:38:03');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (20, 71, 'Thursday', '2019-02-20 22:17:56', '1977-02-18 08:18:32');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (21, 60, 'Monday', '2006-06-15 09:46:48', '1989-04-20 03:24:26');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (22, 84, 'Thursday', '1970-01-25 10:10:02', '1993-08-08 12:34:22');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (23, 44, 'Tuesday', '2007-10-24 10:45:19', '1991-10-12 12:37:20');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (24, 1, 'Saturday', '2010-04-29 11:54:55', '2013-10-24 14:44:20');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (25, 46, 'Friday', '1984-07-30 04:48:48', '1977-02-20 03:51:17');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (26, 60, 'Tuesday', '2009-04-19 00:33:01', '1991-07-11 16:43:09');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (27, 79, 'Thursday', '2014-06-29 10:48:29', '2004-06-26 00:32:31');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (28, 15, 'Monday', '2019-06-15 16:03:27', '2015-02-05 05:08:52');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (29, 56, 'Monday', '2006-05-06 03:27:24', '1998-02-26 00:17:39');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (30, 30, 'Friday', '1973-03-25 11:59:21', '2016-07-17 04:34:15');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (31, 9, 'Tuesday', '2004-10-08 07:11:52', '2009-10-09 22:05:21');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (32, 86, 'Thursday', '1980-02-12 01:49:21', '2008-04-08 02:43:07');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (33, 54, 'Wednesday', '1979-12-07 21:57:11', '2010-04-18 09:53:20');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (34, 29, 'Monday', '1998-10-18 22:27:04', '2014-09-07 11:01:29');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (35, 19, 'Saturday', '1988-03-23 16:18:09', '1993-11-27 21:09:41');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (36, 94, 'Wednesday', '1981-06-11 16:49:11', '2019-01-07 17:11:24');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (37, 90, 'Saturday', '1984-08-30 05:57:30', '1980-04-08 01:19:03');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (38, 64, 'Monday', '2008-01-02 05:05:43', '2002-04-27 23:38:17');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (39, 26, 'Wednesday', '1995-11-18 10:41:31', '1970-07-07 23:42:02');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (40, 66, 'Wednesday', '1988-01-06 12:34:48', '2012-04-23 19:05:18');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (41, 21, 'Thursday', '1994-11-17 19:35:03', '1991-02-11 03:08:18');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (42, 47, 'Thursday', '2000-06-06 22:30:49', '1984-11-23 19:30:52');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (43, 6, 'Friday', '1980-02-06 18:53:58', '1987-11-16 22:55:05');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (44, 2, 'Wednesday', '2003-03-31 18:35:14', '1979-06-10 03:26:17');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (45, 58, 'Friday', '1979-08-30 14:45:47', '1974-08-11 14:15:10');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (46, 41, 'Friday', '2016-05-14 04:50:05', '1978-10-08 02:57:18');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (47, 30, 'Monday', '1995-07-01 17:17:55', '1991-01-20 07:21:51');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (48, 74, 'Monday', '2017-09-25 17:39:38', '1989-01-31 03:40:23');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (49, 33, 'Monday', '1982-07-15 16:03:01', '1978-07-11 19:48:09');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (50, 72, 'Thursday', '2000-07-24 07:59:01', '1971-07-11 22:29:56');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (51, 44, 'Monday', '1992-02-21 11:59:26', '1974-05-12 21:35:50');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (52, 93, 'Friday', '1979-01-22 16:18:54', '1999-08-26 07:54:38');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (53, 56, 'Thursday', '1974-06-29 01:12:08', '1993-04-23 05:42:35');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (54, 88, 'Friday', '2010-12-02 16:41:44', '1985-03-26 18:44:28');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (55, 94, 'Friday', '1980-04-30 13:58:23', '1993-04-01 07:50:12');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (56, 2, 'Saturday', '1977-06-17 04:50:52', '2014-10-12 21:34:39');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (57, 48, 'Tuesday', '2018-12-21 07:54:09', '1991-04-16 20:59:04');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (58, 73, 'Thursday', '1985-12-16 06:10:23', '1980-12-07 03:45:53');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (59, 16, 'Monday', '1995-04-28 02:28:50', '1977-07-25 16:10:08');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (60, 3, 'Thursday', '2016-03-12 10:24:25', '2013-09-24 04:00:09');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (61, 3, 'Wednesday', '1972-07-24 04:03:33', '1972-02-04 22:15:10');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (62, 25, 'Monday', '1995-02-21 11:55:29', '1974-09-29 09:19:24');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (63, 89, 'Saturday', '2015-10-13 00:51:59', '2014-02-09 08:19:15');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (64, 56, 'Monday', '1984-04-09 20:16:43', '2012-10-14 06:54:51');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (65, 54, 'Wednesday', '2007-01-23 03:35:04', '1994-10-02 01:11:34');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (66, 7, 'Monday', '1985-11-01 20:36:44', '1987-07-28 11:58:58');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (67, 50, 'Wednesday', '1992-12-15 12:52:24', '2004-05-27 15:04:15');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (68, 44, 'Wednesday', '2011-07-12 23:55:39', '2013-09-07 10:46:00');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (69, 71, 'Thursday', '2011-09-28 17:26:05', '1989-04-28 15:55:41');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (70, 75, 'Thursday', '1979-12-07 21:17:47', '1979-11-25 15:23:09');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (71, 9, 'Thursday', '1996-01-02 11:23:42', '1975-09-23 23:46:18');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (72, 91, 'Friday', '1981-04-01 18:38:15', '1973-08-15 02:45:01');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (73, 22, 'Saturday', '1988-05-24 07:29:46', '1984-06-25 05:10:32');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (74, 15, 'Tuesday', '1977-05-18 13:47:14', '2008-04-20 08:29:57');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (75, 92, 'Friday', '1999-08-02 07:15:08', '1970-11-05 09:31:36');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (76, 80, 'Saturday', '1987-06-28 12:00:40', '1997-02-08 23:09:24');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (77, 55, 'Friday', '2008-02-03 11:44:03', '1987-10-30 05:19:03');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (78, 21, 'Friday', '1975-02-24 00:09:53', '2005-02-07 10:39:21');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (79, 53, 'Saturday', '2019-03-30 11:59:02', '1974-02-04 04:07:25');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (80, 88, 'Thursday', '1973-02-24 22:36:57', '2018-07-22 09:28:36');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (81, 93, 'Thursday', '1983-09-03 06:06:07', '2008-09-11 04:06:17');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (82, 96, 'Friday', '1982-05-21 15:22:26', '1990-02-19 20:24:39');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (83, 81, 'Thursday', '2016-05-07 23:28:35', '1985-12-17 04:13:10');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (84, 49, 'Saturday', '1983-07-19 21:42:23', '1979-08-27 10:31:04');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (85, 84, 'Saturday', '1990-11-06 15:04:20', '2000-04-17 12:58:31');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (86, 75, 'Thursday', '1976-07-13 04:06:01', '1971-06-29 21:22:39');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (87, 50, 'Wednesday', '2013-02-25 18:47:49', '1989-09-09 20:57:19');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (88, 31, 'Tuesday', '1970-11-04 00:50:00', '1971-02-14 03:49:04');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (89, 47, 'Saturday', '2000-10-26 16:37:48', '1990-01-25 02:40:45');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (90, 66, 'Wednesday', '1988-03-04 01:56:47', '1981-04-11 02:01:04');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (91, 34, 'Tuesday', '2010-02-13 12:43:56', '1996-05-12 03:04:18');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (92, 50, 'Monday', '2000-09-29 07:08:32', '1976-08-21 22:08:44');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (93, 91, 'Wednesday', '2003-08-11 18:15:10', '2011-09-02 00:49:12');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (94, 22, 'Tuesday', '2011-02-18 21:55:47', '2006-10-13 03:49:54');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (95, 6, 'Thursday', '2018-10-26 23:17:00', '2006-10-14 18:05:31');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (96, 44, 'Friday', '1990-03-13 08:44:14', '1974-12-22 13:53:18');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (97, 28, 'Thursday', '2012-07-08 08:24:22', '2016-06-03 21:00:11');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (98, 55, 'Friday', '1973-04-01 23:25:30', '1971-10-10 19:49:08');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (99, 87, 'Monday', '1983-02-27 08:49:18', '1997-12-28 10:47:31');
+INSERT INTO `Timetable` (`TimeTableID`, `CourseID`, `Weekday`, `StartTime`, `EndTime`) VALUES (100, 98, 'Saturday', '2010-05-17 05:03:23', '1980-12-09 15:34:13');
+
+
+#
+# TABLE STRUCTURE FOR: User
+#
+
+DROP TABLE IF EXISTS `User`;
 
 CREATE TABLE `User` (
   `UserID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -1327,506 +1426,504 @@ CREATE TABLE `User` (
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=501 DEFAULT CHARSET=latin1;
 
-INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES
-(1,	'Katlyn',	'West',	'Student'),
-(2,	'Lonzo',	'Rolfson',	'Admin'),
-(3,	'Selmer',	'Spinka',	'Student'),
-(4,	'Annabel',	'Maggio',	'Student'),
-(5,	'Elliot',	'Kutch',	'Admin'),
-(6,	'Zoey',	'Roberts',	'Admin'),
-(7,	'Trenton',	'Erdman',	'Student'),
-(8,	'Dortha',	'Little',	'Admin'),
-(9,	'Vaughn',	'Borer',	'Admin'),
-(10,	'Dallin',	'Lindgren',	'Admin'),
-(11,	'Danika',	'Crona',	'Student'),
-(12,	'Willow',	'Johnson',	'Admin'),
-(13,	'Furman',	'Dietrich',	'Student'),
-(14,	'Mable',	'Pouros',	'Student'),
-(15,	'Geoffrey',	'Beier',	'Student'),
-(16,	'Demetrius',	'Turner',	'Admin'),
-(17,	'Stan',	'Feeney',	'Admin'),
-(18,	'Myrtie',	'Ryan',	'Student'),
-(19,	'Karolann',	'Abshire',	'Admin'),
-(20,	'Toni',	'Torp',	'Student'),
-(21,	'Andreanne',	'Abbott',	'Student'),
-(22,	'Rubye',	'Johns',	'Student'),
-(23,	'Veda',	'Spencer',	'Student'),
-(24,	'Scottie',	'Carroll',	'Student'),
-(25,	'Marisa',	'Yost',	'Student'),
-(26,	'Paolo',	'Grimes',	'Student'),
-(27,	'Magali',	'Legros',	'Student'),
-(28,	'Nola',	'Kuhlman',	'Student'),
-(29,	'Carlee',	'Cummerata',	'Student'),
-(30,	'Alvera',	'Keebler',	'Student'),
-(31,	'Tia',	'Adams',	'Student'),
-(32,	'Erica',	'Fay',	'Student'),
-(33,	'Trystan',	'Rempel',	'Student'),
-(34,	'Americo',	'Fisher',	'Student'),
-(35,	'Ima',	'Ebert',	'Admin'),
-(36,	'Jennifer',	'Murray',	'Admin'),
-(37,	'Celine',	'Kozey',	'Student'),
-(38,	'Gerardo',	'Cassin',	'Admin'),
-(39,	'Marisa',	'Kassulke',	'Student'),
-(40,	'Easter',	'Altenwerth',	'Admin'),
-(41,	'Evelyn',	'Armstrong',	'Admin'),
-(42,	'Evalyn',	'Bashirian',	'Admin'),
-(43,	'Domenick',	'Roberts',	'Admin'),
-(44,	'Faustino',	'Johnston',	'Admin'),
-(45,	'Danial',	'McClure',	'Admin'),
-(46,	'Earline',	'Lakin',	'Student'),
-(47,	'Chauncey',	'Cassin',	'Student'),
-(48,	'Chadrick',	'Bednar',	'Admin'),
-(49,	'Kaci',	'Stokes',	'Student'),
-(50,	'Germaine',	'Tillman',	'Admin'),
-(51,	'Gisselle',	'Erdman',	'Student'),
-(52,	'Lynn',	'Davis',	'Student'),
-(53,	'Hiram',	'Christiansen',	'Admin'),
-(54,	'Albina',	'Schmidt',	'Admin'),
-(55,	'Cleta',	'Zboncak',	'Student'),
-(56,	'Miles',	'Stroman',	'Student'),
-(57,	'Zoe',	'Williamson',	'Student'),
-(58,	'Danyka',	'O\'Conner',	'Admin'),
-(59,	'Judd',	'Wilkinson',	'Student'),
-(60,	'Bonita',	'Smith',	'Student'),
-(61,	'Mauricio',	'Hirthe',	'Admin'),
-(62,	'Maegan',	'Legros',	'Student'),
-(63,	'Sammy',	'Pouros',	'Student'),
-(64,	'Lynn',	'Monahan',	'Student'),
-(65,	'Grady',	'Walsh',	'Student'),
-(66,	'Susan',	'Schamberger',	'Student'),
-(67,	'Reina',	'Kunze',	'Student'),
-(68,	'June',	'Keeling',	'Student'),
-(69,	'Tessie',	'Nicolas',	'Admin'),
-(70,	'Sophie',	'Kris',	'Student'),
-(71,	'Marc',	'Prosacco',	'Admin'),
-(72,	'Rosie',	'Bauch',	'Student'),
-(73,	'Evangeline',	'Kreiger',	'Student'),
-(74,	'Allene',	'Hamill',	'Admin'),
-(75,	'Stacey',	'Grimes',	'Student'),
-(76,	'Mabelle',	'Carroll',	'Student'),
-(77,	'Augustus',	'Powlowski',	'Student'),
-(78,	'Agustina',	'Konopelski',	'Student'),
-(79,	'Jamil',	'Bauch',	'Admin'),
-(80,	'Dejah',	'O\'Hara',	'Student'),
-(81,	'Malcolm',	'Klein',	'Student'),
-(82,	'Aletha',	'Bruen',	'Admin'),
-(83,	'Clark',	'Willms',	'Admin'),
-(84,	'Xander',	'Windler',	'Admin'),
-(85,	'Micheal',	'Kemmer',	'Admin'),
-(86,	'Isabelle',	'Gerhold',	'Student'),
-(87,	'Aric',	'Kuhic',	'Admin'),
-(88,	'Marcelo',	'Gusikowski',	'Admin'),
-(89,	'Jeff',	'Hammes',	'Admin'),
-(90,	'Alexzander',	'Gislason',	'Student'),
-(91,	'Trent',	'Kirlin',	'Admin'),
-(92,	'Otha',	'Little',	'Admin'),
-(93,	'Axel',	'Wintheiser',	'Admin'),
-(94,	'Cora',	'Kuhlman',	'Admin'),
-(95,	'Elenor',	'Howell',	'Student'),
-(96,	'Heber',	'Murazik',	'Admin'),
-(97,	'Annie',	'Wisozk',	'Student'),
-(98,	'Laurel',	'Parisian',	'Student'),
-(99,	'Lucio',	'Hansen',	'Admin'),
-(100,	'Salma',	'Wilderman',	'Admin'),
-(101,	'Gabriella',	'Satterfield',	'Admin'),
-(102,	'Juliet',	'Lesch',	'Admin'),
-(103,	'Jalyn',	'Jacobson',	'Admin'),
-(104,	'Kiara',	'Hintz',	'Student'),
-(105,	'Delphine',	'Bradtke',	'Student'),
-(106,	'Ezekiel',	'Leannon',	'Student'),
-(107,	'Jerod',	'Conroy',	'Admin'),
-(108,	'Vivienne',	'Koss',	'Admin'),
-(109,	'Jaclyn',	'Quigley',	'Student'),
-(110,	'Carolyn',	'Herzog',	'Student'),
-(111,	'Grady',	'Little',	'Admin'),
-(112,	'Norberto',	'Aufderhar',	'Admin'),
-(113,	'Cameron',	'Brown',	'Admin'),
-(114,	'Lillian',	'Mills',	'Admin'),
-(115,	'Irwin',	'Wolff',	'Admin'),
-(116,	'Gavin',	'Kulas',	'Admin'),
-(117,	'Tara',	'Kulas',	'Student'),
-(118,	'Minnie',	'Bauch',	'Admin'),
-(119,	'Barbara',	'Stanton',	'Admin'),
-(120,	'Dock',	'Friesen',	'Student'),
-(121,	'Jaime',	'VonRueden',	'Student'),
-(122,	'Ewald',	'Larkin',	'Admin'),
-(123,	'Mya',	'Altenwerth',	'Admin'),
-(124,	'Maude',	'Turner',	'Admin'),
-(125,	'Ruby',	'Weissnat',	'Student'),
-(126,	'Sienna',	'Emard',	'Admin'),
-(127,	'Devonte',	'Nicolas',	'Student'),
-(128,	'Janick',	'Braun',	'Admin'),
-(129,	'Nikita',	'Sawayn',	'Student'),
-(130,	'Wilbert',	'Muller',	'Student'),
-(131,	'Stefanie',	'Walsh',	'Student'),
-(132,	'Tressa',	'Stoltenberg',	'Student'),
-(133,	'Cathryn',	'Batz',	'Student'),
-(134,	'Devante',	'Rogahn',	'Student'),
-(135,	'Godfrey',	'Price',	'Student'),
-(136,	'Helmer',	'Stroman',	'Admin'),
-(137,	'Bernadette',	'Murazik',	'Student'),
-(138,	'Gilda',	'Grimes',	'Admin'),
-(139,	'Adrien',	'Hills',	'Student'),
-(140,	'Jack',	'Dicki',	'Student'),
-(141,	'Kiera',	'Koelpin',	'Student'),
-(142,	'Yesenia',	'Feest',	'Student'),
-(143,	'Daisy',	'Robel',	'Student'),
-(144,	'Linnea',	'White',	'Student'),
-(145,	'Ilene',	'Cremin',	'Student'),
-(146,	'Liza',	'Schaden',	'Admin'),
-(147,	'Reta',	'Beatty',	'Admin'),
-(148,	'Tatyana',	'Legros',	'Student'),
-(149,	'Amber',	'Streich',	'Student'),
-(150,	'Kendra',	'Hermiston',	'Admin'),
-(151,	'Kathlyn',	'Bradtke',	'Student'),
-(152,	'Jammie',	'Kiehn',	'Student'),
-(153,	'Lillian',	'Gutmann',	'Student'),
-(154,	'Hope',	'Heidenreich',	'Admin'),
-(155,	'Adrien',	'Luettgen',	'Student'),
-(156,	'Meggie',	'Davis',	'Admin'),
-(157,	'Sabrina',	'Hodkiewicz',	'Admin'),
-(158,	'Major',	'Bode',	'Admin'),
-(159,	'Sierra',	'Leannon',	'Student'),
-(160,	'Orpha',	'Harris',	'Admin'),
-(161,	'Delilah',	'Wilkinson',	'Student'),
-(162,	'Savanna',	'Hahn',	'Student'),
-(163,	'Della',	'Weber',	'Student'),
-(164,	'Rosemary',	'Brekke',	'Student'),
-(165,	'Chad',	'Howell',	'Admin'),
-(166,	'Tom',	'Waelchi',	'Student'),
-(167,	'Cathy',	'Littel',	'Admin'),
-(168,	'Simone',	'Will',	'Student'),
-(169,	'Deshawn',	'Jenkins',	'Admin'),
-(170,	'Leopoldo',	'Homenick',	'Student'),
-(171,	'Nia',	'Crist',	'Student'),
-(172,	'Adele',	'Wisoky',	'Student'),
-(173,	'Janie',	'Lehner',	'Admin'),
-(174,	'Israel',	'Zieme',	'Student'),
-(175,	'Julien',	'Wolf',	'Admin'),
-(176,	'Rosanna',	'Spencer',	'Admin'),
-(177,	'Friedrich',	'Hoeger',	'Admin'),
-(178,	'Collin',	'Goyette',	'Student'),
-(179,	'Sandrine',	'Huel',	'Admin'),
-(180,	'Mellie',	'Turcotte',	'Student'),
-(181,	'Odie',	'Wilkinson',	'Admin'),
-(182,	'Bobby',	'Kihn',	'Student'),
-(183,	'Aylin',	'Marvin',	'Admin'),
-(184,	'Berta',	'Heaney',	'Admin'),
-(185,	'Deion',	'Wisoky',	'Student'),
-(186,	'Emma',	'Stroman',	'Student'),
-(187,	'Durward',	'Botsford',	'Admin'),
-(188,	'Trey',	'Reinger',	'Admin'),
-(189,	'Maida',	'Wiza',	'Student'),
-(190,	'Lawrence',	'Raynor',	'Student'),
-(191,	'Jasen',	'Johnston',	'Student'),
-(192,	'Ally',	'Hand',	'Student'),
-(193,	'Tillman',	'Herman',	'Student'),
-(194,	'Scot',	'Murazik',	'Admin'),
-(195,	'Misael',	'Turcotte',	'Student'),
-(196,	'Heaven',	'Bailey',	'Student'),
-(197,	'Jayson',	'Block',	'Admin'),
-(198,	'Jaeden',	'Prohaska',	'Admin'),
-(199,	'Erica',	'Medhurst',	'Student'),
-(200,	'Valentine',	'King',	'Admin'),
-(201,	'Maymie',	'Schamberger',	'Student'),
-(202,	'Alvena',	'Effertz',	'Admin'),
-(203,	'Kathlyn',	'Bernhard',	'Admin'),
-(204,	'Johnson',	'Mayert',	'Admin'),
-(205,	'Darryl',	'Reichert',	'Admin'),
-(206,	'Mariana',	'Ward',	'Student'),
-(207,	'Amparo',	'Bechtelar',	'Student'),
-(208,	'Dameon',	'Parisian',	'Admin'),
-(209,	'Armani',	'Grady',	'Student'),
-(210,	'Laury',	'Herzog',	'Admin'),
-(211,	'Victor',	'Schuster',	'Admin'),
-(212,	'Reba',	'Collier',	'Admin'),
-(213,	'Celia',	'Barton',	'Admin'),
-(214,	'Josefa',	'Hermiston',	'Admin'),
-(215,	'Curtis',	'Franecki',	'Student'),
-(216,	'Godfrey',	'Cassin',	'Student'),
-(217,	'Hermann',	'Labadie',	'Admin'),
-(218,	'Daryl',	'Ledner',	'Student'),
-(219,	'Dawson',	'Mayer',	'Admin'),
-(220,	'Lydia',	'Murazik',	'Admin'),
-(221,	'Ludie',	'Price',	'Student'),
-(222,	'Tanya',	'Crooks',	'Admin'),
-(223,	'Amanda',	'Lind',	'Admin'),
-(224,	'Jerrold',	'Orn',	'Student'),
-(225,	'Clarissa',	'Cremin',	'Student'),
-(226,	'Nathan',	'Ankunding',	'Admin'),
-(227,	'Katelyn',	'Altenwerth',	'Admin'),
-(228,	'Kale',	'Zemlak',	'Student'),
-(229,	'Antone',	'Konopelski',	'Student'),
-(230,	'Leann',	'Kovacek',	'Admin'),
-(231,	'Mark',	'Altenwerth',	'Student'),
-(232,	'Annie',	'Price',	'Student'),
-(233,	'Garrett',	'Hirthe',	'Student'),
-(234,	'Johanna',	'Yundt',	'Admin'),
-(235,	'Candice',	'Olson',	'Student'),
-(236,	'Maryse',	'Turner',	'Admin'),
-(237,	'Kurt',	'Hagenes',	'Student'),
-(238,	'Ubaldo',	'Cruickshank',	'Student'),
-(239,	'Daija',	'Armstrong',	'Student'),
-(240,	'Reilly',	'Sanford',	'Admin'),
-(241,	'Zelda',	'Schinner',	'Student'),
-(242,	'Mortimer',	'Kulas',	'Admin'),
-(243,	'Enola',	'Zieme',	'Admin'),
-(244,	'Sigmund',	'Grimes',	'Student'),
-(245,	'Sabryna',	'Greenholt',	'Student'),
-(246,	'Brooks',	'Kirlin',	'Admin'),
-(247,	'Lorine',	'Runolfsdottir',	'Admin'),
-(248,	'Jeanette',	'Halvorson',	'Admin'),
-(249,	'Dewayne',	'Price',	'Student'),
-(250,	'Yasmeen',	'Ondricka',	'Admin'),
-(251,	'Kellen',	'Bruen',	'Student'),
-(252,	'Kenyatta',	'Mann',	'Student'),
-(253,	'Eliseo',	'Tromp',	'Student'),
-(254,	'Letha',	'Koch',	'Student'),
-(255,	'Alexandro',	'Cronin',	'Admin'),
-(256,	'Hassie',	'Schaefer',	'Student'),
-(257,	'Pierce',	'Pollich',	'Admin'),
-(258,	'Talon',	'Welch',	'Admin'),
-(259,	'Chelsea',	'Weissnat',	'Admin'),
-(260,	'Alyce',	'Quigley',	'Admin'),
-(261,	'Blaze',	'Barton',	'Student'),
-(262,	'Mose',	'Rowe',	'Admin'),
-(263,	'Raphaelle',	'Tillman',	'Student'),
-(264,	'Ethyl',	'Considine',	'Student'),
-(265,	'Laurence',	'Waelchi',	'Admin'),
-(266,	'Murl',	'Hettinger',	'Student'),
-(267,	'Cara',	'Kozey',	'Admin'),
-(268,	'Casandra',	'Stroman',	'Student'),
-(269,	'Griffin',	'Yost',	'Admin'),
-(270,	'Emerald',	'Ritchie',	'Student'),
-(271,	'Isaias',	'Rippin',	'Student'),
-(272,	'Kale',	'Tremblay',	'Admin'),
-(273,	'Marvin',	'Hand',	'Admin'),
-(274,	'Webster',	'Wiegand',	'Admin'),
-(275,	'Jonathon',	'Hansen',	'Student'),
-(276,	'Carmela',	'Hessel',	'Student'),
-(277,	'Natasha',	'Romaguera',	'Student'),
-(278,	'Haley',	'Lemke',	'Admin'),
-(279,	'Tyshawn',	'O\'Keefe',	'Student'),
-(280,	'Zack',	'Christiansen',	'Student'),
-(281,	'Yolanda',	'Hilpert',	'Student'),
-(282,	'Flavie',	'Walsh',	'Student'),
-(283,	'Jude',	'McKenzie',	'Student'),
-(284,	'Enid',	'Goldner',	'Student'),
-(285,	'Walter',	'Daugherty',	'Student'),
-(286,	'Esperanza',	'Weimann',	'Student'),
-(287,	'Sasha',	'Schamberger',	'Student'),
-(288,	'Marshall',	'Friesen',	'Admin'),
-(289,	'Louie',	'Hermiston',	'Admin'),
-(290,	'Ressie',	'Herzog',	'Admin'),
-(291,	'Juana',	'Shields',	'Admin'),
-(292,	'Allie',	'Abbott',	'Admin'),
-(293,	'Shaylee',	'Conn',	'Admin'),
-(294,	'Desmond',	'Welch',	'Student'),
-(295,	'Roscoe',	'Fahey',	'Student'),
-(296,	'Rodrick',	'Ullrich',	'Admin'),
-(297,	'Kody',	'Willms',	'Student'),
-(298,	'Pamela',	'Ondricka',	'Admin'),
-(299,	'Xavier',	'Beatty',	'Admin'),
-(300,	'Justina',	'Ruecker',	'Admin'),
-(301,	'Wiley',	'Baumbach',	'Admin'),
-(302,	'Princess',	'Powlowski',	'Student'),
-(303,	'Dena',	'Lockman',	'Admin'),
-(304,	'Buster',	'Romaguera',	'Admin'),
-(305,	'Willis',	'Anderson',	'Student'),
-(306,	'Maribel',	'Doyle',	'Student'),
-(307,	'Sibyl',	'O\'Connell',	'Admin'),
-(308,	'Marvin',	'Williamson',	'Admin'),
-(309,	'Kenton',	'Halvorson',	'Student'),
-(310,	'Zelda',	'Bahringer',	'Admin'),
-(311,	'Elena',	'Rau',	'Student'),
-(312,	'Sandra',	'Bogan',	'Student'),
-(313,	'Kailyn',	'Ryan',	'Student'),
-(314,	'Glenda',	'Huel',	'Student'),
-(315,	'William',	'Hammes',	'Student'),
-(316,	'Vickie',	'Mosciski',	'Student'),
-(317,	'Duane',	'Howe',	'Admin'),
-(318,	'Edmond',	'Sauer',	'Student'),
-(319,	'Kirk',	'Connelly',	'Admin'),
-(320,	'Myrna',	'Heathcote',	'Student'),
-(321,	'Cory',	'Kilback',	'Admin'),
-(322,	'Elena',	'Kemmer',	'Admin'),
-(323,	'June',	'Swift',	'Student'),
-(324,	'Chase',	'Feil',	'Admin'),
-(325,	'Myron',	'Mante',	'Admin'),
-(326,	'Crystal',	'Lindgren',	'Admin'),
-(327,	'Robb',	'Heller',	'Student'),
-(328,	'Kennedy',	'Effertz',	'Admin'),
-(329,	'Harvey',	'Kshlerin',	'Admin'),
-(330,	'Muriel',	'Ryan',	'Student'),
-(331,	'Kristian',	'Gerhold',	'Admin'),
-(332,	'Lucious',	'Lang',	'Student'),
-(333,	'Mya',	'Runolfsson',	'Student'),
-(334,	'Reyna',	'Graham',	'Student'),
-(335,	'Dominic',	'Kling',	'Admin'),
-(336,	'Everette',	'Frami',	'Student'),
-(337,	'Icie',	'Eichmann',	'Student'),
-(338,	'Paris',	'Oberbrunner',	'Admin'),
-(339,	'Claude',	'Schuppe',	'Student'),
-(340,	'Keyshawn',	'Weimann',	'Student'),
-(341,	'Bret',	'White',	'Admin'),
-(342,	'Domenick',	'Krajcik',	'Student'),
-(343,	'Gudrun',	'Leffler',	'Admin'),
-(344,	'Jabari',	'Bernhard',	'Student'),
-(345,	'Misael',	'Crist',	'Student'),
-(346,	'Kelsi',	'Kshlerin',	'Student'),
-(347,	'Georgette',	'Beahan',	'Admin'),
-(348,	'Julie',	'Kassulke',	'Student'),
-(349,	'Lessie',	'Gutmann',	'Admin'),
-(350,	'Franco',	'Cummerata',	'Admin'),
-(351,	'Sarina',	'Nader',	'Admin'),
-(352,	'Sandrine',	'Grady',	'Student'),
-(353,	'Lucie',	'Feeney',	'Student'),
-(354,	'Willy',	'Cummerata',	'Admin'),
-(355,	'Camylle',	'Goyette',	'Admin'),
-(356,	'Luz',	'Wolff',	'Student'),
-(357,	'Favian',	'Kautzer',	'Student'),
-(358,	'Teresa',	'Schaefer',	'Student'),
-(359,	'Marta',	'Moen',	'Student'),
-(360,	'Candice',	'Fisher',	'Admin'),
-(361,	'Kaylie',	'Fahey',	'Student'),
-(362,	'Enrico',	'Conn',	'Student'),
-(363,	'Nickolas',	'Kessler',	'Admin'),
-(364,	'Kathryn',	'Prosacco',	'Student'),
-(365,	'Lulu',	'Leffler',	'Student'),
-(366,	'Dion',	'Lowe',	'Admin'),
-(367,	'Cristopher',	'Spinka',	'Student'),
-(368,	'Bianka',	'Mayer',	'Admin'),
-(369,	'Trever',	'Goyette',	'Student'),
-(370,	'Antonina',	'Kuhn',	'Admin'),
-(371,	'Watson',	'Wolff',	'Student'),
-(372,	'Arvel',	'Luettgen',	'Admin'),
-(373,	'Corrine',	'Roob',	'Admin'),
-(374,	'Griffin',	'Zieme',	'Admin'),
-(375,	'Ashton',	'Prohaska',	'Admin'),
-(376,	'Aliyah',	'Rippin',	'Student'),
-(377,	'Roxanne',	'Boehm',	'Student'),
-(378,	'Damon',	'Lang',	'Student'),
-(379,	'Narciso',	'Macejkovic',	'Student'),
-(380,	'Shanny',	'Brakus',	'Student'),
-(381,	'Wilfred',	'Blanda',	'Admin'),
-(382,	'Berry',	'O\'Hara',	'Student'),
-(383,	'Heaven',	'Schimmel',	'Admin'),
-(384,	'Anita',	'Fritsch',	'Student'),
-(385,	'Mabel',	'Spinka',	'Student'),
-(386,	'Breanne',	'Shields',	'Admin'),
-(387,	'Henderson',	'Stehr',	'Admin'),
-(388,	'Libbie',	'Jakubowski',	'Admin'),
-(389,	'Coleman',	'Spinka',	'Student'),
-(390,	'Demario',	'Sanford',	'Student'),
-(391,	'Pat',	'Windler',	'Student'),
-(392,	'Elbert',	'Abshire',	'Admin'),
-(393,	'Trycia',	'Schowalter',	'Student'),
-(394,	'Casper',	'Steuber',	'Admin'),
-(395,	'Jon',	'Bernier',	'Student'),
-(396,	'Ewell',	'Bergstrom',	'Student'),
-(397,	'Isadore',	'Frami',	'Student'),
-(398,	'Susie',	'Gaylord',	'Student'),
-(399,	'Doyle',	'Feeney',	'Student'),
-(400,	'Corbin',	'Ledner',	'Student'),
-(401,	'Ottilie',	'Kassulke',	'Student'),
-(402,	'Lucienne',	'Beier',	'Student'),
-(403,	'Florida',	'Cassin',	'Admin'),
-(404,	'Laila',	'Lindgren',	'Admin'),
-(405,	'Daphnee',	'Nitzsche',	'Student'),
-(406,	'Pearl',	'Streich',	'Student'),
-(407,	'Icie',	'Jacobs',	'Student'),
-(408,	'Allie',	'Bins',	'Student'),
-(409,	'Brendon',	'Kunde',	'Student'),
-(410,	'Felicia',	'Mohr',	'Student'),
-(411,	'Delfina',	'Bartell',	'Student'),
-(412,	'Alexandra',	'Gusikowski',	'Student'),
-(413,	'Liliana',	'Padberg',	'Student'),
-(414,	'Araceli',	'Quigley',	'Admin'),
-(415,	'Alejandra',	'Predovic',	'Admin'),
-(416,	'Leatha',	'Maggio',	'Student'),
-(417,	'Guy',	'Bailey',	'Admin'),
-(418,	'Rod',	'Barton',	'Student'),
-(419,	'Marjolaine',	'Monahan',	'Student'),
-(420,	'Guiseppe',	'Kessler',	'Admin'),
-(421,	'Maurice',	'Beer',	'Student'),
-(422,	'Claire',	'Runte',	'Admin'),
-(423,	'Rylee',	'Prosacco',	'Admin'),
-(424,	'Alessandro',	'Kihn',	'Student'),
-(425,	'Ismael',	'Kemmer',	'Admin'),
-(426,	'Gabe',	'Smitham',	'Student'),
-(427,	'Gerda',	'Gusikowski',	'Admin'),
-(428,	'Mallory',	'Mueller',	'Admin'),
-(429,	'Angel',	'Tromp',	'Admin'),
-(430,	'Jeanette',	'Prosacco',	'Admin'),
-(431,	'Jeffrey',	'Jacobson',	'Admin'),
-(432,	'Sidney',	'Nolan',	'Student'),
-(433,	'Trey',	'Okuneva',	'Student'),
-(434,	'Laurianne',	'Bogan',	'Student'),
-(435,	'Tillman',	'Weissnat',	'Admin'),
-(436,	'Evie',	'Osinski',	'Student'),
-(437,	'Lysanne',	'Lockman',	'Student'),
-(438,	'Delpha',	'Goodwin',	'Student'),
-(439,	'Lurline',	'Quigley',	'Admin'),
-(440,	'Erika',	'Bartoletti',	'Admin'),
-(441,	'Monique',	'Fahey',	'Admin'),
-(442,	'Samson',	'Mayert',	'Student'),
-(443,	'Millie',	'Jast',	'Admin'),
-(444,	'Clarabelle',	'Witting',	'Admin'),
-(445,	'Johnnie',	'Lubowitz',	'Student'),
-(446,	'Jettie',	'Moore',	'Admin'),
-(447,	'Danny',	'Gibson',	'Admin'),
-(448,	'Judah',	'McKenzie',	'Admin'),
-(449,	'Harry',	'Jast',	'Student'),
-(450,	'Olen',	'Kassulke',	'Admin'),
-(451,	'Arvel',	'Crona',	'Student'),
-(452,	'Jane',	'Hamill',	'Student'),
-(453,	'Marisol',	'Towne',	'Admin'),
-(454,	'Amina',	'Jast',	'Student'),
-(455,	'Elyssa',	'Murray',	'Admin'),
-(456,	'Winston',	'Nikolaus',	'Student'),
-(457,	'Ciara',	'Bins',	'Admin'),
-(458,	'Savion',	'Kautzer',	'Student'),
-(459,	'Deondre',	'Skiles',	'Admin'),
-(460,	'Everardo',	'Schinner',	'Admin'),
-(461,	'Sammy',	'Konopelski',	'Admin'),
-(462,	'Torey',	'Batz',	'Admin'),
-(463,	'Soledad',	'Hansen',	'Admin'),
-(464,	'Leland',	'Langworth',	'Admin'),
-(465,	'Tiana',	'Harber',	'Admin'),
-(466,	'Morton',	'Simonis',	'Admin'),
-(467,	'Krystel',	'Hegmann',	'Student'),
-(468,	'Verla',	'Moen',	'Student'),
-(469,	'Delphine',	'Predovic',	'Student'),
-(470,	'Lavon',	'Mills',	'Admin'),
-(471,	'Jack',	'Kuhn',	'Student'),
-(472,	'Ike',	'Harber',	'Admin'),
-(473,	'Trent',	'Waelchi',	'Student'),
-(474,	'Janae',	'Williamson',	'Student'),
-(475,	'Israel',	'Stroman',	'Student'),
-(476,	'Jillian',	'Nolan',	'Student'),
-(477,	'Elsa',	'Hoeger',	'Student'),
-(478,	'Emilio',	'Littel',	'Student'),
-(479,	'Stephany',	'Jacobson',	'Student'),
-(480,	'London',	'Graham',	'Student'),
-(481,	'Charity',	'Sanford',	'Admin'),
-(482,	'Hassan',	'Strosin',	'Admin'),
-(483,	'Dulce',	'Wehner',	'Student'),
-(484,	'Albin',	'Collins',	'Student'),
-(485,	'Alysha',	'Bergstrom',	'Student'),
-(486,	'Samanta',	'Gibson',	'Admin'),
-(487,	'Lesly',	'Johnson',	'Student'),
-(488,	'Alta',	'Bahringer',	'Student'),
-(489,	'Flo',	'Ratke',	'Admin'),
-(490,	'Leila',	'Stracke',	'Admin'),
-(491,	'Leann',	'Klein',	'Student'),
-(492,	'Alexandro',	'McGlynn',	'Student'),
-(493,	'Dax',	'Tillman',	'Student'),
-(494,	'Kristina',	'Cole',	'Admin'),
-(495,	'Elda',	'Witting',	'Student'),
-(496,	'Florine',	'Morissette',	'Admin'),
-(497,	'Emily',	'Jakubowski',	'Admin'),
-(498,	'Ansley',	'Schinner',	'Student'),
-(499,	'Santina',	'Franecki',	'Admin'),
-(500,	'Shyann',	'Breitenberg',	'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (1, 'Katlyn', 'West', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (2, 'Lonzo', 'Rolfson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (3, 'Selmer', 'Spinka', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (4, 'Annabel', 'Maggio', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (5, 'Elliot', 'Kutch', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (6, 'Zoey', 'Roberts', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (7, 'Trenton', 'Erdman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (8, 'Dortha', 'Little', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (9, 'Vaughn', 'Borer', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (10, 'Dallin', 'Lindgren', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (11, 'Danika', 'Crona', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (12, 'Willow', 'Johnson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (13, 'Furman', 'Dietrich', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (14, 'Mable', 'Pouros', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (15, 'Geoffrey', 'Beier', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (16, 'Demetrius', 'Turner', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (17, 'Stan', 'Feeney', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (18, 'Myrtie', 'Ryan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (19, 'Karolann', 'Abshire', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (20, 'Toni', 'Torp', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (21, 'Andreanne', 'Abbott', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (22, 'Rubye', 'Johns', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (23, 'Veda', 'Spencer', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (24, 'Scottie', 'Carroll', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (25, 'Marisa', 'Yost', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (26, 'Paolo', 'Grimes', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (27, 'Magali', 'Legros', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (28, 'Nola', 'Kuhlman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (29, 'Carlee', 'Cummerata', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (30, 'Alvera', 'Keebler', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (31, 'Tia', 'Adams', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (32, 'Erica', 'Fay', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (33, 'Trystan', 'Rempel', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (34, 'Americo', 'Fisher', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (35, 'Ima', 'Ebert', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (36, 'Jennifer', 'Murray', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (37, 'Celine', 'Kozey', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (38, 'Gerardo', 'Cassin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (39, 'Marisa', 'Kassulke', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (40, 'Easter', 'Altenwerth', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (41, 'Evelyn', 'Armstrong', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (42, 'Evalyn', 'Bashirian', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (43, 'Domenick', 'Roberts', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (44, 'Faustino', 'Johnston', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (45, 'Danial', 'McClure', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (46, 'Earline', 'Lakin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (47, 'Chauncey', 'Cassin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (48, 'Chadrick', 'Bednar', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (49, 'Kaci', 'Stokes', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (50, 'Germaine', 'Tillman', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (51, 'Gisselle', 'Erdman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (52, 'Lynn', 'Davis', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (53, 'Hiram', 'Christiansen', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (54, 'Albina', 'Schmidt', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (55, 'Cleta', 'Zboncak', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (56, 'Miles', 'Stroman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (57, 'Zoe', 'Williamson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (58, 'Danyka', 'O\'Conner', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (59, 'Judd', 'Wilkinson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (60, 'Bonita', 'Smith', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (61, 'Mauricio', 'Hirthe', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (62, 'Maegan', 'Legros', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (63, 'Sammy', 'Pouros', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (64, 'Lynn', 'Monahan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (65, 'Grady', 'Walsh', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (66, 'Susan', 'Schamberger', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (67, 'Reina', 'Kunze', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (68, 'June', 'Keeling', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (69, 'Tessie', 'Nicolas', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (70, 'Sophie', 'Kris', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (71, 'Marc', 'Prosacco', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (72, 'Rosie', 'Bauch', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (73, 'Evangeline', 'Kreiger', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (74, 'Allene', 'Hamill', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (75, 'Stacey', 'Grimes', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (76, 'Mabelle', 'Carroll', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (77, 'Augustus', 'Powlowski', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (78, 'Agustina', 'Konopelski', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (79, 'Jamil', 'Bauch', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (80, 'Dejah', 'O\'Hara', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (81, 'Malcolm', 'Klein', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (82, 'Aletha', 'Bruen', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (83, 'Clark', 'Willms', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (84, 'Xander', 'Windler', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (85, 'Micheal', 'Kemmer', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (86, 'Isabelle', 'Gerhold', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (87, 'Aric', 'Kuhic', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (88, 'Marcelo', 'Gusikowski', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (89, 'Jeff', 'Hammes', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (90, 'Alexzander', 'Gislason', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (91, 'Trent', 'Kirlin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (92, 'Otha', 'Little', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (93, 'Axel', 'Wintheiser', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (94, 'Cora', 'Kuhlman', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (95, 'Elenor', 'Howell', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (96, 'Heber', 'Murazik', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (97, 'Annie', 'Wisozk', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (98, 'Laurel', 'Parisian', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (99, 'Lucio', 'Hansen', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (100, 'Salma', 'Wilderman', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (101, 'Gabriella', 'Satterfield', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (102, 'Juliet', 'Lesch', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (103, 'Jalyn', 'Jacobson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (104, 'Kiara', 'Hintz', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (105, 'Delphine', 'Bradtke', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (106, 'Ezekiel', 'Leannon', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (107, 'Jerod', 'Conroy', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (108, 'Vivienne', 'Koss', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (109, 'Jaclyn', 'Quigley', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (110, 'Carolyn', 'Herzog', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (111, 'Grady', 'Little', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (112, 'Norberto', 'Aufderhar', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (113, 'Cameron', 'Brown', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (114, 'Lillian', 'Mills', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (115, 'Irwin', 'Wolff', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (116, 'Gavin', 'Kulas', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (117, 'Tara', 'Kulas', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (118, 'Minnie', 'Bauch', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (119, 'Barbara', 'Stanton', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (120, 'Dock', 'Friesen', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (121, 'Jaime', 'VonRueden', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (122, 'Ewald', 'Larkin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (123, 'Mya', 'Altenwerth', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (124, 'Maude', 'Turner', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (125, 'Ruby', 'Weissnat', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (126, 'Sienna', 'Emard', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (127, 'Devonte', 'Nicolas', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (128, 'Janick', 'Braun', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (129, 'Nikita', 'Sawayn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (130, 'Wilbert', 'Muller', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (131, 'Stefanie', 'Walsh', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (132, 'Tressa', 'Stoltenberg', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (133, 'Cathryn', 'Batz', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (134, 'Devante', 'Rogahn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (135, 'Godfrey', 'Price', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (136, 'Helmer', 'Stroman', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (137, 'Bernadette', 'Murazik', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (138, 'Gilda', 'Grimes', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (139, 'Adrien', 'Hills', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (140, 'Jack', 'Dicki', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (141, 'Kiera', 'Koelpin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (142, 'Yesenia', 'Feest', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (143, 'Daisy', 'Robel', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (144, 'Linnea', 'White', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (145, 'Ilene', 'Cremin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (146, 'Liza', 'Schaden', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (147, 'Reta', 'Beatty', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (148, 'Tatyana', 'Legros', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (149, 'Amber', 'Streich', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (150, 'Kendra', 'Hermiston', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (151, 'Kathlyn', 'Bradtke', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (152, 'Jammie', 'Kiehn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (153, 'Lillian', 'Gutmann', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (154, 'Hope', 'Heidenreich', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (155, 'Adrien', 'Luettgen', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (156, 'Meggie', 'Davis', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (157, 'Sabrina', 'Hodkiewicz', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (158, 'Major', 'Bode', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (159, 'Sierra', 'Leannon', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (160, 'Orpha', 'Harris', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (161, 'Delilah', 'Wilkinson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (162, 'Savanna', 'Hahn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (163, 'Della', 'Weber', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (164, 'Rosemary', 'Brekke', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (165, 'Chad', 'Howell', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (166, 'Tom', 'Waelchi', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (167, 'Cathy', 'Littel', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (168, 'Simone', 'Will', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (169, 'Deshawn', 'Jenkins', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (170, 'Leopoldo', 'Homenick', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (171, 'Nia', 'Crist', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (172, 'Adele', 'Wisoky', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (173, 'Janie', 'Lehner', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (174, 'Israel', 'Zieme', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (175, 'Julien', 'Wolf', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (176, 'Rosanna', 'Spencer', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (177, 'Friedrich', 'Hoeger', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (178, 'Collin', 'Goyette', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (179, 'Sandrine', 'Huel', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (180, 'Mellie', 'Turcotte', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (181, 'Odie', 'Wilkinson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (182, 'Bobby', 'Kihn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (183, 'Aylin', 'Marvin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (184, 'Berta', 'Heaney', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (185, 'Deion', 'Wisoky', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (186, 'Emma', 'Stroman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (187, 'Durward', 'Botsford', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (188, 'Trey', 'Reinger', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (189, 'Maida', 'Wiza', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (190, 'Lawrence', 'Raynor', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (191, 'Jasen', 'Johnston', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (192, 'Ally', 'Hand', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (193, 'Tillman', 'Herman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (194, 'Scot', 'Murazik', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (195, 'Misael', 'Turcotte', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (196, 'Heaven', 'Bailey', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (197, 'Jayson', 'Block', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (198, 'Jaeden', 'Prohaska', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (199, 'Erica', 'Medhurst', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (200, 'Valentine', 'King', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (201, 'Maymie', 'Schamberger', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (202, 'Alvena', 'Effertz', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (203, 'Kathlyn', 'Bernhard', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (204, 'Johnson', 'Mayert', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (205, 'Darryl', 'Reichert', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (206, 'Mariana', 'Ward', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (207, 'Amparo', 'Bechtelar', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (208, 'Dameon', 'Parisian', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (209, 'Armani', 'Grady', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (210, 'Laury', 'Herzog', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (211, 'Victor', 'Schuster', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (212, 'Reba', 'Collier', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (213, 'Celia', 'Barton', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (214, 'Josefa', 'Hermiston', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (215, 'Curtis', 'Franecki', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (216, 'Godfrey', 'Cassin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (217, 'Hermann', 'Labadie', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (218, 'Daryl', 'Ledner', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (219, 'Dawson', 'Mayer', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (220, 'Lydia', 'Murazik', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (221, 'Ludie', 'Price', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (222, 'Tanya', 'Crooks', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (223, 'Amanda', 'Lind', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (224, 'Jerrold', 'Orn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (225, 'Clarissa', 'Cremin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (226, 'Nathan', 'Ankunding', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (227, 'Katelyn', 'Altenwerth', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (228, 'Kale', 'Zemlak', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (229, 'Antone', 'Konopelski', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (230, 'Leann', 'Kovacek', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (231, 'Mark', 'Altenwerth', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (232, 'Annie', 'Price', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (233, 'Garrett', 'Hirthe', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (234, 'Johanna', 'Yundt', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (235, 'Candice', 'Olson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (236, 'Maryse', 'Turner', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (237, 'Kurt', 'Hagenes', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (238, 'Ubaldo', 'Cruickshank', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (239, 'Daija', 'Armstrong', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (240, 'Reilly', 'Sanford', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (241, 'Zelda', 'Schinner', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (242, 'Mortimer', 'Kulas', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (243, 'Enola', 'Zieme', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (244, 'Sigmund', 'Grimes', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (245, 'Sabryna', 'Greenholt', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (246, 'Brooks', 'Kirlin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (247, 'Lorine', 'Runolfsdottir', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (248, 'Jeanette', 'Halvorson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (249, 'Dewayne', 'Price', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (250, 'Yasmeen', 'Ondricka', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (251, 'Kellen', 'Bruen', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (252, 'Kenyatta', 'Mann', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (253, 'Eliseo', 'Tromp', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (254, 'Letha', 'Koch', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (255, 'Alexandro', 'Cronin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (256, 'Hassie', 'Schaefer', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (257, 'Pierce', 'Pollich', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (258, 'Talon', 'Welch', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (259, 'Chelsea', 'Weissnat', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (260, 'Alyce', 'Quigley', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (261, 'Blaze', 'Barton', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (262, 'Mose', 'Rowe', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (263, 'Raphaelle', 'Tillman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (264, 'Ethyl', 'Considine', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (265, 'Laurence', 'Waelchi', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (266, 'Murl', 'Hettinger', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (267, 'Cara', 'Kozey', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (268, 'Casandra', 'Stroman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (269, 'Griffin', 'Yost', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (270, 'Emerald', 'Ritchie', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (271, 'Isaias', 'Rippin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (272, 'Kale', 'Tremblay', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (273, 'Marvin', 'Hand', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (274, 'Webster', 'Wiegand', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (275, 'Jonathon', 'Hansen', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (276, 'Carmela', 'Hessel', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (277, 'Natasha', 'Romaguera', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (278, 'Haley', 'Lemke', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (279, 'Tyshawn', 'O\'Keefe', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (280, 'Zack', 'Christiansen', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (281, 'Yolanda', 'Hilpert', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (282, 'Flavie', 'Walsh', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (283, 'Jude', 'McKenzie', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (284, 'Enid', 'Goldner', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (285, 'Walter', 'Daugherty', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (286, 'Esperanza', 'Weimann', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (287, 'Sasha', 'Schamberger', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (288, 'Marshall', 'Friesen', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (289, 'Louie', 'Hermiston', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (290, 'Ressie', 'Herzog', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (291, 'Juana', 'Shields', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (292, 'Allie', 'Abbott', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (293, 'Shaylee', 'Conn', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (294, 'Desmond', 'Welch', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (295, 'Roscoe', 'Fahey', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (296, 'Rodrick', 'Ullrich', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (297, 'Kody', 'Willms', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (298, 'Pamela', 'Ondricka', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (299, 'Xavier', 'Beatty', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (300, 'Justina', 'Ruecker', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (301, 'Wiley', 'Baumbach', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (302, 'Princess', 'Powlowski', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (303, 'Dena', 'Lockman', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (304, 'Buster', 'Romaguera', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (305, 'Willis', 'Anderson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (306, 'Maribel', 'Doyle', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (307, 'Sibyl', 'O\'Connell', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (308, 'Marvin', 'Williamson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (309, 'Kenton', 'Halvorson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (310, 'Zelda', 'Bahringer', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (311, 'Elena', 'Rau', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (312, 'Sandra', 'Bogan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (313, 'Kailyn', 'Ryan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (314, 'Glenda', 'Huel', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (315, 'William', 'Hammes', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (316, 'Vickie', 'Mosciski', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (317, 'Duane', 'Howe', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (318, 'Edmond', 'Sauer', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (319, 'Kirk', 'Connelly', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (320, 'Myrna', 'Heathcote', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (321, 'Cory', 'Kilback', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (322, 'Elena', 'Kemmer', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (323, 'June', 'Swift', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (324, 'Chase', 'Feil', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (325, 'Myron', 'Mante', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (326, 'Crystal', 'Lindgren', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (327, 'Robb', 'Heller', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (328, 'Kennedy', 'Effertz', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (329, 'Harvey', 'Kshlerin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (330, 'Muriel', 'Ryan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (331, 'Kristian', 'Gerhold', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (332, 'Lucious', 'Lang', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (333, 'Mya', 'Runolfsson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (334, 'Reyna', 'Graham', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (335, 'Dominic', 'Kling', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (336, 'Everette', 'Frami', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (337, 'Icie', 'Eichmann', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (338, 'Paris', 'Oberbrunner', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (339, 'Claude', 'Schuppe', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (340, 'Keyshawn', 'Weimann', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (341, 'Bret', 'White', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (342, 'Domenick', 'Krajcik', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (343, 'Gudrun', 'Leffler', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (344, 'Jabari', 'Bernhard', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (345, 'Misael', 'Crist', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (346, 'Kelsi', 'Kshlerin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (347, 'Georgette', 'Beahan', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (348, 'Julie', 'Kassulke', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (349, 'Lessie', 'Gutmann', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (350, 'Franco', 'Cummerata', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (351, 'Sarina', 'Nader', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (352, 'Sandrine', 'Grady', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (353, 'Lucie', 'Feeney', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (354, 'Willy', 'Cummerata', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (355, 'Camylle', 'Goyette', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (356, 'Luz', 'Wolff', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (357, 'Favian', 'Kautzer', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (358, 'Teresa', 'Schaefer', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (359, 'Marta', 'Moen', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (360, 'Candice', 'Fisher', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (361, 'Kaylie', 'Fahey', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (362, 'Enrico', 'Conn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (363, 'Nickolas', 'Kessler', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (364, 'Kathryn', 'Prosacco', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (365, 'Lulu', 'Leffler', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (366, 'Dion', 'Lowe', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (367, 'Cristopher', 'Spinka', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (368, 'Bianka', 'Mayer', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (369, 'Trever', 'Goyette', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (370, 'Antonina', 'Kuhn', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (371, 'Watson', 'Wolff', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (372, 'Arvel', 'Luettgen', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (373, 'Corrine', 'Roob', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (374, 'Griffin', 'Zieme', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (375, 'Ashton', 'Prohaska', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (376, 'Aliyah', 'Rippin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (377, 'Roxanne', 'Boehm', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (378, 'Damon', 'Lang', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (379, 'Narciso', 'Macejkovic', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (380, 'Shanny', 'Brakus', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (381, 'Wilfred', 'Blanda', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (382, 'Berry', 'O\'Hara', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (383, 'Heaven', 'Schimmel', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (384, 'Anita', 'Fritsch', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (385, 'Mabel', 'Spinka', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (386, 'Breanne', 'Shields', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (387, 'Henderson', 'Stehr', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (388, 'Libbie', 'Jakubowski', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (389, 'Coleman', 'Spinka', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (390, 'Demario', 'Sanford', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (391, 'Pat', 'Windler', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (392, 'Elbert', 'Abshire', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (393, 'Trycia', 'Schowalter', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (394, 'Casper', 'Steuber', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (395, 'Jon', 'Bernier', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (396, 'Ewell', 'Bergstrom', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (397, 'Isadore', 'Frami', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (398, 'Susie', 'Gaylord', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (399, 'Doyle', 'Feeney', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (400, 'Corbin', 'Ledner', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (401, 'Ottilie', 'Kassulke', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (402, 'Lucienne', 'Beier', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (403, 'Florida', 'Cassin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (404, 'Laila', 'Lindgren', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (405, 'Daphnee', 'Nitzsche', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (406, 'Pearl', 'Streich', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (407, 'Icie', 'Jacobs', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (408, 'Allie', 'Bins', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (409, 'Brendon', 'Kunde', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (410, 'Felicia', 'Mohr', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (411, 'Delfina', 'Bartell', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (412, 'Alexandra', 'Gusikowski', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (413, 'Liliana', 'Padberg', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (414, 'Araceli', 'Quigley', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (415, 'Alejandra', 'Predovic', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (416, 'Leatha', 'Maggio', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (417, 'Guy', 'Bailey', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (418, 'Rod', 'Barton', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (419, 'Marjolaine', 'Monahan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (420, 'Guiseppe', 'Kessler', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (421, 'Maurice', 'Beer', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (422, 'Claire', 'Runte', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (423, 'Rylee', 'Prosacco', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (424, 'Alessandro', 'Kihn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (425, 'Ismael', 'Kemmer', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (426, 'Gabe', 'Smitham', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (427, 'Gerda', 'Gusikowski', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (428, 'Mallory', 'Mueller', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (429, 'Angel', 'Tromp', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (430, 'Jeanette', 'Prosacco', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (431, 'Jeffrey', 'Jacobson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (432, 'Sidney', 'Nolan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (433, 'Trey', 'Okuneva', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (434, 'Laurianne', 'Bogan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (435, 'Tillman', 'Weissnat', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (436, 'Evie', 'Osinski', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (437, 'Lysanne', 'Lockman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (438, 'Delpha', 'Goodwin', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (439, 'Lurline', 'Quigley', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (440, 'Erika', 'Bartoletti', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (441, 'Monique', 'Fahey', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (442, 'Samson', 'Mayert', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (443, 'Millie', 'Jast', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (444, 'Clarabelle', 'Witting', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (445, 'Johnnie', 'Lubowitz', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (446, 'Jettie', 'Moore', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (447, 'Danny', 'Gibson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (448, 'Judah', 'McKenzie', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (449, 'Harry', 'Jast', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (450, 'Olen', 'Kassulke', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (451, 'Arvel', 'Crona', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (452, 'Jane', 'Hamill', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (453, 'Marisol', 'Towne', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (454, 'Amina', 'Jast', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (455, 'Elyssa', 'Murray', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (456, 'Winston', 'Nikolaus', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (457, 'Ciara', 'Bins', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (458, 'Savion', 'Kautzer', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (459, 'Deondre', 'Skiles', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (460, 'Everardo', 'Schinner', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (461, 'Sammy', 'Konopelski', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (462, 'Torey', 'Batz', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (463, 'Soledad', 'Hansen', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (464, 'Leland', 'Langworth', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (465, 'Tiana', 'Harber', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (466, 'Morton', 'Simonis', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (467, 'Krystel', 'Hegmann', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (468, 'Verla', 'Moen', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (469, 'Delphine', 'Predovic', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (470, 'Lavon', 'Mills', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (471, 'Jack', 'Kuhn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (472, 'Ike', 'Harber', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (473, 'Trent', 'Waelchi', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (474, 'Janae', 'Williamson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (475, 'Israel', 'Stroman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (476, 'Jillian', 'Nolan', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (477, 'Elsa', 'Hoeger', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (478, 'Emilio', 'Littel', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (479, 'Stephany', 'Jacobson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (480, 'London', 'Graham', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (481, 'Charity', 'Sanford', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (482, 'Hassan', 'Strosin', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (483, 'Dulce', 'Wehner', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (484, 'Albin', 'Collins', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (485, 'Alysha', 'Bergstrom', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (486, 'Samanta', 'Gibson', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (487, 'Lesly', 'Johnson', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (488, 'Alta', 'Bahringer', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (489, 'Flo', 'Ratke', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (490, 'Leila', 'Stracke', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (491, 'Leann', 'Klein', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (492, 'Alexandro', 'McGlynn', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (493, 'Dax', 'Tillman', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (494, 'Kristina', 'Cole', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (495, 'Elda', 'Witting', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (496, 'Florine', 'Morissette', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (497, 'Emily', 'Jakubowski', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (498, 'Ansley', 'Schinner', 'Student');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (499, 'Santina', 'Franecki', 'Admin');
+INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `UserType`) VALUES (500, 'Shyann', 'Breitenberg', 'Student');
 
--- 2019-10-12 20:32:49
