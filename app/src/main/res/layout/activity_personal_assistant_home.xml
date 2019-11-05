@@ -9,15 +9,15 @@
     <LinearLayout
         android:id="@+id/hello_linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:orientation="vertical"
-        android:background="#3498DB">
+        android:layout_height="350dp"
+        android:background="#3498DB"
+        android:orientation="vertical">
 
 
         <ImageButton
             android:id="@+id/mic_image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="130dp"
             android:layout_marginTop="50dp"
             android:background="#0000ffff"
@@ -29,8 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="110dp"
             android:text="Hello, I am James"
-            android:textSize="25sp"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/school_personal_assistant_text_view"
@@ -40,7 +40,7 @@
             android:layout_marginTop="15dp"
             android:text="I am your personal assistant for school."
             android:textColor="#ffffff"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/below_help_text_view"
@@ -48,8 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="55dp"
             android:text="Below are a few ways I can be of help"
-            android:textSize="18sp"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
